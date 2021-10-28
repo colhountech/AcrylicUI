@@ -25,7 +25,7 @@ namespace Examples
             this.Text = string.Empty;
             this.ShowIcon = false;
             this.btnUpdateDpi.Default = false; // change this to true for a more prominent button
-
+            this.MinimumSize = this.Size;
 
         }
         private void Form1_Load(object sender, EventArgs e)
