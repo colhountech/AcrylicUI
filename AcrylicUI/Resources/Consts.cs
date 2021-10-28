@@ -10,12 +10,19 @@ namespace AcrylicUI.Resources
         public const byte SOLIDGRADIENT = 0xff;
 
         // Drawing Consts
+        public const int DEFULAT_DPI = 96;
         public const int PEN_WIDTH = 1;        
         public const int BUTTON_XOFFSET = 4;
         public const int BUTTON_XOFFSET_PLUS_PEN = BUTTON_XOFFSET + PEN_WIDTH;
         public const int BUTTON_PADDING = 8;
         public const int CONTROL_PADDING = 12;  // use increments of 4, with 12 minimum
         public const int CONTROL_HEIGHT = 24;
+
+        // Button
+        public const int BUTTON_HEIGHT = 32; // units of 4 or 8
+        public const int BUTTON_WIDTH = 160;
+        public const int ICON_SIZE = 16;
+
         public const int ARC_RADIUS = 8;
         public const int SMALL_ARC_RADIUS = 4;
 
@@ -25,6 +32,11 @@ namespace AcrylicUI.Resources
 
     public sealed class Colors
     {
+        public static Color Transparent 
+        {
+            get { return Color.Transparent; }
+        }
+
         public static Color GreyBackground // Blur Background
         {
             get { return Color.FromArgb(62, 58, 60); }
@@ -65,6 +77,16 @@ namespace AcrylicUI.Resources
         {
             get { return Color.FromArgb(58, 58, 58); }
         }
+
+        public static Color FocusBlueOutline
+        {
+            get { return Color.FromArgb(28, 137, 255); }
+        }
+        public static Color FocusWhiteOutline
+        {
+            get { return Color.FromArgb(126, 126, 126); }
+        }
+
 
 
         public static Color BtnOutline
@@ -107,6 +129,11 @@ namespace AcrylicUI.Resources
         public static Color LightGrey
         {
             get { return Color.FromArgb(69, 73, 74); }
+        }
+
+        public static Color DarkPanel
+        {
+            get { return Color.FromArgb(26,28,30); }
         }
 
 

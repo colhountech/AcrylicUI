@@ -22,7 +22,7 @@ namespace AcrylicUI
             // top left arc
             path.AddArc(arc, 180, 90);
 
-            // top righ arc
+            // top right arc
             arc.X = modRect.Right - d;
             path.AddArc(arc, 270, 90);
 
@@ -46,5 +46,7 @@ namespace AcrylicUI
 
         [DllImport("user32.dll")]
         private static extern uint GetDpiForWindow(IntPtr hwnd);
+
+
     }
 }

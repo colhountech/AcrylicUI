@@ -38,7 +38,7 @@ namespace AcrylicUI.Controls
         {
             get
             {
-                return new Size(Consts.CONTROL_HEIGHT * 5, Consts.CONTROL_HEIGHT);
+                return new Size(Consts.BUTTON_WIDTH, Consts.BUTTON_HEIGHT);
             }
         }
           
@@ -67,7 +67,7 @@ namespace AcrylicUI.Controls
 
         [Category("Appearance")]
         [Description("Determines the amount of padding between the image and text.")]
-        [DefaultValue(5)]
+        [DefaultValue(Consts.BUTTON_XOFFSET)]
         public int ImagePadding
         {
             get { return _imagePadding; }
@@ -285,13 +285,19 @@ namespace AcrylicUI.Controls
         #endregion
 
         #region Paint Region
+        //protected override void OnPaintBackground(PaintEventArgs pevent)
+        //{
+        //    // absorb event
+        //}
 
         protected override void OnPaint(PaintEventArgs e)
         {
             var g = e.Graphics;
+            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
             var rect = new Rectangle(0, 0, ClientSize.Width, ClientSize.Height);
 
-            var rectRounded = Drawing.RoundedRectange( rect, Scale(Consts.SMALL_ARC_RADIUS));
+            var rectRounded = Drawing.RoundedRectange(rect, Scale(Consts.SMALL_ARC_RADIUS));
 
             var textColor = Colors.Text;
             var borderColor = Colors.BtnOutline;
@@ -300,7 +306,7 @@ namespace AcrylicUI.Controls
             if (Enabled)
             {
                 if (Focused && TabStop)
-                    borderColor = Colors.BtnOutline;
+                    borderColor = _isDefault ? Colors.FocusWhiteOutline : Colors.FocusBlueOutline; // TODO: Create TabStop Colors
 
                 switch (ButtonState)
                 {
@@ -311,6 +317,7 @@ namespace AcrylicUI.Controls
                     case AcrylicControlState.Pressed:
                         fillColor = _isDefault ? Colors.DefaulBlueButtonPressedFill : Colors.BtnPressedFill;
                         textColor = _isDefault ? Colors.DefaulBlueButtonPressedText : Colors.Text;
+
                         borderColor = Colors.BtnPressedOutline;
                         break;
                 }
@@ -323,22 +330,24 @@ namespace AcrylicUI.Controls
                 borderColor = Colors.DisabledOutline;
             }
 
-            using (var b = new SolidBrush(fillColor))
+            using (var b = new SolidBrush(fillColor))            
             {
+                g.Clear(Colors.Transparent);
                 g.FillPath(b, rectRounded);
-                //g.FillRectangle(b, rect);
             }
-
-
-            using (var p = new Pen(borderColor, Scale(Consts.PEN_WIDTH) ))
+              
+            using (var p = new Pen(borderColor, Scale(Consts.PEN_WIDTH)/2))
             {
-                //var modRect = new Rectangle(rect.Left, rect.Top, rect.Width - Scale(Consts.PEN_WIDTH), rect.Height - Scale(Consts.PEN_WIDTH));
-                var modRect = new Rectangle(rect.Left, rect.Top, rect.Width - Scale(Consts.PEN_WIDTH), rect.Height - Scale(Consts.PEN_WIDTH));
+                var modRect = new Rectangle(
+                    rect.Left,
+                    rect.Top,
+                    rect.Width - Scale(Consts.PEN_WIDTH),
+                    rect.Height - Scale(Consts.PEN_WIDTH));
+
                 var modRectRounded = Drawing.RoundedRectange(modRect, Scale(Consts.SMALL_ARC_RADIUS));
-                //g.DrawRectangle(p, modRect);
                 g.DrawPath(p, modRectRounded);
             }
-           
+
             var textOffsetX = 0;
             var textOffsetY = 0;
 
@@ -352,16 +361,18 @@ namespace AcrylicUI.Controls
                 switch (TextImageRelation)
                 {
                     case TextImageRelation.ImageAboveText:
-                        textOffsetY = (Image.Size.Height / 2) + Scale(ImagePadding / 2); // TODO: Scaling
-                        y -= ((int)(stringSize.Height / 2) + Scale(ImagePadding / 2)); // TODO: Scaling
+                        textOffsetY = (Image.Size.Height / 2) + Scale(ImagePadding / 2); 
+                        y -= ((int)(stringSize.Height / 2) + Scale(ImagePadding / 2));
                         break;
                     case TextImageRelation.TextAboveImage:
-                        textOffsetY = ((Image.Size.Height / 2) + Scale(ImagePadding / 2)) *  -Scale(Consts.PEN_WIDTH); // TODO: Scaling
-                        y += ((int)(stringSize.Height / 2) + Scale(ImagePadding / 2)); 
+                        textOffsetY = ((Image.Size.Height / 2) + Scale(ImagePadding / 2)) * -Scale(Consts.PEN_WIDTH); 
+                        y += ((int)(stringSize.Height / 2) + Scale(ImagePadding / 2));
                         break;
                     case TextImageRelation.ImageBeforeText:
-                        textOffsetX = Image.Size.Width + Scale(ImagePadding * 2); 
-                        x = Scale(ImagePadding);
+                      
+                            textOffsetX = Image.Size.Width + Scale(ImagePadding);                      
+                            x = Scale(ImagePadding);
+                        
                         break;
                     case TextImageRelation.TextBeforeImage:
                         x += (int)stringSize.Width;
@@ -384,9 +395,12 @@ namespace AcrylicUI.Controls
                     Trimming = StringTrimming.EllipsisCharacter
                 };
 
+                stringFormat.Alignment = TextAlign == ContentAlignment.MiddleCenter ? StringAlignment.Near : StringAlignment.Center;                
+
                 g.DrawString(Text, Font, b, modRect, stringFormat);
             }
         }
+
 
         #endregion
 

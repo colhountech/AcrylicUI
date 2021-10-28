@@ -22,7 +22,6 @@ namespace AcrylicUI.Forms
         public AcrylicForm()
         {
             InitializeComponent();
-
         }
 
         #endregion

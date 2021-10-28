@@ -30,7 +30,7 @@ namespace Examples
         private void InitializeComponent()
         {
             this.pnlPadding = new System.Windows.Forms.Panel();
-            this.grpDpiSettings = new System.Windows.Forms.GroupBox();
+            this.grpDpiSettings = new AcrylicUI.Controls.AcrylicGroupBox();
             this.txtAutoScaleFactor = new AcrylicUI.Controls.AcrylicTextBox();
             this.lblAutoScaleFactor = new System.Windows.Forms.Label();
             this.txtWinVer = new AcrylicUI.Controls.AcrylicTextBox();
@@ -57,6 +57,7 @@ namespace Examples
             // 
             this.grpDpiSettings.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.grpDpiSettings.BackColor = System.Drawing.Color.Transparent;
+            this.grpDpiSettings.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
             this.grpDpiSettings.Controls.Add(this.txtAutoScaleFactor);
             this.grpDpiSettings.Controls.Add(this.lblAutoScaleFactor);
             this.grpDpiSettings.Controls.Add(this.txtWinVer);
@@ -139,10 +140,10 @@ namespace Examples
             // 
             this.btnUpdateDpi.Default = false;
             this.btnUpdateDpi.ImagePadding = 6;
-            this.btnUpdateDpi.Location = new System.Drawing.Point(322, 56);
+            this.btnUpdateDpi.Location = new System.Drawing.Point(312, 52);
             this.btnUpdateDpi.Name = "btnUpdateDpi";
             this.btnUpdateDpi.Padding = new System.Windows.Forms.Padding(6);
-            this.btnUpdateDpi.Size = new System.Drawing.Size(123, 24);
+            this.btnUpdateDpi.Size = new System.Drawing.Size(133, 32);
             this.btnUpdateDpi.TabIndex = 7;
             this.btnUpdateDpi.Text = "Update";
             this.btnUpdateDpi.UseVisualStyleBackColor = false;
@@ -157,6 +158,7 @@ namespace Examples
             this.Controls.Add(this.pnlPadding);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.pnlPadding.ResumeLayout(false);
@@ -169,7 +171,7 @@ namespace Examples
         #endregion
 
         private System.Windows.Forms.Panel pnlPadding;
-        private System.Windows.Forms.GroupBox grpDpiSettings;
+        private AcrylicUI.Controls.AcrylicGroupBox grpDpiSettings;
         
         private System.Windows.Forms.Label lblAutoScaleFactor;
         private AcrylicUI.Controls.AcrylicTextBox txtAutoScaleFactor;
