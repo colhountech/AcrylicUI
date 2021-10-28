@@ -31,7 +31,7 @@ namespace AcrylicUI.Resources
         public Image GreyBitmapFromSvg(byte[] bytes, int width = Consts.ICON_SIZE, int height = Consts.ICON_SIZE)
         {
             var sourceColor = Color.FromArgb(0xff, 0x21, 0x21, 0x21); // Hack for Chrome Close/Min/max/Restore button
-            var replaceColor = Colors.LightGrey;
+            var replaceColor = Colors.DisabledText;
 
             return NamedColorBitmapFromSvg(bytes, sourceColor, replaceColor, width, height);
         }

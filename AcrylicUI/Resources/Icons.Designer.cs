@@ -109,5 +109,15 @@ namespace AcrylicUI.Resources {
                 return ((byte[])(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] UserProfile_16x_svg {
+            get {
+                object obj = ResourceManager.GetObject("UserProfile_16x_svg", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }

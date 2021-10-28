@@ -176,7 +176,7 @@ namespace AcrylicUI.Controls
             else
             {
                 _max.Icon = new SvgUtils(_dpiScale).GreyBitmapFromSvg(Icons.ChromeMaximize_16x_svg);
-                _max.IconHot = new SvgUtils(_dpiScale).BitmapFromSvg(Icons.ChromeMaximize_16x_svg);
+                _max.IconHot = new SvgUtils(_dpiScale).WhiteBitmapFromSvg(Icons.ChromeMaximize_16x_svg);
             }
         }
 
@@ -187,7 +187,7 @@ namespace AcrylicUI.Controls
             _close.Rect = new Rectangle
             {
                 X = ClientRectangle.Right - xCloseButtonOffset,
-                Y = ClientRectangle.Top + (Scale(Consts.ToolWindowHeaderSize) / 2) - (_close.Icon.Height / 2),
+                Y = ClientRectangle.Top + (Scale(Consts.CONTROL_HEIGHT) / 2) - (_close.Icon.Height / 2),
                 Width = _close.Icon.Width,
                 Height = _close.Icon.Height
             };
@@ -198,7 +198,7 @@ namespace AcrylicUI.Controls
             {
 
                 X = ClientRectangle.Right - xMaxButtonOffset,
-                Y = ClientRectangle.Top + (Scale(Consts.ToolWindowHeaderSize) / 2) - (_max.Icon.Height / 2),
+                Y = ClientRectangle.Top + (Scale(Consts.CONTROL_HEIGHT) / 2) - (_max.Icon.Height / 2),
                 Width = _max.Icon.Width,
                 Height = _max.Icon.Height
 
@@ -210,7 +210,7 @@ namespace AcrylicUI.Controls
             {
 
                 X = ClientRectangle.Right - xMinButtonOffset,
-                Y = ClientRectangle.Top + (Scale(Consts.ToolWindowHeaderSize) / 2) - (_min.Icon.Height / 2),
+                Y = ClientRectangle.Top + (Scale(Consts.CONTROL_HEIGHT) / 2) - (_min.Icon.Height / 2),
                 Width = _min.Icon.Width,
                 Height = _min.Icon.Height
 
@@ -222,7 +222,7 @@ namespace AcrylicUI.Controls
             {
 
                 X = ClientRectangle.Right - xProfileButtonOffset,
-                Y = ClientRectangle.Top + (Scale(Consts.ToolWindowHeaderSize) / 2) - (_profile.Icon.Height / 2),
+                Y = ClientRectangle.Top + (Scale(Consts.CONTROL_HEIGHT) / 2) - (_profile.Icon.Height / 2),
                 Width = _profile.Icon.Width,
                 Height = _profile.Icon.Height
 
@@ -532,7 +532,7 @@ namespace AcrylicUI.Controls
                 var iconRect = new Rectangle
                 {
                     X = ClientRectangle.Left + xOffset,
-                    Y = ClientRectangle.Top + (Scale(Consts.ToolWindowHeaderSize) / 2) - (_icon.Height / 2),
+                    Y = ClientRectangle.Top + (Scale(Consts.CONTROL_HEIGHT) / 2) - (_icon.Height / 2),
                     Width = _icon.Width,
                     Height = _icon.Height
                 };

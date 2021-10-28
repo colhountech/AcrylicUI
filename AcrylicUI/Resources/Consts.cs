@@ -135,8 +135,36 @@ namespace AcrylicUI.Resources
         {
             get { return Color.FromArgb(26,28,30); }
         }
+        // WindowPanel
+        public static Color BlueBackground
+        {
+            get { return Color.FromArgb(66, 77, 95); }
+        }
+        public static Color HeaderBackground
+        {
+            get { return Color.FromArgb(57, 60, 62); }
+        }
 
-
+        public static Color DarkBlueBorder
+        {
+            get { return Color.FromArgb(51, 61, 78); }
+        }
+        public static Color DarkBorder
+        {
+            get { return Color.FromArgb(51, 51, 51); }
+        }
+        public static Color LightBlueBorder
+        {
+            get { return Color.FromArgb(86, 97, 114); }
+        }
+        public static Color LightBorder
+        {
+            get { return Color.FromArgb(81, 81, 81); }
+        }
+        public static Color LightText
+        {
+            get { return Color.FromArgb(220, 220, 220); }
+        }
     }
 
 

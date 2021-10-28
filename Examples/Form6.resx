@@ -117,23 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ChromeClose_16x_svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chromeclose_16x.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="ChromeMaximize_16x_svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chromemaximize_16x.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="ChromeMinimize_16x_svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chromeminimize_16x.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="ChromeRestore_16x_svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>chromerestore_16x.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Cube_16x_svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>cube_16x.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="UserProfile_16x_svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>userprofile_16x.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
 </root>

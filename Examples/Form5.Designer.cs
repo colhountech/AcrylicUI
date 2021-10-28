@@ -29,12 +29,36 @@ namespace Examples
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.windowPanel1 = new AcrylicUI.Controls.WindowPanel();
+            this.SuspendLayout();
+            // 
+            // windowPanel1
+            // 
+            this.windowPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.windowPanel1.Icon = null;
+            this.windowPanel1.IsAcrylicEnabled = false;
+            this.windowPanel1.Location = new System.Drawing.Point(0, 0);
+            this.windowPanel1.Name = "windowPanel1";
+            this.windowPanel1.RoundCorners = false;
+            this.windowPanel1.SectionHeader = null;
+            this.windowPanel1.Size = new System.Drawing.Size(800, 450);
+            this.windowPanel1.TabIndex = 0;
+            // 
+            // Form5
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.windowPanel1);
+            this.Location = new System.Drawing.Point(0, 0);
+            this.Name = "Form5";
             this.Text = "Form5";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private AcrylicUI.Controls.WindowPanel windowPanel1;
     }
 }
