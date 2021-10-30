@@ -138,7 +138,7 @@ namespace Examples
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.acrylicButton2);
-            this.Location = new System.Drawing.Point(1580, 780);
+            this.Location = new System.Drawing.Point(0, 0);
             this.Margin = new System.Windows.Forms.Padding(58, 23, 58, 23);
             this.Name = "Form3";
             this.Text = "Form3";

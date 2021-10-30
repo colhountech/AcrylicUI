@@ -10,49 +10,6 @@
     <ProjectReference Include="..\AcrylicUI\AcrylicUI.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Compile Update="Form3 - Copy %282%29 - Copy.Designer.cs">
-      <DependentUpon>Form3 - Copy (2).Designer.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Form3 - Copy %282%29.Designer.cs">
-      <DependentUpon>Form3.Designer.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Form3 - Copy - Copy %282%29.Designer.cs">
-      <DependentUpon>Form3 - Copy.Designer.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Form3 - Copy - Copy - Copy.Designer.cs">
-      <DependentUpon>Form3 - Copy - Copy.Designer.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Form3 - Copy - Copy.Designer.cs">
-      <DependentUpon>Form3 - Copy.Designer.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Form4.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Form3 - Copy.Designer.cs">
-      <DependentUpon>Form3.Designer.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Properties\Resources.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
 
-  <ItemGroup>
-    <EmbeddedResource Update="Form3 - Copy %282%29.resx">
-      <DependentUpon>Form3.resx</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Form3 - Copy - Copy.resx">
-      <DependentUpon>Form3 - Copy.resx</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Form3 - Copy.resx">
-      <DependentUpon>Form3.resx</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
 
 </Project>
