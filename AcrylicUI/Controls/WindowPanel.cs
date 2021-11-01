@@ -705,10 +705,10 @@ namespace AcrylicUI.Controls
                     if (IsControlBoxHit(cursor))
                     {
                         if (_max.IsPressed) _showSnapOverlay = 0;
-                        if (_max.IsHot && _showSnapOverlay++ > 20)
+                        if (_max.IsHot && _showSnapOverlay++ > 30)
                         {
                             message.Result = (IntPtr)(WinUserH.HT_MAXBUTTON);
-                            Console.WriteLine($"SENT--> HT_MAXBUTTON {_showSnapOverlay}");
+                            //Console.WriteLine($"SENT--> HT_MAXBUTTON {_showSnapOverlay}");
                         }
 
 

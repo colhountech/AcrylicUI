@@ -8,6 +8,7 @@
 		<UseWindowsForms>true</UseWindowsForms>
 		<ApplicationIcon />
 		<StartupObject />
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	</PropertyGroup>
 
 	<ItemGroup>
