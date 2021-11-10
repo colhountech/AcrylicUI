@@ -165,6 +165,9 @@ namespace AcrylicUI.Resources
         {
             get { return Color.FromArgb(220, 220, 220); }
         }
+        // Dock Panel
+
+        //BlueSelection
     }
 
 
