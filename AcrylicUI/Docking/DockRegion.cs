@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AcrylicUI.Resources;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -300,13 +301,13 @@ namespace AcrylicUI.Docking
             switch (DockArea)
             {
                 case DockArea.Left:
-                    _splitter = new DockSplitter(DockPanel, this, DarkSplitterType.Right);
+                    _splitter = new DockSplitter(DockPanel, this, SplitterType.Right);
                     break;
                 case DockArea.Right:
-                    _splitter = new DockSplitter(DockPanel, this, DarkSplitterType.Left);
+                    _splitter = new DockSplitter(DockPanel, this, SplitterType.Left);
                     break;
                 case DockArea.Bottom:
-                    _splitter = new DockSplitter(DockPanel, this, DarkSplitterType.Top);
+                    _splitter = new DockSplitter(DockPanel, this, SplitterType.Top);
                     break;
                 default:
                     return;

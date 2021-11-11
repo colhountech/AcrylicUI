@@ -22,7 +22,7 @@ namespace Examples
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Text = "";
-            var appImage = new SvgUtils(SvgUtils.GetDpiScale(Handle)).BitmapFromSvg(Icons.Cube_16x_svg);
+            var appImage = new IconFactory(IconFactory.GetDpiScale(Handle)).BitmapFromSvg(Icons.Cube_16x_svg);
             var appIcon = Icon.FromHandle(new Bitmap(appImage).GetHicon());
 
             this.ShowIcon = true;
@@ -32,10 +32,10 @@ namespace Examples
             this.MinimumSize = this.Size;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             
-            this.acrylicButton1.Image = new SvgUtils(SvgUtils.GetDpiScale(Handle)).BitmapFromSvg(Icons.Cube_16x_svg);
+            this.acrylicButton1.Image = new IconFactory(IconFactory.GetDpiScale(Handle)).BitmapFromSvg(Icons.Cube_16x_svg);
 
 
-            this.acrylicButton2.Image = new SvgUtils(SvgUtils.GetDpiScale(Handle)).BitmapFromSvg(Icons.Cube_16x_svg);
+            this.acrylicButton2.Image = new IconFactory(IconFactory.GetDpiScale(Handle)).BitmapFromSvg(Icons.Cube_16x_svg);
 
         }
     }

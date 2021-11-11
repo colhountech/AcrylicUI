@@ -133,9 +133,9 @@ namespace AcrylicUI.Controls
                 //close
                 //
                 _close.Icon?.Dispose();
-                _close.Icon = new SvgUtils(_dpiScale).GreyBitmapFromSvg(Icons.ChromeClose_16x_svg);
+                _close.Icon = new IconFactory(_dpiScale).GreyBitmapFromSvg(Icons.ChromeClose_16x_svg);
                 _close.IconHot?.Dispose();
-                _close.IconHot = new SvgUtils(_dpiScale).WhiteBitmapFromSvg(Icons.ChromeClose_16x_svg);
+                _close.IconHot = new IconFactory(_dpiScale).WhiteBitmapFromSvg(Icons.ChromeClose_16x_svg);
 
                 //
                 // max
@@ -149,16 +149,16 @@ namespace AcrylicUI.Controls
                 // min
                 //
                 _min.Icon?.Dispose();
-                _min.Icon = new SvgUtils(_dpiScale).GreyBitmapFromSvg(Icons.ChromeMinimize_16x_svg);
+                _min.Icon = new IconFactory(_dpiScale).GreyBitmapFromSvg(Icons.ChromeMinimize_16x_svg);
                 _min.IconHot?.Dispose();
-                _min.IconHot = new SvgUtils(_dpiScale).WhiteBitmapFromSvg(Icons.ChromeMinimize_16x_svg);
+                _min.IconHot = new IconFactory(_dpiScale).WhiteBitmapFromSvg(Icons.ChromeMinimize_16x_svg);
                 //
                 // profile
                 //
                 _profile.Icon?.Dispose();
-                _profile.Icon = new SvgUtils(_dpiScale).BitmapFromSvg(Icons.UserProfile_16x_svg);
+                _profile.Icon = new IconFactory(_dpiScale).BitmapFromSvg(Icons.UserProfile_16x_svg);
                 _profile.IconHot?.Dispose();
-                _profile.IconHot = new SvgUtils(_dpiScale).BitmapFromSvg(Icons.UserProfile_16x_svg);
+                _profile.IconHot = new IconFactory(_dpiScale).BitmapFromSvg(Icons.UserProfile_16x_svg);
 
             }
         }
@@ -169,14 +169,14 @@ namespace AcrylicUI.Controls
 
             if (state == FormWindowState.Maximized)
             {
-                _max.Icon = new SvgUtils(_dpiScale).GreyBitmapFromSvg(Icons.ChromeRestore_16x_svg);
-                _max.IconHot = new SvgUtils(_dpiScale).WhiteBitmapFromSvg(Icons.ChromeRestore_16x_svg);
+                _max.Icon = new IconFactory(_dpiScale).GreyBitmapFromSvg(Icons.ChromeRestore_16x_svg);
+                _max.IconHot = new IconFactory(_dpiScale).WhiteBitmapFromSvg(Icons.ChromeRestore_16x_svg);
 
             }
             else
             {
-                _max.Icon = new SvgUtils(_dpiScale).GreyBitmapFromSvg(Icons.ChromeMaximize_16x_svg);
-                _max.IconHot = new SvgUtils(_dpiScale).WhiteBitmapFromSvg(Icons.ChromeMaximize_16x_svg);
+                _max.Icon = new IconFactory(_dpiScale).GreyBitmapFromSvg(Icons.ChromeMaximize_16x_svg);
+                _max.IconHot = new IconFactory(_dpiScale).WhiteBitmapFromSvg(Icons.ChromeMaximize_16x_svg);
             }
         }
 

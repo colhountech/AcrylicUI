@@ -57,8 +57,8 @@ namespace Examples
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
-            var dpiScale = SvgUtils.GetDpiScale(this.Handle);
-            this.windowPanel1.Icon = new SvgUtils(SvgUtils.GetDpiScale(Handle)).BitmapFromSvg(Icons.Cube_16x_svg);
+            var dpiScale = IconFactory.GetDpiScale(this.Handle);
+            this.windowPanel1.Icon = new IconFactory(IconFactory.GetDpiScale(Handle)).BitmapFromSvg(Icons.Cube_16x_svg);
             this.windowPanel1.SectionHeader = "CT Studio";
         }
 

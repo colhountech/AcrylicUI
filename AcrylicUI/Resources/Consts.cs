@@ -26,7 +26,22 @@ namespace AcrylicUI.Resources
         public const int ARC_RADIUS = 8;
         public const int SMALL_ARC_RADIUS = 4;
 
+        // Docking Tabls
         
+        public static int Padding = 10;
+
+        public static int ScrollBarSize = 15;
+        public static int ArrowButtonSize = 15;
+        public static int MinimumThumbSize = 11;
+
+        public static int CheckBoxSize = 12;
+        public static int RadioButtonSize = 12;
+
+        public const int ToolWindowHeaderSize = 25;
+        public const int DocumentTabAreaSize = 24;
+        public const int ToolWindowTabAreaSize = 21;
+
+
 
     }
 
@@ -41,6 +56,11 @@ namespace AcrylicUI.Resources
         {
             get { return Color.FromArgb(62, 58, 60); }
         }
+        public static Color MediumBackground // Blur Background
+        {
+            get { return Color.FromArgb(49, 51, 53); }
+        }
+
         public static Color DefaulBlueButtonFill 
         {
             get { return Color.FromArgb(26,82,170); }
@@ -167,7 +187,27 @@ namespace AcrylicUI.Resources
         }
         // Dock Panel
 
-        //BlueSelection
+        public static Color BlueSelection
+        {
+            get { return Color.FromArgb(75, 110, 175); }
+        }
+
+        public static Color GreySelection
+        {
+            get { return Color.FromArgb(92, 92, 92); }
+        }
+        public static Color DarkBackground
+        {
+            get { return Color.FromArgb(43, 43, 43); }
+        }
+        public static Color BlueHighlight
+        {
+            get { return Color.FromArgb(104, 151, 187); }
+        }
+        public static Color GreyHighlight
+        {
+            get { return Color.FromArgb(122, 128, 132); }
+        }
     }
 
 

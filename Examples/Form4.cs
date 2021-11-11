@@ -22,7 +22,7 @@ namespace Examples
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Text = "";
-            var appImage = new SvgUtils(SvgUtils.GetDpiScale(Handle)).BitmapFromSvg(Icons.Cube_16x_svg);
+            var appImage = new IconFactory(IconFactory.GetDpiScale(Handle)).BitmapFromSvg(Icons.Cube_16x_svg);
             var appIcon = Icon.FromHandle(new Bitmap(appImage).GetHicon());
 
             this.ShowIcon = true;
@@ -35,9 +35,9 @@ namespace Examples
             // 10 minutes
 
             // Snooze
-            this.acrylicButton1.Image = new SvgUtils(SvgUtils.GetDpiScale(Handle)).BitmapFromSvg(Icons.Cube_16x_svg);
+            this.acrylicButton1.Image = new IconFactory(IconFactory.GetDpiScale(Handle)).BitmapFromSvg(Icons.Cube_16x_svg);
             // Dismiss
-            this.acrylicButton3.Image = new SvgUtils(SvgUtils.GetDpiScale(Handle)).BitmapFromSvg(Icons.Cube_16x_svg);
+            this.acrylicButton3.Image = new IconFactory(IconFactory.GetDpiScale(Handle)).BitmapFromSvg(Icons.Cube_16x_svg);
 
 
 

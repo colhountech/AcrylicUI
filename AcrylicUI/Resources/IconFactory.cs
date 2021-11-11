@@ -7,11 +7,11 @@ using Svg;
 
 namespace AcrylicUI.Resources
 {
-    public class SvgUtils
+    public class IconFactory
     {
         private float _dpiScale;
 
-        public SvgUtils(float dpiScale)
+        public IconFactory(float dpiScale)
         {
             _dpiScale = dpiScale;
         }
@@ -25,7 +25,7 @@ namespace AcrylicUI.Resources
 
         public  int Scale (int pixel)
         {
-            return (int)((float)pixel * _dpiScale);
+            return ((int)Math.Ceiling((float)pixel * _dpiScale));
         }
         
         public Image GreyBitmapFromSvg(byte[] bytes, int width = Consts.ICON_SIZE, int height = Consts.ICON_SIZE)

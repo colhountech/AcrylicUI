@@ -1,5 +1,5 @@
-﻿using AcrylicUI.Config;
-using AcrylicUI.Resources;
+﻿using AcrylicUI.Resources;
+using DarkUI.Docking;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -200,7 +200,7 @@ namespace AcrylicUI.Docking
 
             SuspendLayout();
 
-            var closeButtonSize = DockIcons.close.Width;
+            var closeButtonSize = Consts.CONTROL_HEIGHT;
 
             // Calculate areas of all tabs
             var totalSize = 0;
