@@ -35,7 +35,7 @@ namespace Examples
             this.lblAutoScaleFactor = new System.Windows.Forms.Label();
             this.txtWinVer = new AcrylicUI.Controls.AcrylicTextBox();
             this.lblWinVer = new System.Windows.Forms.Label();
-            this.txtDpi = new AcrylicUI.Controls.AcrylicTextBox();
+            this.txtSystemDpi = new System.Windows.Forms.TextBox();
             this.lblDpi = new System.Windows.Forms.Label();
             this.btnUpdateDpi = new AcrylicUI.Controls.AcrylicButton();
             this.pnlPadding.SuspendLayout();
@@ -62,7 +62,7 @@ namespace Examples
             this.grpDpiSettings.Controls.Add(this.lblAutoScaleFactor);
             this.grpDpiSettings.Controls.Add(this.txtWinVer);
             this.grpDpiSettings.Controls.Add(this.lblWinVer);
-            this.grpDpiSettings.Controls.Add(this.txtDpi);
+            this.grpDpiSettings.Controls.Add(this.txtSystemDpi);
             this.grpDpiSettings.Controls.Add(this.lblDpi);
             this.grpDpiSettings.Controls.Add(this.btnUpdateDpi);
             this.grpDpiSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
@@ -115,16 +115,16 @@ namespace Examples
             this.lblWinVer.TabIndex = 10;
             this.lblWinVer.Text = "WinVer :";
             // 
-            // txtDpi
+            // txtSystemDpi
             // 
-            this.txtDpi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.txtDpi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDpi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.txtDpi.Location = new System.Drawing.Point(170, 58);
-            this.txtDpi.Name = "txtDpi";
-            this.txtDpi.Size = new System.Drawing.Size(136, 23);
-            this.txtDpi.TabIndex = 9;
-            this.txtDpi.Text = "0";
+            this.txtSystemDpi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.txtSystemDpi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSystemDpi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.txtSystemDpi.Location = new System.Drawing.Point(170, 58);
+            this.txtSystemDpi.Name = "txtSystemDpi";
+            this.txtSystemDpi.Size = new System.Drawing.Size(136, 23);
+            this.txtSystemDpi.TabIndex = 9;
+            this.txtSystemDpi.Text = "0";
             // 
             // lblDpi
             // 
@@ -176,7 +176,7 @@ namespace Examples
         private System.Windows.Forms.Label lblAutoScaleFactor;
         private AcrylicUI.Controls.AcrylicTextBox txtAutoScaleFactor;
         private AcrylicUI.Controls.AcrylicTextBox txtWinVer;
-        private AcrylicUI.Controls.AcrylicTextBox txtDpi;
+        private System.Windows.Forms.TextBox txtSystemDpi;
         private System.Windows.Forms.Label lblWinVer;
         
         private System.Windows.Forms.Label lblDpi;

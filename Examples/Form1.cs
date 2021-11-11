@@ -37,7 +37,7 @@ namespace Examples
 
         private void BtnUpdateDpi_Click(object sender, EventArgs e)
         {
-            txtDpi.Text = String.Empty;
+            txtSystemDpi.Text = String.Empty;
             txtAutoScaleFactor.Text = string.Empty;
 
             // Create a reference to the OS version of Windows 10 Creators Update.
@@ -47,7 +47,7 @@ namespace Examples
             var compatible = Environment.OSVersion.Version.CompareTo(OsMinVersion);
             txtWinVer.Text = $"{Environment.OSVersion.VersionString}: Compat: {compatible}";
 
-            txtDpi.Text = $"{this.DeviceDpi}";
+            txtSystemDpi.Text = $"{this.DeviceDpi}";
 
             var scale = (float)Drawing.GetDpi(this.Handle) / (float)96f;
 

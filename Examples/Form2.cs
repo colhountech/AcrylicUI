@@ -19,15 +19,6 @@ namespace Examples
             this.ShowIcon = false;
         }
 
-        private void AcrylicButton4_Click(object sender, EventArgs e)
-        {
-            var Form1 = new Form1();
-            Form1.ShowDialog();
-        }
-
-        private void AcrylicButton5_Click(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }

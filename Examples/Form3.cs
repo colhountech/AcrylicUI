@@ -33,8 +33,6 @@ namespace Examples
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             
             this.acrylicButton1.Image = new IconFactory(IconFactory.GetDpiScale(Handle)).BitmapFromSvg(Icons.Cube_16x_svg);
-
-
             this.acrylicButton2.Image = new IconFactory(IconFactory.GetDpiScale(Handle)).BitmapFromSvg(Icons.Cube_16x_svg);
 
         }
