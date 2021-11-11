@@ -52,5 +52,12 @@ namespace Examples
             form.StartPosition = FormStartPosition.CenterParent;
             form.ShowDialog(this);
         }
+
+        private void acrylicButton6_Click(object sender, EventArgs e)
+        {
+            var form = new Form6();
+            form.StartPosition = FormStartPosition.CenterParent;
+            form.ShowDialog(this);
+        }
     }
 }

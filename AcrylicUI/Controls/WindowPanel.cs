@@ -16,7 +16,6 @@ namespace AcrylicUI.Controls
 
     public class WindowPanel : Panel
     {
-
         #region Field Region
 
         private Image _icon;

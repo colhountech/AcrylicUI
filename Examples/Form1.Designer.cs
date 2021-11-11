@@ -50,7 +50,7 @@ namespace Examples
             this.pnlPadding.Location = new System.Drawing.Point(0, 0);
             this.pnlPadding.Name = "pnlPadding";
             this.pnlPadding.Padding = new System.Windows.Forms.Padding(24);
-            this.pnlPadding.Size = new System.Drawing.Size(527, 283);
+            this.pnlPadding.Size = new System.Drawing.Size(477, 183);
             this.pnlPadding.TabIndex = 8;
             // 
             // grpDpiSettings
@@ -66,9 +66,9 @@ namespace Examples
             this.grpDpiSettings.Controls.Add(this.lblDpi);
             this.grpDpiSettings.Controls.Add(this.btnUpdateDpi);
             this.grpDpiSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.grpDpiSettings.Location = new System.Drawing.Point(24, 24);
+            this.grpDpiSettings.Location = new System.Drawing.Point(12, 13);
             this.grpDpiSettings.Name = "grpDpiSettings";
-            this.grpDpiSettings.Size = new System.Drawing.Size(479, 235);
+            this.grpDpiSettings.Size = new System.Drawing.Size(453, 158);
             this.grpDpiSettings.TabIndex = 8;
             this.grpDpiSettings.TabStop = false;
             this.grpDpiSettings.Text = "Dpi Settings";
@@ -78,7 +78,7 @@ namespace Examples
             this.txtAutoScaleFactor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.txtAutoScaleFactor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAutoScaleFactor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.txtAutoScaleFactor.Location = new System.Drawing.Point(170, 130);
+            this.txtAutoScaleFactor.Location = new System.Drawing.Point(144, 104);
             this.txtAutoScaleFactor.Name = "txtAutoScaleFactor";
             this.txtAutoScaleFactor.Size = new System.Drawing.Size(275, 23);
             this.txtAutoScaleFactor.TabIndex = 13;
@@ -88,7 +88,7 @@ namespace Examples
             // 
             this.lblAutoScaleFactor.AutoSize = true;
             this.lblAutoScaleFactor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.lblAutoScaleFactor.Location = new System.Drawing.Point(41, 133);
+            this.lblAutoScaleFactor.Location = new System.Drawing.Point(15, 107);
             this.lblAutoScaleFactor.Name = "lblAutoScaleFactor";
             this.lblAutoScaleFactor.Size = new System.Drawing.Size(105, 15);
             this.lblAutoScaleFactor.TabIndex = 12;
@@ -99,7 +99,7 @@ namespace Examples
             this.txtWinVer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.txtWinVer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtWinVer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.txtWinVer.Location = new System.Drawing.Point(170, 94);
+            this.txtWinVer.Location = new System.Drawing.Point(144, 68);
             this.txtWinVer.Name = "txtWinVer";
             this.txtWinVer.Size = new System.Drawing.Size(275, 23);
             this.txtWinVer.TabIndex = 11;
@@ -109,7 +109,7 @@ namespace Examples
             // 
             this.lblWinVer.AutoSize = true;
             this.lblWinVer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.lblWinVer.Location = new System.Drawing.Point(41, 97);
+            this.lblWinVer.Location = new System.Drawing.Point(15, 71);
             this.lblWinVer.Name = "lblWinVer";
             this.lblWinVer.Size = new System.Drawing.Size(50, 15);
             this.lblWinVer.TabIndex = 10;
@@ -120,7 +120,7 @@ namespace Examples
             this.txtSystemDpi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.txtSystemDpi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSystemDpi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.txtSystemDpi.Location = new System.Drawing.Point(170, 58);
+            this.txtSystemDpi.Location = new System.Drawing.Point(144, 32);
             this.txtSystemDpi.Name = "txtSystemDpi";
             this.txtSystemDpi.Size = new System.Drawing.Size(136, 23);
             this.txtSystemDpi.TabIndex = 9;
@@ -130,7 +130,7 @@ namespace Examples
             // 
             this.lblDpi.AutoSize = true;
             this.lblDpi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.lblDpi.Location = new System.Drawing.Point(41, 61);
+            this.lblDpi.Location = new System.Drawing.Point(15, 35);
             this.lblDpi.Name = "lblDpi";
             this.lblDpi.Size = new System.Drawing.Size(72, 15);
             this.lblDpi.TabIndex = 8;
@@ -140,7 +140,7 @@ namespace Examples
             // 
             this.btnUpdateDpi.Default = false;
             this.btnUpdateDpi.ImagePadding = 6;
-            this.btnUpdateDpi.Location = new System.Drawing.Point(312, 52);
+            this.btnUpdateDpi.Location = new System.Drawing.Point(286, 26);
             this.btnUpdateDpi.Name = "btnUpdateDpi";
             this.btnUpdateDpi.Padding = new System.Windows.Forms.Padding(6);
             this.btnUpdateDpi.Size = new System.Drawing.Size(133, 32);
@@ -154,7 +154,7 @@ namespace Examples
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(527, 283);
+            this.ClientSize = new System.Drawing.Size(477, 183);
             this.Controls.Add(this.pnlPadding);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "Form1";

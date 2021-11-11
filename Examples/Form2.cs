@@ -15,6 +15,8 @@ namespace Examples
         public Form2()
         {
             InitializeComponent();
+            // Make sure you set this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            // Program.cs : Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
             this.Text = "";
             this.ShowIcon = false;
         }

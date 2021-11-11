@@ -16,6 +16,9 @@ namespace Examples
         public Form4()
         {
             InitializeComponent();
+            // Make sure you set this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            // Program.cs : Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
+
             this.BlurOpacity = 1;
             this.BlurColor = Colors.DarkPanel;
 

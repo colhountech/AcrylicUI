@@ -1,5 +1,6 @@
 ﻿using AcrylicUI;
 using AcrylicUI.Controls;
+using AcrylicUI.Docking;
 using AcrylicUI.Resources;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ using System.Windows.Forms;
 
 namespace Examples
 {
-    public partial class Form5 : AcrylicUI.Forms.AcrylicForm
+    public partial class Form6 : AcrylicUI.Forms.AcrylicForm
     {
 
         #region Fields for Borderless Windows
@@ -24,19 +25,49 @@ namespace Examples
         #endregion
 
 
-        public Form5()
+        public Form6()
         {
             InitializeComponent();
             // Make sure you set this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             // Program.cs : Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
 
+            RoundCorners();
             SetupUIDefaults();
+
+            // Add the dock panel message filter to filter through for dock panel splitter
+            // input before letting events pass through to the rest of the application.
+            Application.AddMessageFilter(DockPanel.DockResizeFilter);
+
+
+            // Inbox
+            this.inboxControl.DefaultDockArea = DockArea.Left;
+
+            // Outbox
+            this.outboxControl.DefaultDockArea = DockArea.Right;
+
+            // Tool Tasks
+            this.toolTaskSettings.DefaultDockArea = DockArea.Bottom;
+            
+            DockPanel.AddContent(this.toolTaskSettings);
+            DockPanel.AddContent(this.inboxControl);
+            DockPanel.AddContent(this.outboxControl);
+
+
             HookEvents();
 
-            bool _isWindows11 = true;
-            RoundCorners(_isWindows11);
 
+        }
 
+        private bool IsWindows11OrGreater()
+        {
+
+            // Create a reference to the OS version of Windows 11
+            Version Os11Version = new Version(10, 0, 22000, 0);
+
+            // Compare the current version to the minimum required version.
+            var compatible = Environment.OSVersion.Version.CompareTo(Os11Version);  // 0 
+
+            return compatible >= 0;
         }
 
         #region fix FormWindowState changes
@@ -55,13 +86,14 @@ namespace Examples
         private void HookEvents()
         {
             this.Load += new System.EventHandler(this.MainWindow_Load);
+
         }
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
             var dpiScale = IconFactory.GetDpiScale(this.Handle);
-            this.windowPanel1.Icon = new IconFactory(IconFactory.GetDpiScale(Handle)).BitmapFromSvg(Icons.Cube_16x_svg);
-            this.windowPanel1.SectionHeader = "CT Studio";
+            this.pnlTask.Icon = new IconFactory(IconFactory.GetDpiScale(Handle)).BitmapFromSvg(Icons.Cube_16x_svg);
+            this.pnlTask.SectionHeader = "CT Studio";
         }
 
 
@@ -208,15 +240,17 @@ namespace Examples
         #region Round Corners
 
 
-        private void RoundCorners(bool _isWindows11)
+        private void RoundCorners()
         {
-            if (_isWindows11)
+            bool isWindows11 = IsWindows11OrGreater();
+
+            if (isWindows11)
             {
                 var attribute = DWMWINDOWATTRIBUTE.DWMWA_WINDOW_CORNER_PREFERENCE;
                 var preference = DWM_WINDOW_CORNER_PREFERENCE.DWMWCP_ROUND;
                 DwmSetWindowAttribute(this.Handle, attribute, ref preference, sizeof(uint));
             }
-            this.windowPanel1.RoundCorners = _isWindows11;
+            this.pnlTask.RoundCorners = isWindows11;
         }
 
         public enum DWMWINDOWATTRIBUTE
