@@ -25,34 +25,42 @@ raise a pull request and message me on twitter https://twitter.com/colhountech
 
 ## Frequenty Asked Questions:
 
-Q: Can I used this in my commercial projects.
+## Q: Can I used this in my commercial projects.
+
 A: Yes, but without warranty. This project is covered by MIT License and is covered for personal and commercial use. 
 
-Q: Can I get support.
+### Q: Can I get support.
 A: If you spot a bug, raise an issue or even better, raise a pull request. If you need support, feel free to contact me at https://wwwcolhountech.com but please don't ask for support for free. 
 
-Q: I want to get involved. How can I help?
+### Q: I want to get involved. How can I help?
 
 Help me test and give suggestions on what should be a priority, the more voices I get for a feature, the more likely I will work on it.
 
 You can support me by joining my YouTube Channel, Start a conversation on my Discord Server, or share your love for Beautiful WinForms Desktop Apps on twitter.
 
-Here are my social link:
+My social links are below:
 
-Twitter:
-    * Follow me on twitter https://twitter.com/colhountech
-    ( I currently have 1 follower)
+## Twitter
 
-Youtube:
-    * Subscribe: https://www.youtube.com/channel/UC-mHR47cULEfJHvk49t1zQA
-    (I currently have 5 Subscribers and If I get to 1000, you can support me with Memberships and Super Thanks. Until then, a sub will help me get there)
+    * Follow me on twitter 
+    * https://twitter.com/colhountech
+    * (I currently have 1 follower)
+
+## Youtube
+
+    * Subscribe: 
+    * https://www.youtube.com/channel/UC-mHR47cULEfJHvk49t1zQA
+    * (I currently have 5 Subscribers and If I get to 1000, you can support me with Memberships and Super Thanks. Until then, a sub will help me get there)
     
-Discord:
-    * You are invited: https://discord.gg/7yTM5RqDfn
+## Discord
 
-Twitch:
+    * You are invited: 
+    * https://discord.gg/7yTM5RqDfn
+
+## Twitch
+
     * Sometime I live code, so join me and Listen to some cool StreamBeats while I figure stuff out.
-    https://twitch.tv/colhountech
+    * https://twitch.tv/colhountech
 
 
 
