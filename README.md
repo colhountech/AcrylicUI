@@ -25,12 +25,13 @@ raise a pull request and message me on twitter https://twitter.com/colhountech
 
 ## Frequenty Asked Questions:
 
-## Q: Can I used this in my commercial projects.
+### Q: Can I used this in my commercial projects.
 
-A: Yes, but without warranty. This project is covered by MIT License and is covered for personal and commercial use. 
+Yes, but without warranty. This project is covered by MIT License and is covered for personal and commercial use. 
 
 ### Q: Can I get support.
-A: If you spot a bug, raise an issue or even better, raise a pull request. If you need support, feel free to contact me at https://wwwcolhountech.com but please don't ask for support for free. 
+
+If you spot a bug, raise an issue or even better, raise a pull request. If you need support, feel free to contact me [via my website](https://wwwcolhountech.com) but please don't ask for support for free. 
 
 ### Q: I want to get involved. How can I help?
 
@@ -42,30 +43,30 @@ My social links are below:
 
 ## Twitter
 
-    * Follow me on twitter 
-    * https://twitter.com/colhountech
-    * (I currently have 1 follower)
+I've recently setup a new account on twitter.
+    
+Follow me on [twitter](https://twitter.com/colhountech)
+
+    (I currently have 1 follower)
 
 ## Youtube
 
-    * Subscribe: 
-    * https://www.youtube.com/channel/UC-mHR47cULEfJHvk49t1zQA
-    * (I currently have 5 Subscribers and If I get to 1000, you can support me with Memberships and Super Thanks. Until then, a sub will help me get there)
+I currently have 5 Subscribers on YouTube and If I get to 1000, you can support me with Memberships and Super Thanks. Until then, a sub will do very nicely.
+    
+Subscribe on [YouTube](https://www.youtube.com/channel/UC-mHR47cULEfJHvk49t1zQA)
+     
     
 ## Discord
 
-    * You are invited: 
-    * https://discord.gg/7yTM5RqDfn
+If you have questions, you are invited to join my [Discord server](https://discord.gg/7yTM5RqDfn) where we can hangout and chat.
 
 ## Twitch
 
-    * Sometime I live code, so join me and Listen to some cool StreamBeats while I figure stuff out.
-    * https://twitch.tv/colhountech
+Sometime I livecode on twitch, so join me and Listen to some cool StreamBeats while I figure stuff out. Sometimes, I play Valorant or Eve-Online on [Twitch.tv](https://twitch.tv/colhountech)
 
+Thank you.
 
-
-
-
+Mícheál Colhoun
 
 
 
