@@ -18,7 +18,7 @@ namespace Examples
     {
 
         #region Fields for Borderless Windows
-        private int borderSize = 2;
+        private int borderSize = 0;
         private bool _flatBorder = true;
         private Size _restoreSize;
         #endregion
@@ -30,8 +30,11 @@ namespace Examples
             // Make sure you set this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             // Program.cs : Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
 
+
             SetupUIDefaults();
             HookEvents();
+            
+            
 
             bool _isWindows11 = true;
             RoundCorners(_isWindows11);

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AcrylicUI.Resources;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,9 @@ namespace Examples
         {
             InitializeComponent();
             this.Text = "";
+            this.IsAcrylic = true;
+            this.BlurColor = Colors.GreyBackground; // This keeps getting overwritten when you change Designer properties
+            
         }
 
         private void acrylicButton1_Click(object sender, EventArgs e)
@@ -50,13 +54,34 @@ namespace Examples
         {
             var form = new Form5();
             form.StartPosition = FormStartPosition.CenterParent;
-            form.ShowDialog(this);
+            form.Show(this);
         }
 
         private void acrylicButton6_Click(object sender, EventArgs e)
         {
             var form = new Form6();
             form.StartPosition = FormStartPosition.CenterParent;
+            form.ShowDialog(this);
+        }
+
+        private void acrylicButton7_Click(object sender, EventArgs e)
+        {
+            var form = new Form7();
+            form.StartPosition = FormStartPosition.CenterParent;
+            form.Show(this);
+        }
+
+        private void acrylicButton8_Click(object sender, EventArgs e)
+        {
+            var form = new Form8();
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.ShowDialog(this);
+        }
+
+        private void acrylicButton9_Click(object sender, EventArgs e)
+        {
+            var form = new Form9();
+            form.StartPosition = FormStartPosition.CenterScreen;
             form.ShowDialog(this);
         }
     }
