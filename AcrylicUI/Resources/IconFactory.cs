@@ -94,6 +94,11 @@ namespace AcrylicUI.Resources
             }
         }
 
+        public Icon IconFromSvg(byte[] bytes, int width = Consts.ICON_SIZE, int height = Consts.ICON_SIZE)
+        {
+            Image icon  = BitmapFromSvg(bytes, width, height);
+            return Icon.FromHandle(new Bitmap(icon).GetHicon());            
+        }
 
         [DllImport("user32.dll")]
         private static extern uint GetDpiForWindow(IntPtr hwnd);
