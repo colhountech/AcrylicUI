@@ -3,7 +3,7 @@
 // Copyright (C) ColhounTech Limited. All rights Reserved
 // Author: Micheal Colhoun
 // Date: Oct 2021
-// Based on DarkUI.DarkForm by Robbin Perrins
+// Based on DarkUI.DarkForm by Robin Perrins
 
 
 namespace AcrylicUI.Controls

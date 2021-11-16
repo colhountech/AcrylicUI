@@ -1,6 +1,5 @@
 ﻿using AcrylicUI;
 using AcrylicUI.Controls;
-using AcrylicUI.Docking;
 using AcrylicUI.Resources;
 using System;
 using System.Collections.Generic;
@@ -15,49 +14,30 @@ using System.Windows.Forms;
 
 namespace Examples
 {
-    public partial class Form6 : AcrylicUI.Forms.AcrylicForm
+    public partial class Form7 : AcrylicUI.Forms.AcrylicForm
     {
 
         #region Fields for Borderless Windows
-        private int borderSize = 2;
+        private int borderSize = 0;
         private bool _flatBorder = true;
         private Size _restoreSize;
         #endregion
 
 
-        public Form6()
+        public Form7()
         {
             InitializeComponent();
             // Make sure you set this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             // Program.cs : Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
 
-            RoundCorners();
             SetupUIDefaults();
-
-            // Add the dock panel message filter to filter through for dock panel splitter
-            // input before letting events pass through to the rest of the application.
-            Application.AddMessageFilter(DockPanel.DockResizeFilter);
-
-
-            // Inbox
-            this.inboxControl.DefaultDockArea = DockArea.Left;
-
-            // Outbox
-            this.outboxControl.DefaultDockArea = DockArea.Right;
-
-            // Tool Tasks
-            this.toolTaskSettings.DefaultDockArea = DockArea.Bottom;
-            
-            DockPanel.AddContent(this.toolTaskSettings);
-            DockPanel.AddContent(this.inboxControl);
-            DockPanel.AddContent(this.outboxControl);
-
-
             HookEvents();
+
+            bool _isWindows11 = true;
+            RoundCorners(_isWindows11);
 
 
         }
-
 
         #region fix FormWindowState changes
 
@@ -69,20 +49,23 @@ namespace Examples
             this.FormBorderStyle = FormBorderStyle.Sizable;
             this.Size = designSize;
             this._restoreSize = designSize; // save for restore
+            // Glass Effect
 
-        }
+            this.BlurOpacity = 1;
+            this.BlurColor = Colors.LightGrey;
+            this.windowPanel1.IsAcrylicEnabled = true;
+    }
 
         private void HookEvents()
         {
             this.Load += new System.EventHandler(this.MainWindow_Load);
-
         }
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
             var dpiScale = IconFactory.GetDpiScale(this.Handle);
-            this.pnlTask.Icon = new IconFactory(IconFactory.GetDpiScale(Handle)).BitmapFromSvg(Icons.Cube_16x_svg);
-            this.pnlTask.SectionHeader = "CT Studio";
+            this.windowPanel1.Icon = new IconFactory(IconFactory.GetDpiScale(Handle)).BitmapFromSvg(Icons.Cube_16x_svg);
+            this.windowPanel1.SectionHeader = "CT Studio";
         }
 
 
@@ -104,10 +87,26 @@ namespace Examples
             AdjustForm();
         }
 
+
+
+        protected override void OnResizeBegin(EventArgs e)
+        {
+            this.SuspendLayout();
+            base.OnResizeBegin(e);
+        }
+
+        protected override void OnResizeEnd(EventArgs e)
+        {
+            base.OnResizeEnd(e);
+            this.ResumeLayout();
+        }
+
         protected override void OnResize(EventArgs e)
         {
+            this.SuspendLayout();
             base.OnResize(e);
             AdjustForm();
+            this.ResumeLayout();
         }
 
         private void AdjustForm()
@@ -144,6 +143,9 @@ namespace Examples
         #endregion
 
         #region Window, No Border Hacks
+
+
+
 
         protected override void WndProc(ref Message message)
         {
@@ -229,29 +231,15 @@ namespace Examples
         #region Round Corners
 
 
-        private bool IsWindows11OrGreater()
+        private void RoundCorners(bool _isWindows11)
         {
-
-            // Create a reference to the OS version of Windows 11
-            Version Os11Version = new Version(10, 0, 22000, 0);
-
-            // Compare the current version to the minimum required version.
-            var compatible = Environment.OSVersion.Version.CompareTo(Os11Version);  // 0 
-
-            return compatible >= 0;
-        }
-
-        private void RoundCorners()
-        {
-            bool isWindows11 = IsWindows11OrGreater();
-
-            if (isWindows11)
+            if (_isWindows11)
             {
                 var attribute = DWMWINDOWATTRIBUTE.DWMWA_WINDOW_CORNER_PREFERENCE;
                 var preference = DWM_WINDOW_CORNER_PREFERENCE.DWMWCP_ROUND;
                 DwmSetWindowAttribute(this.Handle, attribute, ref preference, sizeof(uint));
             }
-            this.pnlTask.RoundCorners = isWindows11;
+            this.windowPanel1.RoundCorners = _isWindows11;
         }
 
         public enum DWMWINDOWATTRIBUTE

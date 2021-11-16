@@ -1,69 +1,29 @@
 ﻿using AcrylicUI;
 using AcrylicUI.Controls;
-using AcrylicUI.Docking;
 using AcrylicUI.Resources;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Examples
 {
-    public partial class Form6 : AcrylicUI.Forms.AcrylicForm
+    public partial class Form8 
     {
-
         #region Fields for Borderless Windows
-        private int borderSize = 2;
+        private int borderSize = 0;
         private bool _flatBorder = true;
         private Size _restoreSize;
         #endregion
-
-
-        public Form6()
-        {
-            InitializeComponent();
-            // Make sure you set this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            // Program.cs : Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
-
-            RoundCorners();
-            SetupUIDefaults();
-
-            // Add the dock panel message filter to filter through for dock panel splitter
-            // input before letting events pass through to the rest of the application.
-            Application.AddMessageFilter(DockPanel.DockResizeFilter);
-
-
-            // Inbox
-            this.inboxControl.DefaultDockArea = DockArea.Left;
-
-            // Outbox
-            this.outboxControl.DefaultDockArea = DockArea.Right;
-
-            // Tool Tasks
-            this.toolTaskSettings.DefaultDockArea = DockArea.Bottom;
-            
-            DockPanel.AddContent(this.toolTaskSettings);
-            DockPanel.AddContent(this.inboxControl);
-            DockPanel.AddContent(this.outboxControl);
-
-
-            HookEvents();
-
-
-        }
-
 
         #region fix FormWindowState changes
 
 
         private void SetupUIDefaults()
-        {
+        {          
+            // Windows 11 Hack
+            RoundCorners();
+
             // Don't change this: NoBorder with Resize Hack
             var designSize = this.ClientSize;
             this.FormBorderStyle = FormBorderStyle.Sizable;
@@ -72,19 +32,7 @@ namespace Examples
 
         }
 
-        private void HookEvents()
-        {
-            this.Load += new System.EventHandler(this.MainWindow_Load);
-
-        }
-
-        private void MainWindow_Load(object sender, EventArgs e)
-        {
-            var dpiScale = IconFactory.GetDpiScale(this.Handle);
-            this.pnlTask.Icon = new IconFactory(IconFactory.GetDpiScale(Handle)).BitmapFromSvg(Icons.Cube_16x_svg);
-            this.pnlTask.SectionHeader = "CT Studio";
-        }
-
+     
 
         private void BtnMaximize_Click(object sender, EventArgs e)
         {
@@ -228,18 +176,7 @@ namespace Examples
 
         #region Round Corners
 
-
-        private bool IsWindows11OrGreater()
-        {
-
-            // Create a reference to the OS version of Windows 11
-            Version Os11Version = new Version(10, 0, 22000, 0);
-
-            // Compare the current version to the minimum required version.
-            var compatible = Environment.OSVersion.Version.CompareTo(Os11Version);  // 0 
-
-            return compatible >= 0;
-        }
+     
 
         private void RoundCorners()
         {
@@ -251,7 +188,19 @@ namespace Examples
                 var preference = DWM_WINDOW_CORNER_PREFERENCE.DWMWCP_ROUND;
                 DwmSetWindowAttribute(this.Handle, attribute, ref preference, sizeof(uint));
             }
-            this.pnlTask.RoundCorners = isWindows11;
+            this.windowPanel1.RoundCorners = isWindows11;
+        }
+
+        private bool IsWindows11OrGreater()
+        {
+
+            // Create a reference to the OS version of Windows 11
+            Version Os11Version = new Version(10, 0, 22000, 0);
+
+            // Compare the current version to the minimum required version.
+            var compatible = Environment.OSVersion.Version.CompareTo(Os11Version);  // 0 
+
+            return compatible >= 0;
         }
 
         public enum DWMWINDOWATTRIBUTE
