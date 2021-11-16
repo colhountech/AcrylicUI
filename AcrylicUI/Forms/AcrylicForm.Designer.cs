@@ -37,9 +37,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.BackColor = Resources.Colors.GreyBackground;
+            this.IsAcrylic = true;
             this.DoubleBuffered = true;
             this.Name = "AcrylicForm";
-            this.ShowIcon = false;
+            this.ShowIcon = true;
             this.Text = "";
             this.ResumeLayout(false);
 
