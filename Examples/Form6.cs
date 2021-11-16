@@ -31,7 +31,6 @@ namespace Examples
             // Make sure you set this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             // Program.cs : Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
 
-            RoundCorners();
             SetupUIDefaults();
 
             // Add the dock panel message filter to filter through for dock panel splitter
@@ -64,6 +63,9 @@ namespace Examples
 
         private void SetupUIDefaults()
         {
+            // Windows 11 Hack
+            RoundCorners();
+
             // Don't change this: NoBorder with Resize Hack
             var designSize = this.ClientSize;
             this.FormBorderStyle = FormBorderStyle.Sizable;

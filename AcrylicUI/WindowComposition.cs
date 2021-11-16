@@ -19,7 +19,8 @@ namespace AcrylicUI
             };
             if (blurColor.A == 0xff)
             {
-                accentPolicy.AccentState = ACCENT.ENABLE_GRADIENT;
+                //accentPolicy.AccentState = ACCENT.ENABLE_GRADIENT;
+                accentPolicy.AccentState = ACCENT.DISABLED;
             }
             unsafe
             {

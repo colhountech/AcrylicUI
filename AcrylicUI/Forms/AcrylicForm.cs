@@ -105,9 +105,6 @@ namespace AcrylicUI.Forms
 
         }
 
-        private static int _solidCount = 0;
-        private static int _AcrylicCount = 0;
-
         private void MakeSolid()
         {
             var solid = Color.FromArgb(Consts.SOLIDGRADIENT, _blurColor);
@@ -144,7 +141,8 @@ namespace AcrylicUI.Forms
 
         protected override void OnPaintBackground(PaintEventArgs e)
         {
-            e.Graphics.Clear(Color.Transparent);
+            //e.Graphics.Clear(Color.Transparent);
+            e.Graphics.Clear(Colors.GreyBackground);
         }
 
       

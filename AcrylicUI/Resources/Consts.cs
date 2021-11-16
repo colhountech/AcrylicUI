@@ -208,6 +208,15 @@ namespace AcrylicUI.Resources
         {
             get { return Color.FromArgb(122, 128, 132); }
         }
+        public static Color MontereyPanel
+        {
+            get { return Color.FromArgb(54, 52, 57); }
+        }
+
+        public static Color MontereyInnerPanel 
+        { 
+            get { return Color.FromArgb(32, 29, 37); }
+        }
     }
 
 

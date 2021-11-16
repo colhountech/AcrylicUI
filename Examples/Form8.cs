@@ -18,12 +18,12 @@ namespace Examples
         public Form8()
         {
             InitializeComponent();
+            SetupUIDefaults();
             HookEvents();
         }
 
         private void HookEvents()
         {
-            SetupUIDefaults();
             this.Load += new System.EventHandler(this.MainWindow_Load);
         }
 
@@ -32,6 +32,7 @@ namespace Examples
             var dpiScale = IconFactory.GetDpiScale(this.Handle);
             this.windowPanel1.Icon = new IconFactory(IconFactory.GetDpiScale(Handle)).BitmapFromSvg(Icons.Cube_16x_svg);
             this.windowPanel1.SectionHeader = "CT Studio";
+           
 
         }
 

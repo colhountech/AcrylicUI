@@ -11,7 +11,7 @@ namespace Examples
     public partial class Form8 
     {
         #region Fields for Borderless Windows
-        private int borderSize = 0;
+        private int borderSize = 2;
         private bool _flatBorder = true;
         private Size _restoreSize;
         #endregion
@@ -20,7 +20,21 @@ namespace Examples
 
 
         private void SetupUIDefaults()
-        {          
+        {
+            // turn off transparency for now
+
+            this.IsAcrylic = false;
+            this.windowPanel1.IsAcrylicEnabled = false;
+            // color defaults
+            // Panel Background
+            this.BackColor = Colors.MontereyPanel;
+            //this.windowPanel1.BackColor = Color.Red;
+            //this.BlurColor = Color.Green;
+            // innerPanel
+            panel1.BackColor = Colors.MontereyInnerPanel;
+            
+
+
             // Windows 11 Hack
             RoundCorners();
 
@@ -54,8 +68,9 @@ namespace Examples
 
         protected override void OnResize(EventArgs e)
         {
-            base.OnResize(e);
+            
             AdjustForm();
+            base.OnResize(e);
         }
 
         private void AdjustForm()
@@ -66,8 +81,8 @@ namespace Examples
                     this.Padding = new Padding(8, 8, 8, 8);
                     break;
                 case FormWindowState.Normal: //Restored form (After)
-                    if (this.Padding.Top != borderSize)
-                        this.Padding = new Padding(borderSize);
+                    if (this.Padding.Top != borderSize)                    
+                        this.Padding = new Padding(borderSize);                    
                     break;
             }
         }
