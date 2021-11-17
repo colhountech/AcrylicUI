@@ -55,7 +55,8 @@ namespace Examples
             this.pnlTask.RoundCorners = false;
             this.pnlTask.SectionHeader = null;
             this.pnlTask.Size = new System.Drawing.Size(800, 450);
-            this.pnlTask.TabIndex = 1;
+            this.pnlTask.TabIndex = 0;
+            this.pnlTask.TabStop = false;
             // 
             // pnlInner
             // 
@@ -66,7 +67,8 @@ namespace Examples
             this.pnlInner.Name = "pnlInner";
             this.pnlInner.Padding = new System.Windows.Forms.Padding(1, 25, 1, 1);
             this.pnlInner.Size = new System.Drawing.Size(818, 409);
-            this.pnlInner.TabIndex = 2;
+            this.pnlInner.TabIndex = 0;
+            this.pnlInner.TabStop = false;            
             // 
             // DockPanel
             // 
@@ -78,7 +80,8 @@ namespace Examples
             this.DockPanel.Location = new System.Drawing.Point(1, 25);
             this.DockPanel.Name = "DockPanel";
             this.DockPanel.Size = new System.Drawing.Size(816, 383);
-            this.DockPanel.TabIndex = 3;
+            this.DockPanel.TabIndex = 0;
+            
             // 
             // inboxControl
             // 
@@ -91,7 +94,7 @@ namespace Examples
             this.inboxControl.Name = "inboxControl";
             this.inboxControl.SerializationKey = null;
             this.inboxControl.Size = new System.Drawing.Size(150, 383);
-            this.inboxControl.TabIndex = 4;
+            this.inboxControl.TabIndex = 0;
             // 
             // outboxControl
             // 
@@ -104,7 +107,7 @@ namespace Examples
             this.outboxControl.Name = "outboxControl";
             this.outboxControl.SerializationKey = null;
             this.outboxControl.Size = new System.Drawing.Size(150, 383);
-            this.outboxControl.TabIndex = 5;
+            this.outboxControl.TabIndex = 1;
             // 
             // toolTaskSettings
             // 
@@ -116,7 +119,7 @@ namespace Examples
             this.toolTaskSettings.Name = "toolTaskSettings";
             this.toolTaskSettings.SerializationKey = null;
             this.toolTaskSettings.Size = new System.Drawing.Size(500, 133);
-            this.toolTaskSettings.TabIndex = 6;
+            this.toolTaskSettings.TabIndex = 2;
             // 
             // MainForm
             // 

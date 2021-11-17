@@ -44,6 +44,7 @@ namespace Examples
             // 
             this.windowPanel1.Controls.Add(this.panel1);
             this.windowPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.windowPanel1.BackColor = Colors.MontereyPanel;
             this.windowPanel1.Icon = null;
             this.windowPanel1.IsAcrylicEnabled = false;
             this.windowPanel1.Location = new System.Drawing.Point(0, 0);
@@ -112,7 +113,7 @@ namespace Examples
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BlurColor = System.Drawing.SystemColors.Control;
+            this.BlurColor =  Colors.MontereyPanel;
             this.ClientSize = new System.Drawing.Size(1600, 900);
             this.Controls.Add(this.windowPanel1);
             this.Location = new System.Drawing.Point(0, 0);
