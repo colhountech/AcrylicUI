@@ -65,6 +65,19 @@ namespace AcrylicUI.Controls
             }
         }
 
+        [Category("Appearance")]
+        [Description("Determines if the Profile feature is enabled")]
+        [Browsable(true)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        public bool ProfileFeature
+        {
+            get { return _profileFeature; }
+            set
+            {
+                _profileFeature = value;
+                Invalidate();
+            }
+        }
 
         [Category("Appearance")]
         [Description("Determines the icon that will appear in the content tabs and headers.")]
