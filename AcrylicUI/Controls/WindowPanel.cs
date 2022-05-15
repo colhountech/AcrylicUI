@@ -582,7 +582,7 @@ namespace AcrylicUI.Controls
 
                 if (_hasRoundCorners)
                 {
-                    using (GraphicsPath border = RoundedRectange(modRect, Scale(ARC_RADIUS)))
+                    using (GraphicsPath border = Drawing.RoundedRectange(modRect, Scale(ARC_RADIUS)))
                     {
                         g.DrawPath(p, border);
                     }
@@ -622,36 +622,36 @@ namespace AcrylicUI.Controls
             }
         }
 
-        public static GraphicsPath RoundedRectange(Rectangle modRect, int radius)
-        {
-            int d = radius * 2;
-            Size size = new Size(d, d);
-            Rectangle arc = new Rectangle(modRect.Location, size);
-            GraphicsPath path = new();
-            if (radius == 0)
-            {
-                path.AddRectangle(modRect);
-                return path;
-            }
-            // top left arc
-            path.AddArc(arc, 180, 90);
+        //public static GraphicsPath RoundedRectange(Rectangle modRect, int radius)
+        //{
+        //    int d = radius * 2;
+        //    Size size = new Size(d, d);
+        //    Rectangle arc = new Rectangle(modRect.Location, size);
+        //    GraphicsPath path = new();
+        //    if (radius == 0)
+        //    {
+        //        path.AddRectangle(modRect);
+        //        return path;
+        //    }
+        //    // top left arc
+        //    path.AddArc(arc, 180, 90);
 
-            // top righ arc
-            arc.X = modRect.Right - d;
-            path.AddArc(arc, 270, 90);
+        //    // top righ arc
+        //    arc.X = modRect.Right - d;
+        //    path.AddArc(arc, 270, 90);
 
-            // bottom right arc
-            arc.Y = modRect.Bottom - d;
-            path.AddArc(arc, 0, 90);
+        //    // bottom right arc
+        //    arc.Y = modRect.Bottom - d;
+        //    path.AddArc(arc, 0, 90);
 
-            //bottom left arc
-            arc.X = modRect.Left;
-            path.AddArc(arc, 90, 90);
+        //    //bottom left arc
+        //    arc.X = modRect.Left;
+        //    path.AddArc(arc, 90, 90);
 
-            path.CloseFigure();
+        //    path.CloseFigure();
         
-            return path;
-        }
+        //    return path;
+        //}
 
         protected override void OnPaintBackground(PaintEventArgs e)
         {

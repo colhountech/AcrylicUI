@@ -19,7 +19,7 @@ namespace AcrylicUI.Resources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Icons {
@@ -57,6 +57,16 @@ namespace AcrylicUI.Resources {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] Audio_16x_svg {
+            get {
+                object obj = ResourceManager.GetObject("Audio_16x_svg", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
@@ -113,9 +123,69 @@ namespace AcrylicUI.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        public static byte[] DiagnosticFile_16x_svg {
+            get {
+                object obj = ResourceManager.GetObject("DiagnosticFile_16x_svg", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] Document_16x_svg {
+            get {
+                object obj = ResourceManager.GetObject("Document_16x_svg", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] Image_16x_svg {
+            get {
+                object obj = ResourceManager.GetObject("Image_16x_svg", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] StatusWarning_16x_svg {
+            get {
+                object obj = ResourceManager.GetObject("StatusWarning_16x_svg", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] TextFile_16x_svg {
+            get {
+                object obj = ResourceManager.GetObject("TextFile_16x_svg", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         public static byte[] UserProfile_16x_svg {
             get {
                 object obj = ResourceManager.GetObject("UserProfile_16x_svg", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] VideoCamera_16x_svg {
+            get {
+                object obj = ResourceManager.GetObject("VideoCamera_16x_svg", resourceCulture);
                 return ((byte[])(obj));
             }
         }

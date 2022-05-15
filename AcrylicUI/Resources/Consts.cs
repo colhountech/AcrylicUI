@@ -17,6 +17,7 @@ namespace AcrylicUI.Resources
         public const int BUTTON_PADDING = 8;
         public const int CONTROL_PADDING = 12;  // use increments of 4, with 12 minimum
         public const int CONTROL_HEIGHT = 24;
+        public const int TAB_CLOSE_BUTTON_SIZE = 8;
 
         // Button
         public const int BUTTON_HEIGHT = 32; // units of 4 or 8
@@ -52,11 +53,11 @@ namespace AcrylicUI.Resources
             get { return Color.Transparent; }
         }
 
-        public static Color GreyBackground // Blur Background
+        public static Color GreyBackground 
         {
-            get { return Color.FromArgb(62, 58, 60); }
+            get { return Color.FromArgb(60, 63, 65); }
         }
-        public static Color MediumBackground // Blur Background
+        public static Color MediumBackground 
         {
             get { return Color.FromArgb(49, 51, 53); }
         }

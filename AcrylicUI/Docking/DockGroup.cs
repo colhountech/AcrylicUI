@@ -200,7 +200,7 @@ namespace AcrylicUI.Docking
 
             SuspendLayout();
 
-            var closeButtonSize = Consts.CONTROL_HEIGHT;
+            var closeButtonSize = Consts.TAB_CLOSE_BUTTON_SIZE;
 
             // Calculate areas of all tabs
             var totalSize = 0;
