@@ -55,7 +55,7 @@ namespace AcrylicUI.Resources
 
         public static Color GreyBackground 
         {
-            get { return Color.FromArgb(60, 63, 65); }
+            get { return Color.FromArgb(51, 51, 51); }
         }
         public static Color MediumBackground 
         {
