@@ -296,8 +296,9 @@ namespace AcrylicUI.Controls
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
             var rect = new Rectangle(0, 0, ClientSize.Width, ClientSize.Height);
+            var arcRadius = Scale(Consts.SMALL_ARC_RADIUS);            
 
-            var rectRounded = Drawing.RoundedRectange(rect, Scale(Consts.SMALL_ARC_RADIUS));
+            var rectRounded = Drawing.RoundedRectange(rect, arcRadius);
 
             var textColor = Colors.Text;
             var borderColor = Colors.BtnOutline;
@@ -335,16 +336,20 @@ namespace AcrylicUI.Controls
                 g.Clear(Colors.Transparent);
                 g.FillPath(b, rectRounded);
             }
-              
-            using (var p = new Pen(borderColor, Scale(Consts.PEN_WIDTH)/2))
+
+            var penWidth = Scale(Consts.PEN_WIDTH) / 2;
+            penWidth = penWidth == 0 ? 1 : penWidth;
+            Console.WriteLine($"penwidth = {penWidth} arcRadius={arcRadius}");
+
+            using (var p = new Pen(borderColor, penWidth))
             {
                 var modRect = new Rectangle(
                     rect.Left,
                     rect.Top,
-                    rect.Width - Scale(Consts.PEN_WIDTH),
-                    rect.Height - Scale(Consts.PEN_WIDTH));
+                    rect.Width - penWidth,
+                    rect.Height - penWidth);
 
-                var modRectRounded = Drawing.RoundedRectange(modRect, Scale(Consts.SMALL_ARC_RADIUS));
+                var modRectRounded = Drawing.RoundedRectange(modRect, arcRadius);
                 g.DrawPath(p, modRectRounded);
             }
 
