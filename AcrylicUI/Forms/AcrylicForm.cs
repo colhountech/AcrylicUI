@@ -141,8 +141,8 @@ namespace AcrylicUI.Forms
 
         protected override void OnPaintBackground(PaintEventArgs e)
         {
-            //e.Graphics.Clear(Color.Transparent);
-            e.Graphics.Clear(Colors.GreyBackground);
+            e.Graphics.Clear(Color.Transparent);
+            //e.Graphics.Clear(Colors.GreyBackground);
         }
 
       
