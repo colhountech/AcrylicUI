@@ -339,7 +339,6 @@ namespace AcrylicUI.Controls
 
             var penWidth = Scale(Consts.PEN_WIDTH) / 2;
             penWidth = penWidth == 0 ? 1 : penWidth;
-            Console.WriteLine($"penwidth = {penWidth} arcRadius={arcRadius}");
 
             using (var p = new Pen(borderColor, penWidth))
             {
