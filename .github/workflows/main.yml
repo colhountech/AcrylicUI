@@ -31,7 +31,7 @@ jobs:
     - name: Set VERSION variable from tag
       #run: echo "VERSION=1.0.0" >> $GITHUB_ENV
       run: |
-        $version = "1.0.0"
+        #$version = "1.0.0"
         echo "VERSION=$version" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append
     - name: Build 
       run: dotnet build ${{env.SOLUTION}} --configuration ${{env.BUILD_CONFIG}} --no-restore
