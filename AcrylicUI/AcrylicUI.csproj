@@ -6,7 +6,8 @@
 		<OutputType>Library</OutputType>
 		<TargetFrameworks>net5-windows</TargetFrameworks>
 		<UseWindowsForms>true</UseWindowsForms>
-		<ApplicationIcon />
+    <Version>1.0.0-preview1</Version>
+    <ApplicationIcon />
 		<StartupObject />
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	</PropertyGroup>
