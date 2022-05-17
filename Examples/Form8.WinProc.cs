@@ -27,11 +27,11 @@ namespace Examples
             this.windowPanel1.IsAcrylicEnabled = false;
             // color defaults
             // Panel Background
-            this.BackColor = Colors.MontereyPanel;
+            //this.BackColor = Colors.GreyBackground;
             //this.windowPanel1.BackColor = Color.Red;
             //this.BlurColor = Color.Green;
             // innerPanel
-            panel1.BackColor = Colors.MontereyInnerPanel;
+            //panel1.BackColor = Colors.GreyBackground;
             
 
 

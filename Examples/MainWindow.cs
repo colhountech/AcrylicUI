@@ -54,7 +54,7 @@ namespace Examples
         {
             var form = new Form5();
             form.StartPosition = FormStartPosition.CenterParent;
-            form.Show(this);
+            form.ShowDialog(this);
         }
 
         private void acrylicButton6_Click(object sender, EventArgs e)
@@ -68,20 +68,20 @@ namespace Examples
         {
             var form = new Form7();
             form.StartPosition = FormStartPosition.CenterParent;
-            form.Show(this);
+            form.ShowDialog(this);
         }
 
         private void acrylicButton8_Click(object sender, EventArgs e)
         {
             var form = new Form8();
-            form.StartPosition = FormStartPosition.CenterScreen;
+            form.StartPosition = FormStartPosition.CenterParent; 
             form.ShowDialog(this);
         }
 
         private void acrylicButton9_Click(object sender, EventArgs e)
         {
             var form = new Form9();
-            form.StartPosition = FormStartPosition.CenterScreen;
+            form.StartPosition = FormStartPosition.CenterParent;
             form.ShowDialog(this);
         }
     }

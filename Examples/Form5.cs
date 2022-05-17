@@ -52,6 +52,7 @@ namespace Examples
             this.FormBorderStyle = FormBorderStyle.Sizable;
             this.Size = designSize;
             this._restoreSize = designSize; // save for restore
+            this.windowPanel1.ProfileFeature = true;
 
         }
 

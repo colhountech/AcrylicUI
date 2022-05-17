@@ -29,6 +29,7 @@ namespace Examples
             this.BlurColor = Color.FromArgb(224, 220, 221);
             this.Icon = new IconFactory(IconFactory.GetDpiScale(Handle)).IconFromSvg(Icons.Cube_16x_svg);
             this.Text = "";
+            this.BackColor = Colors.GreyBackground;
         }
     }
 }
