@@ -52,7 +52,7 @@ namespace Examples
             // Glass Effect
 
             this.BlurOpacity = 1;
-            this.BlurColor = Colors.LightGrey;
+            this.BlurColor = Colors.GreyBackground;
             this.windowPanel1.IsAcrylicEnabled = true;
     }
 
