@@ -36,7 +36,7 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
 
-    - name: Publish FluentEmail.Core
+    - name: Publish to NuGet
 
       uses: brandedoutcast/publish-nuget@v2.5.2
       with:
