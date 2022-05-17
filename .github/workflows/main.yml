@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  workflow_dispatch: 
+  push:
+    branches:
+    - master
+  pull_request:
+    branches:
+    - master
+
+env:
+  BUILD_CONFIG: Release
+  SOLUTION: AcrylicUI.sln 
+  PROJECT: AcrylicUI\AcrylicUI.csproj
+
+jobs:
+  build:   
+
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v1.0.5
+
+    - name: Restore dependencies
+      run: nuget restore ${{env.SOLUTION}}
+      
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+    - name: Set VERSION variable from tag
+      #run: echo "VERSION=1.0.0" >> $GITHUB_ENV
+      run: |
+        $version = "1.0.0"
+        echo "VERSION=$version" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append
+    - name: Build 
+      run: dotnet build ${{env.SOLUTION}} --configuration ${{env.BUILD_CONFIG}} --no-restore
+
+    - name: Debuging Script
+      run: |
+        echo Home: $HOME
+        echo SOLUTION: ${{env.SOLUTION}}
+        echo PROJECT: ${{env.PROJECT}}
+        echo BUILD_CONFIG: ${{env.BUILD_CONFIG}}
+        echo Version: $ENV:VERSION
+        echo GITHUB_REPOSITORY: $ENV:GITHUB_REPOSITORY
+    - name: Pack
+      run: dotnet pack ${{env.PROJECT}} --configuration Release /p:Version=$ENV:VERSION --output .
