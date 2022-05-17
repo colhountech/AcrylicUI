@@ -13,11 +13,16 @@
     <PackageDescription>This package is a .NET Core WinForms Dark Themed Library for Windows 11</PackageDescription>
     <RepositoryUrl>https://github.com/colhountech/AcrylicUI</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <ApplicationIcon />
 		<StartupObject />
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	</PropertyGroup>
 
+  <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath="\"/>
+  </ItemGroup>
+  
 	<ItemGroup>
 		<PackageReference Include="Svg" Version="3.3.0" />
 	</ItemGroup>

@@ -1,9 +1,9 @@
 # AcrylicUI
 AcrylicUI is an Open Source Control and Docking Framework for .NET Core WinForms on Windows 11 only
 
-This framework was inspired by [DarkUI](https://github.com/RobinPerris/DarkUI) by Robin Perris. However DarkUI does not support High Resolution Monitors, .NET 5+ and does not seem to be active. 
+This framework was inspired by [DarkUI](https://github.com/RobinPerris/DarkUI) by Robin Perris. However DarkUI does not support High Resolution Monitors, .NET Core 5+ and does not seem to be active. 
 
-AcrylicUI is taking the best bits of DarkUI and Supporting the latest and greatet dotnet core/ .NET 5+,  Windows 11 Features like Snap Layout, Rounded Corners, Drop Shadows on Borderless Forms and Scaling for High Resolution High Dpi Monitors, and of course beautiful Windows 11 Acrylic UI panels.
+AcrylicUI is taking the best bits of DarkUI and Supporting the latest and greatet dotnet core, Windows 11 Features like Snap Layout, Rounded Corners, Drop Shadows on Borderless Forms and Scaling for High Resolution High Dpi Monitors, and of course beautiful Windows 11 Acrylic UI panels.
 
 Features of AcrylicUI over DarkUI:
 
@@ -47,11 +47,10 @@ I've recently setup a new account on twitter.
     
 Follow me on [twitter](https://twitter.com/colhountech)
 
-    (I currently have 1 follower)
 
 ## Youtube
 
-I currently have 5 Subscribers on YouTube and If I get to 1000, you can support me with Memberships and Super Thanks. Until then, a sub will do very nicely.
+When I reach 1000 subscribers, you can support the project with Memberships and Super Thanks. Until then, a sub will do very nicely.
     
 Subscribe on [YouTube](https://www.youtube.com/channel/UC-mHR47cULEfJHvk49t1zQA)
      
