@@ -531,15 +531,15 @@ namespace AcrylicUI.Controls
 
             // Down arrow
             //var downIcon = _downArrowHot ? ScrollIcons.scrollbar_arrow_hot : ScrollIcons.scrollbar_arrow_standard;
-            var downIcon = _downArrowHot ? _arrowHotIcon : _arrowStandardIcon;
+            var downIcon = _downArrowHot ? _arrowHotIcon.Clone() as Image : _arrowStandardIcon.Clone() as Image;
 
             if (_downArrowClicked)
                 //downIcon = ScrollIcons.scrollbar_arrow_clicked;
-                downIcon = _arrowClickedIcon;
+                downIcon = _arrowClickedIcon.Clone() as Image;
 
             if (!Enabled)
                 //downIcon = ScrollIcons.scrollbar_arrow_disabled;
-                downIcon = _arrowDisabledIcon;
+                downIcon = _arrowDisabledIcon.Clone() as Image;
 
             if (_scrollOrientation == AcrylicScrollOrientation.Horizontal)
                 downIcon.RotateFlip(RotateFlipType.Rotate270FlipNone);
