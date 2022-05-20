@@ -24,21 +24,11 @@ namespace Examples
 
             this.Text = string.Empty;
             this.ShowIcon = false;
-            this.btnUpdateDpi.Default = false; // change this to true for a more prominent button
             this.MinimumSize = this.Size;
 
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            BtnUpdateDpi_Click(this, null);
-        }
-
-
-
-        private void BtnUpdateDpi_Click(object sender, EventArgs e)
-        {
-            txtSystemDpi.Text = String.Empty;
-            txtAutoScaleFactor.Text = string.Empty;
 
             // Create a reference to the OS version of Windows 10 Creators Update.
             Version OsMinVersion = new Version(10, 0, 15063, 0);
@@ -46,13 +36,27 @@ namespace Examples
             // Compare the current version to the minimum required version.
             var compatible = Environment.OSVersion.Version.CompareTo(OsMinVersion);
             txtWinVer.Text = $"{Environment.OSVersion.VersionString}: Compat: {compatible}";
-
-            txtSystemDpi.Text = $"{this.DeviceDpi}";
-
-            var scale = (float)Drawing.GetDpi(this.Handle) / (float)96f;
-
-            txtAutoScaleFactor.Text = scale.ToString();
         }
+
+        protected override void OnResize(EventArgs e)
+        {
+            this.SuspendLayout();
+            base.OnResize(e);
+            ScaleText();
+
+            this.ResumeLayout();
+        }
+
+        private void ScaleText()
+        {
+            if (this.txtSystemDpi != null)
+            {
+                txtSystemDpi.Text = $"{this.DeviceDpi}";
+                var scale = (float)Drawing.GetDpi(this.Handle) / (float)96f;
+                txtAutoScaleFactor.Text = scale.ToString();
+            }
+        }
+
 
     }
 }

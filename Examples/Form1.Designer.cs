@@ -37,7 +37,6 @@ namespace Examples
             this.lblWinVer = new System.Windows.Forms.Label();
             this.txtSystemDpi = new System.Windows.Forms.TextBox();
             this.lblDpi = new System.Windows.Forms.Label();
-            this.btnUpdateDpi = new AcrylicUI.Controls.AcrylicButton();
             this.pnlPadding.SuspendLayout();
             this.grpDpiSettings.SuspendLayout();
             this.SuspendLayout();
@@ -64,7 +63,6 @@ namespace Examples
             this.grpDpiSettings.Controls.Add(this.lblWinVer);
             this.grpDpiSettings.Controls.Add(this.txtSystemDpi);
             this.grpDpiSettings.Controls.Add(this.lblDpi);
-            this.grpDpiSettings.Controls.Add(this.btnUpdateDpi);
             this.grpDpiSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
             this.grpDpiSettings.Location = new System.Drawing.Point(12, 13);
             this.grpDpiSettings.Name = "grpDpiSettings";
@@ -122,7 +120,7 @@ namespace Examples
             this.txtSystemDpi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.txtSystemDpi.Location = new System.Drawing.Point(144, 32);
             this.txtSystemDpi.Name = "txtSystemDpi";
-            this.txtSystemDpi.Size = new System.Drawing.Size(136, 23);
+            this.txtSystemDpi.Size = new System.Drawing.Size(275, 23);
             this.txtSystemDpi.TabIndex = 9;
             this.txtSystemDpi.Text = "0";
             // 
@@ -135,19 +133,6 @@ namespace Examples
             this.lblDpi.Size = new System.Drawing.Size(72, 15);
             this.lblDpi.TabIndex = 8;
             this.lblDpi.Text = "System Dpi :";
-            // 
-            // btnUpdateDpi
-            // 
-            this.btnUpdateDpi.Default = false;
-            this.btnUpdateDpi.ImagePadding = 6;
-            this.btnUpdateDpi.Location = new System.Drawing.Point(286, 26);
-            this.btnUpdateDpi.Name = "btnUpdateDpi";
-            this.btnUpdateDpi.Padding = new System.Windows.Forms.Padding(6);
-            this.btnUpdateDpi.Size = new System.Drawing.Size(133, 32);
-            this.btnUpdateDpi.TabIndex = 7;
-            this.btnUpdateDpi.Text = "Update";
-            this.btnUpdateDpi.UseVisualStyleBackColor = false;
-            this.btnUpdateDpi.Click += new System.EventHandler(this.BtnUpdateDpi_Click);
             // 
             // Form1
             // 
@@ -179,6 +164,5 @@ namespace Examples
         private System.Windows.Forms.Label lblWinVer;
         
         private System.Windows.Forms.Label lblDpi;
-        private AcrylicUI.Controls.AcrylicButton btnUpdateDpi;
     }
 }
