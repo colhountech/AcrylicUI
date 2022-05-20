@@ -112,12 +112,18 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ASX_GlyphDown_blue_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>ASX_GlyphDown_blue_16x.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ASX_GlyphDown_grey_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>ASX_GlyphDown_grey_16x.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="Audio_16x_svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>audio_16x.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -141,6 +147,18 @@
   </data>
   <data name="Document_16x_svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>document_16x.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GlyphDown_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>GlyphDown_16x.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GlyphDown_71GrayNoHaloSmall_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>GlyphDown_71GrayNoHaloSmall_16x.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GlyphDown_71GrayNoHalo_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>GlyphDown_71GrayNoHalo_16x.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GlyphDown_linkBlueNoHalo_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>GlyphDown_linkBlueNoHalo_16x.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="Image_16x_svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>image_16x.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

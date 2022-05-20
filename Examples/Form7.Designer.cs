@@ -30,13 +30,15 @@ namespace Examples
         private void InitializeComponent()
         {
             this.windowPanel1 = new AcrylicUI.Controls.WindowPanel();
-            this.acrylicButton1 = new AcrylicUI.Controls.AcrylicButton();
+            this.acrylicListView1 = new AcrylicUI.Controls.AcrylicListView();
             this.acrylicTextBox1 = new AcrylicUI.Controls.AcrylicTextBox();
+            this.acrylicButton1 = new AcrylicUI.Controls.AcrylicButton();
             this.windowPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // windowPanel1
             // 
+            this.windowPanel1.Controls.Add(this.acrylicListView1);
             this.windowPanel1.Controls.Add(this.acrylicTextBox1);
             this.windowPanel1.Controls.Add(this.acrylicButton1);
             this.windowPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -44,22 +46,20 @@ namespace Examples
             this.windowPanel1.IsAcrylicEnabled = false;
             this.windowPanel1.Location = new System.Drawing.Point(0, 0);
             this.windowPanel1.Name = "windowPanel1";
+            this.windowPanel1.ProfileFeature = false;
             this.windowPanel1.RoundCorners = false;
             this.windowPanel1.SectionHeader = null;
             this.windowPanel1.Size = new System.Drawing.Size(800, 450);
             this.windowPanel1.TabIndex = 0;
             // 
-            // acrylicButton1
+            // acrylicListView1
             // 
-            this.acrylicButton1.Default = false;
-            this.acrylicButton1.ImagePadding = 6;
-            this.acrylicButton1.Location = new System.Drawing.Point(12, 92);
-            this.acrylicButton1.Name = "acrylicButton1";
-            this.acrylicButton1.Padding = new System.Windows.Forms.Padding(6);
-            this.acrylicButton1.Size = new System.Drawing.Size(160, 32);
-            this.acrylicButton1.TabIndex = 0;
-            this.acrylicButton1.Text = "acrylicButton1";
-            this.acrylicButton1.UseVisualStyleBackColor = false;
+            this.acrylicListView1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.acrylicListView1.Location = new System.Drawing.Point(665, 25);
+            this.acrylicListView1.Name = "acrylicListView1";
+            this.acrylicListView1.Size = new System.Drawing.Size(134, 424);
+            this.acrylicListView1.TabIndex = 2;
+            this.acrylicListView1.Text = "acrylicListView1";
             // 
             // acrylicTextBox1
             // 
@@ -68,13 +68,28 @@ namespace Examples
             this.acrylicTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.acrylicTextBox1.Location = new System.Drawing.Point(12, 54);
             this.acrylicTextBox1.Name = "acrylicTextBox1";
+            this.acrylicTextBox1.PlaceholderText = "Enter Text";
             this.acrylicTextBox1.Size = new System.Drawing.Size(160, 23);
             this.acrylicTextBox1.TabIndex = 1;
+            // 
+            // acrylicButton1
+            // 
+            this.acrylicButton1.Default = false;
+            this.acrylicButton1.ImagePadding = 6;
+            this.acrylicButton1.Location = new System.Drawing.Point(178, 47);
+            this.acrylicButton1.Name = "acrylicButton1";
+            this.acrylicButton1.Padding = new System.Windows.Forms.Padding(6);
+            this.acrylicButton1.Size = new System.Drawing.Size(83, 32);
+            this.acrylicButton1.TabIndex = 0;
+            this.acrylicButton1.Text = "Add to List";
+            this.acrylicButton1.UseVisualStyleBackColor = false;
+            this.acrylicButton1.Click += new System.EventHandler(this.acrylicButton1_Click);
             // 
             // Form7
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BlurColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.windowPanel1);
             this.Location = new System.Drawing.Point(0, 0);
@@ -91,5 +106,6 @@ namespace Examples
         private AcrylicUI.Controls.WindowPanel windowPanel1;
         private AcrylicUI.Controls.AcrylicButton acrylicButton1;
         private AcrylicUI.Controls.AcrylicTextBox acrylicTextBox1;
+        private AcrylicUI.Controls.AcrylicListView acrylicListView1;
     }
 }

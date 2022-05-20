@@ -218,6 +218,10 @@ namespace AcrylicUI.Resources
         { 
             get { return Color.FromArgb(32, 29, 37); }
         }
+        public static Color ActiveControl
+        {
+            get { return Color.FromArgb(159, 178, 196); }
+        }
     }
 
 

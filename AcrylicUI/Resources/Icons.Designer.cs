@@ -63,6 +63,26 @@ namespace AcrylicUI.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        public static byte[] ASX_GlyphDown_blue_16x {
+            get {
+                object obj = ResourceManager.GetObject("ASX_GlyphDown_blue_16x", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] ASX_GlyphDown_grey_16x {
+            get {
+                object obj = ResourceManager.GetObject("ASX_GlyphDown_grey_16x", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         public static byte[] Audio_16x_svg {
             get {
                 object obj = ResourceManager.GetObject("Audio_16x_svg", resourceCulture);
@@ -136,6 +156,46 @@ namespace AcrylicUI.Resources {
         public static byte[] Document_16x_svg {
             get {
                 object obj = ResourceManager.GetObject("Document_16x_svg", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] GlyphDown_16x {
+            get {
+                object obj = ResourceManager.GetObject("GlyphDown_16x", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] GlyphDown_71GrayNoHalo_16x {
+            get {
+                object obj = ResourceManager.GetObject("GlyphDown_71GrayNoHalo_16x", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] GlyphDown_71GrayNoHaloSmall_16x {
+            get {
+                object obj = ResourceManager.GetObject("GlyphDown_71GrayNoHaloSmall_16x", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] GlyphDown_linkBlueNoHalo_16x {
+            get {
+                object obj = ResourceManager.GetObject("GlyphDown_linkBlueNoHalo_16x", resourceCulture);
                 return ((byte[])(obj));
             }
         }

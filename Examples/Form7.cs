@@ -36,6 +36,12 @@ namespace Examples
             bool _isWindows11 = true;
             RoundCorners(_isWindows11);
 
+            // Build dummy list data
+            for (var i = 0; i < 50; i++)
+            {
+                var item = new AcrylicListItem($"List item #{i}");
+                acrylicListView1.Items.Add(item);
+            }
 
         }
 
@@ -265,5 +271,13 @@ namespace Examples
                                                          uint cbAttribute);
 
         #endregion
+
+        private void acrylicButton1_Click(object sender, EventArgs e)
+        {
+            var listItem = new AcrylicListItem(acrylicTextBox1.Text);
+            acrylicListView1.Items.Add(listItem);
+            acrylicTextBox1.Text = String.Empty;
+
+        }
     }
 }

@@ -129,7 +129,7 @@ namespace Examples
             this.acrylicButton7.Padding = new System.Windows.Forms.Padding(6);
             this.acrylicButton7.Size = new System.Drawing.Size(160, 32);
             this.acrylicButton7.TabIndex = 6;
-            this.acrylicButton7.Text = "Form 7  -  MenuItem";
+            this.acrylicButton7.Text = "Form 7  -  ListItems";
             this.acrylicButton7.UseVisualStyleBackColor = false;
             this.acrylicButton7.Click += new System.EventHandler(this.acrylicButton7_Click);
             // 
@@ -163,6 +163,7 @@ namespace Examples
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BlurColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.acrylicButton9);
             this.Controls.Add(this.acrylicButton8);
