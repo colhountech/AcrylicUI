@@ -497,10 +497,11 @@ namespace AcrylicUI.Controls
             }
             else
             {
-                using (var b = new SolidBrush(Colors.GreyBackground))
-                {
-                    g.FillRectangle(b, rect);
-                }
+                e.Graphics.Clear(Colors.GreyBackground);
+                //using (var b = new SolidBrush(Colors.GreyBackground))
+                //{
+                //    g.FillRectangle(b, rect);
+                //}
             }
 
             // Draw header
@@ -574,24 +575,30 @@ namespace AcrylicUI.Controls
 
 
             // Draw border
-            using (var p = new Pen(Colors.DarkBorder, Scale(PEN_WIDTH)))
+            /*
+            if (_isAcrylicEnabled)
             {
-                var modRect = new Rectangle(rect.Left, rect.Top,
-                                     rect.Width - Scale(PEN_WIDTH),
-                                     rect.Height - Scale(PEN_WIDTH));
-
-                if (_hasRoundCorners)
+                Console.WriteLine($"Drawing Border {rect.Width} {rect.Height}");
+                using (var p = new Pen(Colors.DarkBorder, Scale(PEN_WIDTH)))
                 {
-                    using (GraphicsPath border = Drawing.RoundedRectange(modRect, Scale(ARC_RADIUS)))
+                    var modRect = new Rectangle(rect.Left, rect.Top,
+                                         rect.Width - Scale(PEN_WIDTH),
+                                         rect.Height - Scale(PEN_WIDTH));
+
+                    if (_hasRoundCorners)
                     {
-                        g.DrawPath(p, border);
+                        using (GraphicsPath border = Drawing.RoundedRectange(modRect, Scale(ARC_RADIUS)))
+                        {
+                            g.DrawPath(p, border);
+                        }
+                    }
+                    else
+                    {
+                        g.DrawRectangle(p, modRect);
                     }
                 }
-                else
-                {
-                    g.DrawRectangle(p, modRect);
-                }
-            }
+            }*/
+
             //
             // Min button
             //
