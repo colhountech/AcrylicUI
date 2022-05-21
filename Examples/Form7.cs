@@ -37,7 +37,7 @@ namespace Examples
             RoundCorners(_isWindows11);
 
             // Build dummy list data
-            for (var i = 0; i < 50; i++)
+            for (var i = 0; i < 22; i++)
             {
                 var item = new AcrylicListItem($"List item #{i}");
                 acrylicListView1.Items.Add(item);
@@ -60,7 +60,7 @@ namespace Examples
             this.BlurOpacity = 1;
             this.BlurColor = Colors.GreyBackground;
             this.windowPanel1.IsAcrylicEnabled = true;
-    }
+        }
 
         private void HookEvents()
         {
@@ -274,9 +274,15 @@ namespace Examples
 
         private void acrylicButton1_Click(object sender, EventArgs e)
         {
+            acrylicListView1.ShowIcons = true;
+
             var listItem = new AcrylicListItem(acrylicTextBox1.Text);
+            var iconSvg = new IconFactory(IconFactory.GetDpiScale(Handle)).BitmapFromSvg(Icons.Cube_16x_svg);
+            listItem.Icon = (Bitmap)iconSvg;
+
             acrylicListView1.Items.Add(listItem);
             acrylicTextBox1.Text = String.Empty;
+            acrylicTextBox1.Focus();
 
         }
     }

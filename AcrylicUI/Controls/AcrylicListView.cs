@@ -94,6 +94,10 @@ namespace AcrylicUI.Controls
         {
             Items = new ObservableCollection<AcrylicListItem>();
             _selectedIndices = new List<int>();
+
+            BackColor = Colors.GreyBackground;
+            base.Padding = new Padding(0, Consts.ToolWindowHeaderSize, 0, 0);
+
         }
 
         #endregion

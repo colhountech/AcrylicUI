@@ -16,6 +16,7 @@ namespace AcrylicUI.Controls
 
         private bool _isDefault = false; // remove this after testing
         private bool _spacePressed;
+        private bool _hasRoundedCorners = true;
 
         private readonly int _padding = Consts.CONTROL_PADDING / 2;
         private int _imagePadding = Consts.CONTROL_PADDING / 2;
@@ -66,6 +67,19 @@ namespace AcrylicUI.Controls
 
 
         [Category("Appearance")]
+        [Description("Determines if the buttons have Rounded Corners.")]
+        [DefaultValue(true)]
+        public bool HasRoundedCorners
+        {
+            get { return _hasRoundedCorners; }
+            set
+            {
+                _hasRoundedCorners = value;
+                Invalidate();
+            }
+        }
+
+        [Category("Appearance")]
         [Description("Determines the amount of padding between the image and text.")]
         [DefaultValue(Consts.BUTTON_XOFFSET)]
         public int ImagePadding
@@ -100,7 +114,7 @@ namespace AcrylicUI.Controls
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public new ContentAlignment ImageAlign
         {
-            get { return base.ImageAlign; }
+            get { return base.ImageAlign; }          
         }
 
 
@@ -109,6 +123,7 @@ namespace AcrylicUI.Controls
         public new ContentAlignment TextAlign
         {
             get { return base.TextAlign; }
+            set { base.TextAlign = value; }
         }
 
       
@@ -122,7 +137,7 @@ namespace AcrylicUI.Controls
                      ControlStyles.ResizeRedraw |
                      ControlStyles.UserPaint, true);
 
-            base.UseVisualStyleBackColor = false;
+            base.UseVisualStyleBackColor = false;            
 
             SetButtonState(AcrylicControlState.Normal);
             Padding = new Padding(_padding);
@@ -295,7 +310,7 @@ namespace AcrylicUI.Controls
             var g = e.Graphics;
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
-            var rect = new Rectangle(0, 0, ClientSize.Width, ClientSize.Height);
+            var rect = new Rectangle(0, 0, ClientSize.Width, ClientSize.Height);            
             var arcRadius = Scale(Consts.SMALL_ARC_RADIUS);            
 
             var rectRounded = Drawing.RoundedRectange(rect, arcRadius);
@@ -334,22 +349,41 @@ namespace AcrylicUI.Controls
             using (var b = new SolidBrush(fillColor))            
             {
                 g.Clear(Colors.Transparent);
-                g.FillPath(b, rectRounded);
+                if (_hasRoundedCorners)
+                {
+                    g.FillPath(b, rectRounded);
+                } 
+                else
+                {
+                    g.FillRectangle(b, rect);
+                }
             }
 
             var penWidth = Scale(Consts.PEN_WIDTH) / 2;
             penWidth = penWidth == 0 ? 1 : penWidth;
 
+
+
             using (var p = new Pen(borderColor, penWidth))
             {
-                var modRect = new Rectangle(
-                    rect.Left,
-                    rect.Top,
-                    rect.Width - penWidth,
-                    rect.Height - penWidth);
+               
+                    var modRect = new Rectangle(
+                        rect.Left,
+                        rect.Top,
+                        rect.Width - penWidth,
+                        rect.Height - penWidth);
 
-                var modRectRounded = Drawing.RoundedRectange(modRect, arcRadius);
-                g.DrawPath(p, modRectRounded);
+                if (_hasRoundedCorners)
+                {
+                    var modRectRounded = Drawing.RoundedRectange(modRect, arcRadius);
+                    g.DrawPath(p, modRectRounded);
+                }
+                else
+                {
+                    g.DrawRectangle(p, modRect);
+
+                }
+
             }
 
             var textOffsetX = 0;

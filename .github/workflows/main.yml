@@ -36,10 +36,4 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
 
-    - name: Publish to NuGet
-
-      uses: brandedoutcast/publish-nuget@v2.5.2
-      with:
-          PROJECT_FILE_PATH: ${{env.PROJECT}}
-          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
-
+  

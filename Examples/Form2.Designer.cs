@@ -42,6 +42,7 @@ namespace Examples
             // acrylicButton1
             // 
             this.acrylicButton1.Default = false;
+            this.acrylicButton1.HasRoundedCorners = false;
             this.acrylicButton1.ImagePadding = 6;
             this.acrylicButton1.Location = new System.Drawing.Point(12, 24);
             this.acrylicButton1.Name = "acrylicButton1";
@@ -54,6 +55,7 @@ namespace Examples
             // acrylicButton2
             // 
             this.acrylicButton2.Default = true;
+            this.acrylicButton2.HasRoundedCorners = false;
             this.acrylicButton2.ImagePadding = 6;
             this.acrylicButton2.Location = new System.Drawing.Point(12, 69);
             this.acrylicButton2.Name = "acrylicButton2";
@@ -67,6 +69,7 @@ namespace Examples
             // 
             this.acrylicButton3.Default = false;
             this.acrylicButton3.Enabled = false;
+            this.acrylicButton3.HasRoundedCorners = false;
             this.acrylicButton3.ImagePadding = 6;
             this.acrylicButton3.Location = new System.Drawing.Point(12, 114);
             this.acrylicButton3.Name = "acrylicButton3";
@@ -96,6 +99,7 @@ namespace Examples
             // acrylicButton5
             // 
             this.acrylicButton5.Default = false;
+            this.acrylicButton5.HasRoundedCorners = false;
             this.acrylicButton5.ImagePadding = 6;
             this.acrylicButton5.Location = new System.Drawing.Point(12, 204);
             this.acrylicButton5.Name = "acrylicButton5";
@@ -108,6 +112,7 @@ namespace Examples
             // acrylicButton4
             // 
             this.acrylicButton4.Default = false;
+            this.acrylicButton4.HasRoundedCorners = false;
             this.acrylicButton4.ImagePadding = 6;
             this.acrylicButton4.Location = new System.Drawing.Point(12, 159);
             this.acrylicButton4.Name = "acrylicButton4";

@@ -49,15 +49,17 @@ namespace Examples
             this.windowPanel1.ProfileFeature = false;
             this.windowPanel1.RoundCorners = false;
             this.windowPanel1.SectionHeader = null;
-            this.windowPanel1.Size = new System.Drawing.Size(800, 450);
+            this.windowPanel1.Size = new System.Drawing.Size(447, 450);
             this.windowPanel1.TabIndex = 0;
             // 
             // acrylicListView1
             // 
-            this.acrylicListView1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.acrylicListView1.Location = new System.Drawing.Point(665, 25);
+            this.acrylicListView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.acrylicListView1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.acrylicListView1.Location = new System.Drawing.Point(1, 25);
             this.acrylicListView1.Name = "acrylicListView1";
-            this.acrylicListView1.Size = new System.Drawing.Size(134, 424);
+            this.acrylicListView1.Padding = new System.Windows.Forms.Padding(0, 25, 0, 0);
+            this.acrylicListView1.Size = new System.Drawing.Size(202, 424);
             this.acrylicListView1.TabIndex = 2;
             this.acrylicListView1.Text = "acrylicListView1";
             // 
@@ -66,20 +68,21 @@ namespace Examples
             this.acrylicTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.acrylicTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.acrylicTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.acrylicTextBox1.Location = new System.Drawing.Point(12, 54);
+            this.acrylicTextBox1.Location = new System.Drawing.Point(214, 54);
             this.acrylicTextBox1.Name = "acrylicTextBox1";
             this.acrylicTextBox1.PlaceholderText = "Enter Text";
-            this.acrylicTextBox1.Size = new System.Drawing.Size(160, 23);
-            this.acrylicTextBox1.TabIndex = 1;
+            this.acrylicTextBox1.Size = new System.Drawing.Size(184, 23);
+            this.acrylicTextBox1.TabIndex = 3;
             // 
             // acrylicButton1
             // 
             this.acrylicButton1.Default = false;
+            this.acrylicButton1.HasRoundedCorners = false;
             this.acrylicButton1.ImagePadding = 6;
-            this.acrylicButton1.Location = new System.Drawing.Point(178, 47);
+            this.acrylicButton1.Location = new System.Drawing.Point(214, 83);
             this.acrylicButton1.Name = "acrylicButton1";
             this.acrylicButton1.Padding = new System.Windows.Forms.Padding(6);
-            this.acrylicButton1.Size = new System.Drawing.Size(83, 32);
+            this.acrylicButton1.Size = new System.Drawing.Size(80, 32);
             this.acrylicButton1.TabIndex = 0;
             this.acrylicButton1.Text = "Add to List";
             this.acrylicButton1.UseVisualStyleBackColor = false;
@@ -90,7 +93,7 @@ namespace Examples
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BlurColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(447, 450);
             this.Controls.Add(this.windowPanel1);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "Form7";
