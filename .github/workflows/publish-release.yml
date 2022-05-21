@@ -1,0 +1,43 @@
+name: Publish to NuGet
+on:  
+  push:
+    tags:
+      - '*'
+
+env:
+  BUILD_CONFIG: Release
+  SOLUTION: AcrylicUI.sln 
+  PROJECT: AcrylicUI\AcrylicUI.csproj
+
+jobs:
+  build:   
+
+    runs-on: windows-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v1.0.5
+
+    - name: Restore dependencies
+      run: nuget restore ${{env.SOLUTION}}
+      
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+
+    - name: Install dependencies
+      run: dotnet restore
+
+    - name: Build
+      run: dotnet build --configuration Release --no-restore
+
+    - name: Publish to NuGet
+
+      uses: brandedoutcast/publish-nuget@v2.5.2
+      with:
+          PROJECT_FILE_PATH: ${{env.PROJECT}}
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+
