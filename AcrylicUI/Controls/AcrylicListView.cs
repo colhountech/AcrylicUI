@@ -29,6 +29,8 @@ namespace AcrylicUI.Controls
         private List<int> _selectedIndices;
         private int _anchoredItemStart = -1;
         private int _anchoredItemEnd = -1;
+        private bool _alternateBackground;
+
 
         #endregion
 
@@ -57,6 +59,20 @@ namespace AcrylicUI.Controls
         public List<int> SelectedIndices
         {
             get { return _selectedIndices; }
+        }
+
+
+        // Alternate Background
+        [Category("Appearance")]
+        [Description("Alternate Background Color for each Line Item")]
+        [DefaultValue(true)]
+        public bool AlternateBackground
+        {
+            get { return _alternateBackground; }
+            set
+            {
+                _alternateBackground = value;
+            }
         }
 
         [Category("Appearance")]
@@ -520,8 +536,14 @@ namespace AcrylicUI.Controls
                 var rect = new Rectangle(0, i * ItemHeight, width, ItemHeight);
 
                 // Background
-                var odd = i % 2 != 0;
-                var bgColor = !odd ? Colors.HeaderBackground : Colors.GreyBackground;
+                var bgColor = Colors.GreyBackground;
+
+                if (AlternateBackground)
+                {
+                    var odd = i % 2 != 0;
+                    bgColor = !odd ? Colors.HeaderBackground : Colors.GreyBackground;
+                }
+              
 
                 if (SelectedIndices.Count > 0 && SelectedIndices.Contains(i))
                     bgColor = Focused ? Colors.BlueSelection : Colors.GreySelection;

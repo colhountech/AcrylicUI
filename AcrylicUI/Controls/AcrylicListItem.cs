@@ -57,7 +57,12 @@ namespace AcrylicUI.Controls
         {
             Text = text;
         }
-
+        public AcrylicListItem(string text, Icon icon)
+          : this()
+        {
+            Text = text;
+            Icon = Icon;
+        }
         #endregion
     }
 }
