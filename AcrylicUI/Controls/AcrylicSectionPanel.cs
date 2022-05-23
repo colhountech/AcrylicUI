@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace DarkUI.Controls
+namespace AcrylicUI.Controls
 {
     public class AcrylicSectionPanel : Panel
     {
