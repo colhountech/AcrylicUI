@@ -50,8 +50,17 @@ namespace AcrylicUI.Controls
 
         protected override void OnPaint(PaintEventArgs e)
         {
+                        
             var borderColor = Colors.DarkBorder;
             var fillColor = Colors.GreyBackground;
+            if (this.BackColor == Color.Transparent)
+            {
+                fillColor = Colors.Transparent;
+            }
+            if (this.ForeColor == Color.Transparent)
+            {
+                borderColor = Colors.Transparent;
+            }
 
             var g = e.Graphics;
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
@@ -65,7 +74,7 @@ namespace AcrylicUI.Controls
             penWidth = penWidth == 0 ? 1 : penWidth;
 
             // fill panel
-            using (var b = new SolidBrush(Colors.GreyBackground))
+            using (var b = new SolidBrush(fillColor))
             {
                 g.Clear(Colors.Transparent);
                 g.FillPath(b, rectRounded);
