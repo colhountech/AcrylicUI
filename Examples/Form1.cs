@@ -24,7 +24,11 @@ namespace Examples
 
             this.Text = string.Empty;
             this.ShowIcon = false;
+            this.BackColor = Colors.GreyBackground;
             this.MinimumSize = this.Size;
+            this.grpDpiSettings.BorderColor = Colors.BtnOutline;
+            this.grpDpiSettings.BackColor = Colors.Transparent;
+            this.grpDpiSettings.ForeColor = Colors.LightGrey;
 
         }
         private void Form1_Load(object sender, EventArgs e)
@@ -44,7 +48,7 @@ namespace Examples
             base.OnResize(e);
             ScaleText();
 
-            this.ResumeLayout();
+            this.ResumeLayout();           
         }
 
         private void ScaleText()
@@ -54,7 +58,7 @@ namespace Examples
                 txtSystemDpi.Text = $"{this.DeviceDpi}";
                 var scale = (float)Drawing.GetDpi(this.Handle) / (float)96f;
                 txtAutoScaleFactor.Text = scale.ToString();
-            }
+            }         
         }
 
 

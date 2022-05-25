@@ -1,5 +1,6 @@
 ﻿using AcrylicUI.Resources;
 using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -45,6 +46,20 @@ namespace AcrylicUI.Controls
         }
 
         #endregion
+        private bool _hasRoundedCorners;
+
+        [Category("Appearance")]
+        [Description("Determines if the buttons have Rounded Corners.")]
+        [DefaultValue(false)]
+        public bool HasRoundedCorners
+        {
+            get { return _hasRoundedCorners; }
+            set
+            {
+                _hasRoundedCorners = value;
+                Invalidate();
+            }
+        }
 
         #region Paint Region
 
@@ -63,7 +78,7 @@ namespace AcrylicUI.Controls
             }
 
             var g = e.Graphics;
-            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+           // g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
             var rect = new Rectangle(0, 0, ClientSize.Width, ClientSize.Height);
             var arcRadius = Scale(Consts.SMALL_ARC_RADIUS);
@@ -77,7 +92,14 @@ namespace AcrylicUI.Controls
             using (var b = new SolidBrush(fillColor))
             {
                 g.Clear(Colors.Transparent);
-                g.FillPath(b, rectRounded);
+                if (HasRoundedCorners)
+                {
+                    g.FillPath(b, rectRounded);
+                }
+                else
+                {
+                    g.FillRectangle(b, rect);
+                }
             }
 
             // draw border
@@ -90,7 +112,14 @@ namespace AcrylicUI.Controls
                     rect.Height - penWidth);
 
                 var modRectRounded = Drawing.RoundedRectange(modRect, arcRadius);
-                g.DrawPath(p, modRectRounded);
+                if (HasRoundedCorners)
+                {
+                    g.DrawPath(p, modRectRounded);
+                }
+                else
+                {
+                    g.DrawRectangle(p, modRect);
+                }
             }
         }
         #endregion

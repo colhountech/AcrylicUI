@@ -49,22 +49,19 @@ namespace Examples
             this.pnlPadding.Location = new System.Drawing.Point(0, 0);
             this.pnlPadding.Name = "pnlPadding";
             this.pnlPadding.Padding = new System.Windows.Forms.Padding(24);
-            this.pnlPadding.Size = new System.Drawing.Size(477, 183);
+            this.pnlPadding.Size = new System.Drawing.Size(667, 278);
             this.pnlPadding.TabIndex = 8;
             // 
             // grpDpiSettings
             // 
             this.grpDpiSettings.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.grpDpiSettings.BackColor = System.Drawing.Color.Transparent;
-            this.grpDpiSettings.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
             this.grpDpiSettings.Controls.Add(this.txtAutoScaleFactor);
             this.grpDpiSettings.Controls.Add(this.lblAutoScaleFactor);
             this.grpDpiSettings.Controls.Add(this.txtWinVer);
             this.grpDpiSettings.Controls.Add(this.lblWinVer);
             this.grpDpiSettings.Controls.Add(this.txtSystemDpi);
             this.grpDpiSettings.Controls.Add(this.lblDpi);
-            this.grpDpiSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.grpDpiSettings.Location = new System.Drawing.Point(12, 13);
+            this.grpDpiSettings.Location = new System.Drawing.Point(112, 67);
             this.grpDpiSettings.Name = "grpDpiSettings";
             this.grpDpiSettings.Size = new System.Drawing.Size(453, 158);
             this.grpDpiSettings.TabIndex = 8;
@@ -138,7 +135,8 @@ namespace Examples
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(477, 183);
+            this.BlurColor = System.Drawing.Color.Empty;
+            this.ClientSize = new System.Drawing.Size(667, 278);
             this.Controls.Add(this.pnlPadding);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "Form1";

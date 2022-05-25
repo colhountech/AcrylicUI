@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,11 @@ namespace AcrylicUI.Controls
 {
     public partial class AcrylicGroupBox : GroupBox
     {
-        private Color _borderColor = Colors.BtnOutline;
+        private Color _borderColor = Colors.DarkBorder;
 
         [Category("Appearance")]
         [Description("Determines the color of the border.")]
+        [DefaultValue(typeof(Color), "0x333333")] // Colors.BtnOutline
         public Color BorderColor
         {
             get { return _borderColor; }
@@ -26,6 +28,34 @@ namespace AcrylicUI.Controls
                 Invalidate();
             }
         }
+
+        //[Category("Appearance")]
+        //[Description("Determines background color.")]
+        //[DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        //[DefaultValue(typeof(Color), "0x00FFFFFF")] // Colors.Transparent
+        //public override Color BackColor
+        //{
+        //    get { return base.BackColor; }
+        //    set
+        //    {
+        //        base.BackColor = value;
+        //        Invalidate();
+        //    }
+        //}
+        [Category("Appearance")]
+        [Description("Determines the foreground color.")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        [DefaultValue(typeof(Color), "0xEBEBEB")] // Colors.Text
+        public override Color ForeColor
+        {
+            get { return base.ForeColor; }
+            set
+            {
+                base.ForeColor = value;
+                Invalidate();
+            }
+        }
+
 
         public AcrylicGroupBox()
         {
@@ -40,18 +70,21 @@ namespace AcrylicUI.Controls
         protected override void OnPaint(PaintEventArgs e)
         {
             var g = e.Graphics;
+            //g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
             var rect = new Rectangle(0, 0, ClientSize.Width, ClientSize.Height);
             var stringSize = g.MeasureString(Text, Font);
 
-            var textColor = Colors.Text;
-            var fillColor = Colors.Transparent;
+            var textColor = ForeColor;
+            var fillColor = BackColor;
+            var borderColor = _borderColor;
 
             using (var b = new SolidBrush(fillColor))
             {
                 g.FillRectangle(b, rect);
             }
 
-            using (var p = new Pen(BorderColor, Scale(Consts.PEN_WIDTH)))
+            using (var p = new Pen(borderColor, Scale(Consts.PEN_WIDTH)))
             {
                 var borderRect = new Rectangle(0, (int)stringSize.Height / 2, rect.Width - Scale(Consts.PEN_WIDTH), rect.Height - ((int)stringSize.Height / 2) - Scale(Consts.PEN_WIDTH));
                 g.DrawRectangle(p, borderRect);
@@ -61,10 +94,17 @@ namespace AcrylicUI.Controls
                     rect.Top,
                     rect.Width - (Consts.CONTROL_PADDING * 2),
                     (int)stringSize.Height);
-
+                   
             using (var b2 = new SolidBrush(fillColor))
             {
                 var modRect = new Rectangle(textRect.Left, textRect.Top, Math.Min(textRect.Width, (int)stringSize.Width), textRect.Height);
+
+                //clear border behind Text
+                g.SetClip(modRect, CombineMode.Replace);
+                g.Clear(Color.Transparent);
+                g.ResetClip();
+
+                // now fill with fillcolor
                 g.FillRectangle(b2, modRect);
             }
 
@@ -108,7 +148,7 @@ namespace AcrylicUI.Controls
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
-            UpdateScale();
+            UpdateScale();            
         }
         private int Scale(int pixel)
         {

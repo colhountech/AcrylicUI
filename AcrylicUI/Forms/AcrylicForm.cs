@@ -48,6 +48,7 @@ namespace AcrylicUI.Forms
         [Category("Appearance")]
         [Description("Determines the blur background color.")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        [DefaultValue(typeof(Color), "0x1F1F1F")] // Colors.GreyBackground
         public Color BlurColor
         {
             get { return _blurColor; }
