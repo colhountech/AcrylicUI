@@ -4,7 +4,8 @@
 
 	<PropertyGroup>
 		<OutputType>Library</OutputType>
-		<TargetFrameworks>net5-windows</TargetFrameworks>
+		<TargetFrameworks>net5-windows;net6-windows</TargetFrameworks>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<UseWindowsForms>true</UseWindowsForms>
     <Version>1.0.0-preview3.2</Version>
     <PackageId>AcrylicUI</PackageId>
