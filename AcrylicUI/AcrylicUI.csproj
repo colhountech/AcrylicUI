@@ -6,7 +6,7 @@
 		<OutputType>Library</OutputType>
 		<TargetFrameworks>net5-windows</TargetFrameworks>
 		<UseWindowsForms>true</UseWindowsForms>
-    <Version>1.0.0-preview3.1</Version>
+    <Version>1.0.0-preview3.2</Version>
     <PackageId>AcrylicUI</PackageId>
     <Authors>Micheal Colhoun</Authors>
     <Company>ColhounTech</Company>
