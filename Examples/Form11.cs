@@ -12,15 +12,15 @@ using System.Windows.Forms;
 
 namespace Examples
 {
-    public partial class Form10 : AcrylicForm
+    public partial class Form11 : AcrylicForm
     {
-        public Form10()
+        public Form11()
         {
             InitializeComponent();
             // Make sure you set this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             // Program.cs : Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
             this.Text = "";
-            this.IsAcrylic = true;            
+            this.IsAcrylic = true;
             this.BlurColor = Colors.GreyBackground;
             this.AutoScaleMode = AutoScaleMode.Dpi;
         }

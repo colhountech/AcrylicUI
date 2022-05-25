@@ -91,5 +91,12 @@ namespace Examples
             form.StartPosition = FormStartPosition.CenterParent;
             form.ShowDialog(this);
         }
+
+        private void acrylicButton11_Click(object sender, EventArgs e)
+        {
+            var form = new Form11();
+            form.StartPosition = FormStartPosition.CenterParent;
+            form.ShowDialog(this);
+        }
     }
 }

@@ -41,6 +41,7 @@ namespace Examples
             this.acrylicButton8 = new AcrylicUI.Controls.AcrylicButton();
             this.acrylicButton9 = new AcrylicUI.Controls.AcrylicButton();
             this.acrylicButton10 = new AcrylicUI.Controls.AcrylicButton();
+            this.acrylicButton11 = new AcrylicUI.Controls.AcrylicButton();
             this.SuspendLayout();
             // 
             // acrylicButton1
@@ -183,12 +184,27 @@ namespace Examples
             this.acrylicButton10.UseVisualStyleBackColor = false;
             this.acrylicButton10.Click += new System.EventHandler(this.acrylicButton10_Click);
             // 
+            // acrylicButton11
+            // 
+            this.acrylicButton11.Default = false;
+            this.acrylicButton11.ImagePadding = 6;
+            this.acrylicButton11.Location = new System.Drawing.Point(321, 288);
+            this.acrylicButton11.Margin = new System.Windows.Forms.Padding(4);
+            this.acrylicButton11.Name = "acrylicButton11";
+            this.acrylicButton11.Padding = new System.Windows.Forms.Padding(9);
+            this.acrylicButton11.Size = new System.Drawing.Size(240, 48);
+            this.acrylicButton11.TabIndex = 10;
+            this.acrylicButton11.Text = "Form 9 - Labels";
+            this.acrylicButton11.UseVisualStyleBackColor = false;
+            this.acrylicButton11.Click += new System.EventHandler(this.acrylicButton11_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BlurColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1200, 675);
+            this.Controls.Add(this.acrylicButton11);
             this.Controls.Add(this.acrylicButton10);
             this.Controls.Add(this.acrylicButton9);
             this.Controls.Add(this.acrylicButton8);
@@ -219,5 +235,6 @@ namespace Examples
         private AcrylicUI.Controls.AcrylicButton acrylicButton8;
         private AcrylicUI.Controls.AcrylicButton acrylicButton9;
         private AcrylicUI.Controls.AcrylicButton acrylicButton10;
+        private AcrylicUI.Controls.AcrylicButton acrylicButton11;
     }
 }
