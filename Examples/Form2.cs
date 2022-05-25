@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AcrylicUI.Resources;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +20,7 @@ namespace Examples
             // Program.cs : Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
             this.Text = "";
             this.ShowIcon = false;
+            this.acrylicGroupBox1.ForeColor = Colors.Text;
         }
 
       

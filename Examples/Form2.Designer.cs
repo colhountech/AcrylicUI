@@ -82,7 +82,7 @@ namespace Examples
             // acrylicGroupBox1
             // 
             this.acrylicGroupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.acrylicGroupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
+            this.acrylicGroupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));           
             this.acrylicGroupBox1.Controls.Add(this.acrylicButton5);
             this.acrylicGroupBox1.Controls.Add(this.acrylicButton4);
             this.acrylicGroupBox1.Controls.Add(this.acrylicButton6);

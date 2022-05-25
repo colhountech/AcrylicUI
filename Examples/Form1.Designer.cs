@@ -49,7 +49,7 @@ namespace Examples
             this.pnlPadding.Location = new System.Drawing.Point(0, 0);
             this.pnlPadding.Name = "pnlPadding";
             this.pnlPadding.Padding = new System.Windows.Forms.Padding(24);
-            this.pnlPadding.Size = new System.Drawing.Size(667, 278);
+            this.pnlPadding.Size = new System.Drawing.Size(482, 210);
             this.pnlPadding.TabIndex = 8;
             // 
             // grpDpiSettings
@@ -61,7 +61,8 @@ namespace Examples
             this.grpDpiSettings.Controls.Add(this.lblWinVer);
             this.grpDpiSettings.Controls.Add(this.txtSystemDpi);
             this.grpDpiSettings.Controls.Add(this.lblDpi);
-            this.grpDpiSettings.Location = new System.Drawing.Point(112, 67);
+            this.grpDpiSettings.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.grpDpiSettings.Location = new System.Drawing.Point(20, 33);
             this.grpDpiSettings.Name = "grpDpiSettings";
             this.grpDpiSettings.Size = new System.Drawing.Size(453, 158);
             this.grpDpiSettings.TabIndex = 8;
@@ -136,7 +137,7 @@ namespace Examples
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BlurColor = System.Drawing.Color.Empty;
-            this.ClientSize = new System.Drawing.Size(667, 278);
+            this.ClientSize = new System.Drawing.Size(482, 210);
             this.Controls.Add(this.pnlPadding);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "Form1";

@@ -28,7 +28,7 @@ namespace Examples
             this.MinimumSize = this.Size;
             this.grpDpiSettings.BorderColor = Colors.BtnOutline;
             this.grpDpiSettings.BackColor = Colors.Transparent;
-            this.grpDpiSettings.ForeColor = Colors.LightGrey;
+            this.grpDpiSettings.ForeColor = Colors.Text;
 
         }
         private void Form1_Load(object sender, EventArgs e)
