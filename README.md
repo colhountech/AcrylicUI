@@ -1,9 +1,9 @@
 # AcrylicUI
-AcrylicUI is an Open Source Control and Docking Framework for .NET Core WinForms on Windows 11 only
+AcrylicUI is an Open Source Control and Docking Framework for .NET Core WinForms on Windows 11
 
 Read the Release Notes for [Release 1.0.0-preview3.2](https://github.com/colhountech/AcrylicUI/releases/tag/1.0.0-preview3.2)
 
-This framework was inspired by [DarkUI](https://github.com/RobinPerris/DarkUI) by Robin Perris. However DarkUI does not support High Resolution Monitors, .NET Core 5+ and does not seem to be active. 
+This framework was inspired by [DarkUI](https://github.com/RobinPerris/DarkUI) by Robin Perris. However DarkUI does not support High Resolution Monitors, .NET Core and does not seem to be active. 
 
 AcrylicUI is taking the best bits of DarkUI and Supporting the latest and greatet dotnet core, Windows 11 Features like Snap Layout, Rounded Corners, Drop Shadows on Borderless Forms and Scaling for High Resolution High Dpi Monitors, and of course beautiful Windows 11 Acrylic UI panels.
 
@@ -14,14 +14,15 @@ Features of AcrylicUI over DarkUI:
     * Support for Custom TitleBars and Borderless WindowPanels
     * Support for Borderless Windows Snapping
     * Support for Borderless Windows 11 Snap Layout Popups (Hack)
-    * Support for .NET 5 and greater (No depenedency on .Net Full Framwork)
+    * Support for .NET Core (No depenedency on .Net Full Framwork)
     * Is active
 
 This is clearly a Work In Progress and should not be considered production ready.
 
 There is a clear path of the work to be done to migrate all relevant Controls from DarkUI to AcrylicUI. 
 
-My Focus is supporting my own projects and I migrate Control based on my personal priority. 
+My Focus is supporting my own projects and I migrate Controls based on my personal priority. 
+
 Feel free to offer support and assistance, or better still 
 raise a pull request and message me on twitter https://twitter.com/colhountech
 
@@ -63,7 +64,7 @@ If you have questions, you are invited to join my [Discord server](https://disco
 
 ## Twitch
 
-Sometime I livecode on twitch, so join me and Listen to some cool StreamBeats while I figure stuff out. Sometimes, I play Valorant or Eve-Online on [Twitch.tv](https://twitch.tv/colhountech)
+Sometime I livecode on twitch, so join me and Listen to some cool StreamBeats while I figure stuff out. Sometimes, I play Valorant or Eve-Online (Badly) on [Twitch.tv](https://twitch.tv/colhountech)
 
 Thank you.
 
