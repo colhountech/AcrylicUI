@@ -45,13 +45,13 @@ You can support me by joining my YouTube Channel, Start a conversation on my Dis
 
 # Release Workflow
 
-Do you ever forgot how you did something? Me too. Especially how I do releases. So this is a not to myself to remind me what to do:
+Do you ever forgot how you did something? Me too. Especially how I do releases. So this is a note to myself to remind me what to do:
 
 * Run Examples Tests
 * Update README.MD to point to Release Notes for impending release
 * Push Changes
 * Check [GitHub Actions CI](https://github.com/colhountech/AcrylicUI/actions/workflows/main.yml) Builds ok
-* Add a new Release Tag udinh [Semantic versioning](http://semver.org/)
+* Add a new Release Tag using [Semantic versioning](http://semver.org/)
 * Update Release Notes
 
 
