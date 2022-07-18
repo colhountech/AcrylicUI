@@ -52,7 +52,7 @@ Do you ever forgot how you did something? Me too. Especially how I do releases. 
 * Push Changes
 * Check [GitHub Actions CI](https://github.com/colhountech/AcrylicUI/actions/workflows/main.yml) Builds ok
 * Add a new Release Tag using [Semantic versioning](http://semver.org/)
-* Update Release Notes
+* Update [Release Notes](https://github.com/colhountech/AcrylicUI/releases/)
 
 
 My social links are below:
