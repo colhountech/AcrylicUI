@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace DarkUI.Controls
+namespace AcrylicUI.Controls
 {
     public class AcrylicTitle : Label
     {
