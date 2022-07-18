@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.acrylicLabel1 = new AcrylicUI.Controls.AcrylicLabel();
-            this.acrylicTitle1 = new DarkUI.Controls.AcrylicTitle();
+            this.acrylicTitle1 = new AcrylicUI.Controls.AcrylicTitle();
             this.SuspendLayout();
             // 
             // acrylicLabel1
@@ -71,6 +71,6 @@
         #endregion
 
         private AcrylicUI.Controls.AcrylicLabel acrylicLabel1;
-        private DarkUI.Controls.AcrylicTitle acrylicTitle1;
+        private AcrylicUI.Controls.AcrylicTitle acrylicTitle1;
     }
 }

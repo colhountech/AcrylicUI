@@ -42,6 +42,19 @@ Help me test and give suggestions on what should be a priority, the more voices 
 
 You can support me by joining my YouTube Channel, Start a conversation on my Discord Server, or share your love for Beautiful WinForms Desktop Apps on twitter.
 
+
+# Release Workflow
+
+Do you ever forgot how you did something? Me too. Especially how I do releases. So this is a not to myself to remind me what to do:
+
+* Run Examples Tests
+* Update README.MD to point to Release Notes for impending release
+* Push Changes
+* Check [GitHub Actions CI](https://github.com/colhountech/AcrylicUI/actions/workflows/main.yml) Builds ok
+* Add a new Release Tag udinh [Semantic versioning](http://semver.org/)
+* Update Release Notes
+
+
 My social links are below:
 
 ## Twitter
