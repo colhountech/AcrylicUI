@@ -51,9 +51,9 @@ Do you ever forgot how you did something? Me too. Especially how I do releases. 
 * Update README.MD to point to Release Notes for impending release
 * Push Changes
 * Check [GitHub Actions CI](https://github.com/colhountech/AcrylicUI/actions/workflows/main.yml) Builds ok
-* Add a new Release Tag using [Semantic versioning](http://semver.org/)
-* Update [Release Notes](https://github.com/colhountech/AcrylicUI/releases/)
-
+* Create a [new Release](https://github.com/colhountech/AcrylicUI/releases/new) Tag using [Semantic versioning](http://semver.org/)
+* Add Release Notes to Tag
+* Add Full Changelog URL https://github.com/colhountech/AcrylicUI/commits/<Tag>
 
 My social links are below:
 
