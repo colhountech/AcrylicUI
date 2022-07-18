@@ -19,8 +19,8 @@ namespace Examples
     {
 
         #region Fields for Borderless Windows
-        private int borderSize = 2;
-        private bool _flatBorder = true;
+        private readonly int borderSize = 2;
+        private readonly bool _flatBorder = true;
         private Size _restoreSize;
         #endregion
 

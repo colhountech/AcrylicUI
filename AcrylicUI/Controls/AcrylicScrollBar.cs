@@ -35,7 +35,7 @@ namespace AcrylicUI.Controls
         private bool _upArrowHot;
         private bool _downArrowHot;
 
-        private bool _thumbClicked;
+        //private bool _thumbClicked;
         private bool _upArrowClicked;
         private bool _downArrowClicked;
 
@@ -50,10 +50,10 @@ namespace AcrylicUI.Controls
         private Image _arrowClickedIcon;
         private Image _arrowDisabledIcon;
         private Image _arrowHotIcon;
-        private Image _arrowUpStandardIcon;
-        private Image _arrowUpClickedIcon;
-        private Image _arrowUpDisabledIcon;
-        private Image _arrowUpHotIcon;
+        //private Image _arrowUpStandardIcon;
+        //private Image _arrowUpClickedIcon;
+        //private Image _arrowUpDisabledIcon;
+        //private Image _arrowUpHotIcon;
 
         #endregion
 
@@ -278,7 +278,7 @@ namespace AcrylicUI.Controls
 
             _isScrolling = false;
 
-            _thumbClicked = false;
+            //_thumbClicked = false;
             _upArrowClicked = false;
             _downArrowClicked = false;
 

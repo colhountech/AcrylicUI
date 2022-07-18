@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.acrylicLabel1 = new AcrylicUI.Controls.AcrylicLabel();
+            this.acrylicTitle1 = new DarkUI.Controls.AcrylicTitle();
             this.SuspendLayout();
             // 
             // acrylicLabel1
@@ -38,16 +39,26 @@
             this.acrylicLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.acrylicLabel1.Location = new System.Drawing.Point(123, 92);
             this.acrylicLabel1.Name = "acrylicLabel1";
-            this.acrylicLabel1.Size = new System.Drawing.Size(111, 25);
+            this.acrylicLabel1.Size = new System.Drawing.Size(75, 15);
             this.acrylicLabel1.TabIndex = 0;
             this.acrylicLabel1.Text = "acrylicLabel1";
             // 
+            // acrylicTitle1
+            // 
+            this.acrylicTitle1.AutoSize = true;
+            this.acrylicTitle1.Location = new System.Drawing.Point(123, 67);
+            this.acrylicTitle1.Name = "acrylicTitle1";
+            this.acrylicTitle1.Size = new System.Drawing.Size(69, 15);
+            this.acrylicTitle1.TabIndex = 1;
+            this.acrylicTitle1.Text = "acrylicTitle1";
+            // 
             // Form11
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BlurColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.acrylicTitle1);
             this.Controls.Add(this.acrylicLabel1);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "Form11";
@@ -60,5 +71,6 @@
         #endregion
 
         private AcrylicUI.Controls.AcrylicLabel acrylicLabel1;
+        private DarkUI.Controls.AcrylicTitle acrylicTitle1;
     }
 }
