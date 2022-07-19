@@ -1,7 +1,7 @@
 # AcrylicUI
 AcrylicUI is an Open Source Control and Docking Framework for .NET Core WinForms on Windows 11
 
-Read the Release Notes for [Release 1.0.0-preview3.3](https://github.com/colhountech/AcrylicUI/releases/tag/1.0.0-preview3.3)
+Read the Release Notes for [Release 1.0.0-preview3.4](https://github.com/colhountech/AcrylicUI/releases/tag/1.0.0-preview3.4)
 
 This framework was inspired by [DarkUI](https://github.com/RobinPerris/DarkUI) by Robin Perris. However DarkUI does not support High Resolution Monitors, .NET Core and does not seem to be active. 
 
