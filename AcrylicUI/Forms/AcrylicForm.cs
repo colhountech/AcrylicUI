@@ -25,6 +25,7 @@ namespace AcrylicUI.Forms
         public AcrylicForm()
         {
             InitializeComponent();
+            UpdateScale();
         }
 
         #endregion
@@ -187,6 +188,7 @@ namespace AcrylicUI.Forms
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
+            UpdateScale();
             AdjustForm();
 
         }
@@ -224,6 +226,43 @@ namespace AcrylicUI.Forms
                     break;
             }
         }
+        #endregion
+
+        #region Dpi Scale
+
+        private const float DEFAULT_DPI = 96f;
+        private float _dpiScale = DEFAULT_DPI;
+
+
+        // call at init too
+        private void UpdateScale()
+        {
+            var form = FindForm();
+            if (form is null)
+            {
+
+            }
+            var handle = form?.Handle ?? this.Handle;
+
+            var newDpiScale = (float)Drawing.GetDpi(handle) / (float)DEFAULT_DPI;
+            if (newDpiScale != _dpiScale)
+            {
+                _dpiScale = newDpiScale;
+
+                // TODO
+                // update Icons
+            }
+        }
+        //protected override void OnResize(EventArgs e)
+        //{
+        //    base.OnResize(e);
+        //    UpdateScale();
+        //}
+        protected int Scale(int pixel)
+        {
+            return (int)(pixel * _dpiScale);
+        }
+
         #endregion
     }
 }

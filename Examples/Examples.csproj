@@ -12,5 +12,11 @@
     <ProjectReference Include="..\AcrylicUI\AcrylicUI.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Form12_Dialogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+
 
 </Project>

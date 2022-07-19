@@ -213,6 +213,36 @@ namespace AcrylicUI.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        public static byte[] InformationSymbol_16x {
+            get {
+                object obj = ResourceManager.GetObject("InformationSymbol_16x", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] StatusAlert_16x_svg {
+            get {
+                object obj = ResourceManager.GetObject("StatusAlert_16x", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] StatusCriticalError_16x_svg {
+            get {
+                object obj = ResourceManager.GetObject("StatusCriticalError_16x", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         public static byte[] StatusWarning_16x_svg {
             get {
                 object obj = ResourceManager.GetObject("StatusWarning_16x_svg", resourceCulture);
