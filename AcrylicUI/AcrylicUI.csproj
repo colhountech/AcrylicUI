@@ -7,7 +7,7 @@
 		<TargetFrameworks>net5-windows;net6-windows</TargetFrameworks>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<UseWindowsForms>true</UseWindowsForms>
-    <Version>1.0.0-preview3.4</Version>
+    <Version>1.0.0-preview3.5</Version>
     <PackageId>AcrylicUI</PackageId>
     <Authors>Micheal Colhoun</Authors>
     <Company>ColhounTech</Company>
