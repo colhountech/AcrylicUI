@@ -44,9 +44,17 @@ namespace AcrylicUI.Resources
             return NamedColorBitmapFromSvg(bytes, sourceColor, replaceColor, width, height);
         }
 
+        public Image BlueBitmapFromSvg(byte[] bytes, int width = Consts.ICON_SIZE, int height = Consts.ICON_SIZE)
+        {
+            var sourceColor = Color.FromArgb(0xff, 0xf6, 0xf6, 0xf6); // // Hack to make white outline GlyphRight_16x to blue
+            var replaceColor = Colors.BlueSelection;
+
+            return NamedColorBitmapFromSvg(bytes, sourceColor, replaceColor, width, height);
+        }
 
 
-        public Image NamedColorBitmapFromSvg(byte[] bytes, Color sourceColor, Color replaceColor, int width, int height )
+
+        public Image NamedColorBitmapFromSvg(byte[] bytes, Color sourceColor, Color replaceColor, int width = Consts.ICON_SIZE, int height = Consts.ICON_SIZE)
         {
             using (var stream = new MemoryStream(bytes))
             {
@@ -68,7 +76,12 @@ namespace AcrylicUI.Resources
         {
             if (element is SvgPath)
             {
+                //var c = ((element as SvgPath).Fill as SvgColourServer).Colour;
+                //Console.WriteLine($"Color:#{c.R:X2}{c.G:X2}{c.B:X2}");
+                // # Color:#F6F6F6    Color:#F6F6F6   Color:#424242
+
                 // {#f6f6f6} // 424242 f0eff1
+
                 if (((element as SvgPath).Fill as SvgColourServer).Colour.ToArgb() == sourceColor.ToArgb())
                 {
                     (element as SvgPath).Fill = new SvgColourServer(replaceColor);

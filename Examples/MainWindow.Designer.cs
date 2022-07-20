@@ -43,6 +43,7 @@ namespace Examples
             this.acrylicButton10 = new AcrylicUI.Controls.AcrylicButton();
             this.acrylicButton11 = new AcrylicUI.Controls.AcrylicButton();
             this.acrylicButton12 = new AcrylicUI.Controls.AcrylicButton();
+            this.acrylicButton13 = new AcrylicUI.Controls.AcrylicButton();
             this.SuspendLayout();
             // 
             // acrylicButton1
@@ -51,7 +52,7 @@ namespace Examples
             this.acrylicButton1.ImagePadding = 6;
             this.acrylicButton1.Location = new System.Drawing.Point(22, 24);
             this.acrylicButton1.Name = "acrylicButton1";
-            this.acrylicButton1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.acrylicButton1.Padding = new System.Windows.Forms.Padding(6);
             this.acrylicButton1.Size = new System.Drawing.Size(160, 32);
             this.acrylicButton1.TabIndex = 0;
             this.acrylicButton1.Text = "Form 1 - GetDpi";
@@ -64,7 +65,7 @@ namespace Examples
             this.acrylicButton2.ImagePadding = 6;
             this.acrylicButton2.Location = new System.Drawing.Point(22, 80);
             this.acrylicButton2.Name = "acrylicButton2";
-            this.acrylicButton2.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.acrylicButton2.Padding = new System.Windows.Forms.Padding(6);
             this.acrylicButton2.Size = new System.Drawing.Size(160, 32);
             this.acrylicButton2.TabIndex = 1;
             this.acrylicButton2.Text = "Form 2 - Acrylic Buttons";
@@ -77,7 +78,7 @@ namespace Examples
             this.acrylicButton3.ImagePadding = 6;
             this.acrylicButton3.Location = new System.Drawing.Point(22, 136);
             this.acrylicButton3.Name = "acrylicButton3";
-            this.acrylicButton3.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.acrylicButton3.Padding = new System.Windows.Forms.Padding(6);
             this.acrylicButton3.Size = new System.Drawing.Size(160, 32);
             this.acrylicButton3.TabIndex = 2;
             this.acrylicButton3.Text = "Form 3 - Alert Panel";
@@ -90,7 +91,7 @@ namespace Examples
             this.acrylicButton4.ImagePadding = 6;
             this.acrylicButton4.Location = new System.Drawing.Point(22, 192);
             this.acrylicButton4.Name = "acrylicButton4";
-            this.acrylicButton4.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.acrylicButton4.Padding = new System.Windows.Forms.Padding(6);
             this.acrylicButton4.Size = new System.Drawing.Size(160, 32);
             this.acrylicButton4.TabIndex = 3;
             this.acrylicButton4.Text = "Form 4 - Glass Panel";
@@ -103,7 +104,7 @@ namespace Examples
             this.acrylicButton5.ImagePadding = 6;
             this.acrylicButton5.Location = new System.Drawing.Point(22, 248);
             this.acrylicButton5.Name = "acrylicButton5";
-            this.acrylicButton5.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.acrylicButton5.Padding = new System.Windows.Forms.Padding(6);
             this.acrylicButton5.Size = new System.Drawing.Size(160, 32);
             this.acrylicButton5.TabIndex = 4;
             this.acrylicButton5.Text = "Form 5 - Borderless Blank";
@@ -116,7 +117,7 @@ namespace Examples
             this.acrylicButton6.ImagePadding = 6;
             this.acrylicButton6.Location = new System.Drawing.Point(22, 306);
             this.acrylicButton6.Name = "acrylicButton6";
-            this.acrylicButton6.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.acrylicButton6.Padding = new System.Windows.Forms.Padding(6);
             this.acrylicButton6.Size = new System.Drawing.Size(160, 32);
             this.acrylicButton6.TabIndex = 5;
             this.acrylicButton6.Text = "Form 6  - DockPanel";
@@ -129,7 +130,7 @@ namespace Examples
             this.acrylicButton7.ImagePadding = 6;
             this.acrylicButton7.Location = new System.Drawing.Point(22, 359);
             this.acrylicButton7.Name = "acrylicButton7";
-            this.acrylicButton7.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.acrylicButton7.Padding = new System.Windows.Forms.Padding(6);
             this.acrylicButton7.Size = new System.Drawing.Size(160, 32);
             this.acrylicButton7.TabIndex = 6;
             this.acrylicButton7.Text = "Form 7  -  ListItems";
@@ -142,7 +143,7 @@ namespace Examples
             this.acrylicButton8.ImagePadding = 6;
             this.acrylicButton8.Location = new System.Drawing.Point(214, 24);
             this.acrylicButton8.Name = "acrylicButton8";
-            this.acrylicButton8.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.acrylicButton8.Padding = new System.Windows.Forms.Padding(6);
             this.acrylicButton8.Size = new System.Drawing.Size(160, 32);
             this.acrylicButton8.TabIndex = 7;
             this.acrylicButton8.Text = "Form 8  -  Blank";
@@ -155,7 +156,7 @@ namespace Examples
             this.acrylicButton9.ImagePadding = 6;
             this.acrylicButton9.Location = new System.Drawing.Point(214, 80);
             this.acrylicButton9.Name = "acrylicButton9";
-            this.acrylicButton9.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.acrylicButton9.Padding = new System.Windows.Forms.Padding(6);
             this.acrylicButton9.Size = new System.Drawing.Size(160, 32);
             this.acrylicButton9.TabIndex = 8;
             this.acrylicButton9.Text = "Form 9 - Blank Glass";
@@ -168,7 +169,7 @@ namespace Examples
             this.acrylicButton10.ImagePadding = 6;
             this.acrylicButton10.Location = new System.Drawing.Point(214, 136);
             this.acrylicButton10.Name = "acrylicButton10";
-            this.acrylicButton10.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.acrylicButton10.Padding = new System.Windows.Forms.Padding(6);
             this.acrylicButton10.Size = new System.Drawing.Size(160, 32);
             this.acrylicButton10.TabIndex = 9;
             this.acrylicButton10.Text = "Form 10 - Panels";
@@ -181,7 +182,7 @@ namespace Examples
             this.acrylicButton11.ImagePadding = 6;
             this.acrylicButton11.Location = new System.Drawing.Point(214, 192);
             this.acrylicButton11.Name = "acrylicButton11";
-            this.acrylicButton11.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.acrylicButton11.Padding = new System.Windows.Forms.Padding(6);
             this.acrylicButton11.Size = new System.Drawing.Size(160, 32);
             this.acrylicButton11.TabIndex = 10;
             this.acrylicButton11.Text = "Form 11 - Labels";
@@ -201,12 +202,26 @@ namespace Examples
             this.acrylicButton12.UseVisualStyleBackColor = false;
             this.acrylicButton12.Click += new System.EventHandler(this.acrylicButton12_Click);
             // 
+            // acrylicButton13
+            // 
+            this.acrylicButton13.Default = false;
+            this.acrylicButton13.ImagePadding = 6;
+            this.acrylicButton13.Location = new System.Drawing.Point(214, 306);
+            this.acrylicButton13.Name = "acrylicButton13";
+            this.acrylicButton13.Padding = new System.Windows.Forms.Padding(6);
+            this.acrylicButton13.Size = new System.Drawing.Size(160, 32);
+            this.acrylicButton13.TabIndex = 12;
+            this.acrylicButton13.Text = "Form 13 - TreeView";
+            this.acrylicButton13.UseVisualStyleBackColor = false;
+            this.acrylicButton13.Click += new System.EventHandler(this.acrylicButton13_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BlurColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.acrylicButton13);
             this.Controls.Add(this.acrylicButton12);
             this.Controls.Add(this.acrylicButton11);
             this.Controls.Add(this.acrylicButton10);
@@ -220,7 +235,7 @@ namespace Examples
             this.Controls.Add(this.acrylicButton2);
             this.Controls.Add(this.acrylicButton1);
             this.Location = new System.Drawing.Point(0, 0);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainWindow";
             this.Text = "MainWindow";
             this.ResumeLayout(false);
@@ -241,5 +256,6 @@ namespace Examples
         private AcrylicUI.Controls.AcrylicButton acrylicButton10;
         private AcrylicUI.Controls.AcrylicButton acrylicButton11;
         private AcrylicUI.Controls.AcrylicButton acrylicButton12;
+        private AcrylicUI.Controls.AcrylicButton acrylicButton13;
     }
 }

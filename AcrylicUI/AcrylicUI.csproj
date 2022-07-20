@@ -30,6 +30,12 @@
 
 	<ItemGroup>
 	  <Compile Update="Controls\AcrylicTransparentLabel.cs" />
+	  <Compile Update="Controls\AcrylicToolStrip.cs">
+	    <SubType>Component</SubType>
+	  </Compile>
+	  <Compile Update="Controls\AcrylicTreeView.cs">
+	    <SubType>Component</SubType>
+	  </Compile>
 	  <Compile Update="Resources\DockIcons.Designer.cs">
 	    <DesignTime>True</DesignTime>
 	    <AutoGen>True</AutoGen>
@@ -45,6 +51,11 @@
 	    <AutoGen>True</AutoGen>
 	    <DependentUpon>MenuIcons.resx</DependentUpon>
 	  </Compile>
+	  <Compile Update="Resources\TreeViewIcons.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>TreeViewIcons.resx</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -58,8 +69,12 @@
 	    <LastGenOutput>Icons.Designer.cs</LastGenOutput>
 	  </EmbeddedResource>
 	  <EmbeddedResource Update="Resources\MenuIcons.resx">
-	    <Generator>ResXFileCodeGenerator</Generator>
+	    <Generator>PublicResXFileCodeGenerator</Generator>
 	    <LastGenOutput>MenuIcons.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\TreeViewIcons.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>TreeViewIcons.Designer.cs</LastGenOutput>
 	  </EmbeddedResource>
 	</ItemGroup>
 

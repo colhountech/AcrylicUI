@@ -105,5 +105,12 @@ namespace Examples
             form.StartPosition = FormStartPosition.CenterParent;
             form.ShowDialog(this);
         }
+
+        private void acrylicButton13_Click(object sender, EventArgs e)
+        {
+            var form = new Form13_TreeView();
+            form.StartPosition = FormStartPosition.CenterParent;
+            form.ShowDialog(this);
+        }
     }
 }
