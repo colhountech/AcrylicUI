@@ -45,7 +45,7 @@ namespace AcrylicUI.Resources
 
 
     }
-
+    //  Color.FromArgb(0xff, 0x42, 0x42, 0x42)
     public sealed class Colors
     {
         public static Color Transparent 
@@ -150,6 +150,11 @@ namespace AcrylicUI.Resources
         public static Color LightGrey
         {
             get { return Color.FromArgb(69, 73, 74); }
+        }
+
+        public static Color GreyShadow
+        {
+            get { return Color.FromArgb(0xff, 0x42, 0x42, 0x42); }
         }
 
         public static Color DarkPanel

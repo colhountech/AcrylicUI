@@ -29,7 +29,7 @@ namespace AcrylicUI.Controls
 
         private readonly int _expandAreaSize = 16;
         private readonly int _iconSize = 16;
-
+        private readonly int _plusIconSize = 12;
         private int _itemHeight = 20;
         private int _indent = 20;
 
@@ -155,8 +155,9 @@ namespace AcrylicUI.Controls
             _selectedNodes.CollectionChanged += SelectedNodes_CollectionChanged;
 
             MaxDragChange = _itemHeight;
-
+            
             LoadIcons();
+            UpdateScale();
         }
 
         #endregion
@@ -489,8 +490,8 @@ namespace AcrylicUI.Controls
                 {
                     var difference = (pos.Y - ClientRectangle.Top) * -1;
 
-                    if (difference > ItemHeight)
-                        difference = ItemHeight;
+                    if (difference > Scale(ItemHeight))
+                        difference = Scale(ItemHeight);
 
                     _vScrollBar.Value = _vScrollBar.Value - difference;
                 }
@@ -500,8 +501,8 @@ namespace AcrylicUI.Controls
                 {
                     var difference = pos.Y - ClientRectangle.Bottom;
 
-                    if (difference > ItemHeight)
-                        difference = ItemHeight;
+                    if (difference > Scale(ItemHeight))
+                        difference = Scale(ItemHeight);
 
                     _vScrollBar.Value = _vScrollBar.Value + difference;
                 }
@@ -514,8 +515,8 @@ namespace AcrylicUI.Controls
                 {
                     var difference = (pos.X - ClientRectangle.Left) * -1;
 
-                    if (difference > ItemHeight)
-                        difference = ItemHeight;
+                    if (difference > Scale(ItemHeight))
+                        difference = Scale(ItemHeight);
 
                     _hScrollBar.Value = _hScrollBar.Value - difference;
                 }
@@ -525,8 +526,8 @@ namespace AcrylicUI.Controls
                 {
                     var difference = pos.X - ClientRectangle.Right;
 
-                    if (difference > ItemHeight)
-                        difference = ItemHeight;
+                    if (difference > Scale(ItemHeight))
+                        difference = Scale(ItemHeight);
 
                     _hScrollBar.Value = _hScrollBar.Value + difference;
                 }
@@ -596,7 +597,7 @@ namespace AcrylicUI.Controls
         {
             UpdateNodeBounds(node, yOffset, indent);
 
-            yOffset += ItemHeight;
+            yOffset += Scale(ItemHeight);
 
             node.Odd = isOdd;
             isOdd = !isOdd;
@@ -614,32 +615,32 @@ namespace AcrylicUI.Controls
             if (node.Expanded)
             {
                 foreach (var childNode in node.Nodes)
-                    UpdateNode(childNode, ref prevNode, indent + Indent, ref yOffset, ref isOdd, ref index);
+                    UpdateNode(childNode, ref prevNode, indent + Scale(Indent), ref yOffset, ref isOdd, ref index);
             }
         }
 
         private void UpdateNodeBounds(AcrylicTreeNode node, int yOffset, int indent)
         {
-            var expandTop = yOffset + (ItemHeight / 2) - (_expandAreaSize / 2);
-            node.ExpandArea = new Rectangle(indent + 3, expandTop, _expandAreaSize, _expandAreaSize);
+            var expandTop = yOffset + (Scale(ItemHeight) / 2) - (Scale(_expandAreaSize) / 2);
+            node.ExpandArea = new Rectangle(indent + Scale(3), expandTop, Scale(_expandAreaSize), Scale(_expandAreaSize));
 
-            var iconTop = yOffset + (ItemHeight / 2) - (_iconSize / 2);
+            var iconTop = yOffset + (Scale(ItemHeight) / 2) - (Scale(_iconSize) / 2);
 
             if (ShowIcons)
-                node.IconArea = new Rectangle(node.ExpandArea.Right + 2, iconTop, _iconSize, _iconSize);
+                node.IconArea = new Rectangle(node.ExpandArea.Right + Scale(2), iconTop, Scale(_iconSize), Scale(_iconSize));
             else
                 node.IconArea = new Rectangle(node.ExpandArea.Right, iconTop, 0, 0);
 
             using (var g = CreateGraphics())
             {
                 var textSize = (int)(g.MeasureString(node.Text, Font).Width);
-                node.TextArea = new Rectangle(node.IconArea.Right + 2, yOffset, textSize + 1, ItemHeight);
+                node.TextArea = new Rectangle(node.IconArea.Right + Scale(2), yOffset, textSize + Scale(1), Scale(ItemHeight));
             }
 
-            node.FullArea = new Rectangle(indent, yOffset, (node.TextArea.Right - indent), ItemHeight);
+            node.FullArea = new Rectangle(indent, yOffset, (node.TextArea.Right - indent), Scale(ItemHeight));
 
-            if (ContentSize.Width < node.TextArea.Right + 2)
-                ContentSize = new Size(node.TextArea.Right + 2, ContentSize.Height);
+            if (ContentSize.Width < node.TextArea.Right + Scale(2))
+                ContentSize = new Size(node.TextArea.Right + Scale(2), ContentSize.Height);
         }
 
         private void LoadIcons()
@@ -650,13 +651,13 @@ namespace AcrylicUI.Controls
             var dpiScale = IconFactory.GetDpiScale(this.Handle);
             _iconFactory = new IconFactory(IconFactory.GetDpiScale(Handle));
 
-            _nodeClosed = _iconFactory.BitmapFromSvg(TreeViewIcons.GlyphRight_16x);
-            _nodeClosedHover = _iconFactory.BlueBitmapFromSvg(TreeViewIcons.GlyphRight_16x);
-            _nodeClosedHoverSelected = _iconFactory.NamedColorBitmapFromSvg(TreeViewIcons.GlyphRight_16x, Color.FromArgb(0xff, 0x42, 0x42, 0x42), Color.White);
+            _nodeClosed = _iconFactory.BitmapFromSvg(TreeViewIcons.GlyphRight_16x, _plusIconSize, _plusIconSize );
+            _nodeClosedHover = _iconFactory.BlueBitmapFromSvg(TreeViewIcons.GlyphRight_16x, _plusIconSize, _plusIconSize);
+            _nodeClosedHoverSelected = _iconFactory.NamedColorBitmapFromSvg(TreeViewIcons.GlyphRight_16x, Colors.GreyShadow, Color.White, _plusIconSize, _plusIconSize);
 
-            _nodeOpen = _iconFactory.BitmapFromSvg(TreeViewIcons.ScrollbarArrowsDownRight_16x_svg);
-            _nodeOpenHover = _iconFactory.BlueBitmapFromSvg(TreeViewIcons.ScrollbarArrowsDownRight_16x_svg);
-            _nodeOpenHoverSelected = _iconFactory.NamedColorBitmapFromSvg(TreeViewIcons.ScrollbarArrowsDownRight_16x_svg, Color.FromArgb(0xff, 0x42, 0x42, 0x42), Color.White);
+            _nodeOpen = _iconFactory.BitmapFromSvg(TreeViewIcons.ScrollbarArrowsDownRight_16x_svg, _plusIconSize, _plusIconSize);
+            _nodeOpenHover = _iconFactory.BlueBitmapFromSvg(TreeViewIcons.ScrollbarArrowsDownRight_16x_svg, _plusIconSize, _plusIconSize);
+            _nodeOpenHoverSelected = _iconFactory.NamedColorBitmapFromSvg(TreeViewIcons.ScrollbarArrowsDownRight_16x_svg, Colors.GreyShadow, Color.White, _plusIconSize, _plusIconSize);
         }
 
         private void DisposeIcons()
@@ -939,7 +940,7 @@ namespace AcrylicUI.Controls
                 return new Rectangle(-1, -1, -1, -1);
 
             var width = Math.Max(ContentSize.Width, Viewport.Width);
-            var rect = new Rectangle(0, node.FullArea.Top, width, ItemHeight);
+            var rect = new Rectangle(0, node.FullArea.Top, width, Scale(ItemHeight));
             return rect;
         }
 
@@ -958,7 +959,7 @@ namespace AcrylicUI.Controls
             else
                 itemTop = _anchoredNodeEnd.FullArea.Top;
 
-            var itemBottom = itemTop + ItemHeight;
+            var itemBottom = itemTop + Scale(ItemHeight);
 
             if (itemTop < Viewport.Top)
                 VScrollTo(itemTop);
@@ -1227,7 +1228,7 @@ namespace AcrylicUI.Controls
             // 2. Draw plus/minus icon
             if (node.Nodes.Count > 0)
             {
-                var pos = new Point(node.ExpandArea.Location.X - 1, node.ExpandArea.Location.Y - 1);
+                var pos = new Point(node.ExpandArea.Location.X +Scale(2), node.ExpandArea.Location.Y + Scale(2) );
 
                 var icon = _nodeOpen;
 
@@ -1244,7 +1245,7 @@ namespace AcrylicUI.Controls
                 else if (!node.Expanded && node.ExpandAreaHot && SelectedNodes.Contains(node))
                     icon = _nodeClosedHoverSelected;
 
-                g.DrawImageUnscaled(icon, pos);
+                g.DrawImage(icon, pos);
             }
 
             // 3. Draw icon
@@ -1277,5 +1278,45 @@ namespace AcrylicUI.Controls
         }
 
         #endregion
+
+
+        #region Dpi Scale
+
+        private const float DEFAULT_DPI = 96f;
+        private float _dpiScale = DEFAULT_DPI;
+
+        // call at init too
+        private void UpdateScale()
+        {
+            var form = FindForm();
+            if (form is null)
+            {
+
+            }
+            var handle = form?.Handle ?? this.Handle;
+
+            var newDpiScale = (float)Drawing.GetDpi(handle) / (float)DEFAULT_DPI;
+            if (newDpiScale != _dpiScale)
+            {
+                _dpiScale = newDpiScale;
+
+                // TODO
+                // update Icons
+            }
+        }
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+            UpdateScale();
+            UpdateNodes();
+            LoadIcons();
+        }
+        private int Scale(int pixel)
+        {
+            return (int)(pixel * _dpiScale);
+        }
+
+        #endregion
+
     }
 }
