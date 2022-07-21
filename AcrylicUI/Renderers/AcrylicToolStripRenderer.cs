@@ -8,6 +8,11 @@ namespace AcrylicUI.Renderers
 {
     public class AcrylicToolStripRenderer : AcrylicMenuRenderer
     {
+        const int _margin = 2;
+        const int _button_size = 24;
+        const int _line_width = 1;
+        const int _seperatorGap = 3;
+
         #region Initialisation Region
 
         protected override void InitializeItem(ToolStripItem item)
@@ -18,13 +23,13 @@ namespace AcrylicUI.Renderers
             {
                 var castItem = (ToolStripSeparator)item;
                 if (!castItem.IsOnDropDown)
-                    item.Margin = new Padding(0, 0, 2, 0);
+                    item.Margin = new Padding(0, 0, Scale(_margin), 0);
             }
 
             if (item.GetType() == typeof(ToolStripButton))
             {
                 item.AutoSize = false;
-                item.Size = new Size(24, 24);
+                item.Size = new Size( Scale(_button_size), Scale(_button_size));
             }
         }
 
@@ -40,9 +45,9 @@ namespace AcrylicUI.Renderers
 
             if (e.ToolStrip.GetType() == typeof(ToolStripOverflow))
             {
-                using (var p = new Pen(Colors.GreyBackground))
+                using (var p = new Pen(Colors.MontereyPanel))
                 {
-                    var rect = new Rectangle(e.AffectedBounds.Left, e.AffectedBounds.Top, e.AffectedBounds.Width - 1, e.AffectedBounds.Height - 1);
+                    var rect = new Rectangle(e.AffectedBounds.Left, e.AffectedBounds.Top, e.AffectedBounds.Width - Scale(_line_width), e.AffectedBounds.Height - Scale(_line_width));
                     g.DrawRectangle(p, rect);
                 }
             }
@@ -58,7 +63,7 @@ namespace AcrylicUI.Renderers
         {
             var g = e.Graphics;
 
-            var rect = new Rectangle(0, 1, e.Item.Width, e.Item.Height - 2);
+            var rect = new Rectangle(0, Scale(_line_width), e.Item.Width, e.Item.Height - Scale(2* _line_width));
 
             if (e.Item.Selected || e.Item.Pressed)
             {
@@ -82,7 +87,7 @@ namespace AcrylicUI.Renderers
 
                 if (castItem.Checked && castItem.Selected)
                 {
-                    var modRect = new Rectangle(rect.Left, rect.Top, rect.Width - 1, rect.Height - 1);
+                    var modRect = new Rectangle(rect.Left, rect.Top, rect.Width - Scale(_line_width), rect.Height - Scale(_line_width));
                     using (var p = new Pen(Colors.GreyHighlight))
                     {
                         g.DrawRectangle(p, modRect);
@@ -95,7 +100,7 @@ namespace AcrylicUI.Renderers
         {
             var g = e.Graphics;
 
-            var rect = new Rectangle(0, 1, e.Item.Width, e.Item.Height - 2);
+            var rect = new Rectangle(0, Scale(_line_width), e.Item.Width, e.Item.Height - Scale(2* _line_width));
 
             if (e.Item.Selected || e.Item.Pressed)
             {
@@ -131,7 +136,7 @@ namespace AcrylicUI.Renderers
                 return;
             }
 
-            var rect = new Rectangle(3, 3, 2, e.Item.Height - 4);
+            var rect = new Rectangle(Scale(_seperatorGap), Scale(_seperatorGap), Scale(2*_line_width), e.Item.Height - Scale(4*_line_width));
 
             using (var p = new Pen(Colors.DarkBorder))
             {
@@ -140,7 +145,7 @@ namespace AcrylicUI.Renderers
 
             using (var p = new Pen(Colors.LightBorder))
             {
-                g.DrawLine(p, rect.Left + 1, rect.Top, rect.Left + 1, rect.Height);
+                g.DrawLine(p, rect.Left + Scale(_line_width), rect.Top, rect.Left + Scale(_line_width), rect.Height); ;
             }
         }
 
@@ -192,6 +197,20 @@ namespace AcrylicUI.Renderers
             {
                 g.DrawImageUnscaled(img, e.Item.Width - 13, e.Item.Height - 9);
             }*/
+        }
+
+        #endregion
+
+        #region Dpi Scale
+
+       public override void UpdateScale(float dpi)
+        {
+            base.UpdateScale(dpi);
+        }
+
+        protected override int Scale(int pixel)
+        {
+            return base.Scale(pixel);
         }
 
         #endregion

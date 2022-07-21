@@ -194,10 +194,6 @@ namespace AcrylicUI.Resources
             get { return Color.FromArgb(75, 110, 175); }
         }
 
-        public static Color GreySelection
-        {
-            get { return Color.FromArgb(92, 92, 92); }
-        }
         public static Color DarkGreySelection
         {
             get { return Color.FromArgb(82, 82, 82); }
@@ -232,7 +228,11 @@ namespace AcrylicUI.Resources
         }
         public static Color GreyHighlight
         {
-            get { return Color.FromArgb(122, 128, 132); }
+            get { return Color.FromArgb(61, 61, 61); }
+        }
+        public static Color GreySelection
+        {
+            get { return Color.FromArgb(46, 46, 46); }     
         }
         public static Color MontereyPanel
         {
@@ -241,7 +241,7 @@ namespace AcrylicUI.Resources
 
         public static Color MontereyInnerPanel 
         { 
-            get { return Color.FromArgb(32, 29, 37); }
+            get { return Color.FromArgb(32, 29, 37); } 
         }
         public static Color ActiveControl
         {

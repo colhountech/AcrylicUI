@@ -377,13 +377,13 @@ namespace AcrylicUI.Docking
                 return;
 
             //Fill body
-            using (var b = new SolidBrush(BackColor))
+            using (var b = new SolidBrush(Colors.GreyBackground))
             {
                 g.FillRectangle(b, ClientRectangle);
             }
 
             // Draw border
-            using (var p = new Pen(Colors.DarkPanel))
+            using (var p = new Pen(Colors.DarkBorder))
             {
                 // Top border
                 if (DockArea == DockArea.Document)

@@ -8,12 +8,17 @@ namespace AcrylicUI.Renderers
 {
     public class AcrylicMenuRenderer : ToolStripRenderer
     {
+        const int _padding = 1;
+        const int _itemPadding = 2;
+        const int _line_width = 1;
+        const int _seperatorGap = 3;
+
         #region Initialisation Region
 
         protected override void Initialize(ToolStrip toolStrip)
         {
-            base.Initialize(toolStrip);
 
+            base.Initialize(toolStrip);
             toolStrip.BackColor = Colors.GreyBackground;
             toolStrip.ForeColor = Colors.LightText;
         }
@@ -27,7 +32,7 @@ namespace AcrylicUI.Renderers
 
             if (item.GetType() == typeof(ToolStripSeparator))
             {
-                item.Margin = new Padding(0, 0, 0, 1);
+                item.Margin = new Padding(0, 0, 0, Scale(_padding)); 
             }
         }
 
@@ -48,7 +53,7 @@ namespace AcrylicUI.Renderers
         {
             var g = e.Graphics;
 
-            var rect = new Rectangle(0, 0, e.ToolStrip.Width - 1, e.ToolStrip.Height - 1);
+            var rect = new Rectangle(0, 0, e.ToolStrip.Width - Scale(_padding), e.ToolStrip.Height - Scale(_padding));
 
             using (var p = new Pen(Colors.LightBorder))
             {
@@ -60,8 +65,8 @@ namespace AcrylicUI.Renderers
         {
             var g = e.Graphics;
 
-            var rect = new Rectangle(e.ImageRectangle.Left - 2, e.ImageRectangle.Top - 2,
-                                         e.ImageRectangle.Width + 4, e.ImageRectangle.Height + 4);
+            var rect = new Rectangle(e.ImageRectangle.Left - Scale(_itemPadding), e.ImageRectangle.Top - Scale(_itemPadding),
+                                         e.ImageRectangle.Width + Scale(_itemPadding*2), e.ImageRectangle.Height + Scale(_itemPadding *2));
 
             using (var b = new SolidBrush(Colors.LightBorder))
             {
@@ -70,7 +75,7 @@ namespace AcrylicUI.Renderers
 
             using (var p = new Pen(Colors.BlueHighlight))
             {
-                var modRect = new Rectangle(rect.Left, rect.Top, rect.Width - 1, rect.Height - 1);
+                var modRect = new Rectangle(rect.Left, rect.Top, rect.Width - Scale(_itemPadding), rect.Height - Scale(_itemPadding));
                 g.DrawRectangle(p, modRect);
             }
 
@@ -84,7 +89,7 @@ namespace AcrylicUI.Renderers
         {
             var g = e.Graphics;
 
-            var rect = new Rectangle(1, 3, e.Item.Width, 1);
+            var rect = new Rectangle(_line_width, Scale(_seperatorGap), e.Item.Width, Scale(_line_width));
 
             using (var b = new SolidBrush(Colors.LightBorder))
             {
@@ -95,7 +100,7 @@ namespace AcrylicUI.Renderers
         protected override void OnRenderArrow(ToolStripArrowRenderEventArgs e)
         {
             e.ArrowColor = Colors.LightText;
-            e.ArrowRectangle = new Rectangle(new Point(e.ArrowRectangle.Left, e.ArrowRectangle.Top - 1), e.ArrowRectangle.Size);
+            e.ArrowRectangle = new Rectangle(new Point(e.ArrowRectangle.Left, e.ArrowRectangle.Top - Scale(_padding)), e.ArrowRectangle.Size);
 
             base.OnRenderArrow(e);
         }
@@ -112,7 +117,7 @@ namespace AcrylicUI.Renderers
                 var bgColor = e.Item.Selected ? Colors.GreyHighlight : e.Item.BackColor;
 
                 // Normal item
-                var rect = new Rectangle(2, 0, e.Item.Width - 3, e.Item.Height);
+                var rect = new Rectangle(Scale(_itemPadding), 0, e.Item.Width - Scale(_seperatorGap), e.Item.Height);
 
                 using (var b = new SolidBrush(bgColor))
                 {
@@ -134,5 +139,28 @@ namespace AcrylicUI.Renderers
         }
 
         #endregion
+
+        #region Dpi Scale
+
+        private const float DEFAULT_DPI = 96f;
+        protected float _dpiScale = DEFAULT_DPI;
+
+        // call at init too
+        public virtual void UpdateScale(float dpi)
+        {
+            var newDpiScale = dpi / (float)DEFAULT_DPI;
+            if (newDpiScale != _dpiScale)
+            {
+                _dpiScale = newDpiScale;
+            }
+        }
+        
+        protected virtual int Scale(int pixel)
+        {
+            return (int)(pixel * _dpiScale);
+        }
+
+        #endregion
+
     }
 }
