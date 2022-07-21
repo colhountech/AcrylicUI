@@ -57,10 +57,6 @@ namespace AcrylicUI.Resources
         {
             get { return Color.FromArgb(31, 31, 31); }
         }
-        public static Color MediumBackground 
-        {
-            get { return Color.FromArgb(49, 51, 53); }
-        }
 
         public static Color DefaulBlueButtonFill 
         {
@@ -202,9 +198,33 @@ namespace AcrylicUI.Resources
         {
             get { return Color.FromArgb(92, 92, 92); }
         }
+        public static Color DarkGreySelection
+        {
+            get { return Color.FromArgb(82, 82, 82); }
+        }
+
         public static Color DarkBackground
         {
             get { return Color.FromArgb(43, 43, 43); }
+        }
+        public static Color MediumBackground
+        {
+            get { return Color.FromArgb(49, 51, 53); }
+        }
+
+        public static Color LightBackground
+        {
+            get { return Color.FromArgb(69, 73, 74); }
+        }
+
+        public static Color LighterBackground
+        {
+            get { return Color.FromArgb(95, 101, 102); }
+        }
+
+        public static Color LightestBackground
+        {
+            get { return Color.FromArgb(178, 178, 178); }
         }
         public static Color BlueHighlight
         {

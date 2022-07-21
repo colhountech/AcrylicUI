@@ -1,4 +1,5 @@
-﻿using AcrylicUI.Resources;
+﻿using AcrylicUI.Controls;
+using AcrylicUI.Resources;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +10,7 @@ using System.Windows.Forms;
 namespace AcrylicUI.Docking
 {
     [ToolboxItem(false)]
-    public class DockRegion : Panel
+    public class DockRegion : AcrylicPanel
     {
         #region Field Region
 
@@ -375,14 +376,14 @@ namespace AcrylicUI.Docking
             if (!Visible)
                 return;
 
-            // Fill body
-            using (var b = new SolidBrush(Colors.GreyBackground))
+            //Fill body
+            using (var b = new SolidBrush(BackColor))
             {
                 g.FillRectangle(b, ClientRectangle);
             }
 
             // Draw border
-            using (var p = new Pen(Colors.DarkBorder))
+            using (var p = new Pen(Colors.DarkPanel))
             {
                 // Top border
                 if (DockArea == DockArea.Document)

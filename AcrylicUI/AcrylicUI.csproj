@@ -36,6 +36,24 @@
 	  <Compile Update="Controls\AcrylicTreeView.cs">
 	    <SubType>Component</SubType>
 	  </Compile>
+	  <Compile Update="Controls\AcrylicDataGridView.cs">
+	    <SubType>UserControl</SubType>
+	  </Compile>
+	  <Compile Update="Controls\AcrylicCheckBox.cs">
+	    <SubType>Component</SubType>
+	  </Compile>
+	  <Compile Update="Controls\AcrylicMenuStrip.cs">
+	    <SubType>Component</SubType>
+	  </Compile>
+	  <Compile Update="Controls\AcrylicNumericUpDown.cs">
+	    <SubType>Component</SubType>
+	  </Compile>
+	  <Compile Update="Docking\Document.cs">
+	    <SubType>UserControl</SubType>
+	  </Compile>
+	  <Compile Update="Docking\ToolWindow.cs">
+	    <SubType>UserControl</SubType>
+	  </Compile>
 	  <Compile Update="Resources\DockIcons.Designer.cs">
 	    <DesignTime>True</DesignTime>
 	    <AutoGen>True</AutoGen>
