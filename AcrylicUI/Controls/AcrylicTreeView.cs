@@ -655,9 +655,9 @@ namespace AcrylicUI.Controls
             _nodeClosedHover = _iconFactory.BlueBitmapFromSvg(TreeViewIcons.GlyphRight_16x, _plusIconSize, _plusIconSize);
             _nodeClosedHoverSelected = _iconFactory.NamedColorBitmapFromSvg(TreeViewIcons.GlyphRight_16x, Colors.GreyShadow, Color.White, _plusIconSize, _plusIconSize);
 
-            _nodeOpen = _iconFactory.BitmapFromSvg(TreeViewIcons.ScrollbarArrowsDownRight_16x_svg, _plusIconSize, _plusIconSize);
+            _nodeOpen = _iconFactory.NamedColorBitmapFromSvg(TreeViewIcons.ScrollbarArrowsDownRight_16x_svg, Colors.GreyShadow, Color.White, _plusIconSize, _plusIconSize);
             _nodeOpenHover = _iconFactory.BlueBitmapFromSvg(TreeViewIcons.ScrollbarArrowsDownRight_16x_svg, _plusIconSize, _plusIconSize);
-            _nodeOpenHoverSelected = _iconFactory.NamedColorBitmapFromSvg(TreeViewIcons.ScrollbarArrowsDownRight_16x_svg, Colors.GreyShadow, Color.White, _plusIconSize, _plusIconSize);
+            _nodeOpenHoverSelected = _iconFactory.NamedColorBitmapFromSvg(TreeViewIcons.ScrollbarArrowsDownRight_16x_svg, Colors.GreyShadow, Colors.BlueSelection, _plusIconSize, _plusIconSize);
         }
 
         private void DisposeIcons()
