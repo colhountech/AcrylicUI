@@ -1251,6 +1251,7 @@ namespace AcrylicUI.Controls
             // 3. Draw icon
             if (ShowIcons && node.Icon != null)
             {
+                node.UpdateScale(_dpiScale);
                 if (node.Expanded && node.ExpandedIcon != null)
                     g.DrawImageUnscaled(node.ExpandedIcon, node.IconArea.Location);
                 else
@@ -1283,7 +1284,7 @@ namespace AcrylicUI.Controls
         #region Dpi Scale
 
         private const float DEFAULT_DPI = 96f;
-        private float _dpiScale = DEFAULT_DPI;
+        private float _dpiScale = 1;
 
         // call at init too
         private void UpdateScale()

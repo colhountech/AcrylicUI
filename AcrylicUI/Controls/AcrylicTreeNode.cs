@@ -1,6 +1,8 @@
 ﻿using AcrylicUI.Collections;
+using Svg;
 using System;
 using System.Drawing;
+using System.IO;
 
 namespace AcrylicUI.Controls
 {
@@ -21,6 +23,8 @@ namespace AcrylicUI.Controls
 
         private string _text;
         private bool _isRoot;
+        private int _iconSize = 16;
+
         private AcrylicTreeView _parentTree;
         private AcrylicTreeNode _parentNode;
 
@@ -56,10 +60,68 @@ namespace AcrylicUI.Controls
 
         public bool ExpandAreaHot { get; set; }
 
-        public Bitmap Icon { get; set; }
+        #region Icon
 
-        public Bitmap ExpandedIcon { get; set; }
+        private byte[] _svgIcon;
 
+        public byte[] SvgIcon
+        {
+            set
+            {
+                _svgIcon = value;
+            }
+        }
+
+        /// <summary>
+        /// Set the svgIcon before getting the Icon
+        /// call the UpdateScale(dpiScale) before gettingIcon
+        /// 
+        /// </summary>
+        public Bitmap Icon
+        {
+            get
+            {
+                if (_svgIcon is null) return null;
+                using (var stream = new MemoryStream(_svgIcon))
+                {
+                    var svgDoc = SvgDocument.Open<SvgDocument>(stream, null);
+                    return svgDoc.Draw(Scale(_iconSize), Scale(_iconSize));
+                }
+
+            }
+
+        }
+        #endregion
+
+        #region ExpandedIcon
+
+        private byte[] _svgExpandedIcon;
+
+        public byte[] SvgExpandedIcon
+        {
+            set
+            {
+                _svgExpandedIcon = value;
+            }
+        }
+
+        /// <summary>
+        /// Set the SvgExpandedIcon before getting the ExpandedIcon
+        /// call the UpdateScale(dpiScale) before getting the ExpandedIcon
+        /// 
+        /// </summary>
+        public Bitmap ExpandedIcon { get
+            {
+                if (_svgExpandedIcon is null) return null;
+                using (var stream = new MemoryStream(_svgExpandedIcon))
+                {
+                    var svgDoc = SvgDocument.Open<SvgDocument>(stream, null);
+                    return svgDoc.Draw(Scale(_iconSize), Scale(_iconSize));
+                }
+            }
+        }
+
+        #endregion
         public bool Expanded
         {
             get { return _expanded; }
@@ -255,5 +317,31 @@ namespace AcrylicUI.Controls
         }
 
         #endregion
+
+        #region Dpi Scale
+
+        private const float DEFAULT_DPI = 96f;
+        private float _dpiScale = 1;
+
+
+        // call at init too
+        internal void UpdateScale(float newDpiScale)
+        {
+
+            if (newDpiScale != _dpiScale)
+            {
+                _dpiScale = newDpiScale;
+
+                // TODO
+                // update Icons
+            }
+        }
+
+        internal int Scale(int pixel)
+        {
+            return (int)(pixel * _dpiScale);
+        }
+        #endregion
+
     }
 }
