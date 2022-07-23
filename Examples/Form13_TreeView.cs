@@ -34,7 +34,7 @@ namespace Examples
 
             acrylicTreeView1.Indent = 12;
             acrylicTreeView1.ItemHeight = 22;
-            acrylicTreeView1.ShowIcons = false;
+            acrylicTreeView1.ShowIcons = true;
 
             BuildTeamView();
 
@@ -64,7 +64,27 @@ namespace Examples
         private void BuildProjectView()
         {
             AcrylicTreeNode projects = new AcrylicTreeNode("Projects");
+            projects.SvgIcon = Media.SvgIcons.Log_16x_svg;
+            for (int i = 0; i < 3; i++)
+            {
+                var p = CreateProject($"Project {i}");
+                projects.Nodes.Add(p);
+            }
             acrylicTreeView1.Nodes.Add(projects);
+        }
+
+        private AcrylicTreeNode CreateProject(string name)
+        {
+            AcrylicTreeNode p1 = new AcrylicTreeNode(name);
+
+            p1.SvgIcon = Media.SvgIcons.FolderClosed_16x_svg;
+            p1.SvgExpandedIcon = Media.SvgIcons.FolderOpened_16x_svg;
+
+            // Add a job to the project
+            AcrylicTreeNode j1 = new AcrylicTreeNode("Job 1");
+            p1.Nodes.Add(j1);
+
+            return p1;
         }
 
         private void BuildTeamView()

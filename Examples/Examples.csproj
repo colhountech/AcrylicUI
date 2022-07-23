@@ -19,6 +19,18 @@
   <ItemGroup>
     <Compile Update="Form13_TreeView.cs" />
     <Compile Update="Form12_Dialogs.cs" />
+    <Compile Update="Media\SvgIcons.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SvgIcons.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Media\SvgIcons.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SvgIcons.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 

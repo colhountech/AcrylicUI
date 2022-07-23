@@ -42,7 +42,7 @@ namespace AcrylicUI.Docking
                      ControlStyles.UserPaint, true);
 
             BackColor = Colors.GreyBackground;
-            base.Padding = new Padding(0, Consts.ToolWindowHeaderSize, 0, 0);
+            base.Padding = new Padding(0, Scale(Consts.ToolWindowHeaderSize), 0, 0);
 
             UpdateCloseButton();
         }
@@ -66,13 +66,13 @@ namespace AcrylicUI.Docking
                 X = ClientRectangle.Left,
                 Y = ClientRectangle.Top,
                 Width = ClientRectangle.Width,
-                Height = Consts.ToolWindowHeaderSize
+                Height = Scale(Consts.ToolWindowHeaderSize)
             };
 
             _closeButtonRect = new Rectangle
             {
-                X = ClientRectangle.Right - DockIcons.tw_close.Width - 5 - 3,
-                Y = ClientRectangle.Top + (Consts.ToolWindowHeaderSize / 2) - (DockIcons.tw_close.Height / 2),
+                X = ClientRectangle.Right - DockIcons.tw_close.Width - Scale(5 + 3),
+                Y = ClientRectangle.Top + (Scale(Consts.ToolWindowHeaderSize) / 2) - (DockIcons.tw_close.Height / 2),
                 Width = DockIcons.tw_close.Width,
                 Height = DockIcons.tw_close.Height
             };
@@ -85,7 +85,7 @@ namespace AcrylicUI.Docking
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
-
+            UpdateScale();
             UpdateCloseButton();
         }
 
@@ -174,34 +174,34 @@ namespace AcrylicUI.Docking
 
             using (var b = new SolidBrush(bgColor))
             {
-                var bgRect = new Rectangle(0, 0, ClientRectangle.Width, Consts.ToolWindowHeaderSize);
+                var bgRect = new Rectangle(0, 0, ClientRectangle.Width, Scale(Consts.ToolWindowHeaderSize));
                 g.FillRectangle(b, bgRect);
             }
 
             using (var p = new Pen(darkColor))
             {
                 g.DrawLine(p, ClientRectangle.Left, 0, ClientRectangle.Right, 0);
-                g.DrawLine(p, ClientRectangle.Left, Consts.ToolWindowHeaderSize - 1, ClientRectangle.Right, Consts.ToolWindowHeaderSize - 1);
+                g.DrawLine(p, ClientRectangle.Left, Scale(Consts.ToolWindowHeaderSize) - Scale(1), ClientRectangle.Right, Scale(Consts.ToolWindowHeaderSize) - Scale(1));
             }
 
             using (var p = new Pen(lightColor))
             {
-                g.DrawLine(p, ClientRectangle.Left, 1, ClientRectangle.Right, 1);
+                g.DrawLine(p, ClientRectangle.Left, Scale(1), ClientRectangle.Right, Scale(1));
             }
 
-            var xOffset = 2;
+            var xOffset = Scale(2);
 
             // Draw icon
             if (Icon != null)
             {
-                g.DrawImageUnscaled(Icon, ClientRectangle.Left + 5, ClientRectangle.Top + (Consts.ToolWindowHeaderSize / 2) - (Icon.Height / 2) + 1);
-                xOffset = Icon.Width + 8;
+                g.DrawImageUnscaled(Icon, ClientRectangle.Left + Scale(5), ClientRectangle.Top + (Scale(Consts.ToolWindowHeaderSize) / 2) - (Icon.Height / 2) + Scale(1));
+                xOffset = Icon.Width + Scale(8);
             }
 
             // Draw text
             using (var b = new SolidBrush(Colors.LightText))
             {
-                var textRect = new Rectangle(xOffset, 0, ClientRectangle.Width - 4 - xOffset, Consts.ToolWindowHeaderSize);
+                var textRect = new Rectangle(xOffset, 0, ClientRectangle.Width - Scale(4) - xOffset, Scale(Consts.ToolWindowHeaderSize));
 
                 var format = new StringFormat
                 {
@@ -229,5 +229,36 @@ namespace AcrylicUI.Docking
         }
 
         #endregion
+        #region Dpi Scale
+
+        private const float DEFAULT_DPI = 96f;
+        private float _dpiScale = 1;
+
+        // call at init too
+        private void UpdateScale()
+        {
+            var form = FindForm();
+            if (form is null)
+            {
+
+            }
+            var handle = form?.Handle ?? this.Handle;
+
+            var newDpiScale = (float)Drawing.GetDpi(handle) / (float)DEFAULT_DPI;
+            if (newDpiScale != _dpiScale)
+            {
+                _dpiScale = newDpiScale;
+
+                // TODO
+                // update Icons
+            }
+        }    
+        private int Scale(int pixel)
+        {
+            return (int)(pixel * _dpiScale);
+        }
+
+        #endregion
+
     }
 }
