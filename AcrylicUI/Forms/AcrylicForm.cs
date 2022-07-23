@@ -231,7 +231,7 @@ namespace AcrylicUI.Forms
         #region Dpi Scale
 
         private const float DEFAULT_DPI = 96f;
-        private float _dpiScale = DEFAULT_DPI;
+        private float _dpiScale = 1;
 
 
         // call at init too

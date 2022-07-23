@@ -10,8 +10,8 @@ namespace AcrylicUI.Resources
         public const byte SOLIDGRADIENT = 0xff;
 
         // Drawing Consts
-        public const int DEFULAT_DPI = 96;
-        public const int PEN_WIDTH = 1;        
+        public const int DEFAULT_DPI = 96;
+        public const int PEN_WIDTH = 1;
         public const int BUTTON_XOFFSET = 4;
         public const int BUTTON_XOFFSET_PLUS_PEN = BUTTON_XOFFSET + PEN_WIDTH;
         public const int BUTTON_PADDING = 8;
@@ -28,7 +28,7 @@ namespace AcrylicUI.Resources
         public const int SMALL_ARC_RADIUS = 4;
 
         // Docking Tabls
-        
+
         public static int Padding = 10;
 
         public static int ScrollBarSize = 15;

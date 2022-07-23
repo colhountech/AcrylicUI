@@ -143,7 +143,7 @@ namespace AcrylicUI.Renderers
         #region Dpi Scale
 
         private const float DEFAULT_DPI = 96f;
-        protected float _dpiScale = DEFAULT_DPI;
+        protected float _dpiScale = 1;
 
         // call at init too
         public virtual void UpdateScale(float dpi)

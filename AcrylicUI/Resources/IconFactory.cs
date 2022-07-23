@@ -19,7 +19,7 @@ namespace AcrylicUI.Resources
         public static float GetDpiScale(IntPtr handle)
 
         {
-            return (float)GetDpiForWindow(handle) / (float) Consts.DEFULAT_DPI;
+            return (float)GetDpiForWindow(handle) / (float) Consts.DEFAULT_DPI;
         }
 
 
