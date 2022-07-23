@@ -332,7 +332,7 @@ namespace AcrylicUI.Controls
                 HandleDrop();
             }
 
-            if (_provisionalDragging)
+            if (_provisionalDragging && MultiSelect)
             {
 
                 if (_provisionalNode != null)
