@@ -41,8 +41,8 @@ namespace AcrylicUI.Controls
                 BackColor = isHeader ? Colors.DataGridTitleBar :
                         (isOdd ? Colors.DataGridOddRow : Colors.DataGridEvenRow),
                 ForeColor = Colors.DataGridRowText,
-                SelectionBackColor = isFocused ? Colors.DataGridCheckboxSelectedBackground : Colors.DataGridCheckboxUnselectedBackground, // fixme
-                SelectionForeColor = Colors.DataGridCheckboxSelectedText,
+                SelectionBackColor = isFocused ? Colors.DataGridSelectionFocussedBackground : Colors.DataGridSelectionBackground, // fixme
+                SelectionForeColor = Colors.DataGridSelectedText,
             };
         }
 

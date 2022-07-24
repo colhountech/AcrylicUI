@@ -74,6 +74,7 @@ namespace AcrylicUI.Controls
 
         #region Method Region
 
+     
         private void ResizeLabel()
         {
             if (!_autoUpdateHeight || _isGrowing)

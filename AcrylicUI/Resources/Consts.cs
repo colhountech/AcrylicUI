@@ -84,11 +84,15 @@ namespace AcrylicUI.Resources
         // Normal Buttons
         public static Color Text //  Label Font Color
         {
-            get { return Color.FromArgb(235, 235, 235); }
+            get { return Color.FromArgb(245, 245, 245); }
+        }
+        public static Color LightText
+        {
+            get { return Color.FromArgb(192, 192, 192); } // Gainsboro 220, White Smoke 245
         }
         public static Color DisabledText
         {
-            get { return Color.FromArgb(126, 126, 126); }
+            get { return Color.FromArgb(126, 126, 126); } // Silver 192
         }
         public static Color DisabledFill
         {
@@ -190,11 +194,7 @@ namespace AcrylicUI.Resources
             get { return Color.FromArgb(83, 81, 80); } // 86, 97, 114
         }
 
-      
-        public static Color LightText
-        {
-            get { return Color.FromArgb(220, 220, 220); }
-        }
+        
         // Dock Panel
 
         public static Color BlueSelection
@@ -253,7 +253,8 @@ namespace AcrylicUI.Resources
         }
         public static Color ActiveControl
         {
-            get { return Color.FromArgb(159, 178, 196); }
+            // get { return Color.FromArgb(159, 178, 196); }
+            get { return Color.FromArgb(54, 52, 57); } //             MontereyPanel
         }
 
         // New Colors
@@ -348,15 +349,15 @@ namespace AcrylicUI.Resources
         {
             get { return Color.FromArgb(0xDF,0xDE,0xDF); } //  #DFDEDF  ~Snuff but less pink
         }
-        public static Color DataGridCheckboxUnselectedBackground 
+        public static Color DataGridSelectionBackground 
         {
             get { return Color.FromArgb(0x71,0x6A,0x70); } //  Gradient Light #716A70 (~Old Lavender) to Dark #574F56 (~Purple Taupe #50404D)
         }
-        public static Color DataGridCheckboxSelectedText
+        public static Color DataGridSelectedText
         {
             get { return Color.FromArgb(0xDC,0xEA,0xF7); } //  (white) #DCEAF7
         }
-        public static Color DataGridCheckboxSelectedBackground 
+        public static Color DataGridSelectionFocussedBackground 
         {
             get { return Color.FromArgb(0x20,0x7B,0xDD); } //  #207BDD (~ Dodger Blue)
         }

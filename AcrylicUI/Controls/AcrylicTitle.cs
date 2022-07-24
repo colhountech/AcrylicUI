@@ -4,12 +4,15 @@ using System.Windows.Forms;
 
 namespace AcrylicUI.Controls
 {
-    public class AcrylicTitle : Label
+    public class AcrylicTitle : AcrylicLabel
     {
         #region Constructor Region
 
         public AcrylicTitle()
-        { }
+        {
+            ForeColor = Colors.Text;
+            BackColor = Colors.Transparent;
+        }
 
         #endregion
 
@@ -22,7 +25,7 @@ namespace AcrylicUI.Controls
 
             var textSize = g.MeasureString(Text, Font);
 
-            using (var b = new SolidBrush(Colors.LightText))
+            using (var b = new SolidBrush(ForeColor))
             {
                 g.DrawString(Text, Font, b, new PointF(-2, 0));
             }

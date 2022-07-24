@@ -16,7 +16,7 @@ namespace AcrylicUI.Controls
                      ControlStyles.ResizeRedraw |
                      ControlStyles.UserPaint, true);
 
-            base.Padding = new Padding(1, 25, 1, 1);
+            base.Padding = new Padding(Scale(1), Scale(25), Scale(1), Scale(1));
         }
 
         #endregion
