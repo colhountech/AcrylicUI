@@ -37,27 +37,26 @@ namespace AcrylicUI.Controls
         {
             return new DataGridViewCellStyle
             {
-                // Acrylicer colors:
-                // BackColor = isOdd ? Colors.MediumBackground : Colors.AcrylicBackground,
-                BackColor = isHeader ? Colors.MediumBackground :
-                        (isOdd ? Colors.GreyBackground : Colors.HeaderBackground),
-                ForeColor = Colors.LightText,
-                SelectionBackColor = isFocused ? Colors.BlueSelection : Colors.GreySelection,
-                SelectionForeColor = Colors.LightText,
+               
+                BackColor = isHeader ? Colors.DataGridTitleBar :
+                        (isOdd ? Colors.DataGridOddRow : Colors.DataGridEvenRow),
+                ForeColor = Colors.DataGridRowText,
+                SelectionBackColor = isFocused ? Colors.DataGridCheckboxSelectedBackground : Colors.DataGridCheckboxUnselectedBackground, // fixme
+                SelectionForeColor = Colors.DataGridCheckboxSelectedText,
             };
         }
 
         private const int DragDrawSideMargin = 3;
         private const int DragDrawHeight = 2;
 
-        private static readonly Brush _dragDrawBrush = new HatchBrush(HatchStyle.Percent50, Color.Transparent, Color.LightGray);
+        private static readonly Brush _dragDrawBrush = new HatchBrush(HatchStyle.Percent50, Color.Transparent, Colors.DataGridDrag);
 
         private int _scrollSize => Consts.ScrollBarSize;
 
         public AcrylicDataGridView()
         {
             Name = "AcrylicDataGridView";
-            OutlineColor = Colors.LightBorder;
+            OutlineColor = Colors.InnerBorder;
 
             // Configure inner data grid view
             _base.Name = "baseView";
@@ -73,9 +72,9 @@ namespace AcrylicUI.Controls
             _base.AllowDrop = true;
             _dataGridViewDoubleBuffered.SetValue(_base, true, null);
 
-            _base.BackgroundColor = Colors.GreyBackground;
+            _base.BackgroundColor = Colors.DocumentBackcolor;
             _base.BackColor = _base.BackgroundColor;
-            _base.GridColor = Colors.DarkBorder;
+            _base.GridColor = Colors.OuterBorder;
             _base.DefaultCellStyle = _cellStyleUnfocusedEven;
             _base.AlternatingRowsDefaultCellStyle = _cellStyleUnfocusedOdd;
             _base.ColumnHeadersDefaultCellStyle = _cellStyleHeader;
@@ -112,12 +111,12 @@ namespace AcrylicUI.Controls
             _base.Scroll += BaseScrolled;
 
             // Configure scroll bars
-            _vScrollBar.BackColor = Colors.MediumBackground;
+            _vScrollBar.BackColor = Colors.DocumentScrollbar;
             _vScrollBar.Minimum = 0;
             _vScrollBar.Maximum = 0;
             _vScrollBar.ValueChanged += _vScrollBar_ValueChanged;
 
-            _hScrollBar.BackColor = Colors.MediumBackground;
+            _hScrollBar.BackColor = Colors.DocumentScrollbar;
             _hScrollBar.Minimum = 0;
             _hScrollBar.Maximum = 0;
             _hScrollBar.ValueChanged += _hScrollBar_ValueChanged;
@@ -1039,6 +1038,41 @@ namespace AcrylicUI.Controls
                 return result;
             }
         }
+        #region Dpi Scale
+
+        private const float DEFAULT_DPI = 96f;
+        private float _dpiScale = 1;
+
+        // call at init too
+        private void UpdateScale()
+        {
+            var form = FindForm();
+            if (form is null)
+            {
+
+            }
+            var handle = form?.Handle ?? this.Handle;
+
+            var newDpiScale = (float)Drawing.GetDpi(handle) / (float)DEFAULT_DPI;
+            if (newDpiScale != _dpiScale)
+            {
+                _dpiScale = newDpiScale;
+
+                // TODO
+                // update Icons
+            }
+        }
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+            UpdateScale();
+        }
+        private int Scale(int pixel)
+        {
+            return (int)(pixel * _dpiScale);
+        }
+
+        #endregion
     }
 
     public class AcrylicDataGridViewButtonCell : DataGridViewButtonCell
@@ -1139,21 +1173,22 @@ namespace AcrylicUI.Controls
 
             // Choose button colors
             Color textColor = cellStyle.ForeColor;
-            Color borderColor = Colors.GreySelection;
-            Color fillColor = Colors.GreyBackground;
+            Color borderColor = Colors.BtnOutline;
+            Color fillColor = Colors.BtnFill;
 
             if (DataGridView.Focused && DataGridView.CurrentCellAddress == new Point(ColumnIndex, rowIndex))
-                borderColor = Colors.BlueHighlight; //Selection
+                borderColor = Colors.BtnHotOutline; //Selection
 
             if (ButtonState.HasFlag(ButtonState.Inactive) || !Enabled)
             {
-                fillColor = Colors.DarkGreySelection;
+                fillColor = Colors.DisabledFill;
                 textColor = Colors.DisabledText;
+                borderColor = Colors.DisabledOutline;
             }
             else if (ButtonState.HasFlag(ButtonState.Checked) || ButtonState.HasFlag(ButtonState.Pushed))
-                fillColor = Colors.DarkBackground;
+                fillColor = Colors.BtnPressedFill;
             else if (_mouseCurserCell == rowIndex) // Hover
-                fillColor = Colors.LighterBackground;
+                fillColor = Colors.BtnHotFill;
 
             // Paint button
             Rectangle contentBounds = new Rectangle(cellBounds.X + _padding.Left, cellBounds.Y + _padding.Top,
@@ -1176,6 +1211,7 @@ namespace AcrylicUI.Controls
             if (DataGridView.ShowCellErrors && paintParts.HasFlag(DataGridViewPaintParts.ErrorIcon))
                 PaintErrorIcon(graphics, clipBounds, contentBounds, errorText);
         }
+
     }
 
     public class AcrylicDataGridViewButtonColumn : DataGridViewButtonColumn
@@ -1251,7 +1287,11 @@ namespace AcrylicUI.Controls
             Column = column;
             Row = row;
         }
+
+
     }
 
     public delegate void AcrylicDataGridViewSafeCellFormattingEventHandler(object sender, AcrylicDataGridViewSafeCellFormattingEventArgs e);
+
+
 }

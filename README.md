@@ -1,19 +1,20 @@
 # AcrylicUI
 AcrylicUI is an Open Source Control and Docking Framework for .NET Core WinForms on Windows 11
 
-This framework was inspired by [DarkUI](https://github.com/RobinPerris/DarkUI) by Robin Perris. However DarkUI does not support High Resolution Monitors, .NET Core and does not seem to be active. 
+This framework was inspired by [DarkUI](https://github.com/RobinPerris/DarkUI) by Robin Perris. However DarkUI does not support High Resolution Monitors or .NET Core. 
 
 AcrylicUI is taking the best bits of DarkUI and Supporting the latest and greatet dotnet core, Windows 11 Features like Snap Layout, Rounded Corners, Drop Shadows on Borderless Forms and Scaling for High Resolution High Dpi Monitors, and of course beautiful Windows 11 Acrylic UI panels.
  
-Features of AcrylicUI over DarkUI:
+Features of AcrylicUI:
 
+    * Most Components migrated from DarkUI are now working (Some require High Dpi Refactoring)
+    * New Dark Theme Style a blend between Windows 11 Dark Theme and MacOs Dark Theme
     * Support for Acyrlic and Glass WindowPanels
     * Support for High Resolution Monitors
     * Support for Custom TitleBars and Borderless WindowPanels
     * Support for Borderless Windows Snapping
     * Support for Borderless Windows 11 Snap Layout Popups (Hack)
     * Support for .NET Core (No depenedency on .Net Full Framwork)
-    * Is active
 
 This is clearly a Work In Progress and should not be considered production ready.
 
@@ -32,14 +33,11 @@ Yes, but without warranty. This project is covered by MIT License and is covered
 
 ### Q: Can I get support.
 
-If you spot a bug, raise an issue or even better, raise a pull request. If you need support, feel free to contact me [via my website](https://wwwcolhountech.com) but please don't ask for support for free. 
+If you spot a bug or need support, raise an issue.
 
 ### Q: I want to get involved. How can I help?
 
-Help me test and give suggestions on what should be a priority, the more voices I get for a feature, the more likely I will work on it.
-
 You can support me by joining my YouTube Channel, Start a conversation on my Discord Server, or share your love for Beautiful WinForms Desktop Apps on twitter.
-
 
 # Release Workflow
 

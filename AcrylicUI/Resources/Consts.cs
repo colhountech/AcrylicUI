@@ -255,6 +255,116 @@ namespace AcrylicUI.Resources
         {
             get { return Color.FromArgb(159, 178, 196); }
         }
+
+        // New Colors
+        public static Color TitleBarActive // Not used
+        {
+            get { return Color.FromArgb(0x38,0x2E,0x37); } //Brown ~Valentino
+        }
+
+        public static Color TitleBarInActive // Not used
+        {
+            get { return Color.FromArgb(55, 46, 55); } //RedderBrown
+        }
+        public static Color InnerBorder // Not used
+        {
+            get { return Color.FromArgb(115,109, 115); } // LightGrey
+        }
+        public static Color OuterBorder // Not used
+        {
+            get { return Color.FromArgb(23, 23,   23); } //  DarkOutline
+        }
+        public static Color SideDockBackground // Not used
+        {
+            get { return Color.FromArgb(0x25,0x28,0x2e); } //   #  More Blue Tints in Brown, ~Bunker (#292C2F)
+        }
+        public static Color SideDockHeader // Not used
+        {
+            get { return Color.FromArgb(0x14,0x14,0x14); } //   #141414 Eerie Black
+        }
+        public static Color SideDockInactiveHeader // Not used
+        {
+            get { return Color.FromArgb(0x14, 0x14, 0x14); } //   #141414 Eerie Black
+        }
+        public static Color EmptyDesktop // Not used
+        {
+            get { return Color.FromArgb(0x26, 0x26, 0x26); } //    #262626  Grey15
+        }
+        // Document Colors
+        public static Color DocumentBackcolor 
+        {
+            get { return Color.FromArgb(0x1e, 0x1e, 0x1e); } //    #1E1E1E (~ Nero #252525)
+        }
+        public static Color DocumentTitleTab           // Not used
+        {
+            get { return Color.FromArgb(0x1c, 0x1c, 0x1c); } //     #1C1C1C (~ Nero #252525)
+        }
+        public static Color DocumentTextColor           // Not used
+        {
+            get { return Color.FromArgb(0xdc, 0xdc, 0xdc); } //      #DCDCDC (Gainsboro)
+        }
+        public static Color DocumentGreenText           // Not used
+        {
+            get { return Color.FromArgb(0x54, 0xc8, 0xb0); } //      #54C8B0 (#59BAA3 Puerto Rico)
+        }
+        public static Color DocumentBlueText           // Not used
+        {
+            get { return Color.FromArgb(0x58,0x9C,0xD3); } //      #589CD3 (#5BA0D0 Picton Blue)
+        }
+        public static Color DocumentRedText           // Not used
+        {
+            get { return Color.FromArgb(0xD6,0x4F,0x51); } //      #D64F51(#CD525B Mandy)
+        }
+        public static Color DocumentScrollbar           // Not used
+        {
+            get { return Color.FromArgb(0x30,0x30,0x30); } 
+        }
+        public static Color ConsoleText // Not used
+        {
+            get { return Color.FromArgb(0x19,0x19,0x19); }
+        }
+        public static Color StatusText // Not used
+        {
+            get { return Color.FromArgb(0x89,0x89,0x89); } //  ~ #8B8685 Suva Grey
+        }
+        // DataGrid
+        public static Color DataGridTitleBar 
+        {
+            get { return Color.FromArgb(0x2D,0x24,0x2D); } //  #2D242D ~Mardi Gras (#352225)
+        }
+        public static Color DataGridEvenRow 
+        {
+            get { return Color.FromArgb(0x2f,0x25,0x2e); } //  #2f252e   ~Mardi Gras (#352225)
+        }
+        public static Color DataGridOddRow 
+        {
+            get { return Color.FromArgb(0x39,0x2F,0x38); } //  #392F38  ~Valentino (#382C38)
+        }
+        public static Color DataGridTitleText // Not used
+        {
+            get { return Color.FromArgb(0xff,0xff,0xff); } //  White
+        }
+        public static Color DataGridRowText 
+        {
+            get { return Color.FromArgb(0xDF,0xDE,0xDF); } //  #DFDEDF  ~Snuff but less pink
+        }
+        public static Color DataGridCheckboxUnselectedBackground 
+        {
+            get { return Color.FromArgb(0x71,0x6A,0x70); } //  Gradient Light #716A70 (~Old Lavender) to Dark #574F56 (~Purple Taupe #50404D)
+        }
+        public static Color DataGridCheckboxSelectedText
+        {
+            get { return Color.FromArgb(0xDC,0xEA,0xF7); } //  (white) #DCEAF7
+        }
+        public static Color DataGridCheckboxSelectedBackground 
+        {
+            get { return Color.FromArgb(0x20,0x7B,0xDD); } //  #207BDD (~ Dodger Blue)
+        }
+        public static Color DataGridDrag 
+        {
+            get { return Color.FromArgb(0xD3,0xD3, 0xD3); } //  LightGray
+        }
+
     }
 
 
