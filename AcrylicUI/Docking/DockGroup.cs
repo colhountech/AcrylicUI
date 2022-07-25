@@ -1,5 +1,5 @@
 ﻿using AcrylicUI.Resources;
-using DarkUI.Docking;
+using AcrylicUI.Docking;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

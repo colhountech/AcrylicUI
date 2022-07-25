@@ -1,7 +1,7 @@
 ﻿using AcrylicUI.Docking;
 using System.Drawing;
 
-namespace DarkUI.Docking
+namespace AcrylicUI.Docking
 {
     internal class DockTab
     {
