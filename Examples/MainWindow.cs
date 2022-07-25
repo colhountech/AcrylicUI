@@ -31,7 +31,7 @@ namespace Examples
 
         private void acrylicButton2_Click(object sender, EventArgs e)
         {
-            var form = new Form2();
+            var form = new Form2_Buttons();
             form.StartPosition = FormStartPosition.CenterParent;
             form.ShowDialog(this);
         }

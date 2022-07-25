@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Examples
 {
-    public partial class Form2 : AcrylicUI.Forms.AcrylicForm
+    public partial class Form2_Buttons : AcrylicUI.Forms.AcrylicForm
     {
-        public Form2()
+        public Form2_Buttons()
         {
             InitializeComponent();
             // Make sure you set this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -21,8 +21,15 @@ namespace Examples
             this.Text = "";
             this.ShowIcon = false;
             this.acrylicGroupBox1.ForeColor = Colors.Text;
+
+            this.acrylicButton9.SvgIcon = Media.SvgIcons.FolderClosed_16x_svg;
+            this.acrylicButton13.SvgIcon = Media.SvgIcons.FolderClosed_16x_svg;
+            this.acrylicButton14.SvgIcon = Media.SvgIcons.FolderClosed_16x_svg;
+            this.acrylicButton15.SvgIcon = Media.SvgIcons.FolderClosed_16x_svg;
+            this.acrylicButton16.SvgIcon = Media.SvgIcons.FolderClosed_16x_svg;
+
         }
 
-      
+
     }
 }
