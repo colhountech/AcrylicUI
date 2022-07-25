@@ -150,6 +150,8 @@ namespace AcrylicUI.Controls
 
         public AcrylicTreeView()
         {
+            this.BackColor = Colors.GreyBackground;
+
             Nodes = new ObservableList<AcrylicTreeNode>();
             _selectedNodes = new ObservableCollection<AcrylicTreeNode>();
             _selectedNodes.CollectionChanged += SelectedNodes_CollectionChanged;

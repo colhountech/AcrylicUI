@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace AcrylicUI.Controls
 {
-    public class AcrylicSectionPanel : Panel
+    public class AcrylicSectionPanel : AcrylicPanel
     {
         #region Field Region
 
