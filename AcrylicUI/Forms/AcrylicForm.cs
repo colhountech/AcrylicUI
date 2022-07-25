@@ -24,6 +24,7 @@ namespace AcrylicUI.Forms
 
         public AcrylicForm()
         {
+            this.BlurColor = Colors.GreyBackground;
             InitializeComponent();
             UpdateScale();
         }
