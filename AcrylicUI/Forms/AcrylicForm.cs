@@ -24,13 +24,11 @@ namespace AcrylicUI.Forms
 
         public AcrylicForm()
         {
-            
-            InitializeComponent();
+            InitializeComponent();            
             UpdateScale();
         }
 
         #endregion
-
 
         #region Property Region
 
@@ -38,7 +36,7 @@ namespace AcrylicUI.Forms
         [Description("Determines the blur background color.")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         [DefaultValue(typeof(Color), "0x1F1F1F")] // Colors.GreyBackground
-        public override Color BackColor
+        public new Color BackColor
         {
             get { return _blurColor; }
             set
@@ -116,7 +114,6 @@ namespace AcrylicUI.Forms
 
         #endregion
 
-
         #region Paint Region
 
         protected override void OnHandleCreated(EventArgs e)
@@ -137,7 +134,6 @@ namespace AcrylicUI.Forms
 
       
         #endregion
-
 
         #region FormWindowState changes
 

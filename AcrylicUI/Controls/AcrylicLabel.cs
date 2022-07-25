@@ -38,7 +38,7 @@ namespace AcrylicUI.Controls
         [Category("Appearance")]
         [Description("Determines the color of the background.")]
         [DefaultValue(typeof(Color), "0x00FFFFFF")] // Color.Transparent
-        public Color BaackColor
+        public new Color BackColor
         {
             get { return base.BackColor; }
             set
@@ -67,7 +67,7 @@ namespace AcrylicUI.Controls
         public AcrylicLabel()
         {
             ForeColor = Colors.LightText;
-            BackColor = Colors.Transparent;
+            base.BackColor = Colors.Transparent;
         }
 
         #endregion
