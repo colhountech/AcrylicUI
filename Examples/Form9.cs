@@ -26,7 +26,7 @@ namespace Examples
         {
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BlurOpacity = 1;
-            this.BlurColor = Color.FromArgb(224, 220, 221);
+            this.BackColor = AcrylicUI.Resources.Colors.GreyBackground;
             this.Icon = new IconFactory(IconFactory.GetDpiScale(Handle)).IconFromSvg(Icons.Cube_16x_svg);
             this.Text = "";
             this.BackColor = Colors.GreyBackground;

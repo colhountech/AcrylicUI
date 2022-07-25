@@ -21,7 +21,6 @@ namespace Examples
             // Program.cs : Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
             this.Text = "";
             this.IsAcrylic = true;            
-            this.BlurColor = Colors.GreyBackground;
             this.AutoScaleMode = AutoScaleMode.Dpi;
         }
     }

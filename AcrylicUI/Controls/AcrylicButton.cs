@@ -118,8 +118,10 @@ namespace AcrylicUI.Controls
         }
 
 
-        [Browsable(false)]
-        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        [Browsable(true)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        [DefaultValue(typeof(ContentAlignment), "MiddleCenter") ]
+
         public new ContentAlignment TextAlign
         {
             get { return base.TextAlign; }
@@ -433,7 +435,7 @@ namespace AcrylicUI.Controls
                     Trimming = StringTrimming.EllipsisCharacter
                 };
 
-                stringFormat.Alignment = TextAlign == ContentAlignment.MiddleCenter ? StringAlignment.Near : StringAlignment.Center;                
+                stringFormat.Alignment = TextAlign == ContentAlignment.MiddleCenter ? StringAlignment.Center : StringAlignment.Near;                
 
                 g.DrawString(Text, Font, b, modRect, stringFormat);
             }

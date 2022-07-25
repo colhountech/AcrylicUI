@@ -136,7 +136,7 @@ namespace Examples
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BlurColor = System.Drawing.Color.Empty;
+            this.BackColor = AcrylicUI.Resources.Colors.GreyBackground;
             this.ClientSize = new System.Drawing.Size(482, 210);
             this.Controls.Add(this.pnlPadding);
             this.Location = new System.Drawing.Point(0, 0);

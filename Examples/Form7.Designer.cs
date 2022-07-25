@@ -92,7 +92,7 @@ namespace Examples
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BlurColor = System.Drawing.SystemColors.Control;
+            this.BackColor = AcrylicUI.Resources.Colors.GreyBackground;
             this.ClientSize = new System.Drawing.Size(447, 450);
             this.Controls.Add(this.windowPanel1);
             this.Location = new System.Drawing.Point(0, 0);

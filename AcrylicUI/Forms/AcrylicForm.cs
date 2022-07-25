@@ -24,7 +24,7 @@ namespace AcrylicUI.Forms
 
         public AcrylicForm()
         {
-            this.BlurColor = Colors.GreyBackground;
+            
             InitializeComponent();
             UpdateScale();
         }
@@ -34,24 +34,11 @@ namespace AcrylicUI.Forms
 
         #region Property Region
 
-        // Override the Back Color to avoid confusion. The BackColor and Blur Color are the same now
-        public override Color BackColor
-        {
-            get
-            {
-                return BlurColor;
-            }
-            set
-            {
-                BlurColor = value;
-            }
-        }
-
         [Category("Appearance")]
         [Description("Determines the blur background color.")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         [DefaultValue(typeof(Color), "0x1F1F1F")] // Colors.GreyBackground
-        public Color BlurColor
+        public override Color BackColor
         {
             get { return _blurColor; }
             set

@@ -324,7 +324,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BlurColor = System.Drawing.SystemColors.Control;
+            this.BackColor = AcrylicUI.Resources.Colors.GreyBackground;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.acrylicButton17);
             this.Controls.Add(this.acrylicButton18);

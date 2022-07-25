@@ -20,7 +20,7 @@ namespace Examples
             // Program.cs : Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
 
             this.BlurOpacity = 0xff;
-            this.BlurColor = Colors.DarkPanel;
+            this.BackColor = AcrylicUI.Resources.Colors.GreyBackground;
 
             this.MaximizeBox = false;
             this.MinimizeBox = false;

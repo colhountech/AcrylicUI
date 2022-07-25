@@ -191,7 +191,7 @@ namespace AcrylicUI.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BlurColor = System.Drawing.SystemColors.Control;
+            this.BackColor = Colors.GreyBackground;
             this.ClientSize = new System.Drawing.Size(767, 402);
             this.Controls.Add(this.pnlFooter);
             this.Location = new System.Drawing.Point(0, 0);

@@ -58,7 +58,7 @@ namespace Examples
             // Glass Effect
 
             this.BlurOpacity = 1;
-            this.BlurColor = Colors.GreyBackground;
+            this.BackColor = AcrylicUI.Resources.Colors.GreyBackground;
             this.windowPanel1.IsAcrylicEnabled = true;
         }
 

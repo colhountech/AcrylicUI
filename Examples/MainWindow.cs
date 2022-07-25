@@ -18,8 +18,8 @@ namespace Examples
             InitializeComponent();
             this.Text = "";
             this.IsAcrylic = true;
-            this.BlurColor = Colors.GreyBackground; // This keeps getting overwritten when you change Designer properties
-            
+            this.BackColor = AcrylicUI.Resources.Colors.GreyBackground;
+
         }
 
         private void acrylicButton1_Click(object sender, EventArgs e)

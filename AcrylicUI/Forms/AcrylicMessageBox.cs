@@ -57,8 +57,6 @@ namespace AcrylicUI.Forms
             InitializeComponent();
 
             this.IsAcrylic = false;
-            this.BlurColor = Colors.GreyBackground;
-
             var dpiScale = IconFactory.GetDpiScale(this.Handle);
             _iconFactory = new IconFactory(IconFactory.GetDpiScale(Handle));
 

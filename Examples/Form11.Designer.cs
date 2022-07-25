@@ -1,4 +1,6 @@
-﻿namespace Examples
+﻿using AcrylicUI.Resources;
+
+namespace Examples
 {
     partial class Form11
     {
@@ -104,7 +106,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BlurColor = System.Drawing.SystemColors.Control;
+            this.BackColor = AcrylicUI.Resources.Colors.GreyBackground;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.acrylicLabel4);
             this.Controls.Add(this.acrylicLabel3);

@@ -76,7 +76,7 @@ namespace AcrylicUI.Forms
 
 
             this.IsAcrylic = false;
-            this.BlurColor = Colors.GreyBackground;
+            this.BackColor = Colors.GreyBackground;
 
             _buttons = new List<AcrylicButton>
                 {
