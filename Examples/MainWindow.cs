@@ -24,7 +24,7 @@ namespace Examples
 
         private void acrylicButton1_Click(object sender, EventArgs e)
         {
-            var form = new Form1();
+            var form = new Form1_GetDpi();
             form.StartPosition = FormStartPosition.CenterParent;
             form.ShowDialog(this);
         }
@@ -38,63 +38,63 @@ namespace Examples
 
         private void acrylicButton3_Click(object sender, EventArgs e)
         {
-            var form = new Form3();
+            var form = new Form3_AlertPanel();
             form.StartPosition = FormStartPosition.CenterParent;
             form.ShowDialog(this);
         }
 
         private void acrylicButton4_Click(object sender, EventArgs e)
         {
-            var form = new Form4();
+            var form = new Form4_GlassPanel();
             form.StartPosition = FormStartPosition.CenterParent;
             form.ShowDialog(this);
         }
 
         private void acrylicButton5_Click(object sender, EventArgs e)
         {
-            var form = new Form5();
+            var form = new Form5_Borderless();
             form.StartPosition = FormStartPosition.CenterParent;
             form.ShowDialog(this);
         }
 
         private void acrylicButton6_Click(object sender, EventArgs e)
         {
-            var form = new Form6();
+            var form = new Form6_DockPanel();
             form.StartPosition = FormStartPosition.CenterParent;
             form.ShowDialog(this);
         }
 
         private void acrylicButton7_Click(object sender, EventArgs e)
         {
-            var form = new Form7();
+            var form = new Form7_ListItems();
             form.StartPosition = FormStartPosition.CenterParent;
             form.ShowDialog(this);
         }
 
         private void acrylicButton8_Click(object sender, EventArgs e)
         {
-            var form = new Form8();
+            var form = new Form8_Blank();
             form.StartPosition = FormStartPosition.CenterParent; 
             form.ShowDialog(this);
         }
 
         private void acrylicButton9_Click(object sender, EventArgs e)
         {
-            var form = new Form9();
+            var form = new Form9_BlankGlass();
             form.StartPosition = FormStartPosition.CenterParent;
             form.ShowDialog(this);
         }
 
         private void acrylicButton10_Click(object sender, EventArgs e)
         {
-            var form = new Form10();
+            var form = new Form10_Panels();
             form.StartPosition = FormStartPosition.CenterParent;
             form.ShowDialog(this);
         }
 
         private void acrylicButton11_Click(object sender, EventArgs e)
         {
-            var form = new Form11();
+            var form = new Form11_Labels();
             form.StartPosition = FormStartPosition.CenterParent;
             form.ShowDialog(this);
         }
@@ -109,6 +109,14 @@ namespace Examples
         private void acrylicButton13_Click(object sender, EventArgs e)
         {
             var form = new Form13_TreeView();
+            form.StartPosition = FormStartPosition.CenterParent;
+            form.ShowDialog(this);
+        }
+
+        private void acrylicButton14_Click(object sender, EventArgs e)
+        {
+
+            var form = new Form14_SectionPanel();
             form.StartPosition = FormStartPosition.CenterParent;
             form.ShowDialog(this);
         }

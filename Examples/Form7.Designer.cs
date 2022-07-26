@@ -1,7 +1,7 @@
 ﻿
 namespace Examples
 {
-    partial class Form7
+    partial class Form7_ListItems
     {
         /// <summary>
         /// Required designer variable.

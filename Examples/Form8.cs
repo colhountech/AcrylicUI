@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace Examples
 {
-    public partial class Form8 : AcrylicForm
+    public partial class Form8_Blank : AcrylicForm
     {
-        public Form8()
+        public Form8_Blank()
         {
             InitializeComponent();
             SetupUIDefaults();

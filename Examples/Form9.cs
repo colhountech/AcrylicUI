@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Examples
 {
-    public partial class Form9 : AcrylicUI.Forms.AcrylicForm
+    public partial class Form9_BlankGlass : AcrylicUI.Forms.AcrylicForm
     {
-        public Form9()
+        public Form9_BlankGlass()
         {
             InitializeComponent();
             // Make sure you set this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;

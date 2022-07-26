@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Examples
 {
-    public partial class Form8 
+    public partial class Form8_Blank 
     {
         #region Fields for Borderless Windows
         private int borderSize = 2;

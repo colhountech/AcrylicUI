@@ -1,7 +1,7 @@
 ﻿
 namespace Examples
 {
-    partial class Form4
+    partial class Form4_GlassPanel
     {
         /// <summary>
         /// Required designer variable.

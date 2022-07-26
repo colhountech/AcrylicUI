@@ -1,4 +1,5 @@
 ﻿using AcrylicUI.Resources;
+using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
@@ -44,7 +45,7 @@ namespace AcrylicUI.Controls
                      ControlStyles.ResizeRedraw |
                      ControlStyles.UserPaint, true);
 
-            base.Padding = new Padding(1, 25, 1, 1);
+            base.Padding = new Padding(Scale(1), Scale(25), Scale(1), Scale(1));
         }
 
         #endregion
@@ -95,26 +96,26 @@ namespace AcrylicUI.Controls
 
             using (var b = new SolidBrush(bgColor))
             {
-                var bgRect = new Rectangle(0, 0, rect.Width, 25);
+                var bgRect = new Rectangle(0, 0, rect.Width, Scale(25));
                 g.FillRectangle(b, bgRect);
             }
 
             using (var p = new Pen(darkColor))
             {
                 g.DrawLine(p, rect.Left, 0, rect.Right, 0);
-                g.DrawLine(p, rect.Left, 25 - 1, rect.Right, 25 - 1);
+                g.DrawLine(p, rect.Left, Scale(25 - 1), rect.Right, Scale(25 - 1));
             }
 
             using (var p = new Pen(lightColor))
             {
-                g.DrawLine(p, rect.Left, 1, rect.Right, 1);
+                g.DrawLine(p, rect.Left,Scale(1), rect.Right, Scale(1));
             }
 
             var xOffset = 3;
 
             using (var b = new SolidBrush(Colors.LightText))
             {
-                var textRect = new Rectangle(xOffset, 0, rect.Width - 4 - xOffset, 25);
+                var textRect = new Rectangle(xOffset, 0, rect.Width - Scale(4) - xOffset, Scale(25));
 
                 var format = new StringFormat
                 {
@@ -128,9 +129,9 @@ namespace AcrylicUI.Controls
             }
 
             // Draw border
-            using (var p = new Pen(Colors.DarkBorder, 1))
+            using (var p = new Pen(Colors.DarkBorder, Scale(1)))
             {
-                var modRect = new Rectangle(rect.Left, rect.Top, rect.Width - 1, rect.Height - 1);
+                var modRect = new Rectangle(rect.Left, rect.Top, rect.Width - Scale(1), rect.Height - Scale(1));
 
                 g.DrawRectangle(p, modRect);
             }
@@ -141,6 +142,42 @@ namespace AcrylicUI.Controls
             // Absorb event
         }
 
-        #endregion      
+        #endregion
+
+        #region Dpi Scale
+
+        private const float DEFAULT_DPI = 96f;
+        private float _dpiScale = 1;
+
+        // call at init too
+        private void UpdateScale()
+        {
+            var form = FindForm();
+            if (form is null)
+            {
+
+            }
+            var handle = form?.Handle ?? this.Handle;
+
+            var newDpiScale = (float)Drawing.GetDpi(handle) / (float)DEFAULT_DPI;
+            if (newDpiScale != _dpiScale)
+            {
+                _dpiScale = newDpiScale;
+
+                // TODO
+                // update Icons
+            }
+        }
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+            UpdateScale();
+        }
+        private int Scale(int pixel)
+        {
+            return (int)(pixel * _dpiScale);
+        }
+
+        #endregion
     }
 }

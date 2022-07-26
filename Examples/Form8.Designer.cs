@@ -2,7 +2,7 @@
 
 namespace Examples
 {
-    partial class Form8
+    partial class Form8_Blank
     {
         /// <summary>
         /// Required designer variable.

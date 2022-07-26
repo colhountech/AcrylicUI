@@ -4,7 +4,7 @@ using AcrylicUI.Docking;
 
 namespace Examples
 {
-    partial class Form6
+    partial class Form6_DockPanel
     {
         /// <summary>
         /// Required designer variable.

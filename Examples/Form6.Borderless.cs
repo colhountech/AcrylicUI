@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Examples
 {
-    public partial class Form6
+    public partial class Form6_DockPanel
     {
 
 

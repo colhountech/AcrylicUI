@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace Examples
 {
-    public partial class Form6 : AcrylicUI.Forms.AcrylicForm
+    public partial class Form6_DockPanel : AcrylicUI.Forms.AcrylicForm
     {
 
         #region Fields for Borderless Windows
@@ -25,7 +25,7 @@ namespace Examples
         #endregion
 
 
-        public Form6()
+        public Form6_DockPanel()
         {
             InitializeComponent();
             // Make sure you set this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;

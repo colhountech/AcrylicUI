@@ -1,7 +1,7 @@
 ﻿
 namespace Examples
 {
-    partial class Form5
+    partial class Form5_Borderless
     {
         /// <summary>
         /// Required designer variable.

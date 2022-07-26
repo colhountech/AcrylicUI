@@ -1,7 +1,7 @@
 ﻿
 namespace Examples
 {
-    partial class Form1
+    partial class Form1_GetDpi
     {
         /// <summary>
         /// Required designer variable.

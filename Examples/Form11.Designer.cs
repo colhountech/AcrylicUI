@@ -2,7 +2,7 @@
 
 namespace Examples
 {
-    partial class Form11
+    partial class Form11_Labels
     {
         /// <summary>
         /// Required designer variable.

@@ -1,7 +1,7 @@
 ﻿
 namespace Examples
 {
-    partial class Form3
+    partial class Form3_AlertPanel
     {
         /// <summary>
         /// Required designer variable.

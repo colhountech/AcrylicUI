@@ -1,6 +1,6 @@
 ﻿namespace Examples
 {
-    partial class Form9
+    partial class Form9_BlankGlass
     {
         /// <summary>
         /// Required designer variable.

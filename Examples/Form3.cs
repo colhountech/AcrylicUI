@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Examples
 {
-    public partial class Form3 : AcrylicUI.Forms.AcrylicForm
+    public partial class Form3_AlertPanel : AcrylicUI.Forms.AcrylicForm
     {
-        public Form3()
+        public Form3_AlertPanel()
         {
             InitializeComponent();
             // Make sure you set this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;

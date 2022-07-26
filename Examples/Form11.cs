@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace Examples
 {
-    public partial class Form11 : AcrylicForm
+    public partial class Form11_Labels : AcrylicForm
     {
-        public Form11()
+        public Form11_Labels()
         {
             InitializeComponent();
             // Make sure you set this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;

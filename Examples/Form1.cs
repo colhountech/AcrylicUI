@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace Examples
 {
-    public partial class Form1 : AcrylicUI.Forms.AcrylicForm
+    public partial class Form1_GetDpi : AcrylicUI.Forms.AcrylicForm
     {
 
-        public Form1()
+        public Form1_GetDpi()
         {
 
             InitializeComponent();

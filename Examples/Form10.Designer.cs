@@ -2,7 +2,7 @@
 
 namespace Examples
 {
-    partial class Form10
+    partial class Form10_Panels
     {
         /// <summary>
         /// Required designer variable.
