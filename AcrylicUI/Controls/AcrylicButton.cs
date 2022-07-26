@@ -139,6 +139,19 @@ namespace AcrylicUI.Controls
             set
             {
                 _svgIcon = value;
+                RescaleImage();
+            }
+        }
+
+        private void RescaleImage()
+        {
+            if (_svgIcon is not null)
+            {
+                using (var stream = new MemoryStream(_svgIcon))
+                {
+                    var svgDoc = SvgDocument.Open<SvgDocument>(stream, null);
+                    base.Image = svgDoc.Draw(Scale(_iconSize), Scale(_iconSize));
+                }
             }
         }
 
@@ -147,17 +160,30 @@ namespace AcrylicUI.Controls
         /// call the UpdateScale(dpiScale) before gettingIcon
         /// 
         /// </summary>
-        public Bitmap Icon
+        public new Image Image
         {
             get
             {
-                if (_svgIcon is null) return null;
-                using (var stream = new MemoryStream(_svgIcon))
+                // fall back to base Image if set
+                if (base.Image is not null)
                 {
-                    var svgDoc = SvgDocument.Open<SvgDocument>(stream, null);
-                    return svgDoc.Draw(Scale(_iconSize), Scale(_iconSize));
+                    return base.Image;
                 }
 
+                return null;
+                
+                //if (_svgIcon is null) return null;
+
+                //using (var stream = new MemoryStream(_svgIcon))
+                //{
+                //    var svgDoc = SvgDocument.Open<SvgDocument>(stream, null);
+                //    return svgDoc.Draw(Scale(_iconSize), Scale(_iconSize));
+                //}
+
+            }
+            set
+            {
+                base.Image = value;
             }
 
         }
@@ -424,26 +450,26 @@ namespace AcrylicUI.Controls
             var textOffsetX = 0;
             var textOffsetY = 0;
 
-            if (Icon != null)
+            if (Image != null)
             {
                 var stringSize = g.MeasureString(Text, Font, rect.Size);
 
-                var x = (ClientSize.Width / 2) - (Icon.Size.Width / 2);
-                var y = (ClientSize.Height / 2) - (Icon.Size.Height / 2);
+                var x = (ClientSize.Width / 2) - (Image.Size.Width / 2);
+                var y = (ClientSize.Height / 2) - (Image.Size.Height / 2);
 
                 switch (TextImageRelation)
                 {
                     case TextImageRelation.ImageAboveText:
-                        textOffsetY = (Icon.Size.Height / 2) + Scale(ImagePadding / 2); 
+                        textOffsetY = (Image.Size.Height / 2) + Scale(ImagePadding / 2); 
                         y -= ((int)(stringSize.Height / 2) + Scale(ImagePadding / 2));
                         break;
                     case TextImageRelation.TextAboveImage:
-                        textOffsetY = ((Icon.Size.Height / 2) + Scale(ImagePadding / 2)) * -Scale(Consts.PEN_WIDTH); 
+                        textOffsetY = ((Image.Size.Height / 2) + Scale(ImagePadding / 2)) * -Scale(Consts.PEN_WIDTH); 
                         y += ((int)(stringSize.Height / 2) + Scale(ImagePadding / 2));
                         break;
                     case TextImageRelation.ImageBeforeText:
                       
-                            textOffsetX = Icon.Size.Width + Scale(ImagePadding);                      
+                            textOffsetX = Image.Size.Width + Scale(ImagePadding);                      
                             x = Scale(ImagePadding);
                         
                         break;
@@ -452,7 +478,7 @@ namespace AcrylicUI.Controls
                         break;
                 }
 
-                g.DrawImage(Icon, x, y);
+                g.DrawImage(Image, x, y);
             }
 
             using (var b = new SolidBrush(textColor))
@@ -505,6 +531,7 @@ namespace AcrylicUI.Controls
         {
             base.OnResize(e);
             UpdateScale();
+            RescaleImage();
         }
         private int Scale(int pixel)
         {

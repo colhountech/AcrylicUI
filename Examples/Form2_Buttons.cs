@@ -22,11 +22,20 @@ namespace Examples
             this.ShowIcon = false;
             this.acrylicGroupBox1.ForeColor = Colors.Text;
 
-            this.acrylicButton9.SvgIcon = Media.SvgIcons.FolderClosed_16x_svg;
+            // TextImageRelation = TextImageRelation.ImageBeforeText;
+            this.acrylicButton9.SvgIcon = Media.SvgIcons.FolderClosed_16x_svg;           
             this.acrylicButton13.SvgIcon = Media.SvgIcons.FolderClosed_16x_svg;
-            this.acrylicButton14.SvgIcon = Media.SvgIcons.FolderClosed_16x_svg;
-            this.acrylicButton15.SvgIcon = Media.SvgIcons.FolderClosed_16x_svg;
+            this.acrylicButton14.SvgIcon = Media.SvgIcons.FolderClosed_16x_svg;            
+            this.acrylicButton15.SvgIcon = Media.SvgIcons.FolderClosed_16x_svg;            
             this.acrylicButton16.SvgIcon = Media.SvgIcons.FolderClosed_16x_svg;
+
+            //// TextImageRelation = TextImageRelation.ImageBeforeText;
+
+            this.acrylicButton17.SvgIcon = Media.SvgIcons.FolderClosed_16x_svg;   
+            this.acrylicButton18.SvgIcon = Media.SvgIcons.FolderClosed_16x_svg;   
+            this.acrylicButton19.SvgIcon = Media.SvgIcons.FolderClosed_16x_svg;   
+            this.acrylicButton20.SvgIcon = Media.SvgIcons.FolderClosed_16x_svg;   
+            this.acrylicButton21.SvgIcon = Media.SvgIcons.FolderClosed_16x_svg;
 
         }
 
