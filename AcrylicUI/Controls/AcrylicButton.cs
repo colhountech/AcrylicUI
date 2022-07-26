@@ -468,13 +468,13 @@ namespace AcrylicUI.Controls
                         y += ((int)(stringSize.Height / 2) + Scale(ImagePadding / 2));
                         break;
                     case TextImageRelation.ImageBeforeText:
-                      
-                            textOffsetX = Image.Size.Width + Scale(ImagePadding);                      
-                            x = Scale(ImagePadding);
-                        
+
+                        textOffsetX = 0;                    
+                        x = Scale(ImagePadding) + Scale(Consts.PEN_WIDTH); ;
+
                         break;
                     case TextImageRelation.TextBeforeImage:
-                        x += (int)stringSize.Width;
+                        x = ClientSize.Width - Image.Size.Width - Scale(ImagePadding) - Scale(Consts.PEN_WIDTH);
                         break;
                 }
 
@@ -493,9 +493,24 @@ namespace AcrylicUI.Controls
                     Alignment = StringAlignment.Center,
                     Trimming = StringTrimming.EllipsisCharacter
                 };
-
-                stringFormat.Alignment = TextAlign == ContentAlignment.MiddleCenter ? StringAlignment.Center : StringAlignment.Near;                
-
+                switch (TextAlign)
+                {
+                    case ContentAlignment.MiddleCenter:
+                    case ContentAlignment.TopCenter:
+                    case ContentAlignment.BottomCenter:
+                        stringFormat.Alignment = StringAlignment.Center;
+                        break;
+                    case ContentAlignment.MiddleLeft:
+                    case ContentAlignment.TopLeft:
+                    case ContentAlignment.BottomLeft:
+                        stringFormat.Alignment = StringAlignment.Near;
+                        break;
+                    case ContentAlignment.MiddleRight:
+                    case ContentAlignment.TopRight:
+                    case ContentAlignment.BottomRight:
+                        stringFormat.Alignment = StringAlignment.Far;
+                        break;
+                }
                 g.DrawString(Text, Font, b, modRect, stringFormat);
             }
         }

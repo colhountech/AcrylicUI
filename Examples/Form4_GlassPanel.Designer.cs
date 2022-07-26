@@ -48,7 +48,7 @@ namespace Examples
             this.acrylicButton2.Size = new System.Drawing.Size(416, 48);
             this.acrylicButton2.TabIndex = 0;
             this.acrylicButton2.TabStop = false;
-            this.acrylicButton2.Text = "  10 minutes";
+            this.acrylicButton2.Text = "10 minutes";
             this.acrylicButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.acrylicButton2.UseVisualStyleBackColor = false;
             // 

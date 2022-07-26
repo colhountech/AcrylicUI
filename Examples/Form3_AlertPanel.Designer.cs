@@ -41,6 +41,7 @@ namespace Examples
             // acrylicButton2
             // 
             this.acrylicButton2.Default = false;
+            this.acrylicButton2.Image = null;
             this.acrylicButton2.ImagePadding = 6;
             this.acrylicButton2.Location = new System.Drawing.Point(22, 165);
             this.acrylicButton2.Name = "acrylicButton2";
@@ -48,7 +49,7 @@ namespace Examples
             this.acrylicButton2.Size = new System.Drawing.Size(416, 48);
             this.acrylicButton2.TabIndex = 0;
             this.acrylicButton2.TabStop = false;
-            this.acrylicButton2.Text = "  10 minutes";
+            this.acrylicButton2.Text = "10 minutes";
             this.acrylicButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.acrylicButton2.UseVisualStyleBackColor = false;
             // 
@@ -101,6 +102,7 @@ namespace Examples
             // acrylicButton1
             // 
             this.acrylicButton1.Default = false;
+            this.acrylicButton1.Image = null;
             this.acrylicButton1.ImagePadding = 6;
             this.acrylicButton1.Location = new System.Drawing.Point(22, 229);
             this.acrylicButton1.Name = "acrylicButton1";
@@ -115,6 +117,7 @@ namespace Examples
             // acrylicButton3
             // 
             this.acrylicButton3.Default = false;
+            this.acrylicButton3.Image = null;
             this.acrylicButton3.ImagePadding = 6;
             this.acrylicButton3.Location = new System.Drawing.Point(238, 229);
             this.acrylicButton3.Name = "acrylicButton3";
@@ -126,7 +129,7 @@ namespace Examples
             this.acrylicButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.acrylicButton3.UseVisualStyleBackColor = false;
             // 
-            // Form3
+            // Form3_AlertPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -140,7 +143,7 @@ namespace Examples
             this.Controls.Add(this.acrylicButton2);
             this.Location = new System.Drawing.Point(0, 0);
             this.Margin = new System.Windows.Forms.Padding(58, 23, 58, 23);
-            this.Name = "Form3";
+            this.Name = "Form3_AlertPanel";
             this.Text = "Form3";
             this.ResumeLayout(false);
             this.PerformLayout();
