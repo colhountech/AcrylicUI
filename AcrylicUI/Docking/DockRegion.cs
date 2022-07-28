@@ -377,7 +377,7 @@ namespace AcrylicUI.Docking
                 return;
 
             //Fill body
-            using (var b = new SolidBrush(Colors.GreyBackground))
+            using (var b = new SolidBrush(BackColor))
             {
                 g.FillRectangle(b, ClientRectangle);
             }

@@ -25,11 +25,10 @@ namespace Examples
         private void SetupUIDefaults()
         {
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BlurOpacity = 1;
-            this.BackColor = AcrylicUI.Resources.Colors.GreyBackground;
+            this.BlurOpacity = 10;
+            this.BackColor = Colors.GreyBackground;            
             this.Icon = new IconFactory(IconFactory.GetDpiScale(Handle)).IconFromSvg(Icons.Cube_16x_svg);
             this.Text = "";
-            this.BackColor = Colors.GreyBackground;
         }
     }
 }

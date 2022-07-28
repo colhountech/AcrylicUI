@@ -1,4 +1,5 @@
 ﻿using AcrylicUI.Resources;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -6,13 +7,26 @@ namespace AcrylicUI.Controls
 {
     public class AcrylicStatusStrip : StatusStrip
     {
+        [Category("Appearance")]
+        [Description("Determines the color of the background.")]
+        [DefaultValue(typeof(Color),"#313131")]
+        public new Color BackColor
+        {
+            get { return base.BackColor; }
+            set
+            {
+                base.BackColor = value;
+                Invalidate();
+            }
+        }
+
         #region Constructor Region
 
         public AcrylicStatusStrip()
         {
             AutoSize = false;
             BackColor = Colors.GreyBackground;
-            ForeColor = Colors.LightText;
+            ForeColor = Colors.LightText;            
             Padding = new Padding(0, 5, 0, 3);
             Size = new Size(Size.Width, 24);
             SizingGrip = false;
@@ -38,7 +52,7 @@ namespace AcrylicUI.Controls
             //    g.DrawRectangle(p, modRect);
             //}
 
-            using (var b = new SolidBrush(Colors.GreyBackground))
+            using (var b = new SolidBrush(BackColor))
             {
                 g.FillRectangle(b, ClientRectangle);
             }

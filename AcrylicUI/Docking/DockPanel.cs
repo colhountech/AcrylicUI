@@ -123,8 +123,6 @@ namespace AcrylicUI.Docking
             _regions = new Dictionary<DockArea, DockRegion>();
             _contents = new List<DockContent>();
 
-            //BackColor = Colors.BlueSelection;
-
             CreateRegions();
         }
 
