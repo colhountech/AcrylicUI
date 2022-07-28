@@ -20,8 +20,8 @@ namespace AcrylicUI.Controls
         private bool _spacePressed;
         private bool _hasRoundedCorners = true;
         private int _iconSize = 16;
-        private readonly int _padding = Consts.CONTROL_PADDING / 2;
-        private int _imagePadding = Consts.CONTROL_PADDING / 2;
+        private readonly int _padding = Consts.Padding / 2;
+        private int _imagePadding = Consts.ImagePadding;
 
         #endregion
 
@@ -86,7 +86,7 @@ namespace AcrylicUI.Controls
         [DefaultValue(Consts.BUTTON_XOFFSET)]
         public int ImagePadding
         {
-            get { return _imagePadding; }
+            get { return Scale(_imagePadding); }
             set
             {
                 _imagePadding = value;

@@ -108,21 +108,25 @@ namespace AcrylicUI.Forms
             switch (_dialogButtons)
             {
                 case AcrylicDialogButton.Ok:
+                    btnOk.Default = true;
                     ShowButton(btnOk, true);
                     AcceptButton = btnOk;
                     break;
                 case AcrylicDialogButton.Close:
+                    btnClose.Default = true;
                     ShowButton(btnClose, true);
                     AcceptButton = btnClose;
                     CancelButton = btnClose;
                     break;
                 case AcrylicDialogButton.OkCancel:
+                    btnOk.Default = true;
                     ShowButton(btnOk);
                     ShowButton(btnCancel, true);
                     AcceptButton = btnOk;
                     CancelButton = btnCancel;
                     break;
                 case AcrylicDialogButton.AbortRetryIgnore:
+                    btnAbort.Default = true;
                     ShowButton(btnAbort);
                     ShowButton(btnRetry);
                     ShowButton(btnIgnore, true);
@@ -130,18 +134,21 @@ namespace AcrylicUI.Forms
                     CancelButton = btnIgnore;
                     break;
                 case AcrylicDialogButton.RetryCancel:
+                    btnRetry.Default = true;
                     ShowButton(btnRetry);
                     ShowButton(btnCancel, true);
                     AcceptButton = btnRetry;
                     CancelButton = btnCancel;
                     break;
                 case AcrylicDialogButton.YesNo:
+                    btnYes.Default = true;
                     ShowButton(btnYes);
                     ShowButton(btnNo, true);
                     AcceptButton = btnYes;
                     CancelButton = btnNo;
                     break;
                 case AcrylicDialogButton.YesNoCancel:
+                    btnYes.Default = true;
                     ShowButton(btnYes);
                     ShowButton(btnNo);
                     ShowButton(btnCancel, true);
@@ -174,8 +181,6 @@ namespace AcrylicUI.Forms
                     if (btn.Visible)
                         width += btn.Width + btn.Margin.Right;
                 }
-
-                width += Scale(2); // Magin Number to stop wrapping of Dialog buttons
 
                 flowInner.Width = width;
                 TotalButtonSize = width;

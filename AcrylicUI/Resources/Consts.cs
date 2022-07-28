@@ -27,9 +27,12 @@ namespace AcrylicUI.Resources
         public const int ARC_RADIUS = 8;
         public const int SMALL_ARC_RADIUS = 4;
 
-        // Docking Tabls
+        // Docking Tabls / Dialogs
 
         public static int Padding = 10;
+        public const int ImagePadding = 5;
+
+        //
 
         public static int ScrollBarSize = 15;
         public static int ArrowButtonSize = 15;
