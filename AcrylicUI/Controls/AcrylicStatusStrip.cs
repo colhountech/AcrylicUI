@@ -1,4 +1,5 @@
 ﻿using AcrylicUI.Resources;
+using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
@@ -35,6 +36,7 @@ namespace AcrylicUI.Controls
         #endregion
 
         #region Paint Region
+      
 
         protected override void OnPaintBackground(PaintEventArgs e)
         {
@@ -54,6 +56,7 @@ namespace AcrylicUI.Controls
 
             using (var b = new SolidBrush(BackColor))
             {
+                g.Clear(BackColor);
                 g.FillRectangle(b, ClientRectangle);
             }
 
