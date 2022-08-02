@@ -211,7 +211,7 @@ namespace AcrylicUI.Forms
 
         #endregion
 
-        protected AcrylicPanel pnlFooter;
-        protected System.Windows.Forms.FlowLayoutPanel flowInner;
+        private AcrylicPanel pnlFooter;
+        private System.Windows.Forms.FlowLayoutPanel flowInner;
     }
 }

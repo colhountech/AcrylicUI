@@ -109,17 +109,20 @@ namespace AcrylicUI.Forms
             {
                 case AcrylicDialogButton.Ok:
                     btnOk.Default = true;
+                    ActiveControl = btnOk;
                     ShowButton(btnOk, true);
                     AcceptButton = btnOk;
                     break;
                 case AcrylicDialogButton.Close:
                     btnClose.Default = true;
+                    ActiveControl = btnClose;
                     ShowButton(btnClose, true);
                     AcceptButton = btnClose;
                     CancelButton = btnClose;
                     break;
                 case AcrylicDialogButton.OkCancel:
                     btnOk.Default = true;
+                    ActiveControl = btnOk;
                     ShowButton(btnOk);
                     ShowButton(btnCancel, true);
                     AcceptButton = btnOk;
@@ -127,6 +130,7 @@ namespace AcrylicUI.Forms
                     break;
                 case AcrylicDialogButton.AbortRetryIgnore:
                     btnAbort.Default = true;
+                    ActiveControl = btnAbort;
                     ShowButton(btnAbort);
                     ShowButton(btnRetry);
                     ShowButton(btnIgnore, true);
@@ -135,6 +139,7 @@ namespace AcrylicUI.Forms
                     break;
                 case AcrylicDialogButton.RetryCancel:
                     btnRetry.Default = true;
+                    ActiveControl = btnRetry;
                     ShowButton(btnRetry);
                     ShowButton(btnCancel, true);
                     AcceptButton = btnRetry;
@@ -142,6 +147,7 @@ namespace AcrylicUI.Forms
                     break;
                 case AcrylicDialogButton.YesNo:
                     btnYes.Default = true;
+                    ActiveControl = btnYes;
                     ShowButton(btnYes);
                     ShowButton(btnNo, true);
                     AcceptButton = btnYes;
@@ -149,6 +155,7 @@ namespace AcrylicUI.Forms
                     break;
                 case AcrylicDialogButton.YesNoCancel:
                     btnYes.Default = true;
+                    ActiveControl = btnYes;
                     ShowButton(btnYes);
                     ShowButton(btnNo);
                     ShowButton(btnCancel, true);
@@ -174,7 +181,7 @@ namespace AcrylicUI.Forms
         {
             if (flowInner is not null && _buttons is not null)
             {
-                var width = flowInner.Padding.Horizontal;                
+                var width = flowInner.Padding.Horizontal;           
 
                 foreach (var btn in _buttons)
                 {
