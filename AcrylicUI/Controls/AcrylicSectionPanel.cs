@@ -44,7 +44,7 @@ namespace AcrylicUI.Controls
             SetStyle(ControlStyles.OptimizedDoubleBuffer |
                      ControlStyles.ResizeRedraw |
                      ControlStyles.UserPaint, true);
-
+            UpdateScale();
             base.Padding = new Padding(Scale(1), Scale(25), Scale(1), Scale(1));
         }
 
