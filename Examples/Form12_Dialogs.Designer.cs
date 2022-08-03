@@ -49,11 +49,13 @@
             this.acrylicButton17 = new AcrylicUI.Controls.AcrylicButton();
             this.acrylicButton18 = new AcrylicUI.Controls.AcrylicButton();
             this.acrylicButton19 = new AcrylicUI.Controls.AcrylicButton();
+            this.acrylicButton20 = new AcrylicUI.Controls.AcrylicButton();
             this.SuspendLayout();
             // 
             // acrylicButton1
             // 
             this.acrylicButton1.Default = false;
+            this.acrylicButton1.Image = null;
             this.acrylicButton1.ImagePadding = 6;
             this.acrylicButton1.Location = new System.Drawing.Point(33, 47);
             this.acrylicButton1.Name = "acrylicButton1";
@@ -67,6 +69,7 @@
             // acrylicButton2
             // 
             this.acrylicButton2.Default = false;
+            this.acrylicButton2.Image = null;
             this.acrylicButton2.ImagePadding = 6;
             this.acrylicButton2.Location = new System.Drawing.Point(33, 85);
             this.acrylicButton2.Name = "acrylicButton2";
@@ -80,6 +83,7 @@
             // acrylicButton3
             // 
             this.acrylicButton3.Default = false;
+            this.acrylicButton3.Image = null;
             this.acrylicButton3.ImagePadding = 6;
             this.acrylicButton3.Location = new System.Drawing.Point(33, 123);
             this.acrylicButton3.Name = "acrylicButton3";
@@ -93,6 +97,7 @@
             // acrylicButton4
             // 
             this.acrylicButton4.Default = false;
+            this.acrylicButton4.Image = null;
             this.acrylicButton4.ImagePadding = 6;
             this.acrylicButton4.Location = new System.Drawing.Point(33, 161);
             this.acrylicButton4.Name = "acrylicButton4";
@@ -106,6 +111,7 @@
             // acrylicButton5
             // 
             this.acrylicButton5.Default = false;
+            this.acrylicButton5.Image = null;
             this.acrylicButton5.ImagePadding = 6;
             this.acrylicButton5.Location = new System.Drawing.Point(33, 199);
             this.acrylicButton5.Name = "acrylicButton5";
@@ -119,6 +125,7 @@
             // acrylicButton6
             // 
             this.acrylicButton6.Default = false;
+            this.acrylicButton6.Image = null;
             this.acrylicButton6.ImagePadding = 6;
             this.acrylicButton6.Location = new System.Drawing.Point(33, 237);
             this.acrylicButton6.Name = "acrylicButton6";
@@ -132,6 +139,7 @@
             // acrylicButton7
             // 
             this.acrylicButton7.Default = false;
+            this.acrylicButton7.Image = null;
             this.acrylicButton7.ImagePadding = 6;
             this.acrylicButton7.Location = new System.Drawing.Point(33, 275);
             this.acrylicButton7.Name = "acrylicButton7";
@@ -145,6 +153,7 @@
             // acrylicButton8
             // 
             this.acrylicButton8.Default = false;
+            this.acrylicButton8.Image = null;
             this.acrylicButton8.ImagePadding = 6;
             this.acrylicButton8.Location = new System.Drawing.Point(33, 313);
             this.acrylicButton8.Name = "acrylicButton8";
@@ -158,7 +167,6 @@
             // acrylicLabel1
             // 
             this.acrylicLabel1.AutoSize = true;
-            this.acrylicLabel1.BackColor = System.Drawing.Color.Transparent;
             this.acrylicLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.acrylicLabel1.Location = new System.Drawing.Point(33, 19);
             this.acrylicLabel1.Name = "acrylicLabel1";
@@ -169,7 +177,6 @@
             // acrylicLabel2
             // 
             this.acrylicLabel2.AutoSize = true;
-            this.acrylicLabel2.BackColor = System.Drawing.Color.Transparent;
             this.acrylicLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.acrylicLabel2.Location = new System.Drawing.Point(217, 19);
             this.acrylicLabel2.Name = "acrylicLabel2";
@@ -180,6 +187,7 @@
             // acrylicButton13
             // 
             this.acrylicButton13.Default = false;
+            this.acrylicButton13.Image = null;
             this.acrylicButton13.ImagePadding = 6;
             this.acrylicButton13.Location = new System.Drawing.Point(217, 199);
             this.acrylicButton13.Name = "acrylicButton13";
@@ -193,6 +201,7 @@
             // acrylicButton14
             // 
             this.acrylicButton14.Default = false;
+            this.acrylicButton14.Image = null;
             this.acrylicButton14.ImagePadding = 6;
             this.acrylicButton14.Location = new System.Drawing.Point(217, 161);
             this.acrylicButton14.Name = "acrylicButton14";
@@ -206,6 +215,7 @@
             // acrylicButton15
             // 
             this.acrylicButton15.Default = false;
+            this.acrylicButton15.Image = null;
             this.acrylicButton15.ImagePadding = 6;
             this.acrylicButton15.Location = new System.Drawing.Point(217, 123);
             this.acrylicButton15.Name = "acrylicButton15";
@@ -219,6 +229,7 @@
             // acrylicButton16
             // 
             this.acrylicButton16.Default = false;
+            this.acrylicButton16.Image = null;
             this.acrylicButton16.ImagePadding = 6;
             this.acrylicButton16.Location = new System.Drawing.Point(217, 47);
             this.acrylicButton16.Name = "acrylicButton16";
@@ -232,6 +243,7 @@
             // acrylicButton10
             // 
             this.acrylicButton10.Default = false;
+            this.acrylicButton10.Image = null;
             this.acrylicButton10.ImagePadding = 6;
             this.acrylicButton10.Location = new System.Drawing.Point(217, 85);
             this.acrylicButton10.Name = "acrylicButton10";
@@ -245,6 +257,7 @@
             // acrylicButton9
             // 
             this.acrylicButton9.Default = false;
+            this.acrylicButton9.Image = null;
             this.acrylicButton9.ImagePadding = 6;
             this.acrylicButton9.Location = new System.Drawing.Point(383, 199);
             this.acrylicButton9.Name = "acrylicButton9";
@@ -258,6 +271,7 @@
             // acrylicButton11
             // 
             this.acrylicButton11.Default = false;
+            this.acrylicButton11.Image = null;
             this.acrylicButton11.ImagePadding = 6;
             this.acrylicButton11.Location = new System.Drawing.Point(383, 161);
             this.acrylicButton11.Name = "acrylicButton11";
@@ -271,6 +285,7 @@
             // acrylicButton12
             // 
             this.acrylicButton12.Default = false;
+            this.acrylicButton12.Image = null;
             this.acrylicButton12.ImagePadding = 6;
             this.acrylicButton12.Location = new System.Drawing.Point(383, 123);
             this.acrylicButton12.Name = "acrylicButton12";
@@ -284,6 +299,7 @@
             // acrylicButton17
             // 
             this.acrylicButton17.Default = false;
+            this.acrylicButton17.Image = null;
             this.acrylicButton17.ImagePadding = 6;
             this.acrylicButton17.Location = new System.Drawing.Point(549, 199);
             this.acrylicButton17.Name = "acrylicButton17";
@@ -297,6 +313,7 @@
             // acrylicButton18
             // 
             this.acrylicButton18.Default = false;
+            this.acrylicButton18.Image = null;
             this.acrylicButton18.ImagePadding = 6;
             this.acrylicButton18.Location = new System.Drawing.Point(549, 161);
             this.acrylicButton18.Name = "acrylicButton18";
@@ -310,6 +327,7 @@
             // acrylicButton19
             // 
             this.acrylicButton19.Default = false;
+            this.acrylicButton19.Image = null;
             this.acrylicButton19.ImagePadding = 6;
             this.acrylicButton19.Location = new System.Drawing.Point(549, 123);
             this.acrylicButton19.Name = "acrylicButton19";
@@ -320,12 +338,27 @@
             this.acrylicButton19.UseVisualStyleBackColor = false;
             this.acrylicButton19.Click += new System.EventHandler(this.acrylicButton19_Click);
             // 
+            // acrylicButton20
+            // 
+            this.acrylicButton20.Default = false;
+            this.acrylicButton20.Image = null;
+            this.acrylicButton20.ImagePadding = 6;
+            this.acrylicButton20.Location = new System.Drawing.Point(33, 351);
+            this.acrylicButton20.Name = "acrylicButton20";
+            this.acrylicButton20.Padding = new System.Windows.Forms.Padding(6);
+            this.acrylicButton20.Size = new System.Drawing.Size(160, 32);
+            this.acrylicButton20.TabIndex = 26;
+            this.acrylicButton20.Text = "OKCancelApply";
+            this.acrylicButton20.UseVisualStyleBackColor = false;
+            this.acrylicButton20.Click += new System.EventHandler(this.acrylicButton20_Click);
+            // 
             // Form12_Dialogs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = AcrylicUI.Resources.Colors.GreyBackground;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.acrylicButton20);
             this.Controls.Add(this.acrylicButton17);
             this.Controls.Add(this.acrylicButton18);
             this.Controls.Add(this.acrylicButton19);
@@ -378,5 +411,6 @@
         private AcrylicUI.Controls.AcrylicButton acrylicButton17;
         private AcrylicUI.Controls.AcrylicButton acrylicButton18;
         private AcrylicUI.Controls.AcrylicButton acrylicButton19;
+        private AcrylicUI.Controls.AcrylicButton acrylicButton20;
     }
 }

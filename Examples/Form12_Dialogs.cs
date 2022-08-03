@@ -84,6 +84,16 @@ namespace Examples
             }
         }
 
+        private void acrylicButton20_Click(object sender, EventArgs e)
+        {
+            using (var form = new AcrylicDialog())
+            {
+                form.DialogButtons = AcrylicDialogButton.OKCancelApply;
+                form.Text = "";
+                form.ShowDialog();
+            }
+        }
+
         private void acrylicButton7_Click(object sender, EventArgs e)
         {
             using (var form = new AcrylicDialog())
@@ -160,6 +170,7 @@ namespace Examples
         {
             AcrylicMessageBox.ShowInformation("This is a longer Message that spans at least one line and probably more", "Caption Goes Here");
         }
+
     }
     
 }

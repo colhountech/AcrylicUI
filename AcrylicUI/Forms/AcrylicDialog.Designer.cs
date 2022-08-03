@@ -41,6 +41,7 @@ namespace AcrylicUI.Forms
             this.btnAbort = new AcrylicUI.Controls.AcrylicButton();
             this.btnRetry = new AcrylicUI.Controls.AcrylicButton();
             this.btnIgnore = new AcrylicUI.Controls.AcrylicButton();
+            this.btnApply = new AcrylicUI.Controls.AcrylicButton();
             this.pnlFooter.SuspendLayout();
             this.flowInner.SuspendLayout();
             this.SuspendLayout();
@@ -66,6 +67,7 @@ namespace AcrylicUI.Forms
             this.flowInner.Controls.Add(this.btnAbort);
             this.flowInner.Controls.Add(this.btnRetry);
             this.flowInner.Controls.Add(this.btnIgnore);
+            this.flowInner.Controls.Add(this.btnApply);
             this.flowInner.Dock = System.Windows.Forms.DockStyle.Right;
             this.flowInner.Location = new System.Drawing.Point(104, 0);
             this.flowInner.Name = "flowInner";
@@ -177,6 +179,21 @@ namespace AcrylicUI.Forms
             this.btnRetry.TabIndex = 9;
             this.btnRetry.Text = "Retry";
             this.btnRetry.UseVisualStyleBackColor = false;
+            // 
+            // btnApply
+            // 
+            this.btnApply.Default = false;
+            this.btnApply.DialogResult = System.Windows.Forms.DialogResult.Continue;
+            this.btnApply.Image = null;
+            this.btnApply.ImagePadding = 6;
+            this.btnApply.Location = new System.Drawing.Point(462, 12);
+            this.btnApply.Margin = new System.Windows.Forms.Padding(0);
+            this.btnApply.Name = "btnApply";
+            this.btnApply.Padding = new System.Windows.Forms.Padding(5);
+            this.btnApply.Size = new System.Drawing.Size(75, 26);
+            this.btnApply.TabIndex = 9;
+            this.btnApply.Text = "Apply";
+            this.btnApply.UseVisualStyleBackColor = false;
             // 
             // btnIgnore
             // 
