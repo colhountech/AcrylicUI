@@ -26,6 +26,7 @@ namespace AcrylicUI.Forms
         protected AcrylicButton btnAbort;
         protected AcrylicButton btnRetry;
         protected AcrylicButton btnIgnore;
+        protected AcrylicButton btnApply;
 
         #endregion
 
@@ -81,7 +82,7 @@ namespace AcrylicUI.Forms
             _buttons = new List<AcrylicButton>
                 {
                     btnAbort, btnRetry, btnIgnore, btnOk,
-                    btnCancel, btnClose, btnYes, btnNo
+                    btnCancel, btnClose, btnYes, btnNo, btnApply
                 };          
         }
 
@@ -125,6 +126,15 @@ namespace AcrylicUI.Forms
                     ActiveControl = btnOk;
                     ShowButton(btnOk);
                     ShowButton(btnCancel, true);
+                    AcceptButton = btnOk;
+                    CancelButton = btnCancel;
+                    break;
+                case AcrylicDialogButton.OKCancelApply:
+                    btnOk.Default = true;
+                    ActiveControl = btnOk;
+                    ShowButton(btnOk);
+                    ShowButton(btnCancel);
+                    ShowButton(btnApply, true);
                     AcceptButton = btnOk;
                     CancelButton = btnCancel;
                     break;

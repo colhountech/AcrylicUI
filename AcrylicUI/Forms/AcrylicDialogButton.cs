@@ -8,6 +8,7 @@
         YesNo,
         YesNoCancel,
         AbortRetryIgnore,
-        RetryCancel
+        RetryCancel,
+        OKCancelApply
     }
 }

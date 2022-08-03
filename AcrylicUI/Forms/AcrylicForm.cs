@@ -1,4 +1,5 @@
-﻿using AcrylicUI.Resources;
+﻿using AcrylicUI.Platform.Windows;
+using AcrylicUI.Resources;
 using System;
 using System.ComponentModel;
 using System.Drawing;
@@ -121,6 +122,7 @@ namespace AcrylicUI.Forms
             _wasAcrylicActive = _isAcrylicActiveNow;
             _isAcrylicActiveNow = true;
             base.OnHandleCreated(e);
+            Win32Hacks.DarkThemeTitleBar(this.Handle);
         }
 
 
