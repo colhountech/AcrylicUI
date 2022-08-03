@@ -69,10 +69,10 @@ namespace AcrylicUI.Forms
             this.flowInner.Controls.Add(this.btnIgnore);
             this.flowInner.Controls.Add(this.btnApply);
             this.flowInner.Dock = System.Windows.Forms.DockStyle.Right;
-            this.flowInner.Location = new System.Drawing.Point(104, 0);
+            this.flowInner.Location = new System.Drawing.Point(24, 0);
             this.flowInner.Name = "flowInner";
             this.flowInner.Padding = new System.Windows.Forms.Padding(12);
-            this.flowInner.Size = new System.Drawing.Size(663, 45);
+            this.flowInner.Size = new System.Drawing.Size(743, 45);
             this.flowInner.TabIndex = 10014;
             // 
             // btnOk
@@ -180,21 +180,6 @@ namespace AcrylicUI.Forms
             this.btnRetry.Text = "Retry";
             this.btnRetry.UseVisualStyleBackColor = false;
             // 
-            // btnApply
-            // 
-            this.btnApply.Default = false;
-            this.btnApply.DialogResult = System.Windows.Forms.DialogResult.Continue;
-            this.btnApply.Image = null;
-            this.btnApply.ImagePadding = 6;
-            this.btnApply.Location = new System.Drawing.Point(462, 12);
-            this.btnApply.Margin = new System.Windows.Forms.Padding(0);
-            this.btnApply.Name = "btnApply";
-            this.btnApply.Padding = new System.Windows.Forms.Padding(5);
-            this.btnApply.Size = new System.Drawing.Size(75, 26);
-            this.btnApply.TabIndex = 9;
-            this.btnApply.Text = "Apply";
-            this.btnApply.UseVisualStyleBackColor = false;
-            // 
             // btnIgnore
             // 
             this.btnIgnore.Default = false;
@@ -209,6 +194,21 @@ namespace AcrylicUI.Forms
             this.btnIgnore.TabIndex = 10;
             this.btnIgnore.Text = "Ignore";
             this.btnIgnore.UseVisualStyleBackColor = false;
+            // 
+            // btnApply
+            // 
+            this.btnApply.Default = false;
+            this.btnApply.DialogResult = System.Windows.Forms.DialogResult.Continue;
+            this.btnApply.Image = null;
+            this.btnApply.ImagePadding = 6;
+            this.btnApply.Location = new System.Drawing.Point(612, 12);
+            this.btnApply.Margin = new System.Windows.Forms.Padding(0);
+            this.btnApply.Name = "btnApply";
+            this.btnApply.Padding = new System.Windows.Forms.Padding(5);
+            this.btnApply.Size = new System.Drawing.Size(75, 26);
+            this.btnApply.TabIndex = 9;
+            this.btnApply.Text = "Apply";
+            this.btnApply.UseVisualStyleBackColor = false;
             // 
             // AcrylicDialog
             // 
