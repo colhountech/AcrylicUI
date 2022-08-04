@@ -11,7 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AcrylicUI\AcrylicUI.csproj" />
+    <PackageReference Include="AcrylicUI" Version="1.0.0-preview5.2" />
   </ItemGroup>
 
 </Project>
