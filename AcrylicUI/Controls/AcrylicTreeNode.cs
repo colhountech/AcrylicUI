@@ -60,6 +60,9 @@ namespace AcrylicUI.Controls
 
         public bool ExpandAreaHot { get; set; }
 
+        #endregion Property Region
+
+
         #region Icon
 
         private byte[] _svgIcon;
@@ -69,29 +72,48 @@ namespace AcrylicUI.Controls
             set
             {
                 _svgIcon = value;
+                RescaleImage();
             }
         }
 
-        /// <summary>
-        /// Set the svgIcon before getting the Icon
-        /// call the UpdateScale(dpiScale) before gettingIcon
-        /// 
-        /// </summary>
-        public Bitmap Icon
+        private void RescaleImage()
         {
-            get
+            if (_svgIcon is not null)
             {
-                if (_svgIcon is null) return null;
                 using (var stream = new MemoryStream(_svgIcon))
                 {
                     var svgDoc = SvgDocument.Open<SvgDocument>(stream, null);
-                    return svgDoc.Draw(Scale(_iconSize), Scale(_iconSize));
+                    Icon = svgDoc.Draw(Scale(_iconSize), Scale(_iconSize));
+                }
+            }
+        }
+
+        private Image _icon;
+        /// <summary>
+        /// Set the svgIcon before getting the Icon.
+        /// call the UpdateScale(dpiScale) before gettingIcon
+        /// 
+        /// </summary>
+        /// 
+        public Image Icon
+        {
+            get
+            {
+                if (_icon is not null)
+                {
+                    return _icon;
                 }
 
+                return null;
+            }
+            set
+            {
+                _icon = value;
             }
 
         }
         #endregion
+
 
         #region ExpandedIcon
 
@@ -122,6 +144,7 @@ namespace AcrylicUI.Controls
         }
 
         #endregion
+
         public bool Expanded
         {
             get { return _expanded; }
@@ -235,8 +258,6 @@ namespace AcrylicUI.Controls
 
             return false;
         }
-
-        #endregion
 
         #region Constructor Region
 

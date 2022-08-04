@@ -52,9 +52,46 @@ namespace AcrylicUI.Resources
             return NamedColorBitmapFromSvg(bytes, sourceColor, replaceColor, width, height);
         }
 
+        public Image DarkColorFromSvg(byte[] bytes,           
+            string backColorHex= "#FF424242", // fill
+            string newBackColorHex = "#FF424242",
+            string foreColorHex = "#FFF6F6F6",  // outline
+            string newForeColorHex = "#FFF6F6F6",
+            int width = Consts.ICON_SIZE, int height = Consts.ICON_SIZE)
+        {
+            var backColor = Color.FromArgb(GetColorFromHexString(backColorHex));
+            var newBackColor = Color.FromArgb(GetColorFromHexString(newBackColorHex));
+            var foreColor = Color.FromArgb(GetColorFromHexString(foreColorHex));
+            var newForeColor = Color.FromArgb(GetColorFromHexString(newForeColorHex));
+
+            using (var stream = new MemoryStream(bytes))
+            {
+                var svgDoc = SvgDocument.Open<SvgDocument>(stream, null);
+                foreach (Svg.SvgElement item in svgDoc.Children)
+                {
+
+                    ChangeFill(item, backColor, newBackColor);
+                    ChangeFill(item, foreColor, newForeColor);
+                }
 
 
-        public Image NamedColorBitmapFromSvg(byte[] bytes, Color sourceColor, Color replaceColor, int width = Consts.ICON_SIZE, int height = Consts.ICON_SIZE)
+                var color = new SvgColourServer(newBackColor);
+                svgDoc.Fill = color;
+                return svgDoc.Draw(Scale(width), Scale(height));
+            }
+        }
+
+        private int GetColorFromHexString(string backColorHex)
+        {
+            if (backColorHex.StartsWith('#'))
+            {
+                var str = backColorHex.Substring(1);
+                return Convert.ToInt32(str, 16);
+            }
+            return  Convert.ToInt32(backColorHex, 16);
+        }
+
+        public Image NamedColorBitmapFromSvg(byte[] bytes, Color backColor, Color newBackColor, int width = Consts.ICON_SIZE, int height = Consts.ICON_SIZE)
         {
             using (var stream = new MemoryStream(bytes))
             {
@@ -62,11 +99,11 @@ namespace AcrylicUI.Resources
                 foreach (Svg.SvgElement item in svgDoc.Children)
                 {
 
-                    ChangeFill(item, sourceColor, replaceColor);
+                    ChangeFill(item, backColor, newBackColor);
                 }
 
 
-                var color = new SvgColourServer(replaceColor);
+                var color = new SvgColourServer(newBackColor);
                 svgDoc.Fill = color;
                 return svgDoc.Draw(Scale(width), Scale(height));
             }
@@ -75,16 +112,17 @@ namespace AcrylicUI.Resources
         private  void ChangeFill(SvgElement element, Color sourceColor, Color replaceColor)
         {
             if (element is SvgPath)
-            {
-                //var c = ((element as SvgPath).Fill as SvgColourServer).Colour;
-                //Console.WriteLine($"Color:#{c.R:X2}{c.G:X2}{c.B:X2}");
-                // # Color:#F6F6F6    Color:#F6F6F6   Color:#424242
-
-                // {#f6f6f6} // 424242 f0eff1
-
+            { 
+    
                 if (((element as SvgPath).Fill as SvgColourServer).Colour.ToArgb() == sourceColor.ToArgb())
                 {
                     (element as SvgPath).Fill = new SvgColourServer(replaceColor);
+                    Console.WriteLine($"replaced #{sourceColor.A:X2}{sourceColor.R:X2}{sourceColor.G:X2}{sourceColor.B:X2} with #{replaceColor.A:X2}{replaceColor.R:X2}{replaceColor.G:X2}{replaceColor.B:X2} ");
+                }
+                else
+                {
+                    var c = ((element as SvgPath).Fill as SvgColourServer).Colour;
+                    Console.WriteLine($"Color:#{c.A:X2}{c.R:X2}{c.G:X2}{c.B:X2}");
                 }
             }
 

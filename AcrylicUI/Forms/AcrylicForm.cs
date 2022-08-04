@@ -18,7 +18,9 @@ namespace AcrylicUI.Forms
         bool _isAcrylic = true;
         bool _isAcrylicActiveNow = true;
         bool _wasAcrylicActive = true;
-        #endregion
+        bool _isAcrylcWhileResizing = false;//this is still buggy in windows. turn off for now 
+        bool _isAcrylicWhenMaximized = true;
+         #endregion
 
 
         #region Constructor Region
@@ -42,6 +44,7 @@ namespace AcrylicUI.Forms
             get { return _blurColor; }
             set
             {
+                base.BackColor = _blurColor;
                 _blurColor = value;
                 var acrylic = Color.FromArgb(_blurOpacity, _blurColor);
                 if (_isAcrylic & _isAcrylicActiveNow)
@@ -102,14 +105,23 @@ namespace AcrylicUI.Forms
 
         private void MakeAcrylic()
         {
-            if (!_isResizing)
+            if ( !_isResizing)
             {
                 var acrylic = Color.FromArgb(_blurOpacity, _blurColor);
                 WindowComposition.EnableAcrylic(this, acrylic);
             }
-            else
+            else // Rewizing
             {
-                MakeSolid();
+                if (_isAcrylcWhileResizing)
+                {
+                    var acrylic = Color.FromArgb(_blurOpacity, _blurColor);
+                    WindowComposition.EnableAcrylic(this, acrylic);
+                    Console.WriteLine("_isAcrylcWhileResizing");
+                }
+                else
+                {
+                    MakeSolid();
+                }
             }
         }
 
@@ -186,7 +198,7 @@ namespace AcrylicUI.Forms
                 case FormWindowState.Maximized: //Maximized form (After)
 
                     _wasAcrylicActive = _isAcrylicActiveNow;
-                    _isAcrylicActiveNow = false;
+                    _isAcrylicActiveNow = _isAcrylicWhenMaximized;
 
                     if (_isAcrylic & _isAcrylicActiveNow)
                         MakeAcrylic();

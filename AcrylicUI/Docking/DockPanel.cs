@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace AcrylicUI.Docking
 {
@@ -116,6 +117,7 @@ namespace AcrylicUI.Docking
 
         public DockPanel()
         {
+            BackColor = Colors.GreyBackground;
             Splitters = new List<DockSplitter>();
             DockContentDragFilter = new DockContentDragFilter(this);
             DockResizeFilter = new DockResizeFilter(this);
