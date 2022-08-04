@@ -45,11 +45,13 @@ namespace Examples
             this.acrylicButton12 = new AcrylicUI.Controls.AcrylicButton();
             this.acrylicButton13 = new AcrylicUI.Controls.AcrylicButton();
             this.acrylicButton14 = new AcrylicUI.Controls.AcrylicButton();
+            this.acrylicButton15 = new AcrylicUI.Controls.AcrylicButton();
             this.SuspendLayout();
             // 
             // acrylicButton1
             // 
             this.acrylicButton1.Default = false;
+            this.acrylicButton1.Image = null;
             this.acrylicButton1.ImagePadding = 6;
             this.acrylicButton1.Location = new System.Drawing.Point(22, 24);
             this.acrylicButton1.Name = "acrylicButton1";
@@ -63,6 +65,7 @@ namespace Examples
             // acrylicButton2
             // 
             this.acrylicButton2.Default = false;
+            this.acrylicButton2.Image = null;
             this.acrylicButton2.ImagePadding = 6;
             this.acrylicButton2.Location = new System.Drawing.Point(22, 80);
             this.acrylicButton2.Name = "acrylicButton2";
@@ -76,6 +79,7 @@ namespace Examples
             // acrylicButton3
             // 
             this.acrylicButton3.Default = false;
+            this.acrylicButton3.Image = null;
             this.acrylicButton3.ImagePadding = 6;
             this.acrylicButton3.Location = new System.Drawing.Point(22, 136);
             this.acrylicButton3.Name = "acrylicButton3";
@@ -89,6 +93,7 @@ namespace Examples
             // acrylicButton4
             // 
             this.acrylicButton4.Default = false;
+            this.acrylicButton4.Image = null;
             this.acrylicButton4.ImagePadding = 6;
             this.acrylicButton4.Location = new System.Drawing.Point(22, 192);
             this.acrylicButton4.Name = "acrylicButton4";
@@ -102,6 +107,7 @@ namespace Examples
             // acrylicButton5
             // 
             this.acrylicButton5.Default = false;
+            this.acrylicButton5.Image = null;
             this.acrylicButton5.ImagePadding = 6;
             this.acrylicButton5.Location = new System.Drawing.Point(22, 248);
             this.acrylicButton5.Name = "acrylicButton5";
@@ -115,6 +121,7 @@ namespace Examples
             // acrylicButton6
             // 
             this.acrylicButton6.Default = false;
+            this.acrylicButton6.Image = null;
             this.acrylicButton6.ImagePadding = 6;
             this.acrylicButton6.Location = new System.Drawing.Point(22, 306);
             this.acrylicButton6.Name = "acrylicButton6";
@@ -128,6 +135,7 @@ namespace Examples
             // acrylicButton7
             // 
             this.acrylicButton7.Default = false;
+            this.acrylicButton7.Image = null;
             this.acrylicButton7.ImagePadding = 6;
             this.acrylicButton7.Location = new System.Drawing.Point(22, 359);
             this.acrylicButton7.Name = "acrylicButton7";
@@ -141,6 +149,7 @@ namespace Examples
             // acrylicButton8
             // 
             this.acrylicButton8.Default = false;
+            this.acrylicButton8.Image = null;
             this.acrylicButton8.ImagePadding = 6;
             this.acrylicButton8.Location = new System.Drawing.Point(214, 24);
             this.acrylicButton8.Name = "acrylicButton8";
@@ -154,6 +163,7 @@ namespace Examples
             // acrylicButton9
             // 
             this.acrylicButton9.Default = false;
+            this.acrylicButton9.Image = null;
             this.acrylicButton9.ImagePadding = 6;
             this.acrylicButton9.Location = new System.Drawing.Point(214, 80);
             this.acrylicButton9.Name = "acrylicButton9";
@@ -167,6 +177,7 @@ namespace Examples
             // acrylicButton10
             // 
             this.acrylicButton10.Default = false;
+            this.acrylicButton10.Image = null;
             this.acrylicButton10.ImagePadding = 6;
             this.acrylicButton10.Location = new System.Drawing.Point(214, 136);
             this.acrylicButton10.Name = "acrylicButton10";
@@ -180,6 +191,7 @@ namespace Examples
             // acrylicButton11
             // 
             this.acrylicButton11.Default = false;
+            this.acrylicButton11.Image = null;
             this.acrylicButton11.ImagePadding = 6;
             this.acrylicButton11.Location = new System.Drawing.Point(214, 192);
             this.acrylicButton11.Name = "acrylicButton11";
@@ -193,6 +205,7 @@ namespace Examples
             // acrylicButton12
             // 
             this.acrylicButton12.Default = false;
+            this.acrylicButton12.Image = null;
             this.acrylicButton12.ImagePadding = 6;
             this.acrylicButton12.Location = new System.Drawing.Point(214, 248);
             this.acrylicButton12.Name = "acrylicButton12";
@@ -206,6 +219,7 @@ namespace Examples
             // acrylicButton13
             // 
             this.acrylicButton13.Default = false;
+            this.acrylicButton13.Image = null;
             this.acrylicButton13.ImagePadding = 6;
             this.acrylicButton13.Location = new System.Drawing.Point(214, 306);
             this.acrylicButton13.Name = "acrylicButton13";
@@ -219,6 +233,7 @@ namespace Examples
             // acrylicButton14
             // 
             this.acrylicButton14.Default = false;
+            this.acrylicButton14.Image = null;
             this.acrylicButton14.ImagePadding = 6;
             this.acrylicButton14.Location = new System.Drawing.Point(214, 359);
             this.acrylicButton14.Name = "acrylicButton14";
@@ -229,12 +244,27 @@ namespace Examples
             this.acrylicButton14.UseVisualStyleBackColor = false;
             this.acrylicButton14.Click += new System.EventHandler(this.acrylicButton14_Click);
             // 
+            // acrylicButton15
+            // 
+            this.acrylicButton15.Default = false;
+            this.acrylicButton15.Image = null;
+            this.acrylicButton15.ImagePadding = 6;
+            this.acrylicButton15.Location = new System.Drawing.Point(396, 24);
+            this.acrylicButton15.Name = "acrylicButton15";
+            this.acrylicButton15.Padding = new System.Windows.Forms.Padding(6);
+            this.acrylicButton15.Size = new System.Drawing.Size(160, 32);
+            this.acrylicButton15.TabIndex = 14;
+            this.acrylicButton15.Text = "Form 15 - ComboBox";
+            this.acrylicButton15.UseVisualStyleBackColor = false;
+            this.acrylicButton15.Click += new System.EventHandler(this.acrylicButton15_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.acrylicButton15);
             this.Controls.Add(this.acrylicButton14);
             this.Controls.Add(this.acrylicButton13);
             this.Controls.Add(this.acrylicButton12);
@@ -273,5 +303,6 @@ namespace Examples
         private AcrylicUI.Controls.AcrylicButton acrylicButton12;
         private AcrylicUI.Controls.AcrylicButton acrylicButton13;
         private AcrylicUI.Controls.AcrylicButton acrylicButton14;
+        private AcrylicUI.Controls.AcrylicButton acrylicButton15;
     }
 }

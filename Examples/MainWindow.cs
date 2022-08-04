@@ -120,5 +120,12 @@ namespace Examples
             form.StartPosition = FormStartPosition.CenterParent;
             form.ShowDialog(this);
         }
+
+        private void acrylicButton15_Click(object sender, EventArgs e)
+        {
+            var form = new Form15_ComboBox();
+            form.StartPosition = FormStartPosition.CenterParent;
+            form.ShowDialog(this);
+        }
     }
 }

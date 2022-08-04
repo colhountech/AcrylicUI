@@ -24,9 +24,9 @@ namespace AcrylicUI.Controls
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public new ComboBoxStyle DropDownStyle { get; set; }
 
-        private Bitmap _buffer;
-        private IconFactory _iconFactory;
-        private Image _scrollbar_arrow_hot;
+        private Bitmap _buffer;               
+        private Image _scrollbar_arrow_hot = new IconFactory(1).BitmapFromSvg(Icons.ASX_GlyphDown_grey_16x);
+        private IconFactory _iconfactory;
         public AcrylicComboBox() : base()
         {
             SetStyle(ControlStyles.OptimizedDoubleBuffer |
@@ -37,13 +37,7 @@ namespace AcrylicUI.Controls
 
             base.FlatStyle = FlatStyle.Flat;
             base.DropDownStyle = ComboBoxStyle.DropDownList;
-
-            var dpiScale = IconFactory.GetDpiScale(this.Handle);
-            _iconFactory = new IconFactory(IconFactory.GetDpiScale(Handle));
-
-            // Down Glyph
-            _scrollbar_arrow_hot = _iconFactory.BitmapFromSvg(Icons.ASX_GlyphDown_grey_16x);
-
+            _iconfactory = new IconFactory(IconFactory.GetDpiScale(this.Handle));
         }
 
         protected override void Dispose(bool disposing)
@@ -102,9 +96,40 @@ namespace AcrylicUI.Controls
             PaintCombobox();
         }
 
+        #region Dpi Scale
+
+        private const float DEFAULT_DPI = 96f;
+        private float _dpiScale = 1;
+
+        // call at init too
+        private void UpdateScale()
+        {
+            var form = FindForm();
+            if (form is null)
+            {
+
+            }
+            var handle = form?.Handle ?? this.Handle;
+
+            var newDpiScale = (float)Drawing.GetDpi(handle) / (float)DEFAULT_DPI;
+            if (newDpiScale != _dpiScale)
+            {
+                _dpiScale = newDpiScale;
+
+                // update Icons
+
+                _scrollbar_arrow_hot = _iconfactory.BitmapFromSvg(Icons.ASX_GlyphDown_grey_16x);
+                
+
+            }
+
+        }
+        #endregion
+
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
+            UpdateScale();
             _buffer = null;
             Invalidate();
         }
@@ -137,7 +162,6 @@ namespace AcrylicUI.Controls
                 }
 
                 var icon = _scrollbar_arrow_hot;
-                //var icon = ScrollIcons.scrollbar_arrow_hot;
                 g.DrawImageUnscaled(icon,
                                     rect.Right - icon.Width - (Consts.Padding / 2),
                                     (rect.Height / 2) - (icon.Height / 2));
