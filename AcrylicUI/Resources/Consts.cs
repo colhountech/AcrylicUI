@@ -61,6 +61,22 @@ namespace AcrylicUI.Resources
             get { return Color.FromArgb(31, 31, 31); }
         }
 
+        //  Acrylc Glass Panels
+
+        public static Color AcrylicOuterPanel
+        {
+            get { return Color.FromArgb(40, 88, 88, 88); }
+        }
+        public static Color AcrylicInnerPanel
+        {
+            get { return Color.FromArgb(90, 88, 88, 88); }
+        }
+
+        public static Color AcrylicHairline
+        {
+            get { return Color.FromArgb(99, 99, 99, 99); }
+        }
+
         public static Color HeaderBackground
         {
             get { return Color.FromArgb(41, 40, 42); } //57, 60, 62

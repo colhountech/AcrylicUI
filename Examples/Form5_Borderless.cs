@@ -27,6 +27,14 @@ namespace Examples
             HookEvents();
             RoundCorners(IsWindowsCreatorOrLater());
 
+            this.acrylicGlassPanel3.BackColor = Colors.AcrylicInnerPanel;
+            this.acrylicGlassPanel3.ForeColor = Colors.AcrylicHairline;
+
+
+
+
+
+
 
         }
 
@@ -43,7 +51,6 @@ namespace Examples
             this.windowPanel1.ProfileFeature = false;
             this.windowPanel1.IsAcrylicEnabled = true;
             this.BlurOpacity = 10;
-            //this.BackColor = Colors.Transparent;
             this.BackColor = AcrylicUI.Resources.Colors.GreyBackground;
 
         }
