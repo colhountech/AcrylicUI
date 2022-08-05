@@ -1,17 +1,11 @@
 ﻿using AcrylicUI;
 using AcrylicUI.Controls;
+using AcrylicUI.Platform.Windows;
 using AcrylicUI.Resources;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace Examples
 {
     public partial class Form5_Borderless : AcrylicUI.Forms.AcrylicForm
@@ -29,15 +23,9 @@ namespace Examples
             InitializeComponent();
             // Make sure you set this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             // Program.cs : Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
-
-
             SetupUIDefaults();
             HookEvents();
-            
-            
-
-            bool _isWindows11 = true;
-            RoundCorners(_isWindows11);
+            RoundCorners(IsWindowsCreatorOrLater());
 
 
         }
@@ -52,10 +40,25 @@ namespace Examples
             this.FormBorderStyle = FormBorderStyle.Sizable;
             this.Size = designSize;
             this._restoreSize = designSize; // save for restore
-            this.windowPanel1.ProfileFeature = true;
+            this.windowPanel1.ProfileFeature = false;
+            this.windowPanel1.IsAcrylicEnabled = true;
+            this.BlurOpacity = 10;
+            //this.BackColor = Colors.Transparent;
+            this.BackColor = AcrylicUI.Resources.Colors.GreyBackground;
 
         }
 
+        public bool IsWindowsCreatorOrLater()
+        {
+            // Create a reference to the OS version of Windows 10 Creators Update.
+            Version OsMinVersion = new Version(10, 0, 15063, 0);
+
+            // Compare the current version to the minimum required version.
+            var compatible = Environment.OSVersion.Version.CompareTo(OsMinVersion);
+            Console.WriteLine($"{Environment.OSVersion.VersionString}: Compat: {compatible}");
+
+            return compatible == 1;
+        }
         private void HookEvents()
         {
             this.Load += new System.EventHandler(this.MainWindow_Load);
@@ -123,6 +126,16 @@ namespace Examples
             }
         }
 
+
+        #endregion
+
+        #region Windows AcrylicTheme Hack
+
+        protected override void OnHandleCreated(EventArgs e)
+        {
+            base.OnHandleCreated(e);
+            Win32Hacks.DarkThemeTitleBar(this.Handle);
+        }
 
         #endregion
 
