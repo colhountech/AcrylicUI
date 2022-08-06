@@ -27,12 +27,12 @@ namespace AcrylicUI.Controls
         private bool _hasRoundCorners = false;
 
 
-        private const int PEN_WIDTH = 1;
-        private const int CONTROL_BUTTON_XOFFSET = 3;
-        private const int CONTROL_BUTTON_XOFFSET_PLUS_PEN = CONTROL_BUTTON_XOFFSET + PEN_WIDTH;
-        private const int CONTROL_BUTTON_PADDING = 5;
-        private const int CONTROL_HEIGHT = 25;
-        private const int ARC_RADIUS = 8;
+        //private const int PEN_WIDTH = 1;
+        //private const int CONTROL_BUTTON_XOFFSET = 3;
+        //private const int CONTROL_BUTTON_XOFFSET_PLUS_PEN = CONTROL_BUTTON_XOFFSET + PEN_WIDTH;
+        //private const int CONTROL_BUTTON_PADDING = 5;
+        //private const int CONTROL_HEIGHT = 25;
+        //private const int ARC_RADIUS = 8;
 
         private ControlButton _close = new ControlButton();
         private ControlButton _max = new ControlButton();
@@ -143,11 +143,11 @@ namespace AcrylicUI.Controls
 
             if (_hasRoundCorners)
             {
-                base.Padding = new Padding(PEN_WIDTH, CONTROL_HEIGHT, PEN_WIDTH, ARC_RADIUS); // Top spacing for esthetics, Lower spacing for arc
+                base.Padding = new Padding(Consts.PEN_WIDTH, Consts.CONTROL_HEIGHT, Consts.PEN_WIDTH, Consts.ARC_RADIUS); // Top spacing for esthetics, Lower spacing for arc
             }
             else
             {
-                base.Padding = new Padding(PEN_WIDTH, CONTROL_HEIGHT, PEN_WIDTH, PEN_WIDTH); // Top spacing for esthetics
+                base.Padding = new Padding(Consts.PEN_WIDTH, Consts.CONTROL_HEIGHT, Consts.PEN_WIDTH, Consts.PEN_WIDTH); // Top spacing for esthetics
             }
             UpdateScale();
             UpdateControlButtons();
@@ -195,18 +195,15 @@ namespace AcrylicUI.Controls
                 //
                 // menu
                 //
-                if (HamburgerMenuFeature)
-                {
-                    _menu.Icon?.Dispose();
-                    _menu.Icon = new IconFactory(_dpiScale).DarkColorFromSvg(Icons.HamburgerMenu_16x_svg,
-                        backColorHex: "#fff6f6f6",
-                        newBackColorHex: "#001ff1f1",
-                        foreColorHex: "#ff424242",
-                        newForeColorHex: "ff7e7e7e"
-                        );
-                    _menu.IconHot?.Dispose();
-                    _menu.IconHot = new IconFactory(_dpiScale).WhiteBitmapFromSvg(Icons.HamburgerMenu_16x_svg);
-                }
+                _menu.Icon?.Dispose();
+                _menu.Icon = new IconFactory(_dpiScale).DarkColorFromSvg(Icons.HamburgerMenu_16x_svg,
+                    backColorHex: "#fff6f6f6",
+                    newBackColorHex: "#001ff1f1",
+                    foreColorHex: "#ff424242",
+                    newForeColorHex: "ff7e7e7e"
+                    );
+                _menu.IconHot?.Dispose();
+                _menu.IconHot = new IconFactory(_dpiScale).WhiteBitmapFromSvg(Icons.HamburgerMenu_16x_svg);
             }
         }
 
@@ -233,7 +230,7 @@ namespace AcrylicUI.Controls
 
             if (_hamburgerMenuFeature)
             {
-                xMenuButtonOffset = Scale(CONTROL_BUTTON_PADDING) + Scale(CONTROL_BUTTON_XOFFSET);
+                xMenuButtonOffset = Scale(Consts.CONTROL_BUTTON_PADDING) + Scale(Consts.CONTROL_BUTTON_XOFFSET);
                 _menu.Rect = new Rectangle
                 {
                     X = xMenuButtonOffset,
@@ -244,7 +241,7 @@ namespace AcrylicUI.Controls
                 };
             }
           
-            var xCloseButtonOffset = _close.Icon.Width + Scale(CONTROL_BUTTON_PADDING) + Scale(CONTROL_BUTTON_XOFFSET);
+            var xCloseButtonOffset = _close.Icon.Width + Scale(Consts.CONTROL_BUTTON_PADDING) + Scale(Consts.CONTROL_BUTTON_XOFFSET);
 
             _close.Rect = new Rectangle
             {
@@ -254,7 +251,7 @@ namespace AcrylicUI.Controls
                 Height = _close.Icon.Height
             };
 
-            var xMaxButtonOffset = xCloseButtonOffset + _max.Icon.Width + Scale(CONTROL_BUTTON_PADDING * 3 );
+            var xMaxButtonOffset = xCloseButtonOffset + _max.Icon.Width + Scale(Consts.CONTROL_BUTTON_PADDING * 3 );
 
             _max.Rect = new Rectangle
             {
@@ -266,7 +263,7 @@ namespace AcrylicUI.Controls
 
             };
 
-            var xMinButtonOffset = xMaxButtonOffset + _min.Icon.Width + Scale(CONTROL_BUTTON_PADDING * 3);
+            var xMinButtonOffset = xMaxButtonOffset + _min.Icon.Width + Scale(Consts.CONTROL_BUTTON_PADDING * 3);
 
             _min.Rect = new Rectangle
             {
@@ -278,7 +275,7 @@ namespace AcrylicUI.Controls
 
             };
 
-            var xProfileButtonOffset = xMinButtonOffset + _min.Icon.Width + Scale(CONTROL_BUTTON_PADDING * 3);
+            var xProfileButtonOffset = xMinButtonOffset + _min.Icon.Width + Scale(Consts.CONTROL_BUTTON_PADDING * 3);
 
             _profile.Rect = new Rectangle
             {
@@ -623,7 +620,7 @@ namespace AcrylicUI.Controls
             {
                 using (var b = new SolidBrush(bgColor))
                 {
-                    var bgRect = new Rectangle(0, 0, rect.Width, Scale(CONTROL_HEIGHT));
+                    var bgRect = new Rectangle(0, 0, rect.Width, Scale(Consts.CONTROL_HEIGHT));
                     g.FillRectangle(b, bgRect);
                 }
 
@@ -631,15 +628,15 @@ namespace AcrylicUI.Controls
                 {
                     g.DrawLine(p, rect.Left, 0, rect.Right, 0);
                     g.DrawLine(p,
-                        rect.Left, Scale(CONTROL_HEIGHT) - Scale(PEN_WIDTH),
-                        rect.Right, Scale(CONTROL_HEIGHT) - Scale(PEN_WIDTH));
+                        rect.Left, Scale(Consts.CONTROL_HEIGHT) - Scale(Consts.PEN_WIDTH),
+                        rect.Right, Scale(Consts.CONTROL_HEIGHT) - Scale(Consts.PEN_WIDTH));
                 }
 
                 using (var p = new Pen(lightColor))
                 {
                     g.DrawLine(p,
-                        rect.Left, Scale(PEN_WIDTH),
-                        rect.Right, Scale(PEN_WIDTH));
+                        rect.Left, Scale(Consts.PEN_WIDTH),
+                        rect.Right, Scale(Consts.PEN_WIDTH));
                 }
             }
 
@@ -652,7 +649,7 @@ namespace AcrylicUI.Controls
 
             if (_hamburgerMenuFeature)
             {
-                xMenuButtonOffset = Scale(CONTROL_BUTTON_PADDING) + Scale(CONTROL_BUTTON_XOFFSET);
+                xMenuButtonOffset = Scale(Consts.CONTROL_BUTTON_PADDING) + Scale(Consts.CONTROL_BUTTON_XOFFSET);
                 //
                 // Hamburger Menu button
                 //
@@ -660,7 +657,7 @@ namespace AcrylicUI.Controls
                 g.DrawImage(menuImg, _menu.Rect.Left + xMenuButtonOffset, _menu.Rect.Top);
             }
 
-            var xOffset = xMenuButtonOffset + _menu.Rect.Width + Scale(CONTROL_BUTTON_PADDING * 3);
+            var xOffset = xMenuButtonOffset + _menu.Rect.Width + Scale(Consts.CONTROL_BUTTON_PADDING * 3);
 
             if (_icon is not null)
             {
@@ -677,13 +674,13 @@ namespace AcrylicUI.Controls
                 g.DrawImage(_icon, iconRect);
 
 
-                xOffset += _icon.Width + CONTROL_BUTTON_XOFFSET;
+                xOffset += _icon.Width + Consts.CONTROL_BUTTON_XOFFSET;
             }
             // Draw Text Title 
 
             using (var b = new SolidBrush(Colors.LightText))
             {
-                var textRect = new Rectangle(xOffset, 0, rect.Width - Scale(CONTROL_BUTTON_XOFFSET_PLUS_PEN) - xOffset, Scale(CONTROL_HEIGHT));
+                var textRect = new Rectangle(xOffset, 0, rect.Width - Scale(Consts.CONTROL_BUTTON_XOFFSET_PLUS_PEN) - xOffset, Scale(Consts.CONTROL_HEIGHT));
 
                 var format = new StringFormat
                 {
