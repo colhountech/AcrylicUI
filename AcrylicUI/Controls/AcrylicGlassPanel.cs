@@ -86,7 +86,7 @@ namespace AcrylicUI.Controls
 
             using (var b = new SolidBrush(fillColor))
             {
-                g.Clear(Colors.Transparent);
+                 g.Clear(Colors.Transparent);
                 if (_hasRoundedCorners)
                 {
                     g.FillPath(b, rectRounded);
@@ -123,17 +123,16 @@ namespace AcrylicUI.Controls
                 }
 
             }
-
-
-
-
-
         }
 
-        //protected override void OnPaintBackground(PaintEventArgs e)
-        //{
-        //    e.Graphics.Clear(Color.Transparent);
-        //}
+
+
+        protected override void OnPaintBackground(PaintEventArgs e)
+        {
+            // absorb event
+            // if you don't absorb this event
+            // you get terrible flickering on layered panels
+        }
 
         #endregion
 
