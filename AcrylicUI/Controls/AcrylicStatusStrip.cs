@@ -8,6 +8,21 @@ namespace AcrylicUI.Controls
 {
     public class AcrylicStatusStrip : StatusStrip
     {
+        private bool _isAcrylicEnabled;
+
+        public bool IsAcrylicEnabled
+        {
+            get
+            {
+                return _isAcrylicEnabled;
+            }
+            set
+            {
+                _isAcrylicEnabled = value;
+            }
+        }
+
+
         [Category("Appearance")]
         [Description("Determines the color of the background.")]
         [DefaultValue(typeof(Color),"#313131")]
@@ -53,13 +68,16 @@ namespace AcrylicUI.Controls
             //{
             //    g.DrawRectangle(p, modRect);
             //}
-
+           
             using (var b = new SolidBrush(BackColor))
             {
                 g.Clear(BackColor);
                 g.FillRectangle(b, ClientRectangle);
             }
-
+            if (_isAcrylicEnabled)
+            {
+                return;
+            }
             using (var p = new Pen(Colors.DarkBorder))
             {
                 g.DrawLine(p, ClientRectangle.Left, 0, ClientRectangle.Right, 0);

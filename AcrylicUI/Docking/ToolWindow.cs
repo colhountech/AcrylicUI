@@ -72,7 +72,7 @@ namespace AcrylicUI.Docking
             _closeButtonRect = new Rectangle
             {
                 X = ClientRectangle.Right - DockIcons.tw_close.Width - Scale(5 + 3),
-                Y = ClientRectangle.Top + (Scale(Consts.ToolWindowHeaderSize) / 2) - (DockIcons.tw_close.Height / 2),
+                Y = ClientRectangle.Top + (Scale(Consts.ToolWindowHeaderSize) / 2) - Scale(Consts.ICON_SIZE / 2),
                 Width = DockIcons.tw_close.Width,
                 Height = DockIcons.tw_close.Height
             };
@@ -201,7 +201,7 @@ namespace AcrylicUI.Docking
             // Draw text
             using (var b = new SolidBrush(Colors.LightText))
             {
-                var textRect = new Rectangle(xOffset, 0, ClientRectangle.Width - Scale(4) - xOffset, Scale(Consts.ToolWindowHeaderSize));
+                var textRect = new Rectangle(xOffset, 0, ClientRectangle.Width - Scale(4) - xOffset, Scale(Consts.ToolWindowHeaderSize * 3 / 4) );
 
                 var format = new StringFormat
                 {
