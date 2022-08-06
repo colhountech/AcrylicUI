@@ -122,7 +122,7 @@ namespace AcrylicUI.Resources
                 else
                 {
                     var c = ((element as SvgPath).Fill as SvgColourServer).Colour;
-                    Console.WriteLine($"Color:#{c.A:X2}{c.R:X2}{c.G:X2}{c.B:X2}");
+                    Console.WriteLine($"Didn't replace Color:#{c.A:X2}{c.R:X2}{c.G:X2}{c.B:X2}");
                 }
             }
 

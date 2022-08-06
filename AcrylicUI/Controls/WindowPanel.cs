@@ -1,7 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using AcrylicUI.Resources;
@@ -18,10 +17,13 @@ namespace AcrylicUI.Controls
     {
         #region Field Region
 
+        public event EventHandler OnMenuClicked;
+
         private Image _icon;
         private string _sectionHeader;
         private float _dpiScale = 0f;
         private bool _profileFeature = false;
+        private bool _hamburgerMenuFeature = false;
         private bool _hasRoundCorners = false;
 
 
@@ -36,7 +38,8 @@ namespace AcrylicUI.Controls
         private ControlButton _max = new ControlButton();
         private ControlButton _min = new ControlButton();
         private ControlButton _profile = new ControlButton();
-        
+        private ControlButton _menu = new ControlButton();
+
         #endregion
 
         #region Property Region
@@ -68,6 +71,7 @@ namespace AcrylicUI.Controls
         [Category("Appearance")]
         [Description("Determines if the Profile feature is enabled")]
         [Browsable(true)]
+        [DefaultValue(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public bool ProfileFeature
         {
@@ -78,6 +82,23 @@ namespace AcrylicUI.Controls
                 Invalidate();
             }
         }
+
+        [Category("Appearance")]
+        [Description("Determines if the Profile feature is enabled")]
+        [Browsable(true)]
+        [DefaultValue(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        public bool HamburgerMenuFeature
+        {
+            get { return _hamburgerMenuFeature; }
+            set
+            {
+                _hamburgerMenuFeature = value;
+                Invalidate();
+            }
+        }
+
+
 
         [Category("Appearance")]
         [Description("Determines the icon that will appear in the content tabs and headers.")]
@@ -171,7 +192,21 @@ namespace AcrylicUI.Controls
                 _profile.Icon = new IconFactory(_dpiScale).BitmapFromSvg(Icons.UserProfile_16x_svg);
                 _profile.IconHot?.Dispose();
                 _profile.IconHot = new IconFactory(_dpiScale).BitmapFromSvg(Icons.UserProfile_16x_svg);
-
+                //
+                // menu
+                //
+                if (HamburgerMenuFeature)
+                {
+                    _menu.Icon?.Dispose();
+                    _menu.Icon = new IconFactory(_dpiScale).DarkColorFromSvg(Icons.HamburgerMenu_16x_svg,
+                        backColorHex: "#fff6f6f6",
+                        newBackColorHex: "#001ff1f1",
+                        foreColorHex: "#ff424242",
+                        newForeColorHex: "ff7e7e7e"
+                        );
+                    _menu.IconHot?.Dispose();
+                    _menu.IconHot = new IconFactory(_dpiScale).WhiteBitmapFromSvg(Icons.HamburgerMenu_16x_svg);
+                }
             }
         }
 
@@ -194,6 +229,21 @@ namespace AcrylicUI.Controls
 
         private void UpdateControlButtons()
         {
+            int xMenuButtonOffset = 0;
+
+            if (_hamburgerMenuFeature)
+            {
+                xMenuButtonOffset = Scale(CONTROL_BUTTON_PADDING) + Scale(CONTROL_BUTTON_XOFFSET);
+                _menu.Rect = new Rectangle
+                {
+                    X = xMenuButtonOffset,
+                    Y = ClientRectangle.Top + (Scale(Consts.CONTROL_HEIGHT) / 2) - (_profile.Icon.Height / 2),
+                    Width = _menu.Icon.Width,
+                    Height = _menu.Icon.Height
+
+                };
+            }
+          
             var xCloseButtonOffset = _close.Icon.Width + Scale(CONTROL_BUTTON_PADDING) + Scale(CONTROL_BUTTON_XOFFSET);
 
             _close.Rect = new Rectangle
@@ -286,6 +336,9 @@ namespace AcrylicUI.Controls
         {
             base.OnMouseMove(e);
 
+            //
+            // close
+            //
 
             if (_close.Rect.Contains(e.Location) || _close.IsPressed)
             {
@@ -305,10 +358,12 @@ namespace AcrylicUI.Controls
 
             }
            
-
+            //
+            // max
+            // 
             if (_max.Rect.Contains(e.Location) || _max.IsPressed)
             {
-               
+
                 if (!_max.IsHot)
                 {
                     _max.IsHot = true;
@@ -319,8 +374,33 @@ namespace AcrylicUI.Controls
             {
                 if (_max.IsHot)
                 {
-                    _max.IsHot = false;                    
+                    _max.IsHot = false;
                     Invalidate();
+                }
+            }
+
+            //
+            // menu
+            //
+
+            if (_hamburgerMenuFeature)
+            {
+                if (_menu.Rect.Contains(e.Location) || _menu.IsPressed)
+                {
+                    if (!_menu.IsHot)
+                    {
+                        _menu.IsHot = true;
+                        Invalidate();
+                    }
+                }
+                else
+                {
+                    if (_menu.IsHot)
+                    {
+                        _menu.IsHot = false;
+                        Invalidate();
+                    }
+
                 }
             }
             //
@@ -364,7 +444,7 @@ namespace AcrylicUI.Controls
                 }
 
             }
-
+      
 
         }
 
@@ -428,6 +508,22 @@ namespace AcrylicUI.Controls
             }
             _profile.IsPressed = false;
             _profile.IsHot = false;
+
+            //
+            // Menu
+            //
+            if (_hamburgerMenuFeature)
+            {
+                if (_menu.Rect.Contains(e.Location) && _menu.IsPressed)
+                {
+                    // TODO: Do something. 
+                    OnMenuClicked?.Invoke(this, new EventArgs());
+
+                }
+                _menu.IsPressed = false;
+                _menu.IsHot = false;
+            }
+
             // Done
 
             Invalidate();
@@ -437,6 +533,20 @@ namespace AcrylicUI.Controls
         protected override void OnMouseDown(MouseEventArgs e)
         {
             base.OnMouseDown(e);
+            //
+            // Menu
+            //
+
+            if (_hamburgerMenuFeature)
+            {
+                if (_menu.Rect.Contains(e.Location))
+                {
+                    _menu.IsPressed = true;
+                    _menu.IsHot = true;
+                    Invalidate();
+                    return;
+                }
+            }
             //
             // Close
             //
@@ -535,9 +645,22 @@ namespace AcrylicUI.Controls
 
 
             // Draw Section Header
+            //  var xMenuButtonOffset = Scale(CONTROL_BUTTON_PADDING * 2);
+            //var xMenuButtonOffset = Scale(CONTROL_BUTTON_PADDING * 2 );
 
-            var xOffset = Scale(CONTROL_BUTTON_XOFFSET);
+            int xMenuButtonOffset = 0;
 
+            if (_hamburgerMenuFeature)
+            {
+                xMenuButtonOffset = Scale(CONTROL_BUTTON_PADDING) + Scale(CONTROL_BUTTON_XOFFSET);
+                //
+                // Hamburger Menu button
+                //
+                var menuImg = _menu.IsHot ? _menu.IconHot : _menu.Icon;
+                g.DrawImage(menuImg, _menu.Rect.Left + xMenuButtonOffset, _menu.Rect.Top);
+            }
+
+            var xOffset = xMenuButtonOffset + _menu.Rect.Width + Scale(CONTROL_BUTTON_PADDING * 3);
 
             if (_icon is not null)
             {
@@ -626,7 +749,7 @@ namespace AcrylicUI.Controls
                 //
                 var profileImg = _profile.IsHot ? _profile.IconHot : _profile.Icon;
                 g.DrawImage(profileImg, _profile.Rect.Left, _profile.Rect.Top);
-            }
+            }          
         }
 
         //public static GraphicsPath RoundedRectange(Rectangle modRect, int radius)
@@ -757,6 +880,12 @@ namespace AcrylicUI.Controls
             absorbHit |= _close.IsHot;
             absorbHit |= _profile.Rect.Contains(cursor);
             absorbHit |= _profile.IsHot;
+
+            if (HamburgerMenuFeature)
+            {
+                absorbHit |= _menu.Rect.Contains(cursor);
+                absorbHit |= _menu.IsHot;
+            }
             return absorbHit;
         }
 

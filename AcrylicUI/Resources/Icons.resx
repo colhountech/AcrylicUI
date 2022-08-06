@@ -160,16 +160,19 @@
   <data name="GlyphDown_linkBlueNoHalo_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>GlyphDown_linkBlueNoHalo_16x.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="HamburgerMenu_16x_svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>HamburgerMenu_16x.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="Image_16x_svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>image_16x.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="InformationSymbol_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="InformationSymbol_16x_svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>InformationSymbol_16x.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="StatusAlert_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="StatusAlert_16x_svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>StatusAlert_16x.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="StatusCriticalError_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="StatusCriticalError_16x_svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>StatusCriticalError_16x.svg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="StatusWarning_16x_svg" type="System.Resources.ResXFileRef, System.Windows.Forms">

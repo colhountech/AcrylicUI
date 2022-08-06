@@ -76,8 +76,13 @@ namespace Examples
             var dpiScale = IconFactory.GetDpiScale(this.Handle);
             this.windowPanel1.Icon = new IconFactory(IconFactory.GetDpiScale(Handle)).BitmapFromSvg(Icons.Cube_16x_svg);
             this.windowPanel1.SectionHeader = "CT Studio";
+            this.windowPanel1.OnMenuClicked += WindowPanel1_OnMenuClicked;
         }
 
+        private void WindowPanel1_OnMenuClicked(object sender, EventArgs e)
+        {
+            lblStatus.Text = "Menu Was Clicked";
+        }
 
         private void BtnMaximize_Click(object sender, EventArgs e)
         {

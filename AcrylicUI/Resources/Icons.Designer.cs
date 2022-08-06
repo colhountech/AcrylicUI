@@ -203,6 +203,16 @@ namespace AcrylicUI.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        public static byte[] HamburgerMenu_16x_svg {
+            get {
+                object obj = ResourceManager.GetObject("HamburgerMenu_16x_svg", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         public static byte[] Image_16x_svg {
             get {
                 object obj = ResourceManager.GetObject("Image_16x_svg", resourceCulture);
@@ -213,9 +223,9 @@ namespace AcrylicUI.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        public static byte[] InformationSymbol_16x {
+        public static byte[] InformationSymbol_16x_svg {
             get {
-                object obj = ResourceManager.GetObject("InformationSymbol_16x", resourceCulture);
+                object obj = ResourceManager.GetObject("InformationSymbol_16x_svg", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -225,7 +235,7 @@ namespace AcrylicUI.Resources {
         /// </summary>
         public static byte[] StatusAlert_16x_svg {
             get {
-                object obj = ResourceManager.GetObject("StatusAlert_16x", resourceCulture);
+                object obj = ResourceManager.GetObject("StatusAlert_16x_svg", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -235,7 +245,7 @@ namespace AcrylicUI.Resources {
         /// </summary>
         public static byte[] StatusCriticalError_16x_svg {
             get {
-                object obj = ResourceManager.GetObject("StatusCriticalError_16x", resourceCulture);
+                object obj = ResourceManager.GetObject("StatusCriticalError_16x_svg", resourceCulture);
                 return ((byte[])(obj));
             }
         }
