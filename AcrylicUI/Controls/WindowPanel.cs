@@ -234,7 +234,7 @@ namespace AcrylicUI.Controls
                 _menu.Rect = new Rectangle
                 {
                     X = xMenuButtonOffset,
-                    Y = ClientRectangle.Top + (Scale(Consts.CONTROL_HEIGHT) / 2) - (_profile.Icon.Height / 2),
+                    Y = ClientRectangle.Top + (Scale(Consts.CONTROL_HEIGHT) / 2) - (_menu.Icon.Height / 2),
                     Width = _menu.Icon.Width,
                     Height = _menu.Icon.Height
 
