@@ -31,6 +31,7 @@ namespace AcrylicUI.Controls
             // Draw background
             if (_isAcrylic)
             {
+                e.Graphics.Clear(Color.Transparent);
                 using var b = new SolidBrush(Colors.Transparent);
                 g.FillRectangle(b, ClientRectangle);
             }

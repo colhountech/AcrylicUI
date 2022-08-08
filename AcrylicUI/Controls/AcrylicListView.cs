@@ -21,7 +21,6 @@ namespace AcrylicUI.Controls
         #region Field Region
 
         private int _itemHeight = Consts.LISTITEM_HEIGHT; //20;
-        private int _pad = Consts.LISTITEM_PADDING;
         private bool _multiSelect;
 
         private readonly int _iconSize = Consts.ICON_SIZE; // 16
@@ -33,7 +32,7 @@ namespace AcrylicUI.Controls
         private bool _alternateBackground;
 
         Color _defaultBgColor = Colors.Transparent;
-        Color _defaultSelectionColor = Colors.AcrylicInnerPanel;
+        Color _defaultSelectionColor = Colors.AcrylicOuterPanel;
 
         #endregion
 
@@ -141,6 +140,7 @@ namespace AcrylicUI.Controls
 
             BackColor = (IsAcrylic) ? Colors.Transparent : Colors.GreyBackground;
             base.Padding = new Padding(0, Scale(Consts.ToolWindowHeaderSize), 0, 0);
+           
         }
 
         #endregion
@@ -609,7 +609,7 @@ namespace AcrylicUI.Controls
                 // Icon
                 if (ShowIcons && Items[i].Icon != null)
                 {
-                    g.DrawImageUnscaled(Items[i].Icon, new Point(rect.Left + Scale(5), rect.Top + (rect.Height / 2) - (_iconSize / 2)));
+                    g.DrawImageUnscaled(Items[i].Icon, new Point(rect.Left + Scale(4), rect.Top + (rect.Height / 2) - (_iconSize / 2)));
                 }
 
                 // Text
@@ -670,7 +670,6 @@ namespace AcrylicUI.Controls
         private void UpdatePadding()
         {
             base.Padding = new Padding(0, Scale(Consts.ToolWindowHeaderSize), 0, 0);
-            _pad = Scale(Consts.LISTITEM_PADDING);
         }
 
         private int Scale(int pixel)
