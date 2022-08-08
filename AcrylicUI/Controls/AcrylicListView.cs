@@ -32,7 +32,7 @@ namespace AcrylicUI.Controls
         private int _anchoredItemEnd = -1;
         private bool _alternateBackground;
 
-        Color _defaultBgColor = Colors.AcrylicOuterPanel;
+        Color _defaultBgColor = Colors.Transparent;
         Color _defaultSelectionColor = Colors.AcrylicInnerPanel;
 
         #endregion
@@ -131,11 +131,15 @@ namespace AcrylicUI.Controls
 
         public AcrylicListView()
         {
+            SetStyle(ControlStyles.OptimizedDoubleBuffer |
+                  ControlStyles.ResizeRedraw |
+                  ControlStyles.UserPaint, true);
+          
             Items = new ObservableCollection<AcrylicListItem>();
             _selectedIndices = new List<int>();
 
 
-            BackColor = (IsAcrylic) ? Colors.DarkPanel : Colors.GreyBackground;
+            BackColor = (IsAcrylic) ? Colors.Transparent : Colors.GreyBackground;
             base.Padding = new Padding(0, Scale(Consts.ToolWindowHeaderSize), 0, 0);
         }
 
@@ -619,10 +623,10 @@ namespace AcrylicUI.Controls
 
                     var modFont = new Font(Font, Items[i].FontStyle);
 
-                    var modRect = new Rectangle(rect.Left + Scale(2), rect.Top, rect.Width, rect.Height);
+                    var modRect = new Rectangle(rect.Left + Scale(Consts.LISTITEM_OFFSET), rect.Top, rect.Width, rect.Height);
 
                     if (ShowIcons)
-                        modRect.X += _iconSize + Scale(8);
+                        modRect.X += _iconSize + Scale(Consts.LISTITEM_OFFSET);
 
                     g.DrawString(Items[i].Text, modFont, b, modRect, stringFormat);
                 }
