@@ -24,7 +24,7 @@ namespace Examples
             // turn off transparency for now
 
             this.IsAcrylic = false;
-            this.windowPanel1.IsAcrylicEnabled = false;
+            this.windowPanel1.IsAcrylic = false;
             // color defaults
             // Panel Background
             //this.BackColor = Colors.GreyBackground;

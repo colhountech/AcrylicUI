@@ -48,7 +48,7 @@ namespace Examples
             this.windowPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.windowPanel1.HamburgerMenuFeature = false;
             this.windowPanel1.Icon = null;
-            this.windowPanel1.IsAcrylicEnabled = true;
+            this.windowPanel1.IsAcrylic = true;
             this.windowPanel1.Location = new System.Drawing.Point(0, 0);
             this.windowPanel1.Name = "windowPanel1";
             this.windowPanel1.ProfileFeature = false;

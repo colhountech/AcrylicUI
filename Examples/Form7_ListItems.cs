@@ -59,7 +59,7 @@ namespace Examples
 
             this.BlurOpacity = 1;
             this.BackColor = AcrylicUI.Resources.Colors.GreyBackground;
-            this.windowPanel1.IsAcrylicEnabled = true;
+            this.windowPanel1.IsAcrylic = true;
         }
 
         private void HookEvents()

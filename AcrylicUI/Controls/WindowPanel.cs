@@ -56,15 +56,20 @@ namespace AcrylicUI.Controls
             }
 
         }
-        public bool IsAcrylicEnabled
+
+        [Category("Appearance")]
+        [Description("Determines the acrylic glass effect background.")]
+        [DefaultValue(true)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        public bool IsAcrylic
         {
             get
             {
-                return _isAcrylicEnabled;
+                return _isAcrylic;
             }
             set
             {
-                _isAcrylicEnabled = value;
+                _isAcrylic = value;
             }
         }
 
@@ -598,7 +603,7 @@ namespace AcrylicUI.Controls
             var rect = ClientRectangle;
 
             // Fill body
-            if (IsAcrylicEnabled )
+            if (IsAcrylic )
             {
                 e.Graphics.Clear(Color.Transparent);
             }
@@ -793,7 +798,7 @@ namespace AcrylicUI.Controls
         #region Win32 Hacks
 
         private int _showSnapOverlay;
-        private bool _isAcrylicEnabled;
+        private bool _isAcrylic;
 
         protected override void WndProc(ref Message message)
         {

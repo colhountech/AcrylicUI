@@ -48,7 +48,7 @@ namespace Examples
             this.pnlTask.Controls.Add(this.pnlInner);
             this.pnlTask.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTask.Icon = null;
-            this.pnlTask.IsAcrylicEnabled = false;
+            this.pnlTask.IsAcrylic = false;
             this.pnlTask.Location = new System.Drawing.Point(0, 0);
             this.pnlTask.Margin = new System.Windows.Forms.Padding(0);
             this.pnlTask.Name = "pnlTask";

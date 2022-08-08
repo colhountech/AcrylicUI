@@ -62,7 +62,7 @@ namespace Examples
         {
             // Colors
             this.IsAcrylic = false;
-            this.pnlTask.IsAcrylicEnabled = false;
+            this.pnlTask.IsAcrylic = false;
             this.BackColor = Colors.MontereyPanel;
 
             // Windows 11 Hack
