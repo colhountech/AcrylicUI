@@ -45,7 +45,7 @@ namespace AcrylicUI.Resources
         public static int CheckBoxSize = 12;
         public static int RadioButtonSize = 12;
 
-        public const int ToolWindowHeaderSize = 100;
+        public const int ToolWindowHeaderSize = 24;
         public const int DocumentTabAreaSize = 24;
         public const int ToolWindowTabAreaSize = 21;
 

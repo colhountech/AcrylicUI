@@ -201,7 +201,7 @@ namespace AcrylicUI.Docking
             // Draw text
             using (var b = new SolidBrush(Colors.LightText))
             {
-                var textRect = new Rectangle(xOffset, 0, ClientRectangle.Width - Scale(4) - xOffset, Scale(Consts.ToolWindowHeaderSize * 3 / 4) );
+                var textRect = new Rectangle(xOffset, 0, ClientRectangle.Width - Scale(4) - xOffset, Scale(Consts.ToolWindowHeaderSize) );
 
                 var format = new StringFormat
                 {

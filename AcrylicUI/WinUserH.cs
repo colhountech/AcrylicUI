@@ -111,6 +111,14 @@ namespace AcrylicUI
         [DllImport("user32.dll", SetLastError = true)]
         public static extern bool PostMessage(IntPtr hWnd, uint Msg, IntPtr wParam, IntPtr lParam);
 
+        public const int WMSZ_BOTTOM = 6;       // Bottom edge
+        public const int WMSZ_BOTTOMLEFT = 7;   // Bottom-left corner
+        public const int WMSZ_BOTTOMRIGHT = 8;  // Bottom-right corner
+        public const int WMSZ_LEFT = 1;         // Left edge
+        public const int WMSZ_RIGHT = 2;        // Right edge
+        public const int WMSZ_TOP = 3;          // Top edge
+        public const int WMSZ_TOPLEFT = 4;      // Top-left corner
+        public const int WMSZ_TOPRIGHT = 5;     // Top-right corner
 
         // Sent one time to a window, after it has exited the moving or sizing modal loop.
         // The window enters the moving or sizing modal loop when the user clicks the
