@@ -59,7 +59,7 @@ namespace Examples
             this.acrylicListView1.Location = new System.Drawing.Point(1, 36);
             this.acrylicListView1.Name = "acrylicListView1";
             this.acrylicListView1.Padding = new System.Windows.Forms.Padding(0, 25, 0, 0);
-            this.acrylicListView1.Size = new System.Drawing.Size(202, 413);
+            this.acrylicListView1.Size = new System.Drawing.Size(150, 413);
             this.acrylicListView1.TabIndex = 2;
             this.acrylicListView1.Text = "acrylicListView1";
             // 

@@ -21,6 +21,7 @@ namespace AcrylicUI.Controls
         #region Field Region
 
         private int _itemHeight = Consts.LISTITEM_HEIGHT; //20;
+        private int _pad = Consts.LISTITEM_PADDING;
         private bool _multiSelect;
 
         private readonly int _iconSize = Consts.ICON_SIZE; // 16
@@ -31,7 +32,8 @@ namespace AcrylicUI.Controls
         private int _anchoredItemEnd = -1;
         private bool _alternateBackground;
 
-        Color _defaultBgColor = Colors.AcrylicInnerPanel;
+        Color _defaultBgColor = Colors.AcrylicOuterPanel;
+        Color _defaultSelectionColor = Colors.AcrylicInnerPanel;
 
         #endregion
 
@@ -51,6 +53,7 @@ namespace AcrylicUI.Controls
             {
                 base._isAcrylic = value;
                 _defaultBgColor = (IsAcrylic) ? Colors.Transparent : Colors.GreyBackground;
+                _defaultSelectionColor = (IsAcrylic) ? Colors.AcrylicInnerPanel : Colors.BlueSelection;
 
             }
         }
@@ -102,7 +105,8 @@ namespace AcrylicUI.Controls
             get { return _itemHeight; }
             set
             {
-                _itemHeight = value;
+                UpdateScale();
+                _itemHeight = Scale(value);
                 UpdateListBox();
             }
         }
@@ -132,8 +136,7 @@ namespace AcrylicUI.Controls
 
 
             BackColor = (IsAcrylic) ? Colors.DarkPanel : Colors.GreyBackground;
-
-            base.Padding = new Padding(0, Consts.ToolWindowHeaderSize, 0, 0);
+            base.Padding = new Padding(0, Scale(Consts.ToolWindowHeaderSize), 0, 0);
         }
 
         #endregion
@@ -445,14 +448,14 @@ namespace AcrylicUI.Controls
             size.Width++;
 
             if (ShowIcons)
-                size.Width += _iconSize + 8;
+                size.Width += _iconSize + Scale(8);
 
             item.Area = new Rectangle(item.Area.Left, item.Area.Top, (int)size.Width, item.Area.Height);
         }
 
         private void UpdateItemPosition(AcrylicListItem item, int index)
         {
-            item.Area = new Rectangle(2, (index * ItemHeight), item.Area.Width, ItemHeight);
+            item.Area = new Rectangle(Scale(2), (index * ItemHeight), item.Area.Width, ItemHeight);
         }
 
         private void UpdateContentSize()
@@ -461,8 +464,8 @@ namespace AcrylicUI.Controls
 
             foreach (var item in Items)
             {
-                if (item.Area.Right + 1 > highestWidth)
-                    highestWidth = item.Area.Right + 1;
+                if (item.Area.Right + Scale(1) > highestWidth)
+                    highestWidth = item.Area.Right + Scale(1);
             }
 
             var width = highestWidth;
@@ -477,7 +480,7 @@ namespace AcrylicUI.Controls
 
         private void UpdateContentSize(AcrylicListItem item)
         {
-            var itemWidth = item.Area.Right + 1;
+            var itemWidth = item.Area.Right + Scale(1);
 
             if (itemWidth == ContentSize.Width)
             {
@@ -515,12 +518,12 @@ namespace AcrylicUI.Controls
 
         private IEnumerable<int> ItemIndexesInView()
         {
-            var top = (Viewport.Top / ItemHeight) - 1;
+            var top = (Viewport.Top / ItemHeight) - Scale(1);
 
             if (top < 0)
                 top = 0;
 
-            var bottom = ((Viewport.Top + Viewport.Height) / ItemHeight) + 1;
+            var bottom = ((Viewport.Top + Viewport.Height) / ItemHeight) + Scale(1);
 
             if (bottom > Items.Count)
                 bottom = Items.Count;
@@ -553,7 +556,16 @@ namespace AcrylicUI.Controls
             for (var i = top; i <= bottom; i++)
             {
                 var width = Math.Max(ContentSize.Width, Viewport.Width);
-                var rect = new Rectangle(0, i * ItemHeight, width, ItemHeight);
+                var r = new Rectangle(0, i * ItemHeight, width, ItemHeight);
+                var rect = new Rectangle( 
+                    r.X     +Scale(Consts.LISTITEM_PADDING),
+                    r.Y     +Scale(Consts.LISTITEM_PADDING), 
+                    r.Width - Scale(Consts.LISTITEM_PADDING * 2), 
+                    r.Height-Scale(Consts.LISTITEM_PADDING));
+
+                var arcRadius = Scale(Consts.SMALL_ARC_RADIUS);
+
+                var rectRounded = Drawing.RoundedRectange(rect, arcRadius);
 
                 Color bgColor;
 
@@ -567,23 +579,33 @@ namespace AcrylicUI.Controls
                 }
                 // set Focussed
                 if (SelectedIndices.Count > 0 && SelectedIndices.Contains(i))
-                    bgColor = Focused ? Colors.BlueSelection : _defaultBgColor;
+                    bgColor = Focused ? _defaultSelectionColor : _defaultBgColor;
                          
                 using (var b = new SolidBrush(bgColor))
-                {                  
-                    g.FillRectangle(b, rect);
-                }
+                {
+                    if (IsAcrylic)
+                    {
+                        g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                        g.FillPath(b, rectRounded);
+                        g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.None;
+                        g.FillPath(b, rectRounded);
+                    }
+                    else
+                    { 
+                        g.FillRectangle(b, rect);
+                    }
+                }              
 
                 // DEBUG: Border
-                /*using (var p = new Pen(Colors.DarkBorder))
-                {
-                    g.DrawLine(p, new Point(rect.Left, rect.Bottom - 1), new Point(rect.Right, rect.Bottom - 1));
-                }*/
+                //using (var p = new Pen(Color.Red))
+                //{
+                //    g.DrawLine(p, new Point(rect.Left, rect.Bottom - 1), new Point(rect.Right, rect.Bottom - 1));
+                //}
 
                 // Icon
                 if (ShowIcons && Items[i].Icon != null)
                 {
-                    g.DrawImageUnscaled(Items[i].Icon, new Point(rect.Left + 5, rect.Top + (rect.Height / 2) - (_iconSize / 2)));
+                    g.DrawImageUnscaled(Items[i].Icon, new Point(rect.Left + Scale(5), rect.Top + (rect.Height / 2) - (_iconSize / 2)));
                 }
 
                 // Text
@@ -597,10 +619,10 @@ namespace AcrylicUI.Controls
 
                     var modFont = new Font(Font, Items[i].FontStyle);
 
-                    var modRect = new Rectangle(rect.Left + 2, rect.Top, rect.Width, rect.Height);
+                    var modRect = new Rectangle(rect.Left + Scale(2), rect.Top, rect.Width, rect.Height);
 
                     if (ShowIcons)
-                        modRect.X += _iconSize + 8;
+                        modRect.X += _iconSize + Scale(8);
 
                     g.DrawString(Items[i].Text, modFont, b, modRect, stringFormat);
                 }
@@ -608,7 +630,51 @@ namespace AcrylicUI.Controls
         }
 
         #endregion
+        #region Dpi Scale
 
+        private const float DEFAULT_DPI = 96f;
+        private float _dpiScale = 1;
+
+        // call at init too
+        //protected void UpdateScale()
+        //{
+        //    var form = FindForm();
+        //    if (form is null)
+        //    {
+
+        //    }
+        //    var handle = form?.Handle ?? this.Handle;
+
+        //    var newDpiScale = (float)Drawing.GetDpi(handle) / (float)DEFAULT_DPI;
+        //    if (newDpiScale != _dpiScale)
+        //    {
+        //        _dpiScale = newDpiScale;
+
+        //        // TODO
+        //        // update Icons
+        //    }
+        //}
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+            UpdateScale();            
+            UpdatePadding();
+            UpdateListBox();
+            //TODO update icons RescaleImage();
+        }
+
+        private void UpdatePadding()
+        {
+            base.Padding = new Padding(0, Scale(Consts.ToolWindowHeaderSize), 0, 0);
+            _pad = Scale(Consts.LISTITEM_PADDING);
+        }
+
+        private int Scale(int pixel)
+        {
+            return (int)(pixel * _dpiScale);
+        }
+
+        #endregion
 
     }
 }

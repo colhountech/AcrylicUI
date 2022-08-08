@@ -37,7 +37,7 @@ namespace Examples
             RoundCorners(_isWindows11);
 
             // Build dummy list data
-            for (var i = 0; i < 22; i++)
+            for (var i = 0; i < 5; i++)
             {
                 var item = new AcrylicListItem($"List item #{i}");
                 acrylicListView1.Items.Add(item);
