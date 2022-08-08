@@ -20,10 +20,10 @@ namespace AcrylicUI.Controls
 
         #region Field Region
 
-        private int _itemHeight = 20;
+        private int _itemHeight = Consts.LISTITEM_HEIGHT; //20;
         private bool _multiSelect;
 
-        private readonly int _iconSize = 16;
+        private readonly int _iconSize = Consts.ICON_SIZE; // 16
 
         private ObservableCollection<AcrylicListItem> _items;
         private List<int> _selectedIndices;
@@ -31,10 +31,29 @@ namespace AcrylicUI.Controls
         private int _anchoredItemEnd = -1;
         private bool _alternateBackground;
 
+        Color _defaultBgColor = Colors.AcrylicInnerPanel;
 
         #endregion
 
         #region Property Region
+
+        [Category("Appearance")]
+        [Description("Determines the acrylic glass effect background.")]
+        [DefaultValue(true)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        public bool IsAcrylic
+        {
+            get
+            {
+                return base._isAcrylic;
+            }
+            set
+            {
+                base._isAcrylic = value;
+                _defaultBgColor = (IsAcrylic) ? Colors.Transparent : Colors.GreyBackground;
+
+            }
+        }
 
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -111,9 +130,10 @@ namespace AcrylicUI.Controls
             Items = new ObservableCollection<AcrylicListItem>();
             _selectedIndices = new List<int>();
 
-            BackColor = Colors.GreyBackground;
-            base.Padding = new Padding(0, Consts.ToolWindowHeaderSize, 0, 0);
 
+            BackColor = (IsAcrylic) ? Colors.DarkPanel : Colors.GreyBackground;
+
+            base.Padding = new Padding(0, Consts.ToolWindowHeaderSize, 0, 0);
         }
 
         #endregion
@@ -535,21 +555,22 @@ namespace AcrylicUI.Controls
                 var width = Math.Max(ContentSize.Width, Viewport.Width);
                 var rect = new Rectangle(0, i * ItemHeight, width, ItemHeight);
 
-                // Background
-                var bgColor = Colors.GreyBackground;
+                Color bgColor;
 
+                // set background
+                bgColor = _defaultBgColor;
+                // AlternateBackground
                 if (AlternateBackground)
                 {
                     var odd = i % 2 != 0;
-                    bgColor = !odd ? Colors.HeaderBackground : Colors.GreyBackground;
+                    bgColor = !odd ? Colors.HeaderBackground : _defaultBgColor;
                 }
-              
-
+                // set Focussed
                 if (SelectedIndices.Count > 0 && SelectedIndices.Contains(i))
-                    bgColor = Focused ? Colors.BlueSelection : Colors.GreySelection;
-
+                    bgColor = Focused ? Colors.BlueSelection : _defaultBgColor;
+                         
                 using (var b = new SolidBrush(bgColor))
-                {
+                {                  
                     g.FillRectangle(b, rect);
                 }
 
@@ -587,5 +608,7 @@ namespace AcrylicUI.Controls
         }
 
         #endregion
+
+
     }
 }

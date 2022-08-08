@@ -1,4 +1,6 @@
-﻿using System.Drawing;
+﻿using AcrylicUI.Resources;
+using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace AcrylicUI.Controls
@@ -6,6 +8,8 @@ namespace AcrylicUI.Controls
     public abstract class AcrylicScrollView : AcrylicScrollBase    
    {
         #region Constructor Region
+
+        protected bool _isAcrylic = false;
 
         protected AcrylicScrollView()
         {
@@ -25,10 +29,16 @@ namespace AcrylicUI.Controls
             var g = e.Graphics;
 
             // Draw background
-            using (var b = new SolidBrush(BackColor))
+            if (_isAcrylic)
             {
+                using var b = new SolidBrush(Colors.AcrylicOuterPanel);
                 g.FillRectangle(b, ClientRectangle);
             }
+            else
+                using (var b = new SolidBrush(BackColor))
+                {
+                    g.FillRectangle(b, ClientRectangle);
+                }
 
             // Offset the graphics based on the viewport, render the control contents, then reset it.
             g.TranslateTransform(Viewport.Left * -1, Viewport.Top * -1);
@@ -55,6 +65,6 @@ namespace AcrylicUI.Controls
             // Absorb event
         }
 
-        #endregion
+        #endregion       
     }
 }

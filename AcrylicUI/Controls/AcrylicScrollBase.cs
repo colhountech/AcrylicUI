@@ -141,7 +141,7 @@ namespace AcrylicUI.Controls
             if (_hScrollBar.Maximum != ContentSize.Width)
                 _hScrollBar.Maximum = ContentSize.Width;
 
-            var scrollSize = Consts.ScrollBarSize;
+            var scrollSize = Scale(Consts.ScrollBarSize);
 
             _vScrollBar.Location = new Point(ClientSize.Width - scrollSize, 0);
             _vScrollBar.Size = new Size(scrollSize, ClientSize.Height);
@@ -186,7 +186,7 @@ namespace AcrylicUI.Controls
 
         private void SetVisibleSize()
         {
-            var scrollSize = Consts.ScrollBarSize;
+            var scrollSize = Scale(Consts.ScrollBarSize);
 
             _visibleSize = new Size(ClientSize.Width, ClientSize.Height);
 
@@ -292,8 +292,8 @@ namespace AcrylicUI.Controls
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
-
-            UpdateScrollBars();
+            UpdateScale();
+            UpdateScrollBars();  
         }
 
         protected override void OnMouseMove(MouseEventArgs e)
@@ -420,5 +420,43 @@ namespace AcrylicUI.Controls
         }
 
         #endregion
+
+        #region Dpi Scale
+
+        private const float DEFAULT_DPI = 96f;
+        private float _dpiScale = 1;
+
+        // call at init too
+        protected void UpdateScale()
+        {
+            var form = FindForm();
+            if (form is null)
+            {
+
+            }
+            var handle = form?.Handle ?? this.Handle;
+
+            var newDpiScale = (float)Drawing.GetDpi(handle) / (float)DEFAULT_DPI;
+            if (newDpiScale != _dpiScale)
+            {
+                _dpiScale = newDpiScale;
+
+                // TODO
+                // update Icons
+            }
+        }
+        //protected override void OnResize(EventArgs e)
+        //{
+        //    base.OnResize(e);
+        //    UpdateScale();
+        //    //TODO update icons RescaleImage();
+        //}
+        private int Scale(int pixel)
+        {
+            return (int)(pixel * _dpiScale);
+        }
+
+        #endregion
+
     }
 }

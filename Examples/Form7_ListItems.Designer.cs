@@ -46,7 +46,6 @@ namespace Examples
             this.windowPanel1.IsAcrylic = false;
             this.windowPanel1.Location = new System.Drawing.Point(0, 0);
             this.windowPanel1.Name = "windowPanel1";
-            this.windowPanel1.ProfileFeature = false;
             this.windowPanel1.RoundCorners = false;
             this.windowPanel1.SectionHeader = null;
             this.windowPanel1.Size = new System.Drawing.Size(447, 450);
@@ -54,12 +53,13 @@ namespace Examples
             // 
             // acrylicListView1
             // 
-            this.acrylicListView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.acrylicListView1.AlternateBackground = false;
             this.acrylicListView1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.acrylicListView1.Location = new System.Drawing.Point(1, 25);
+            this.acrylicListView1.IsAcrylic = true;
+            this.acrylicListView1.Location = new System.Drawing.Point(1, 36);
             this.acrylicListView1.Name = "acrylicListView1";
             this.acrylicListView1.Padding = new System.Windows.Forms.Padding(0, 25, 0, 0);
-            this.acrylicListView1.Size = new System.Drawing.Size(202, 424);
+            this.acrylicListView1.Size = new System.Drawing.Size(202, 413);
             this.acrylicListView1.TabIndex = 2;
             this.acrylicListView1.Text = "acrylicListView1";
             // 
@@ -78,6 +78,7 @@ namespace Examples
             // 
             this.acrylicButton1.Default = false;
             this.acrylicButton1.HasRoundedCorners = false;
+            this.acrylicButton1.Image = null;
             this.acrylicButton1.ImagePadding = 6;
             this.acrylicButton1.Location = new System.Drawing.Point(214, 83);
             this.acrylicButton1.Name = "acrylicButton1";
@@ -88,15 +89,15 @@ namespace Examples
             this.acrylicButton1.UseVisualStyleBackColor = false;
             this.acrylicButton1.Click += new System.EventHandler(this.acrylicButton1_Click);
             // 
-            // Form7
+            // Form7_ListItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = AcrylicUI.Resources.Colors.GreyBackground;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(447, 450);
             this.Controls.Add(this.windowPanel1);
             this.Location = new System.Drawing.Point(0, 0);
-            this.Name = "Form7";
+            this.Name = "Form7_ListItems";
             this.Text = "Form5";
             this.windowPanel1.ResumeLayout(false);
             this.windowPanel1.PerformLayout();
