@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace AcrylicUI.Controls
 {
-   public abstract class AcrylicScrollBase : Control
+    public abstract class AcrylicScrollBase : Control
     {
         #region Event Region
 
@@ -17,8 +17,10 @@ namespace AcrylicUI.Controls
 
         #region Field Region
 
-        protected readonly AcrylicScrollBar _vScrollBar;
-        protected readonly AcrylicScrollBar _hScrollBar;
+        protected AcrylicScrollBar _vScrollBar;
+        protected AcrylicScrollBar _hScrollBar;
+
+        public bool DisableHorizontalScrollBar { get; set; } = false;
 
         private Size _visibleSize;
         private Size _contentSize;
@@ -180,7 +182,8 @@ namespace AcrylicUI.Controls
             if (_hideScrollBars)
             {
                 _vScrollBar.Visible = _vScrollBar.Enabled;
-                _hScrollBar.Visible = _hScrollBar.Enabled;
+                if (!DisableHorizontalScrollBar)
+                    _hScrollBar.Visible = _hScrollBar.Enabled;
             }
         }
 

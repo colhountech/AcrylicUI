@@ -589,8 +589,8 @@ namespace AcrylicUI.Controls
                 {
                     if (IsAcrylic)
                     {
-                        g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-                        g.FillPath(b, rectRounded);
+                        //g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                        //g.FillPath(b, rectRounded);
                         g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.None;
                         g.FillPath(b, rectRounded);
                     }
