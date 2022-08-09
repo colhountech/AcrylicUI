@@ -37,12 +37,7 @@ namespace AcrylicUI.Controls
                 Invalidate();
             }
         }
-
-
         #endregion
-
-
-
 
         public AcrylicGlassPanel()
         {
@@ -54,22 +49,18 @@ namespace AcrylicUI.Controls
             BackColor = Colors.AcrylicOuterPanel; //or Colors.AcrylicInnerPanel;
             ForeColor = Colors.AcrylicHairline;
         }
-
-
       
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
             UpdateScale();
-
         }
 
-
         #region Paint Region
-        //protected override void OnPaintBackground(PaintEventArgs pevent)
-        //{
-        //    // absorb event
-        //}
+        protected override void OnPaintBackground(PaintEventArgs pevent)
+        {
+            // absorb event
+        }
 
         protected override void OnPaint(PaintEventArgs e)
         {
@@ -100,11 +91,8 @@ namespace AcrylicUI.Controls
             var penWidth = Scale(Consts.PEN_WIDTH) / 2;
             penWidth = penWidth == 0 ? 1 : penWidth;
 
-
-
             using (var p = new Pen(borderColor, penWidth))
             {
-
                 var modRect = new Rectangle(
                     rect.Left,
                     rect.Top,
@@ -121,21 +109,10 @@ namespace AcrylicUI.Controls
                     g.DrawRectangle(p, modRect);
 
                 }
-
             }
         }
 
-
-
-        protected override void OnPaintBackground(PaintEventArgs e)
-        {
-            // absorb event
-            // if you don't absorb this event
-            // you get terrible flickering on layered panels
-        }
-
         #endregion
-
 
         #region Dpi Scale
 
@@ -145,11 +122,7 @@ namespace AcrylicUI.Controls
         // call at init too
         private void UpdateScale()
         {
-            var form = FindForm();
-            if (form is null)
-            {
-
-            }
+            var form = FindForm();            
             var handle = form?.Handle ?? this.Handle;
 
             var newDpiScale = (float)Drawing.GetDpi(handle) / (float)DEFAULT_DPI;
@@ -160,14 +133,11 @@ namespace AcrylicUI.Controls
                 // TODO
                 // update Icons
             }
-        }
-      
+        }      
         private int Scale(int pixel)
         {
             return (int)(pixel * _dpiScale);
         }
-
         #endregion
-
     }
 }
