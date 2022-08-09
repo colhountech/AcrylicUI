@@ -18,7 +18,7 @@ namespace AcrylicUI.Resources
         public const int CONTROL_PADDING = 12;  // use increments of 4, with 12 minimum
         public const int CONTROL_HEIGHT = 36;
         public const int LISTITEM_HEIGHT = 32;
-        public const int LISTITEM_PADDING = 8;
+        public const int LISTITEM_PADDING = 6;
         public const int LISTITEM_OFFSET = 12;
         public const int CONTROL_BUTTON_PADDING = 5;
         public const int CONTROL_BUTTON_XOFFSET = 3;
