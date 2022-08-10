@@ -33,6 +33,7 @@ namespace AcrylicUI.Resources
 
         public const int ARC_RADIUS = 8;
         public const int SMALL_ARC_RADIUS = 4;
+        public const int TINY_ARC_RADIUS = 2;
 
         // Docking Tabls / Dialogs
 
@@ -67,6 +68,14 @@ namespace AcrylicUI.Resources
         {
             get { return Color.FromArgb(31, 31, 31); }
         }
+
+        // Acrylic Title Label
+
+        public static Color AcrylicDropShadow
+        {
+            get { return Color.FromArgb(10, 31, 31, 31); } // Dark Border, low opacity
+        }
+
 
         //  Acrylc Glass Panels
 

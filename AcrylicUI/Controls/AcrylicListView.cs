@@ -32,7 +32,7 @@ namespace AcrylicUI.Controls
         private bool _alternateBackground;
 
         Color _defaultBgColor = Colors.Transparent;
-        Color _defaultSelectionColor = Colors.AcrylicOuterPanel;
+        Color _defaultSelectionColor = Colors.AcrylicInnerPanel;
 
         #endregion
 
@@ -628,7 +628,9 @@ namespace AcrylicUI.Controls
                     if (ShowIcons)
                         modRect.X += _iconSize + Scale(Consts.LISTITEM_OFFSET);
 
-                    g.DrawString(Items[i].Text, modFont, b, modRect, stringFormat);
+                    this.DrawTextBlur(modRect, g, Items[i].Text, modFont);
+                    g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SingleBitPerPixelGridFit;
+                    g.DrawString(Items[i].Text, modFont, b, modRect, stringFormat);                   
                 }
             }
         }

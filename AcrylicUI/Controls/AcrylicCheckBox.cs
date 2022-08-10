@@ -13,10 +13,30 @@ namespace AcrylicUI.Controls
         private AcrylicControlState _controlState = AcrylicControlState.Normal;
 
         private bool _spacePressed;
+        private bool _isAcrylic;
+        private Color _defaultBgColor =  Colors.GreyBackground;
 
         #endregion
 
         #region Property Region
+
+        [Category("Appearance")]
+        [Description("Determines the acrylic glass effect background.")]
+        [DefaultValue(true)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        public bool IsAcrylic
+        {
+            get
+            {
+                return _isAcrylic;
+            }
+            set
+            {
+                _isAcrylic = value;
+                _defaultBgColor = (IsAcrylic) ? Colors.Transparent : Colors.GreyBackground;
+
+            }
+        }
 
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -312,8 +332,12 @@ namespace AcrylicUI.Controls
                 fillColor = Colors.GreySelection;
             }
 
-            using (var b = new SolidBrush(Colors.GreyBackground))
+            using (var b = new SolidBrush(_defaultBgColor))
             {
+                if (_isAcrylic)
+                {
+                    g.Clear(_defaultBgColor);
+                }
                 g.FillRectangle(b, rect);
             }
 
@@ -341,6 +365,8 @@ namespace AcrylicUI.Controls
                 };
 
                 var modRect = new Rectangle(size + 4, 0, rect.Width - size, rect.Height);
+                g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SingleBitPerPixelGridFit;
+                this.DrawTextBlur(modRect, g,  Text, Font);
                 g.DrawString(Text, Font, b, modRect, stringFormat);
             }
         }
