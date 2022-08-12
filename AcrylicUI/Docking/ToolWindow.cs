@@ -31,6 +31,25 @@ namespace AcrylicUI.Docking
             get { return base.Padding; }
         }
 
+        [Category("Appearance")]
+        [Description("Determines the acrylic glass effect background.")]
+        [DefaultValue(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        public bool IsAcrylic
+        {
+            get
+            {
+                return _isAcrylic;
+            }
+            set
+            {
+                _isAcrylic = value;
+                _defaultBgColor = (IsAcrylic) ? Colors.AcrylicOuterPanel : Colors.GreyBackground;
+                _defaultHeaderColor = (IsAcrylic) ? Colors.AcrylicInnerPanel : Colors.HeaderBackground;
+                _defaultHeaderActiveColor = (IsAcrylic) ? Colors.AcrylicInnerPanel : Colors.BlueBackground;
+
+            }
+        }
         #endregion
 
         #region Constructor Region
@@ -160,7 +179,7 @@ namespace AcrylicUI.Docking
             var g = e.Graphics;
 
             // Fill body
-            using (var b = new SolidBrush(Colors.GreyBackground))
+            using (var b = new SolidBrush(_defaultBgColor))
             {
                 g.FillRectangle(b, ClientRectangle);
             }
@@ -168,7 +187,7 @@ namespace AcrylicUI.Docking
             var isActive = IsActive();
 
             // Draw header
-            var bgColor = isActive ? Colors.BlueBackground : Colors.HeaderBackground;
+            var bgColor = isActive ? _defaultHeaderActiveColor : _defaultHeaderColor;
             var darkColor = isActive ? Colors.DarkBlueBorder : Colors.DarkBorder;
             var lightColor = isActive ? Colors.LightBlueBorder : Colors.LightBorder;
 
@@ -210,7 +229,7 @@ namespace AcrylicUI.Docking
                     FormatFlags = StringFormatFlags.NoWrap,
                     Trimming = StringTrimming.EllipsisCharacter
                 };
-
+                g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SingleBitPerPixelGridFit;
                 g.DrawString(DockText, Font, b, textRect, format);
             }
 
@@ -229,10 +248,15 @@ namespace AcrylicUI.Docking
         }
 
         #endregion
+
         #region Dpi Scale
 
         private const float DEFAULT_DPI = 96f;
         private float _dpiScale = 1;
+        private bool _isAcrylic;
+        private Color _defaultBgColor;
+        private Color _defaultHeaderColor;
+        private Color _defaultHeaderActiveColor;
 
         // call at init too
         private void UpdateScale()

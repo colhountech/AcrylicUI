@@ -695,6 +695,7 @@ namespace AcrylicUI.Controls
                     Trimming = StringTrimming.EllipsisCharacter
                 };
 
+                g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
                 g.DrawString(SectionHeader, Font, b, textRect, format);
             }
 

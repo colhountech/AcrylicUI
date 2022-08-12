@@ -116,10 +116,12 @@ namespace AcrylicUI.Controls
             {
                 _dpiScale = newDpiScale;
 
-                // update Icons
-
-                _scrollbar_arrow_hot = _iconfactory.BitmapFromSvg(Icons.ASX_GlyphDown_grey_16x);
-                
+                if (_iconfactory is not null)
+                {
+                    // update Icons
+                    // BUG: Object reference not set to an instance of an object.
+                    _scrollbar_arrow_hot = _iconfactory.BitmapFromSvg(Icons.ASX_GlyphDown_grey_16x);
+                }
 
             }
 
