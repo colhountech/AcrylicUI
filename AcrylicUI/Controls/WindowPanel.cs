@@ -20,6 +20,10 @@ namespace AcrylicUI.Controls
         public event EventHandler OnMenuClicked;
 
         private Image _icon;
+        private Image _iconMazimizeCache;
+        private Image _iconMazimizeHotCache;
+        private Image _iconRestoreCache;
+        private Image _iconRestoreHotCache;
         private string _sectionHeader;
         private float _dpiScale = 0f;
         private bool _profileFeature = false;
@@ -144,8 +148,7 @@ namespace AcrylicUI.Controls
         {
             SetStyle(ControlStyles.OptimizedDoubleBuffer |
                      ControlStyles.ResizeRedraw |
-                     ControlStyles.UserPaint, true);
-
+                     ControlStyles.UserPaint, true);       
             if (_hasRoundCorners)
             {
                 base.Padding = new Padding(Consts.PEN_WIDTH, Consts.CONTROL_HEIGHT, Consts.PEN_WIDTH, Consts.ARC_RADIUS); // Top spacing for esthetics, Lower spacing for arc
@@ -167,6 +170,14 @@ namespace AcrylicUI.Controls
             if (newDpiScale != _dpiScale)
             {
                 _dpiScale = newDpiScale;
+
+                // update cache before max icon
+                _iconMazimizeCache = new IconFactory(_dpiScale).GreyBitmapFromSvg(Icons.ChromeRestore_16x_svg);
+                _iconMazimizeHotCache = new IconFactory(_dpiScale).WhiteBitmapFromSvg(Icons.ChromeRestore_16x_svg);
+                _iconRestoreCache = new IconFactory(_dpiScale).GreyBitmapFromSvg(Icons.ChromeMaximize_16x_svg);
+                _iconRestoreHotCache = new IconFactory(_dpiScale).WhiteBitmapFromSvg(Icons.ChromeMaximize_16x_svg);
+
+
                 //
                 //close
                 //
@@ -209,6 +220,7 @@ namespace AcrylicUI.Controls
                     );
                 _menu.IconHot?.Dispose();
                 _menu.IconHot = new IconFactory(_dpiScale).WhiteBitmapFromSvg(Icons.HamburgerMenu_16x_svg);
+
             }
         }
 
@@ -218,14 +230,14 @@ namespace AcrylicUI.Controls
 
             if (state == FormWindowState.Maximized)
             {
-                _max.Icon = new IconFactory(_dpiScale).GreyBitmapFromSvg(Icons.ChromeRestore_16x_svg);
-                _max.IconHot = new IconFactory(_dpiScale).WhiteBitmapFromSvg(Icons.ChromeRestore_16x_svg);
+                _max.Icon = _iconMazimizeCache;
+                _max.IconHot = _iconMazimizeHotCache;
 
             }
             else
             {
-                _max.Icon = new IconFactory(_dpiScale).GreyBitmapFromSvg(Icons.ChromeMaximize_16x_svg);
-                _max.IconHot = new IconFactory(_dpiScale).WhiteBitmapFromSvg(Icons.ChromeMaximize_16x_svg);
+                _max.Icon = _iconRestoreCache;
+                _max.IconHot = _iconRestoreHotCache;
             }
         }
 
@@ -316,8 +328,6 @@ namespace AcrylicUI.Controls
 
 
         #endregion
-
-
 
         #region Event Handler Region
 
