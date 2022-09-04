@@ -89,8 +89,8 @@ namespace AcrylicUI.Docking
 
             _closeButtonRect = new Rectangle
             {
-                X = ClientRectangle.Right - DockIcons.tw_close.Width - Scale(5 + 3),
-                Y = ClientRectangle.Top + (Scale(Consts.ToolWindowHeaderSize) / 2) - Scale(Consts.ICON_SIZE / 2),
+                X = ClientRectangle.Right - DockIcons.tw_close.Width - Scale(Consts.CONTROL_BUTTON_PADDING),
+                Y = ClientRectangle.Top + (Scale(Consts.ToolWindowHeaderSize) / 2) - ( DockIcons.tw_close.Height / 2),
                 Width = DockIcons.tw_close.Width,
                 Height = DockIcons.tw_close.Height
             };
