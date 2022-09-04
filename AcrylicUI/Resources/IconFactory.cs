@@ -117,12 +117,12 @@ namespace AcrylicUI.Resources
                 if (((element as SvgPath).Fill as SvgColourServer).Colour.ToArgb() == sourceColor.ToArgb())
                 {
                     (element as SvgPath).Fill = new SvgColourServer(replaceColor);
-                    Console.WriteLine($"replaced #{sourceColor.A:X2}{sourceColor.R:X2}{sourceColor.G:X2}{sourceColor.B:X2} with #{replaceColor.A:X2}{replaceColor.R:X2}{replaceColor.G:X2}{replaceColor.B:X2} ");
+                   // Console.WriteLine($"replaced #{sourceColor.A:X2}{sourceColor.R:X2}{sourceColor.G:X2}{sourceColor.B:X2} with #{replaceColor.A:X2}{replaceColor.R:X2}{replaceColor.G:X2}{replaceColor.B:X2} ");
                 }
                 else
                 {
                     var c = ((element as SvgPath).Fill as SvgColourServer).Colour;
-                    Console.WriteLine($"Didn't replace Color:#{c.A:X2}{c.R:X2}{c.G:X2}{c.B:X2}");
+                   // Console.WriteLine($"Didn't replace Color:#{c.A:X2}{c.R:X2}{c.G:X2}{c.B:X2}");
                 }
             }
 
