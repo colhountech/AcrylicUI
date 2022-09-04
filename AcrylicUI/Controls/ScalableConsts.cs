@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace AcrylicUI.Controls
+﻿namespace AcrylicUI.Controls
 {
     public class ScalableConsts
     {
@@ -103,11 +96,11 @@ namespace AcrylicUI.Controls
         private const float DEFAULT_DPI = 96f;
         protected float _dpiScale = 1f;
 
-     
+
         // call at init too
         public virtual void UpdateScale(float newDpiScale = 1f)
         {
-           
+
             if (newDpiScale != _dpiScale)
             {
                 _dpiScale = newDpiScale;

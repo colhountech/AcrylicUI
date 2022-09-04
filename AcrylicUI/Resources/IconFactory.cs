@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Svg;
+using System;
 using System.Drawing;
 using System.IO;
 using System.Runtime.InteropServices;
-using Svg;
 
 
 namespace AcrylicUI.Resources
@@ -19,15 +19,15 @@ namespace AcrylicUI.Resources
         public static float GetDpiScale(IntPtr handle)
 
         {
-            return (float)GetDpiForWindow(handle) / (float) Consts.DEFAULT_DPI;
+            return (float)GetDpiForWindow(handle) / (float)Consts.DEFAULT_DPI;
         }
 
 
-        public  int Scale (int pixel)
+        public int Scale(int pixel)
         {
             return ((int)Math.Ceiling((float)pixel * _dpiScale));
         }
-        
+
         public Image GreyBitmapFromSvg(byte[] bytes, int width = Consts.ICON_SIZE, int height = Consts.ICON_SIZE)
         {
             var sourceColor = Color.FromArgb(0xff, 0x21, 0x21, 0x21); // Hack for Chrome Close/Min/max/Restore button
@@ -52,8 +52,8 @@ namespace AcrylicUI.Resources
             return NamedColorBitmapFromSvg(bytes, sourceColor, replaceColor, width, height);
         }
 
-        public Image DarkColorFromSvg(byte[] bytes,           
-            string backColorHex= "#FF424242", // fill
+        public Image DarkColorFromSvg(byte[] bytes,
+            string backColorHex = "#FF424242", // fill
             string newBackColorHex = "#FF424242",
             string foreColorHex = "#FFF6F6F6",  // outline
             string newForeColorHex = "#FFF6F6F6",
@@ -88,7 +88,7 @@ namespace AcrylicUI.Resources
                 var str = backColorHex.Substring(1);
                 return Convert.ToInt32(str, 16);
             }
-            return  Convert.ToInt32(backColorHex, 16);
+            return Convert.ToInt32(backColorHex, 16);
         }
 
         public Image NamedColorBitmapFromSvg(byte[] bytes, Color backColor, Color newBackColor, int width = Consts.ICON_SIZE, int height = Consts.ICON_SIZE)
@@ -109,11 +109,11 @@ namespace AcrylicUI.Resources
             }
         }
 
-        private  void ChangeFill(SvgElement element, Color sourceColor, Color replaceColor)
+        private void ChangeFill(SvgElement element, Color sourceColor, Color replaceColor)
         {
             if (element is SvgPath)
-            { 
-    
+            {
+
                 if (((element as SvgPath).Fill as SvgColourServer).Colour.ToArgb() == sourceColor.ToArgb())
                 {
                     (element as SvgPath).Fill = new SvgColourServer(replaceColor);
@@ -135,20 +135,20 @@ namespace AcrylicUI.Resources
             }
         }
 
-        public  Image BitmapFromSvg(byte[] bytes, int width = Consts.ICON_SIZE, int height = Consts.ICON_SIZE)
+        public Image BitmapFromSvg(byte[] bytes, int width = Consts.ICON_SIZE, int height = Consts.ICON_SIZE)
         {
 
             using (var stream = new MemoryStream(bytes))
             {
                 var svgDoc = SvgDocument.Open<SvgDocument>(stream, null);
-                return svgDoc.Draw( Scale(width), Scale(height));
+                return svgDoc.Draw(Scale(width), Scale(height));
             }
         }
 
         public Icon IconFromSvg(byte[] bytes, int width = Consts.ICON_SIZE, int height = Consts.ICON_SIZE)
         {
-            Image icon  = BitmapFromSvg(bytes, Scale(width), Scale(height));
-            return Icon.FromHandle(new Bitmap(icon).GetHicon());            
+            Image icon = BitmapFromSvg(bytes, Scale(width), Scale(height));
+            return Icon.FromHandle(new Bitmap(icon).GetHicon());
         }
 
         [DllImport("user32.dll")]

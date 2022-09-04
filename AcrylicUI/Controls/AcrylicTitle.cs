@@ -1,6 +1,5 @@
 ﻿using AcrylicUI.Resources;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
 namespace AcrylicUI.Controls
@@ -24,7 +23,7 @@ namespace AcrylicUI.Controls
             var g = e.Graphics;
             var rect = new Rectangle(0, 0, ClientSize.Width, ClientSize.Height);
             var textSize = g.MeasureString(Text, Font);
-            
+
             using (var b = new SolidBrush(ForeColor))
             {
                 g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;

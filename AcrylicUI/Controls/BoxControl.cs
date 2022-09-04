@@ -1,8 +1,8 @@
-﻿using System.Windows.Forms;
-using System.Drawing;
-using System.ComponentModel;
-using AcrylicUI.Docking;
+﻿using AcrylicUI.Docking;
 using AcrylicUI.Resources;
+using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace AcrylicUI.Controls
 {
@@ -37,7 +37,7 @@ namespace AcrylicUI.Controls
                 return false;
 
             return DockPanel.ActiveContent == this;
-        }       
+        }
 
         protected override void OnPaint(PaintEventArgs e)
         {
@@ -97,8 +97,8 @@ namespace AcrylicUI.Controls
 
                 g.DrawString(DockText, Font, b, textRect, format);
             }
-          
-          
+
+
         }
 
         protected override void OnPaintBackground(PaintEventArgs e)

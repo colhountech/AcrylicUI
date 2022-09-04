@@ -1,13 +1,8 @@
 ﻿using AcrylicUI.Resources;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AcrylicUI.Controls
@@ -90,11 +85,11 @@ namespace AcrylicUI.Controls
                 g.DrawRectangle(p, borderRect);
             }
 
-            var textRect = new Rectangle(rect.Left + Scale (Consts.CONTROL_PADDING),
+            var textRect = new Rectangle(rect.Left + Scale(Consts.CONTROL_PADDING),
                     rect.Top,
                     rect.Width - (Consts.CONTROL_PADDING * 2),
                     (int)stringSize.Height);
-                   
+
             using (var b2 = new SolidBrush(fillColor))
             {
                 var modRect = new Rectangle(textRect.Left, textRect.Top, Math.Min(textRect.Width, (int)stringSize.Width), textRect.Height);
@@ -148,7 +143,7 @@ namespace AcrylicUI.Controls
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
-            UpdateScale();            
+            UpdateScale();
         }
         private int Scale(int pixel)
         {

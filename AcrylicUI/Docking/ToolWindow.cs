@@ -1,9 +1,8 @@
-﻿using System.ComponentModel;
+﻿using AcrylicUI.Resources;
+using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using System;
-using AcrylicUI.Docking;
-using AcrylicUI.Resources;
 
 namespace AcrylicUI.Docking
 {
@@ -220,7 +219,7 @@ namespace AcrylicUI.Docking
             // Draw text
             using (var b = new SolidBrush(Colors.LightText))
             {
-                var textRect = new Rectangle(xOffset, 0, ClientRectangle.Width - Scale(4) - xOffset, Scale(Consts.ToolWindowHeaderSize) );
+                var textRect = new Rectangle(xOffset, 0, ClientRectangle.Width - Scale(4) - xOffset, Scale(Consts.ToolWindowHeaderSize));
 
                 var format = new StringFormat
                 {
@@ -276,7 +275,7 @@ namespace AcrylicUI.Docking
                 // TODO
                 // update Icons
             }
-        }    
+        }
         private int Scale(int pixel)
         {
             return (int)(pixel * _dpiScale);

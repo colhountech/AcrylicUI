@@ -1,5 +1,4 @@
-﻿using System;
-using AcrylicUI.Controls;
+﻿using AcrylicUI.Controls;
 using AcrylicUI.Resources;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -83,7 +82,7 @@ namespace AcrylicUI.Forms
                 {
                     btnAbort, btnRetry, btnIgnore, btnOk,
                     btnCancel, btnClose, btnYes, btnNo, btnApply
-                };          
+                };
         }
 
         #endregion
@@ -191,7 +190,7 @@ namespace AcrylicUI.Forms
         {
             if (flowInner is not null && _buttons is not null)
             {
-                var width = flowInner.Padding.Horizontal;           
+                var width = flowInner.Padding.Horizontal;
 
                 foreach (var btn in _buttons)
                 {

@@ -1,12 +1,11 @@
 ﻿using AcrylicUI.Resources;
-using System;
 using System.Drawing;
 using System.Windows.Forms;
 
 namespace AcrylicUI.Controls
 {
-    public abstract class AcrylicScrollView : AcrylicScrollBase    
-   {
+    public abstract class AcrylicScrollView : AcrylicScrollBase
+    {
         #region Constructor Region
 
         protected bool _isAcrylic = false;

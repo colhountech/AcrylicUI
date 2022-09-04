@@ -3,7 +3,8 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace AcrylicUI.Platform.Windows { 
+namespace AcrylicUI.Platform.Windows
+{
     public class DockResizeFilter : IMessageFilter
     {
         #region Field Region

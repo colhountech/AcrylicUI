@@ -132,7 +132,9 @@ namespace AcrylicUI.Controls
         /// call the UpdateScale(dpiScale) before getting the ExpandedIcon
         /// 
         /// </summary>
-        public Bitmap ExpandedIcon { get
+        public Bitmap ExpandedIcon
+        {
+            get
             {
                 if (_svgExpandedIcon is null) return null;
                 using (var stream = new MemoryStream(_svgExpandedIcon))

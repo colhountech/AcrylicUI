@@ -1,12 +1,10 @@
-﻿using AcrylicUI.Docking;
+﻿using AcrylicUI.Platform.Windows;
 using AcrylicUI.Resources;
-using AcrylicUI.Platform.Windows;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
-using System.Drawing;
 
 namespace AcrylicUI.Docking
 {
@@ -333,4 +331,3 @@ namespace AcrylicUI.Docking
         #endregion
     }
 }
-    

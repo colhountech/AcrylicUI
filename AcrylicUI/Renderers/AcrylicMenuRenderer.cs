@@ -1,5 +1,4 @@
-﻿using AcrylicUI.Controls;
-using AcrylicUI.Resources;
+﻿using AcrylicUI.Resources;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -32,7 +31,7 @@ namespace AcrylicUI.Renderers
 
             if (item.GetType() == typeof(ToolStripSeparator))
             {
-                item.Margin = new Padding(0, 0, 0, Scale(_padding)); 
+                item.Margin = new Padding(0, 0, 0, Scale(_padding));
             }
         }
 
@@ -66,7 +65,7 @@ namespace AcrylicUI.Renderers
             var g = e.Graphics;
 
             var rect = new Rectangle(e.ImageRectangle.Left - Scale(_itemPadding), e.ImageRectangle.Top - Scale(_itemPadding),
-                                         e.ImageRectangle.Width + Scale(_itemPadding*2), e.ImageRectangle.Height + Scale(_itemPadding *2));
+                                         e.ImageRectangle.Width + Scale(_itemPadding * 2), e.ImageRectangle.Height + Scale(_itemPadding * 2));
 
             using (var b = new SolidBrush(Colors.LightBorder))
             {
@@ -113,7 +112,7 @@ namespace AcrylicUI.Renderers
 
             if (e.Item.Enabled)
             {
-                
+
                 var bgColor = e.Item.Selected ? Colors.GreyHighlight : e.Item.BackColor;
 
                 // Normal item
@@ -154,7 +153,7 @@ namespace AcrylicUI.Renderers
                 _dpiScale = newDpiScale;
             }
         }
-        
+
         protected virtual int Scale(int pixel)
         {
             return (int)(pixel * _dpiScale);

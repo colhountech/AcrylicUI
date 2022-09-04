@@ -1,12 +1,5 @@
 ﻿using AcrylicUI.Resources;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AcrylicUI.Controls
@@ -16,8 +9,8 @@ namespace AcrylicUI.Controls
         public AcrylicTextBox()
         {
             BackColor = Colors.DarkGrey;
-            ForeColor = Colors.Text;            
-            Padding = new Padding( Scale( Consts.BUTTON_PADDING));
+            ForeColor = Colors.Text;
+            Padding = new Padding(Scale(Consts.BUTTON_PADDING));
             BorderStyle = BorderStyle.FixedSingle;
         }
         #region Dpi Scale

@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace AcrylicUI.Controls
 {
-   public class AcrylicScrollBar : Control
+    public class AcrylicScrollBar : Control
     {
         #region Event Region
 
@@ -511,7 +511,7 @@ namespace AcrylicUI.Controls
 
             // Up arrow
             //var upIcon = _upArrowHot ? ScrollIcons.scrollbar_arrow_hot : ScrollIcons.scrollbar_arrow_standard;
-            var upIcon = _upArrowHot ?  _arrowHotIcon.Clone() as Image  : _arrowStandardIcon.Clone() as Image;
+            var upIcon = _upArrowHot ? _arrowHotIcon.Clone() as Image : _arrowStandardIcon.Clone() as Image;
             if (_upArrowClicked)
                 //upIcon = ScrollIcons.scrollbar_arrow_clicked;
                 upIcon = _arrowClickedIcon.Clone() as Image;

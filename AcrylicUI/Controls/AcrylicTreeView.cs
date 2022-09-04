@@ -1,7 +1,6 @@
 ﻿using AcrylicUI.Collections;
 using AcrylicUI.Forms;
 using AcrylicUI.Resources;
-using AcrylicUI.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -41,7 +40,7 @@ namespace AcrylicUI.Controls
 
 
         private IconFactory _iconFactory;
-        
+
         private Image _nodeClosed;
         private Image _nodeClosedHover;
         private Image _nodeClosedHoverSelected;
@@ -158,7 +157,7 @@ namespace AcrylicUI.Controls
             _selectedNodes.CollectionChanged += SelectedNodes_CollectionChanged;
 
             MaxDragChange = _itemHeight;
-            
+
             LoadIcons();
             UpdateScale();
         }
@@ -581,7 +580,7 @@ namespace AcrylicUI.Controls
             var isOdd = false;
             var index = 0;
             AcrylicTreeNode prevNode = null;
-            
+
             for (var i = 0; i <= Nodes.Count - 1; i++)
             {
                 var node = Nodes[i];
@@ -654,7 +653,7 @@ namespace AcrylicUI.Controls
             var dpiScale = IconFactory.GetDpiScale(this.Handle);
             _iconFactory = new IconFactory(IconFactory.GetDpiScale(Handle));
 
-            _nodeClosed = _iconFactory.BitmapFromSvg(TreeViewIcons.GlyphRight_16x, _plusIconSize, _plusIconSize );
+            _nodeClosed = _iconFactory.BitmapFromSvg(TreeViewIcons.GlyphRight_16x, _plusIconSize, _plusIconSize);
             _nodeClosedHover = _iconFactory.BlueBitmapFromSvg(TreeViewIcons.GlyphRight_16x, _plusIconSize, _plusIconSize);
             _nodeClosedHoverSelected = _iconFactory.NamedColorBitmapFromSvg(TreeViewIcons.GlyphRight_16x, Colors.GreyShadow, Color.White, _plusIconSize, _plusIconSize);
 
@@ -1231,7 +1230,7 @@ namespace AcrylicUI.Controls
             // 2. Draw plus/minus icon
             if (node.Nodes.Count > 0)
             {
-                var pos = new Point(node.ExpandArea.Location.X +Scale(2), node.ExpandArea.Location.Y + Scale(2) );
+                var pos = new Point(node.ExpandArea.Location.X + Scale(2), node.ExpandArea.Location.Y + Scale(2));
 
                 var icon = _nodeOpen;
 

@@ -4,7 +4,7 @@ namespace AcrylicUI.Resources
 {
     public sealed class Consts
     {
-        
+
         // Acrylic Consts
         public const byte DEFAULT_OPACITY = 210;
         public const byte SOLIDGRADIENT = 0xff;
@@ -59,12 +59,12 @@ namespace AcrylicUI.Resources
     //  Color.FromArgb(0xff, 0x42, 0x42, 0x42)
     public sealed class Colors
     {
-        public static Color Transparent 
+        public static Color Transparent
         {
             get { return Color.Transparent; }
         }
 
-        public static Color GreyBackground 
+        public static Color GreyBackground
         {
             get { return Color.FromArgb(31, 31, 31); }
         }
@@ -98,15 +98,15 @@ namespace AcrylicUI.Resources
             get { return Color.FromArgb(41, 40, 42); } //57, 60, 62
         }
 
-        public static Color DefaulBlueButtonFill 
+        public static Color DefaulBlueButtonFill
         {
-            get { return Color.FromArgb(26,82,170); }
+            get { return Color.FromArgb(26, 82, 170); }
         }
-        public static Color DefaulBlueButtonPressedFill 
+        public static Color DefaulBlueButtonPressedFill
         {
             get { return Color.FromArgb(23, 72, 150); }
         }
-        public static Color DefaulBlueButtonPressedText 
+        public static Color DefaulBlueButtonPressedText
         {
             get { return Color.FromArgb(185, 185, 185); }
         }
@@ -155,20 +155,20 @@ namespace AcrylicUI.Resources
             get { return Color.FromArgb(69, 69, 69); }
         }
 
-        public static Color BtnFill 
+        public static Color BtnFill
         {
-            get { return Color.FromArgb(55, 55, 55); } 
+            get { return Color.FromArgb(55, 55, 55); }
         }
 
-        public static Color BtnHotFill 
+        public static Color BtnHotFill
         {
-            get { return Color.FromArgb(60,60,60); }
+            get { return Color.FromArgb(60, 60, 60); }
         }
         public static Color BtnHotOutline
         {
             get { return Color.FromArgb(74, 74, 74); }
         }
-        public static Color BtnPressedFill 
+        public static Color BtnPressedFill
         {
             get { return Color.FromArgb(52, 48, 48); }
         }
@@ -199,10 +199,10 @@ namespace AcrylicUI.Resources
 
         public static Color DarkPanel
         {
-            get { return Color.FromArgb(26,28,30); }
+            get { return Color.FromArgb(26, 28, 30); }
         }
-      
-     
+
+
         public static Color DarkBorder
         {
             get { return Color.FromArgb(51, 51, 51); }
@@ -229,7 +229,7 @@ namespace AcrylicUI.Resources
             get { return Color.FromArgb(83, 81, 80); } // 86, 97, 114
         }
 
-        
+
         // Dock Panel
 
         public static Color BlueSelection
@@ -275,16 +275,16 @@ namespace AcrylicUI.Resources
         }
         public static Color GreySelection
         {
-            get { return Color.FromArgb(46, 46, 46); }     
+            get { return Color.FromArgb(46, 46, 46); }
         }
         public static Color MontereyPanel
         {
             get { return Color.FromArgb(54, 52, 57); }
         }
 
-        public static Color MontereyInnerPanel 
-        { 
-            get { return Color.FromArgb(32, 29, 37); } 
+        public static Color MontereyInnerPanel
+        {
+            get { return Color.FromArgb(32, 29, 37); }
         }
         public static Color ActiveControl
         {
@@ -295,7 +295,7 @@ namespace AcrylicUI.Resources
         // New Colors
         public static Color TitleBarActive // Not used
         {
-            get { return Color.FromArgb(0x38,0x2E,0x37); } //Brown ~Valentino
+            get { return Color.FromArgb(0x38, 0x2E, 0x37); } //Brown ~Valentino
         }
 
         public static Color TitleBarInActive // Not used
@@ -304,19 +304,19 @@ namespace AcrylicUI.Resources
         }
         public static Color InnerBorder // Not used
         {
-            get { return Color.FromArgb(115,109, 115); } // LightGrey
+            get { return Color.FromArgb(115, 109, 115); } // LightGrey
         }
         public static Color OuterBorder // Not used
         {
-            get { return Color.FromArgb(23, 23,   23); } //  DarkOutline
+            get { return Color.FromArgb(23, 23, 23); } //  DarkOutline
         }
         public static Color SideDockBackground // Not used
         {
-            get { return Color.FromArgb(0x25,0x28,0x2e); } //   #  More Blue Tints in Brown, ~Bunker (#292C2F)
+            get { return Color.FromArgb(0x25, 0x28, 0x2e); } //   #  More Blue Tints in Brown, ~Bunker (#292C2F)
         }
         public static Color SideDockHeader // Not used
         {
-            get { return Color.FromArgb(0x14,0x14,0x14); } //   #141414 Eerie Black
+            get { return Color.FromArgb(0x14, 0x14, 0x14); } //   #141414 Eerie Black
         }
         public static Color SideDockInactiveHeader // Not used
         {
@@ -327,7 +327,7 @@ namespace AcrylicUI.Resources
             get { return Color.FromArgb(0x26, 0x26, 0x26); } //    #262626  Grey15
         }
         // Document Colors
-        public static Color DocumentBackcolor 
+        public static Color DocumentBackcolor
         {
             get { return Color.FromArgb(0x1e, 0x1e, 0x1e); } //    #1E1E1E (~ Nero #252525)
         }
@@ -345,60 +345,60 @@ namespace AcrylicUI.Resources
         }
         public static Color DocumentBlueText           // Not used
         {
-            get { return Color.FromArgb(0x58,0x9C,0xD3); } //      #589CD3 (#5BA0D0 Picton Blue)
+            get { return Color.FromArgb(0x58, 0x9C, 0xD3); } //      #589CD3 (#5BA0D0 Picton Blue)
         }
         public static Color DocumentRedText           // Not used
         {
-            get { return Color.FromArgb(0xD6,0x4F,0x51); } //      #D64F51(#CD525B Mandy)
+            get { return Color.FromArgb(0xD6, 0x4F, 0x51); } //      #D64F51(#CD525B Mandy)
         }
         public static Color DocumentScrollbar           // Not used
         {
-            get { return Color.FromArgb(0x30,0x30,0x30); } 
+            get { return Color.FromArgb(0x30, 0x30, 0x30); }
         }
         public static Color ConsoleText // Not used
         {
-            get { return Color.FromArgb(0x19,0x19,0x19); }
+            get { return Color.FromArgb(0x19, 0x19, 0x19); }
         }
         public static Color StatusText // Not used
         {
-            get { return Color.FromArgb(0x89,0x89,0x89); } //  ~ #8B8685 Suva Grey
+            get { return Color.FromArgb(0x89, 0x89, 0x89); } //  ~ #8B8685 Suva Grey
         }
         // DataGrid
-        public static Color DataGridTitleBar 
+        public static Color DataGridTitleBar
         {
-            get { return Color.FromArgb(0x2D,0x24,0x2D); } //  #2D242D ~Mardi Gras (#352225)
+            get { return Color.FromArgb(0x2D, 0x24, 0x2D); } //  #2D242D ~Mardi Gras (#352225)
         }
-        public static Color DataGridEvenRow 
+        public static Color DataGridEvenRow
         {
-            get { return Color.FromArgb(0x2f,0x25,0x2e); } //  #2f252e   ~Mardi Gras (#352225)
+            get { return Color.FromArgb(0x2f, 0x25, 0x2e); } //  #2f252e   ~Mardi Gras (#352225)
         }
-        public static Color DataGridOddRow 
+        public static Color DataGridOddRow
         {
-            get { return Color.FromArgb(0x39,0x2F,0x38); } //  #392F38  ~Valentino (#382C38)
+            get { return Color.FromArgb(0x39, 0x2F, 0x38); } //  #392F38  ~Valentino (#382C38)
         }
         public static Color DataGridTitleText // Not used
         {
-            get { return Color.FromArgb(0xff,0xff,0xff); } //  White
+            get { return Color.FromArgb(0xff, 0xff, 0xff); } //  White
         }
-        public static Color DataGridRowText 
+        public static Color DataGridRowText
         {
-            get { return Color.FromArgb(0xDF,0xDE,0xDF); } //  #DFDEDF  ~Snuff but less pink
+            get { return Color.FromArgb(0xDF, 0xDE, 0xDF); } //  #DFDEDF  ~Snuff but less pink
         }
-        public static Color DataGridSelectionBackground 
+        public static Color DataGridSelectionBackground
         {
-            get { return Color.FromArgb(0x71,0x6A,0x70); } //  Gradient Light #716A70 (~Old Lavender) to Dark #574F56 (~Purple Taupe #50404D)
+            get { return Color.FromArgb(0x71, 0x6A, 0x70); } //  Gradient Light #716A70 (~Old Lavender) to Dark #574F56 (~Purple Taupe #50404D)
         }
         public static Color DataGridSelectedText
         {
-            get { return Color.FromArgb(0xDC,0xEA,0xF7); } //  (white) #DCEAF7
+            get { return Color.FromArgb(0xDC, 0xEA, 0xF7); } //  (white) #DCEAF7
         }
-        public static Color DataGridSelectionFocussedBackground 
+        public static Color DataGridSelectionFocussedBackground
         {
-            get { return Color.FromArgb(0x20,0x7B,0xDD); } //  #207BDD (~ Dodger Blue)
+            get { return Color.FromArgb(0x20, 0x7B, 0xDD); } //  #207BDD (~ Dodger Blue)
         }
-        public static Color DataGridDrag 
+        public static Color DataGridDrag
         {
-            get { return Color.FromArgb(0xD3,0xD3, 0xD3); } //  LightGray
+            get { return Color.FromArgb(0xD3, 0xD3, 0xD3); } //  LightGray
         }
 
     }

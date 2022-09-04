@@ -14,7 +14,7 @@ namespace AcrylicUI.Controls
 
         private bool _spacePressed;
         private bool _isAcrylic;
-        private Color _defaultBgColor =  Colors.GreyBackground;
+        private Color _defaultBgColor = Colors.GreyBackground;
 
         #endregion
 
@@ -366,7 +366,7 @@ namespace AcrylicUI.Controls
 
                 var modRect = new Rectangle(size + 4, 0, rect.Width - size, rect.Height);
                 g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SingleBitPerPixelGridFit;
-                this.DrawTextBlur(modRect, g,  Text, Font);
+                this.DrawTextBlur(modRect, g, Text, Font);
                 g.DrawString(Text, Font, b, modRect, stringFormat);
             }
         }

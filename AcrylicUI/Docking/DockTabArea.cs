@@ -1,5 +1,4 @@
 ﻿using AcrylicUI.Controls;
-using AcrylicUI.Docking;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
@@ -36,7 +35,7 @@ namespace AcrylicUI.Docking
         public DockTab ClickedCloseButton { get; set; }
 
         #endregion
-        
+
         #region Constructor Region
 
         public DockTabArea(DockArea dockArea)

@@ -1,5 +1,4 @@
-﻿using AcrylicUI.Controls;
-using AcrylicUI.Extensions;
+﻿using AcrylicUI.Extensions;
 using AcrylicUI.Resources;
 using System.Drawing;
 using System.Windows.Forms;
@@ -29,7 +28,7 @@ namespace AcrylicUI.Renderers
             if (item.GetType() == typeof(ToolStripButton))
             {
                 item.AutoSize = false;
-                item.Size = new Size( Scale(_button_size), Scale(_button_size));
+                item.Size = new Size(Scale(_button_size), Scale(_button_size));
             }
         }
 
@@ -63,7 +62,7 @@ namespace AcrylicUI.Renderers
         {
             var g = e.Graphics;
 
-            var rect = new Rectangle(0, Scale(_line_width), e.Item.Width, e.Item.Height - Scale(2* _line_width));
+            var rect = new Rectangle(0, Scale(_line_width), e.Item.Width, e.Item.Height - Scale(2 * _line_width));
 
             if (e.Item.Selected || e.Item.Pressed)
             {
@@ -100,7 +99,7 @@ namespace AcrylicUI.Renderers
         {
             var g = e.Graphics;
 
-            var rect = new Rectangle(0, Scale(_line_width), e.Item.Width, e.Item.Height - Scale(2* _line_width));
+            var rect = new Rectangle(0, Scale(_line_width), e.Item.Width, e.Item.Height - Scale(2 * _line_width));
 
             if (e.Item.Selected || e.Item.Pressed)
             {
@@ -136,7 +135,7 @@ namespace AcrylicUI.Renderers
                 return;
             }
 
-            var rect = new Rectangle(Scale(_seperatorGap), Scale(_seperatorGap), Scale(2*_line_width), e.Item.Height - Scale(4*_line_width));
+            var rect = new Rectangle(Scale(_seperatorGap), Scale(_seperatorGap), Scale(2 * _line_width), e.Item.Height - Scale(4 * _line_width));
 
             using (var p = new Pen(Colors.DarkBorder))
             {
@@ -203,7 +202,7 @@ namespace AcrylicUI.Renderers
 
         #region Dpi Scale
 
-       public override void UpdateScale(float dpi)
+        public override void UpdateScale(float dpi)
         {
             base.UpdateScale(dpi);
         }

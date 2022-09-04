@@ -1,10 +1,10 @@
-﻿using System;
+﻿using AcrylicUI.Resources;
+using Svg;
+using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using AcrylicUI.Resources;
-using Svg;
 
 namespace AcrylicUI.Controls
 {
@@ -44,7 +44,7 @@ namespace AcrylicUI.Controls
                 return new Size(Consts.BUTTON_WIDTH, Consts.BUTTON_HEIGHT);
             }
         }
-          
+
 
 
         public new bool Enabled
@@ -116,13 +116,13 @@ namespace AcrylicUI.Controls
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public new ContentAlignment ImageAlign
         {
-            get { return base.ImageAlign; }          
+            get { return base.ImageAlign; }
         }
 
 
         [Browsable(true)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
-        [DefaultValue(typeof(ContentAlignment), "MiddleCenter") ]
+        [DefaultValue(typeof(ContentAlignment), "MiddleCenter")]
 
         public new ContentAlignment TextAlign
         {
@@ -171,7 +171,7 @@ namespace AcrylicUI.Controls
                 }
 
                 return null;
-                
+
                 //if (_svgIcon is null) return null;
 
                 //using (var stream = new MemoryStream(_svgIcon))
@@ -198,7 +198,7 @@ namespace AcrylicUI.Controls
                      ControlStyles.ResizeRedraw |
                      ControlStyles.UserPaint, true);
 
-            base.UseVisualStyleBackColor = false;            
+            base.UseVisualStyleBackColor = false;
 
             SetButtonState(AcrylicControlState.Normal);
             Padding = new Padding(_padding);
@@ -371,8 +371,8 @@ namespace AcrylicUI.Controls
             var g = e.Graphics;
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
-            var rect = new Rectangle(0, 0, ClientSize.Width, ClientSize.Height);            
-            var arcRadius = Scale(Consts.SMALL_ARC_RADIUS);            
+            var rect = new Rectangle(0, 0, ClientSize.Width, ClientSize.Height);
+            var arcRadius = Scale(Consts.SMALL_ARC_RADIUS);
 
             var rectRounded = Drawing.RoundedRectange(rect, arcRadius);
 
@@ -407,13 +407,13 @@ namespace AcrylicUI.Controls
                 borderColor = Colors.DisabledOutline;
             }
 
-            using (var b = new SolidBrush(fillColor))            
+            using (var b = new SolidBrush(fillColor))
             {
                 g.Clear(Colors.Transparent);
                 if (_hasRoundedCorners)
                 {
                     g.FillPath(b, rectRounded);
-                } 
+                }
                 else
                 {
                     g.FillRectangle(b, rect);
@@ -427,12 +427,12 @@ namespace AcrylicUI.Controls
 
             using (var p = new Pen(borderColor, penWidth))
             {
-               
-                    var modRect = new Rectangle(
-                        rect.Left,
-                        rect.Top,
-                        rect.Width - penWidth,
-                        rect.Height - penWidth);
+
+                var modRect = new Rectangle(
+                    rect.Left,
+                    rect.Top,
+                    rect.Width - penWidth,
+                    rect.Height - penWidth);
 
                 if (_hasRoundedCorners)
                 {
@@ -460,16 +460,16 @@ namespace AcrylicUI.Controls
                 switch (TextImageRelation)
                 {
                     case TextImageRelation.ImageAboveText:
-                        textOffsetY = (Image.Size.Height / 2) + Scale(ImagePadding / 2); 
+                        textOffsetY = (Image.Size.Height / 2) + Scale(ImagePadding / 2);
                         y -= ((int)(stringSize.Height / 2) + Scale(ImagePadding / 2));
                         break;
                     case TextImageRelation.TextAboveImage:
-                        textOffsetY = ((Image.Size.Height / 2) + Scale(ImagePadding / 2)) * -Scale(Consts.PEN_WIDTH); 
+                        textOffsetY = ((Image.Size.Height / 2) + Scale(ImagePadding / 2)) * -Scale(Consts.PEN_WIDTH);
                         y += ((int)(stringSize.Height / 2) + Scale(ImagePadding / 2));
                         break;
                     case TextImageRelation.ImageBeforeText:
 
-                        textOffsetX = 0;                    
+                        textOffsetX = 0;
                         x = Scale(ImagePadding) + Scale(Consts.PEN_WIDTH); ;
 
                         break;
@@ -520,7 +520,7 @@ namespace AcrylicUI.Controls
 
         #region Dpi Scale
 
-        private const float DEFAULT_DPI = 96f; 
+        private const float DEFAULT_DPI = 96f;
         private float _dpiScale = 1;
 
         // call at init too

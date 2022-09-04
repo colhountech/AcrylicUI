@@ -108,7 +108,7 @@ namespace AcrylicUI.Controls
 
             using (var p = new Pen(lightColor))
             {
-                g.DrawLine(p, rect.Left,Scale(1), rect.Right, Scale(1));
+                g.DrawLine(p, rect.Left, Scale(1), rect.Right, Scale(1));
             }
 
             var xOffset = 3;

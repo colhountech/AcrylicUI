@@ -1,16 +1,15 @@
-﻿using System;
+﻿using AcrylicUI.Resources;
+using System;
+using System.Collections;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Design;
+using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Reflection;
 using System.Windows.Forms;
 using static System.Windows.Forms.DataGridView;
-using System.Collections;
-using System.Diagnostics;
-using System.Drawing.Design;
-
-using System.Reflection;
-using System.Drawing.Drawing2D;
-using AcrylicUI.Resources;
 
 namespace AcrylicUI.Controls
 {
@@ -37,7 +36,7 @@ namespace AcrylicUI.Controls
         {
             return new DataGridViewCellStyle
             {
-               
+
                 BackColor = isHeader ? Colors.DataGridTitleBar :
                         (isOdd ? Colors.DataGridOddRow : Colors.DataGridEvenRow),
                 ForeColor = Colors.DataGridRowText,
@@ -281,7 +280,7 @@ namespace AcrylicUI.Controls
                 return;
 
             IList rows = EditableRowCollection;
-      
+
             object[] previousRows = Rows.Cast<DataGridViewRow>()
                 .Where(row => row.Index < DragPosition)
                 .Except(SelectedRows.Cast<DataGridViewRow>())

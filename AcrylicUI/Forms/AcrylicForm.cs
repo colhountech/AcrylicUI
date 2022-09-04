@@ -12,7 +12,7 @@ namespace AcrylicUI.Forms
     {
         #region Field Region
 
-        private Color _blurColor = Colors.GreyBackground;               
+        private Color _blurColor = Colors.GreyBackground;
         private byte _blurOpacity = Consts.DEFAULT_OPACITY;
 
         bool _isAcrylic = true;
@@ -20,14 +20,14 @@ namespace AcrylicUI.Forms
         bool _wasAcrylicActive = true;
         bool _isAcrylcWhileResizing = false;//this is still buggy in windows. turn off for now 
         bool _isAcrylicWhenMaximized = true;
-         #endregion
+        #endregion
 
 
         #region Constructor Region
 
         public AcrylicForm()
         {
-            InitializeComponent();            
+            InitializeComponent();
             UpdateScale();
         }
 
@@ -72,7 +72,7 @@ namespace AcrylicUI.Forms
             }
         }
 
-        
+
 
         [Category("Appearance")]
         [Description("Determines the acrylic glass effect background.")]
@@ -88,10 +88,10 @@ namespace AcrylicUI.Forms
             {
                 _isAcrylic = value;
                 {
-                    if (_isAcrylic & _isAcrylicActiveNow)                    
-                        MakeAcrylic();                    
-                    else                    
-                        MakeSolid();                    
+                    if (_isAcrylic & _isAcrylicActiveNow)
+                        MakeAcrylic();
+                    else
+                        MakeSolid();
                 }
             }
 
@@ -105,7 +105,7 @@ namespace AcrylicUI.Forms
 
         private void MakeAcrylic()
         {
-            if ( !_isResizing)
+            if (!_isResizing)
             {
                 var acrylic = Color.FromArgb(_blurOpacity, _blurColor);
                 WindowComposition.EnableAcrylic(this, acrylic);
@@ -146,7 +146,7 @@ namespace AcrylicUI.Forms
             //e.Graphics.Clear(Colors.GreyBackground);
         }
 
-      
+
         #endregion
 
         #region FormWindowState changes

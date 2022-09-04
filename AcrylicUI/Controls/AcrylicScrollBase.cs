@@ -296,7 +296,7 @@ namespace AcrylicUI.Controls
         {
             base.OnResize(e);
             UpdateScale();
-            UpdateScrollBars();  
+            UpdateScrollBars();
         }
 
         protected override void OnMouseMove(MouseEventArgs e)

@@ -1,5 +1,4 @@
-﻿using AcrylicUI.Docking;
-using System.Drawing;
+﻿using System.Drawing;
 
 namespace AcrylicUI.Docking
 {

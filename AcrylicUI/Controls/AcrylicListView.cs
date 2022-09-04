@@ -133,14 +133,14 @@ namespace AcrylicUI.Controls
             SetStyle(ControlStyles.OptimizedDoubleBuffer |
                   ControlStyles.ResizeRedraw |
                   ControlStyles.UserPaint, true);
-          
+
             Items = new ObservableCollection<AcrylicListItem>();
             _selectedIndices = new List<int>();
 
 
             BackColor = (IsAcrylic) ? Colors.Transparent : Colors.GreyBackground;
             base.Padding = new Padding(0, Scale(Consts.ToolWindowHeaderSize), 0, 0);
-           
+
         }
 
         #endregion
@@ -561,11 +561,11 @@ namespace AcrylicUI.Controls
             {
                 var width = Math.Max(ContentSize.Width, Viewport.Width);
                 var r = new Rectangle(0, i * ItemHeight, width, ItemHeight);
-                var rect = new Rectangle( 
-                    r.X     +Scale(Consts.LISTITEM_PADDING),
-                    r.Y     +Scale(Consts.LISTITEM_PADDING), 
-                    r.Width - Scale(Consts.LISTITEM_PADDING * 2), 
-                    r.Height-Scale(Consts.LISTITEM_PADDING));
+                var rect = new Rectangle(
+                    r.X + Scale(Consts.LISTITEM_PADDING),
+                    r.Y + Scale(Consts.LISTITEM_PADDING),
+                    r.Width - Scale(Consts.LISTITEM_PADDING * 2),
+                    r.Height - Scale(Consts.LISTITEM_PADDING));
 
                 var arcRadius = Scale(Consts.SMALL_ARC_RADIUS);
 
@@ -584,7 +584,7 @@ namespace AcrylicUI.Controls
                 // set Focussed
                 if (SelectedIndices.Count > 0 && SelectedIndices.Contains(i))
                     bgColor = Focused ? _defaultSelectionColor : _defaultBgColor;
-                         
+
                 using (var b = new SolidBrush(bgColor))
                 {
                     if (IsAcrylic)
@@ -595,10 +595,10 @@ namespace AcrylicUI.Controls
                         g.FillPath(b, rectRounded);
                     }
                     else
-                    { 
+                    {
                         g.FillRectangle(b, rect);
                     }
-                }              
+                }
 
                 // DEBUG: Border
                 //using (var p = new Pen(Color.Red))
@@ -630,7 +630,7 @@ namespace AcrylicUI.Controls
 
                     this.DrawTextBlur(modRect, g, Items[i].Text, modFont);
                     g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SingleBitPerPixelGridFit;
-                    g.DrawString(Items[i].Text, modFont, b, modRect, stringFormat);                   
+                    g.DrawString(Items[i].Text, modFont, b, modRect, stringFormat);
                 }
             }
         }
@@ -663,7 +663,7 @@ namespace AcrylicUI.Controls
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
-            UpdateScale();            
+            UpdateScale();
             UpdatePadding();
             UpdateListBox();
             //TODO update icons RescaleImage();
