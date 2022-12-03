@@ -234,7 +234,7 @@ namespace AcrylicUI.Resources
 
         public static Color BlueSelection
         {
-            get { return Color.FromArgb(75, 110, 175); }
+            get { return Color.FromArgb(77,77,77); } // 75, 110, 175 Modernise to Light Grey
         }
 
         public static Color DarkGreySelection
