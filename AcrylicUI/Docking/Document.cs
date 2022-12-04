@@ -22,7 +22,7 @@ namespace AcrylicUI.Docking
 
         public Document()
         {
-            BackColor = Color.Black;
+            BackColor = Colors.FocusActiveTab;
             base.DefaultDockArea = DockArea.Document;
         }
 
