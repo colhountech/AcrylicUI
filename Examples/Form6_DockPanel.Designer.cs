@@ -1,6 +1,7 @@
 ﻿
 using AcrylicUI.Controls;
 using AcrylicUI.Docking;
+using AcrylicUI.Resources;
 
 namespace Examples
 {
@@ -38,9 +39,13 @@ namespace Examples
             this.inboxControl = new AcrylicUI.Controls.BoxControl();
             this.outboxControl = new AcrylicUI.Controls.BoxControl();
             this.toolTaskSettings = new AcrylicUI.Controls.BoxControl();
+            this.mnuMain = new AcrylicUI.Controls.AcrylicMenuStrip();
+            this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFileExit = new System.Windows.Forms.ToolStripMenuItem();            
             this.pnlTask.SuspendLayout();
             this.pnlInner.SuspendLayout();
             this.DockPanel.SuspendLayout();
+            this.mnuMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTask
@@ -54,21 +59,19 @@ namespace Examples
             this.pnlTask.Name = "pnlTask";
             this.pnlTask.RoundCorners = false;
             this.pnlTask.SectionHeader = null;
-            this.pnlTask.Size = new System.Drawing.Size(800, 450);
+            this.pnlTask.Size = new System.Drawing.Size(820, 435);
             this.pnlTask.TabIndex = 0;
-            this.pnlTask.TabStop = false;
             // 
             // pnlInner
             // 
             this.pnlInner.Controls.Add(this.DockPanel);
             this.pnlInner.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlInner.Location = new System.Drawing.Point(1, 25);
+            this.pnlInner.Location = new System.Drawing.Point(1, 36);
             this.pnlInner.Margin = new System.Windows.Forms.Padding(0);
             this.pnlInner.Name = "pnlInner";
             this.pnlInner.Padding = new System.Windows.Forms.Padding(1, 25, 1, 1);
-            this.pnlInner.Size = new System.Drawing.Size(818, 409);
+            this.pnlInner.Size = new System.Drawing.Size(818, 398);
             this.pnlInner.TabIndex = 0;
-            this.pnlInner.TabStop = false;            
             // 
             // DockPanel
             // 
@@ -81,7 +84,6 @@ namespace Examples
             this.DockPanel.Name = "DockPanel";
             this.DockPanel.Size = new System.Drawing.Size(816, 383);
             this.DockPanel.TabIndex = 0;
-            
             // 
             // inboxControl
             // 
@@ -121,19 +123,52 @@ namespace Examples
             this.toolTaskSettings.Size = new System.Drawing.Size(500, 133);
             this.toolTaskSettings.TabIndex = 2;
             // 
-            // MainForm
+            // mnuMain
+            // 
+            this.mnuMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.mnuMain.Dock = System.Windows.Forms.DockStyle.None;
+            this.mnuMain.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.mnuMain.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuFile});
+            this.mnuMain.Location = new System.Drawing.Point(0, 0);
+            this.mnuMain.Name = "mnuMain";
+            this.mnuMain.Padding = new System.Windows.Forms.Padding(4, 5, 0, 5);
+            this.mnuMain.Size = new System.Drawing.Size(150, 29);
+            this.mnuMain.TabIndex = 1;
+            this.mnuMain.Text = "mnuMain";
+            // 
+            // mnuFile
+            // 
+            this.mnuFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuFileExit});
+            this.mnuFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.mnuFile.Name = "mnuFile";
+            this.mnuFile.Size = new System.Drawing.Size(37, 19);
+            this.mnuFile.Text = "&File";
+            // 
+            // mnuFileExit
+            // 
+            this.mnuFileExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(29)))), ((int)(((byte)(37)))));
+            this.mnuFileExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.mnuFileExit.Name = "mnuFileExit";
+            this.mnuFileExit.Size = new System.Drawing.Size(180, 22);
+            this.mnuFileExit.Text = "E&xit";
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(820, 435);
             this.Controls.Add(this.pnlTask);
             this.Location = new System.Drawing.Point(0, 0);
-            this.DoubleBuffered = true;
-            this.Name = "Form5";
+            this.MainMenuStrip = this.mnuMain;
+            this.Name = "Form6_DockPanel";
             this.Text = "Form5";
             this.pnlTask.ResumeLayout(false);
             this.pnlInner.ResumeLayout(false);
             this.DockPanel.ResumeLayout(false);
+            this.mnuMain.ResumeLayout(false);
+            this.mnuMain.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -142,6 +177,9 @@ namespace Examples
 
         private AcrylicUI.Controls.WindowPanel pnlTask;
         private System.Windows.Forms.Panel pnlInner;
+        private AcrylicUI.Controls.AcrylicMenuStrip mnuMain;
+        private System.Windows.Forms.ToolStripMenuItem mnuFile;
+        private System.Windows.Forms.ToolStripMenuItem mnuFileExit;
         private AcrylicUI.Controls.BoxControl outboxControl;
         private AcrylicUI.Controls.BoxControl inboxControl;
         private AcrylicUI.Controls.BoxControl toolTaskSettings;

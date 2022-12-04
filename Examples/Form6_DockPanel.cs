@@ -52,6 +52,9 @@ namespace Examples
             DockPanel.AddContent(this.toolTaskSettings);    // The order added sets the tab order
             DockPanel.AddContent(this.outboxControl);
             DockPanel.AddContent(this.inboxControl);        // Active Control
+            var doc1 = new Document();
+            doc1.DockText = "Document 1";
+            DockPanel.AddContent(doc1);
 
             HookEvents();
 
@@ -64,6 +67,8 @@ namespace Examples
             this.IsAcrylic = false;
             this.pnlTask.IsAcrylic = false;
             this.BackColor = Colors.MontereyPanel;
+            this.DockPanel.BackColor = Colors.MontereyDark;
+
 
             // Windows 11 Hack
             RoundCorners();

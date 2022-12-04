@@ -46,6 +46,7 @@ namespace Examples
             this.acrylicButton13 = new AcrylicUI.Controls.AcrylicButton();
             this.acrylicButton14 = new AcrylicUI.Controls.AcrylicButton();
             this.acrylicButton15 = new AcrylicUI.Controls.AcrylicButton();
+            this.acrylicButton16 = new AcrylicUI.Controls.AcrylicButton();
             this.SuspendLayout();
             // 
             // acrylicButton1
@@ -258,12 +259,27 @@ namespace Examples
             this.acrylicButton15.UseVisualStyleBackColor = false;
             this.acrylicButton15.Click += new System.EventHandler(this.acrylicButton15_Click);
             // 
+            // acrylicButton16
+            // 
+            this.acrylicButton16.Default = false;
+            this.acrylicButton16.Image = null;
+            this.acrylicButton16.ImagePadding = 6;
+            this.acrylicButton16.Location = new System.Drawing.Point(396, 80);
+            this.acrylicButton16.Name = "acrylicButton16";
+            this.acrylicButton16.Padding = new System.Windows.Forms.Padding(6);
+            this.acrylicButton16.Size = new System.Drawing.Size(160, 32);
+            this.acrylicButton16.TabIndex = 15;
+            this.acrylicButton16.Text = "Form 16 - Multi Panel App";
+            this.acrylicButton16.UseVisualStyleBackColor = false;
+            this.acrylicButton16.Click += new System.EventHandler(this.acrylicButton16_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.acrylicButton16);
             this.Controls.Add(this.acrylicButton15);
             this.Controls.Add(this.acrylicButton14);
             this.Controls.Add(this.acrylicButton13);
@@ -304,5 +320,6 @@ namespace Examples
         private AcrylicUI.Controls.AcrylicButton acrylicButton13;
         private AcrylicUI.Controls.AcrylicButton acrylicButton14;
         private AcrylicUI.Controls.AcrylicButton acrylicButton15;
+        private AcrylicUI.Controls.AcrylicButton acrylicButton16;
     }
 }

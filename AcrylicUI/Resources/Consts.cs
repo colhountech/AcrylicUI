@@ -281,6 +281,10 @@ namespace AcrylicUI.Resources
         {
             get { return Color.FromArgb(54, 52, 57); }
         }
+        public static Color MontereyDark
+        {
+            get { return Color.FromArgb(25, 24, 26); } // same as windows explorer background
+        }
 
         public static Color MontereyInnerPanel
         {
