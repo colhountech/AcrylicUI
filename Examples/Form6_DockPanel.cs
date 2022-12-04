@@ -60,6 +60,16 @@ namespace Examples
             doc2.DockText = "Document 2";
             DockPanel.AddContent(doc2);
 
+            var doc3 = new Document();
+            doc3.DockText = "Document 3";
+            DockPanel.AddContent(doc3);
+
+
+            var doc4 = new Document();
+            doc4.DockText = "Document 4";
+            DockPanel.AddContent(doc4);
+
+
 
             HookEvents();
 

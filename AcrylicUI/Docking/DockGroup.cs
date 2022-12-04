@@ -164,7 +164,7 @@ namespace AcrylicUI.Docking
             switch (DockArea)
             {
                 case DockArea.Document:
-                    size = _tabArea.Visible ? Consts.DocumentTabAreaSize : 0;
+                    size = _tabArea.Visible ? Consts.DocumentTabAreaSize : 0;                    
                     Padding = new Padding(0, size, 0, 0);
                     _tabArea.ClientRectangle = new Rectangle(Padding.Left, 0, ClientRectangle.Width - Padding.Horizontal, size);
                     break;
@@ -654,11 +654,12 @@ namespace AcrylicUI.Docking
             {
                 // Color divider
                 var isActiveGroup = DockPanel.ActiveGroup == this;
-                var divColor = isActiveGroup ? Colors.BlueSelection : Colors.GreySelection;
+                var divColor = isActiveGroup ? Colors.FocusActiveTab : Colors.UnFocusActiveTab;
                 using (var b = new SolidBrush(divColor))
                 {
-                    var divRect = new Rectangle(_tabArea.ClientRectangle.Left, _tabArea.ClientRectangle.Bottom - 2, _tabArea.ClientRectangle.Width, 2);
-                    g.FillRectangle(b, divRect);
+                    // IN Windows 11 We want the Tab to Bleed into the ActiveContent
+                    //var divRect = new Rectangle(_tabArea.ClientRectangle.Left, _tabArea.ClientRectangle.Bottom - 2, _tabArea.ClientRectangle.Width, 2);
+                    //g.FillRectangle(b, divRect);
                 }
 
                 // Content dropdown list
