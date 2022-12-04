@@ -680,16 +680,16 @@ namespace AcrylicUI.Docking
         {
             var tabRect = RectangleToTabArea(tab.ClientRectangle);
 
-            var isVisibleTab = VisibleContent == tab.DockContent;
+            var isFocussed = VisibleContent == tab.DockContent;
             var isActiveGroup = DockPanel.ActiveGroup == this;
 
-            var bgColor = isVisibleTab ? Colors.BlueSelection : Colors.DarkBackground;
+            var bgColor = isFocussed ? Colors.FocusActiveTab : Colors.FocusInactiveTab;
 
             if (!isActiveGroup)
-                bgColor = isVisibleTab ? Colors.GreySelection : Colors.DarkBackground;
+                bgColor = isFocussed ? Colors.UnFocusActiveTab: Colors.UnFocusInactiveTab;
 
-            if (tab.Hot && !isVisibleTab)
-                bgColor = Colors.MediumBackground;
+            if (tab.Hot && !isFocussed)
+                bgColor = Colors.FocusHotTab;
 
             using (var b = new SolidBrush(bgColor))
             {
@@ -699,7 +699,8 @@ namespace AcrylicUI.Docking
             // Draw separators
             if (tab.ShowSeparator)
             {
-                using (var p = new Pen(Colors.DarkBorder))
+                var sepColor = !isFocussed ? Colors.FocusBorderTab : Colors.UnFocusBorderTab;
+                using (var p = new Pen(sepColor))
                 {
                     g.DrawLine(p, tabRect.Right - 1, tabRect.Top, tabRect.Right - 1, tabRect.Bottom);
                 }
@@ -723,7 +724,7 @@ namespace AcrylicUI.Docking
             };
 
             // Draw text
-            var textColor = isVisibleTab ? Colors.LightText : Colors.DisabledText;
+            var textColor = isFocussed ? Colors.LightText : Colors.DisabledText;
             using (var b = new SolidBrush(textColor))
             {
                 var textRect = new Rectangle(tabRect.Left + 5 + xOffset, tabRect.Top, tabRect.Width - tab.CloseButtonRectangle.Width - 7 - 5 - xOffset, tabRect.Height);
@@ -733,7 +734,7 @@ namespace AcrylicUI.Docking
             // Close button
             var img = tab.CloseButtonHot ? DockIcons.inactive_close_selected : DockIcons.inactive_close;
 
-            if (isVisibleTab)
+            if (isFocussed)
             {
                 if (isActiveGroup)
                     img = tab.CloseButtonHot ? DockIcons.close_selected : DockIcons.close;

@@ -1,5 +1,6 @@
 ﻿using AcrylicUI.Resources;
 using System.ComponentModel;
+using System.Drawing;
 
 namespace AcrylicUI.Docking
 {
@@ -21,7 +22,7 @@ namespace AcrylicUI.Docking
 
         public Document()
         {
-            BackColor = Colors.GreyBackground;
+            BackColor = Color.Black;
             base.DefaultDockArea = DockArea.Document;
         }
 

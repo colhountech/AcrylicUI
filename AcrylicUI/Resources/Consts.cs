@@ -405,6 +405,39 @@ namespace AcrylicUI.Resources
             get { return Color.FromArgb(0xD3, 0xD3, 0xD3); } //  LightGray
         }
 
+        public static Color FocusInactiveTab
+        {
+            get { return Color.FromArgb(0x00, 0x0b, 0x1e); }
+        }
+        public static Color FocusActiveTab
+        {
+            get { return Color.FromArgb(0x1a, 0x20, 0x2b); }
+        }
+        public static Color FocusBorderTab
+        {
+            get { return Color.FromArgb(0x13, 0x1a, 0x2a); }
+        }
+        public static Color FocusHotTab
+        {
+            get { return Color.FromArgb(0x27, 0x2d, 0x38); }
+        }
+        public static Color UnFocusInactiveTab
+        {
+            get { return Color.FromArgb(0x20, 0x20, 0x20); }
+        }
+        public static Color UnFocusActiveTab
+        {
+            get { return Color.FromArgb(0x2c, 0x2c, 0x2c); }
+        }
+        public static Color UnFocusBorderTab
+        {
+            get { return Color.FromArgb(0x28, 0x28, 0x28); }
+        }
+        //public static Color UnFocusHotTab
+        //{
+        //    get { return Color.FromArgb(0x38, 0x38, 0x38); }
+        //}
+
     }
 
 
