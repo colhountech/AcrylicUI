@@ -67,7 +67,8 @@ namespace AcrylicUI.Controls
         {
                         
             var borderColor = Colors.DarkBorder;
-            var fillColor = Colors.GreyBackground;
+            var fillColor = BackColor;
+
             if (this.BackColor == Color.Transparent)
             {
                 fillColor = Colors.Transparent;
