@@ -1,5 +1,6 @@
 ﻿using AcrylicUI.Resources;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace AcrylicUI.Controls
@@ -7,8 +8,8 @@ namespace AcrylicUI.Controls
     public partial class AcrylicTextBox : TextBox
     {
         public AcrylicTextBox()
-        {
-            BackColor = Colors.DarkGrey;
+        {           
+            BackColor = Colors.GreyBackground;
             ForeColor = Colors.Text;
             Padding = new Padding(Scale(Consts.BUTTON_PADDING));
             BorderStyle = BorderStyle.FixedSingle;
