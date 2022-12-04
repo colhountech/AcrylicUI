@@ -84,7 +84,7 @@ namespace AcrylicUI.Controls
             var rect = ClientRectangle;
 
             // Fill body
-            using (var b = new SolidBrush(Colors.GreyBackground))
+            using (var b = new SolidBrush(BackColor))
             {
                 g.FillRectangle(b, rect);
             }
