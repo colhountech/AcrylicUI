@@ -50,6 +50,7 @@ namespace Examples
             // 
             // pnlTask
             // 
+            this.pnlTask.Controls.Add(this.mnuMain);
             this.pnlTask.Controls.Add(this.pnlInner);
             this.pnlTask.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTask.Icon = null;
@@ -66,10 +67,10 @@ namespace Examples
             // 
             this.pnlInner.Controls.Add(this.DockPanel);
             this.pnlInner.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlInner.Location = new System.Drawing.Point(1, 36);
+            this.pnlInner.Location = new System.Drawing.Point(1, 1);
             this.pnlInner.Margin = new System.Windows.Forms.Padding(0);
             this.pnlInner.Name = "pnlInner";
-            this.pnlInner.Padding = new System.Windows.Forms.Padding(1, 25, 1, 1);
+            //this.pnlInner.Padding = new System.Windows.Forms.Padding(1, 25, 1, 1);
             this.pnlInner.Size = new System.Drawing.Size(818, 398);
             this.pnlInner.TabIndex = 0;
             // 
@@ -131,7 +132,6 @@ namespace Examples
             this.mnuMain.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuFile});
-            this.mnuMain.Location = new System.Drawing.Point(0, 0);
             this.mnuMain.Name = "mnuMain";
             this.mnuMain.Padding = new System.Windows.Forms.Padding(4, 5, 0, 5);
             this.mnuMain.Size = new System.Drawing.Size(150, 29);

@@ -91,7 +91,8 @@ namespace Examples
         {
             var dpiScale = IconFactory.GetDpiScale(this.Handle);
             this.pnlTask.Icon = new IconFactory(IconFactory.GetDpiScale(Handle)).BitmapFromSvg(Icons.Cube_16x_svg);
-            this.pnlTask.SectionHeader = "CT Studio";
+            this.pnlTask.SectionHeader = "";
+            this.mnuMain.Location = new System.Drawing.Point(36, 3); // Overlay Menu on Top Control Bar
         }
 
 
