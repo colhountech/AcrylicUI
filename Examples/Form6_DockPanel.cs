@@ -56,6 +56,11 @@ namespace Examples
             doc1.DockText = "Document 1";
             DockPanel.AddContent(doc1);
 
+            var doc2 = new Document();
+            doc2.DockText = "Document 2";
+            DockPanel.AddContent(doc2);
+
+
             HookEvents();
 
 
