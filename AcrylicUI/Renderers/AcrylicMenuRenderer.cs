@@ -43,7 +43,7 @@ namespace AcrylicUI.Renderers
         protected override void OnRenderToolStripBackground(ToolStripRenderEventArgs e)
         {
             var g = e.Graphics;
-            using (var b = new SolidBrush(e.BackColor))
+            using (var b = new SolidBrush(Colors.GreyBackground))
             {
                 g.FillRectangle(b, e.AffectedBounds);
             }
