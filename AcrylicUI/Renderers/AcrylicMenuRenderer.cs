@@ -2,6 +2,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace AcrylicUI.Renderers
 {
@@ -18,7 +19,7 @@ namespace AcrylicUI.Renderers
         {
 
             base.Initialize(toolStrip);
-            toolStrip.BackColor = Colors.GreyBackground;
+            toolStrip.BackColor = Colors.GreyBackground;            
             toolStrip.ForeColor = Colors.LightText;
         }
 
@@ -42,7 +43,7 @@ namespace AcrylicUI.Renderers
         protected override void OnRenderToolStripBackground(ToolStripRenderEventArgs e)
         {
             var g = e.Graphics;
-            using (var b = new SolidBrush(Colors.GreyBackground))
+            using (var b = new SolidBrush(e.BackColor))
             {
                 g.FillRectangle(b, e.AffectedBounds);
             }

@@ -44,7 +44,7 @@ namespace AcrylicUI.Renderers
 
             if (e.ToolStrip.GetType() == typeof(ToolStripOverflow))
             {
-                using (var p = new Pen(Colors.MontereyPanel))
+                using (var p = new Pen(e.BackColor))
                 {
                     var rect = new Rectangle(e.AffectedBounds.Left, e.AffectedBounds.Top, e.AffectedBounds.Width - Scale(_line_width), e.AffectedBounds.Height - Scale(_line_width));
                     g.DrawRectangle(p, rect);
@@ -66,7 +66,7 @@ namespace AcrylicUI.Renderers
 
             if (e.Item.Selected || e.Item.Pressed)
             {
-                using (var b = new SolidBrush(Colors.GreySelection))
+                using (var b = new SolidBrush(e.Item.BackColor))
                 {
                     g.FillRectangle(b, rect);
                 }
@@ -78,7 +78,7 @@ namespace AcrylicUI.Renderers
 
                 if (castItem.Checked)
                 {
-                    using (var b = new SolidBrush(Colors.GreySelection))
+                    using (var b = new SolidBrush(e.Item.BackColor))
                     {
                         g.FillRectangle(b, rect);
                     }
