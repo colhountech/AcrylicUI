@@ -50,6 +50,8 @@
             this.acrylicButton18 = new AcrylicUI.Controls.AcrylicButton();
             this.acrylicButton19 = new AcrylicUI.Controls.AcrylicButton();
             this.acrylicButton20 = new AcrylicUI.Controls.AcrylicButton();
+            this.acrylicButton20 = new AcrylicUI.Controls.AcrylicButton();
+            this.acrylicButton21 = new AcrylicUI.Controls.AcrylicButton();
             this.SuspendLayout();
             // 
             // acrylicButton1
@@ -352,12 +354,27 @@
             this.acrylicButton20.UseVisualStyleBackColor = false;
             this.acrylicButton20.Click += new System.EventHandler(this.acrylicButton20_Click);
             // 
+            // acrylicButton21
+            // 
+            this.acrylicButton21.Default = false;
+            this.acrylicButton21.Image = null;
+            this.acrylicButton21.ImagePadding = 6;
+            this.acrylicButton21.Location = new System.Drawing.Point(217, 237);
+            this.acrylicButton21.Name = "acrylicButton21";
+            this.acrylicButton21.Padding = new System.Windows.Forms.Padding(6);
+            this.acrylicButton21.Size = new System.Drawing.Size(160, 32);
+            this.acrylicButton21.TabIndex = 26;
+            this.acrylicButton21.Text = "Single Input Dialog";
+            this.acrylicButton21.UseVisualStyleBackColor = false;
+            this.acrylicButton21.Click += AcrylicButton21_Click;
+            // 
             // Form12_Dialogs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.acrylicButton21);
             this.Controls.Add(this.acrylicButton20);
             this.Controls.Add(this.acrylicButton17);
             this.Controls.Add(this.acrylicButton18);
@@ -412,5 +429,6 @@
         private AcrylicUI.Controls.AcrylicButton acrylicButton18;
         private AcrylicUI.Controls.AcrylicButton acrylicButton19;
         private AcrylicUI.Controls.AcrylicButton acrylicButton20;
+        private AcrylicUI.Controls.AcrylicButton acrylicButton21;
     }
 }

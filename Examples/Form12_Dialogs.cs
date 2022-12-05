@@ -171,6 +171,19 @@ namespace Examples
             AcrylicMessageBox.ShowInformation("This is a longer Message that spans at least one line and probably more", "Caption Goes Here");
         }
 
+
+        private void AcrylicButton21_Click(object sender, System.EventArgs e)
+        {
+            var input = new AcrylicSingleInput { DialogButtons = AcrylicDialogButton.OkCancel };
+            input.TextName = "Old Value";
+            DialogResult result = input.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                AcrylicMessageBox.ShowInformation($"Got \"{input.TextName}\" as Name", "Single Input");
+            }
+
+        }
+
     }
-    
+
 }
