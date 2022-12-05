@@ -43,7 +43,12 @@ namespace AcrylicUI.Renderers
         protected override void OnRenderToolStripBackground(ToolStripRenderEventArgs e)
         {
             var g = e.Graphics;
-            using (var b = new SolidBrush(Colors.GreyBackground))
+            // Hack: if toolstrip is set to backcolor, then the mainmenu has a bright box around dropdown
+            // Hack: this hack allows us to have both
+            // Hack: Please fix this someone if you can figure it out
+            var fillcolor = e.BackColor == Colors.FocusActiveTab ? e.BackColor : Colors.GreyBackground;
+
+            using (var b = new SolidBrush(fillcolor))
             {
                 g.FillRectangle(b, e.AffectedBounds);
             }
