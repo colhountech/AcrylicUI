@@ -690,7 +690,7 @@ namespace AcrylicUI.Docking
                 bgColor = isFocussed ? Colors.UnFocusActiveTab: Colors.UnFocusInactiveTab;
 
             if (tab.Hot && !isFocussed)
-                bgColor = Colors.FocusHotTab;
+                bgColor = Colors.UnFocusHotTab;
 
             using (var b = new SolidBrush(bgColor))
             {

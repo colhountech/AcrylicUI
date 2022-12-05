@@ -433,10 +433,10 @@ namespace AcrylicUI.Resources
         {
             get { return Color.FromArgb(0x28, 0x28, 0x28); }
         }
-        //public static Color UnFocusHotTab
-        //{
-        //    get { return Color.FromArgb(0x38, 0x38, 0x38); }
-        //}
+        public static Color UnFocusHotTab
+{
+            get { return Color.FromArgb(0x38, 0x38, 0x38); }
+        }
 
     }
 
