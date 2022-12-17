@@ -71,7 +71,7 @@ namespace AcrylicUI.Controls
 
             if (this.BackColor == Color.Transparent)
             {
-                fillColor = Colors.Transparent;
+               // fillColor = Colors.Transparent;
             }
             if (this.ForeColor == Color.Transparent)
             {
