@@ -6,10 +6,16 @@ namespace AcrylicUI.Controls
 {
     public partial class AcrylicProgressBar : ProgressBar
     {
+     
+
         public AcrylicProgressBar()
         {
-            SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer |
+                   ControlStyles.ResizeRedraw |
+                   ControlStyles.UserPaint, true);
+
             this.BackColor = Colors.GreyBackground;            
+            
         }
 
         protected override void OnPaint(PaintEventArgs e)
