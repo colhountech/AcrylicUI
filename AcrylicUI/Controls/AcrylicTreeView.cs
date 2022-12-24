@@ -1289,24 +1289,24 @@ namespace AcrylicUI.Controls
         private float _dpiScale = 1;
 
         // call at init too
-        private void UpdateScale()
-        {
-            var form = FindForm();
-            if (form is null)
-            {
+        //private void UpdateScale()
+        //{
+        //    var form = FindForm();
+        //    if (form is null)
+        //    {
 
-            }
-            var handle = form?.Handle ?? this.Handle;
+        //    }
+        //    var handle = form?.Handle ?? this.Handle;
 
-            var newDpiScale = (float)Drawing.GetDpi(handle) / (float)DEFAULT_DPI;
-            if (newDpiScale != _dpiScale)
-            {
-                _dpiScale = newDpiScale;
+        //    var newDpiScale = (float)Drawing.GetDpi(handle) / (float)DEFAULT_DPI;
+        //    if (newDpiScale != _dpiScale)
+        //    {
+        //        _dpiScale = newDpiScale;
 
-                // TODO
-                // update Icons
-            }
-        }
+        //        // TODO
+        //        // update Icons
+        //    }
+        //}
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);

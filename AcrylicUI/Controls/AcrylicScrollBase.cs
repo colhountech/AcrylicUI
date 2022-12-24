@@ -30,7 +30,7 @@ namespace AcrylicUI.Controls
         private Point _offsetMousePosition;
 
         private int _maxDragChange = 0;
-        private Timer _dragTimer;
+        private readonly Timer _dragTimer;
 
         private bool _hideScrollBars = true;
 
@@ -48,8 +48,7 @@ namespace AcrylicUI.Controls
             {
                 _viewport = value;
 
-                if (ViewportChanged != null)
-                    ViewportChanged(this, null);
+                ViewportChanged?.Invoke(this, null);
             }
         }
 
@@ -63,8 +62,7 @@ namespace AcrylicUI.Controls
                 _contentSize = value;
                 UpdateScrollBars();
 
-                if (ContentSizeChanged != null)
-                    ContentSizeChanged(this, null);
+                ContentSizeChanged?.Invoke(this, null);
             }
         }
 
@@ -126,8 +124,10 @@ namespace AcrylicUI.Controls
             _vScrollBar.MouseDown += delegate { Select(); };
             _hScrollBar.MouseDown += delegate { Select(); };
 
-            _dragTimer = new Timer();
-            _dragTimer.Interval = 1;
+            _dragTimer = new Timer
+            {
+                Interval = 1
+            };
             _dragTimer.Tick += DragTimer_Tick;
         }
 
@@ -381,7 +381,7 @@ namespace AcrylicUI.Controls
                     if (MaxDragChange > 0 && difference > MaxDragChange)
                         difference = MaxDragChange;
 
-                    _vScrollBar.Value = _vScrollBar.Value - difference;
+                    _vScrollBar.Value -= difference;
                 }
 
                 // Scroll down
@@ -392,7 +392,7 @@ namespace AcrylicUI.Controls
                     if (MaxDragChange > 0 && difference > MaxDragChange)
                         difference = MaxDragChange;
 
-                    _vScrollBar.Value = _vScrollBar.Value + difference;
+                    _vScrollBar.Value += difference;
                 }
             }
 
@@ -406,7 +406,7 @@ namespace AcrylicUI.Controls
                     if (MaxDragChange > 0 && difference > MaxDragChange)
                         difference = MaxDragChange;
 
-                    _hScrollBar.Value = _hScrollBar.Value - difference;
+                    _hScrollBar.Value -= difference;
                 }
 
                 // Scroll right
@@ -417,7 +417,7 @@ namespace AcrylicUI.Controls
                     if (MaxDragChange > 0 && difference > MaxDragChange)
                         difference = MaxDragChange;
 
-                    _hScrollBar.Value = _hScrollBar.Value + difference;
+                    _hScrollBar.Value += difference;
                 }
             }
         }
