@@ -4,10 +4,10 @@
 
 	<PropertyGroup>
 		<OutputType>Library</OutputType>
-		<TargetFrameworks>net6-windows</TargetFrameworks>
+		<TargetFrameworks>net8-windows</TargetFrameworks>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<UseWindowsForms>true</UseWindowsForms>
-    <Version>1.0.0-preview5.9</Version>
+    <Version>1.0.0</Version>
     <PackageId>AcrylicUI</PackageId>
     <Authors>Micheal Colhoun</Authors>
     <Company>ColhounTech</Company>
