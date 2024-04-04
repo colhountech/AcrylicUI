@@ -22,6 +22,7 @@ namespace Examples
             this.Text = "";
             this.IsAcrylic = true;
             this.AutoScaleMode = AutoScaleMode.Dpi;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
         }
 
         private void DefaultDialog_Click(object sender, EventArgs e)
