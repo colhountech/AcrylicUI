@@ -58,6 +58,18 @@ namespace AcrylicUI.Forms
 
             this.IsAcrylic = false;
             var dpiScale = IconFactory.GetDpiScale(this.Handle);
+
+            this.picIcon.Size = new Size(Scale(this.picIcon.Width), Scale(this.picIcon.Height));
+            this.picIcon.Location = new Point( 
+                Scale(this.picIcon.Location.X), 
+                Scale(this.picIcon.Location.Y)
+            );
+            this.lblText.Location = new Point(
+                Scale(this.lblText.Location.X),
+                Scale(this.lblText.Location.Y)
+            );
+
+
             _iconFactory = new IconFactory(IconFactory.GetDpiScale(Handle));
 
             _iconInformation = _iconFactory.BitmapFromSvg(Icons.StatusAlert_16x_svg, _DEFAULT_ICON_SIZE, _DEFAULT_ICON_SIZE); 

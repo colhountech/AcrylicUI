@@ -38,7 +38,7 @@ namespace AcrylicUI.Forms
             // 
             // picIcon
             // 
-            this.picIcon.Location = new System.Drawing.Point(10, 10);
+            this.picIcon.Location = new System.Drawing.Point(20, 20);
             this.picIcon.Name = "picIcon";
             this.picIcon.Size = new System.Drawing.Size(33, 33);
             this.picIcon.TabIndex = 3;
@@ -48,7 +48,7 @@ namespace AcrylicUI.Forms
             // lblText
             // 
             this.lblText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lblText.Location = new System.Drawing.Point(50, 9);
+            this.lblText.Location = new System.Drawing.Point(60, 20);
             this.lblText.Name = "lblText";
             this.lblText.Size = new System.Drawing.Size(185, 15);
             this.lblText.TabIndex = 4;
