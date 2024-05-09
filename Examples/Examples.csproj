@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <!--<ItemGroup>
-    <PackageReference Include="AcrylicUI" Version="1.0.0-preview3.8" />
+    <PackageReference Include="AcrylicUI" Version="1.0.0-preview6.0" />
   </ItemGroup>-->
 
   <ItemGroup>

@@ -39,7 +39,7 @@ namespace AcrylicControlLibraryTemplates
             this.Size = designSize;
             this._restoreSize = designSize; // save for restore
             this.windowPanel1.ProfileFeature = false;
-            this.windowPanel1.IsAcrylicEnabled = true;
+            this.windowPanel1.IsAcrylic = true;
             this.BlurOpacity = 10;
             //this.BackColor = Colors.Transparent;
             this.BackColor = AcrylicUI.Resources.Colors.GreyBackground;
