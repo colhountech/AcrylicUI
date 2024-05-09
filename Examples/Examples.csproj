@@ -9,8 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AcrylicUI\AcrylicUI.csproj" />
+    <PackageReference Include="AcrylicUI" Version="1.0.0" />
   </ItemGroup>
+
+  <!--<ItemGroup>
+    <ProjectReference Include="..\AcrylicUI\AcrylicUI.csproj" />
+  </ItemGroup>-->
 
   <ItemGroup>
     <Compile Update="Form13_TreeView.cs" />
