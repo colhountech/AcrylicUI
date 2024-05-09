@@ -8,10 +8,6 @@
     <ForceDesignerDpiUnaware>true</ForceDesignerDpiUnaware>
   </PropertyGroup>
 
-  <!--<ItemGroup>
-    <PackageReference Include="AcrylicUI" Version="1.0.0-preview6.0" />
-  </ItemGroup>-->
-
   <ItemGroup>
     <ProjectReference Include="..\AcrylicUI\AcrylicUI.csproj" />
   </ItemGroup>
@@ -19,12 +15,8 @@
   <ItemGroup>
     <Compile Update="Form13_TreeView.cs" />
     <Compile Update="Form12_Dialogs.cs" />
-    <Compile Update="Form16_MultiPanel.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Form15_ComboBox.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Update="Form16_MultiPanel.cs" />
+    <Compile Update="Form15_ComboBox.cs" />
     <Compile Update="Media\SvgIcons.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
