@@ -32,6 +32,39 @@ namespace AcrylicUI
                 });
             }
         }
+        [Flags]
+        public enum DWMWINDOWATTRIBUTE
+        {
+            DWMWA_USE_IMMERSIVE_DARK_MODE= 20,
+            DWMWA_SYSTEMBACKDROP_TYPE= 38
+        }
+
+        public enum BlurMode
+        {
+            None = 1,
+            Acrylic = 3,
+            Mica = 2,
+            Tabbed = 4
+        }
+
+        public static void SetWindowBlur(IntPtr handle, int color, BlurMode mode)
+        {
+            SetWindowAttribute(
+                handle,
+                DWMWINDOWATTRIBUTE.DWMWA_USE_IMMERSIVE_DARK_MODE,
+                color);
+            SetWindowAttribute(
+                handle,
+                DWMWINDOWATTRIBUTE.DWMWA_SYSTEMBACKDROP_TYPE,
+                (int)mode);
+        }
+
+        public static void EnableMica(IntPtr handle, Color blurColor)
+        {
+            int color = blurColor.ToArgb(); ;
+
+            SetWindowBlur(handle, color, BlurMode.Mica);
+        }
 
         private static uint ToAbgr(Color color)
         {
@@ -41,9 +74,13 @@ namespace AcrylicUI
                 | color.R;
         }
 
+        [DllImport("dwmapi.dll")]
+        static extern int DwmSetWindowAttribute(IntPtr hwnd, DWMWINDOWATTRIBUTE dwAttribute, ref int pvAttribute, int cbAttribute);
+
         [DllImport("user32.dll")]
         private static extern int SetWindowCompositionAttribute(HandleRef hWnd, in WindowCompositionAttributeData data);
-
+        public static int SetWindowAttribute(IntPtr hwnd, DWMWINDOWATTRIBUTE attribute, int parameter)
+           => DwmSetWindowAttribute(hwnd, attribute, ref parameter, Marshal.SizeOf<int>());
         private unsafe struct WindowCompositionAttributeData
         {
             public WCA Attribute;

@@ -130,7 +130,7 @@ namespace Examples
 
         private void acrylicButton16_Click(object sender, EventArgs e)
         {
-            var form = new Form16_MultiPanel();
+            var form = new Form16_Mica();
             form.StartPosition = FormStartPosition.CenterParent;
             form.ShowDialog(this);
         }

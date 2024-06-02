@@ -269,7 +269,7 @@ namespace Examples
             this.acrylicButton16.Padding = new System.Windows.Forms.Padding(6);
             this.acrylicButton16.Size = new System.Drawing.Size(160, 32);
             this.acrylicButton16.TabIndex = 15;
-            this.acrylicButton16.Text = "Form 16 - Multi Panel App";
+            this.acrylicButton16.Text = "Form 16 - Mica Form";
             this.acrylicButton16.UseVisualStyleBackColor = false;
             this.acrylicButton16.Click += new System.EventHandler(this.acrylicButton16_Click);
             // 

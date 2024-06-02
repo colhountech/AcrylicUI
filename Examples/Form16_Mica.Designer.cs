@@ -1,6 +1,6 @@
 ﻿namespace Examples
 {
-    partial class Form16_MultiPanel
+    partial class Form16_Mica
     {
         /// <summary>
         /// Required designer variable.

@@ -4,10 +4,10 @@ using System.Text.Json;
 
 namespace Examples
 {
-    public partial class Form16_MultiPanel : AcrylicForm
+    public partial class Form16_Mica : AcrylicForm
     {
 
-        public Form16_MultiPanel()
+        public Form16_Mica()
         {
             // Make sure you set:
             //  * Form1.cs:  this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
