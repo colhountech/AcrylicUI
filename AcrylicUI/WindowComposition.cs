@@ -19,8 +19,7 @@ namespace AcrylicUI
             };
             if (blurColor.A == 0xff)
             {
-                accentPolicy.AccentState = ACCENT.ENABLE_GRADIENT;
-                //accentPolicy.AccentState = ACCENT.DISABLED;
+                accentPolicy.AccentState = ACCENT.ENABLE_GRADIENT;      
             }
             unsafe
             {
@@ -39,33 +38,6 @@ namespace AcrylicUI
             DWMWA_SYSTEMBACKDROP_TYPE= 38
         }
 
-        public enum BlurMode
-        {
-            None = 1,
-            Acrylic = 3,
-            Mica = 2,
-            Tabbed = 4
-        }
-
-        public static void SetWindowBlur(IntPtr handle, int color, BlurMode mode)
-        {
-            SetWindowAttribute(
-                handle,
-                DWMWINDOWATTRIBUTE.DWMWA_USE_IMMERSIVE_DARK_MODE,
-                color);
-            SetWindowAttribute(
-                handle,
-                DWMWINDOWATTRIBUTE.DWMWA_SYSTEMBACKDROP_TYPE,
-                (int)mode);
-        }
-
-        public static void EnableMica(IntPtr handle, Color blurColor)
-        {
-            int color = blurColor.ToArgb(); ;
-
-            SetWindowBlur(handle, color, BlurMode.Mica);
-        }
-
         private static uint ToAbgr(Color color)
         {
             return ((uint)color.A << 24)
@@ -79,8 +51,6 @@ namespace AcrylicUI
 
         [DllImport("user32.dll")]
         private static extern int SetWindowCompositionAttribute(HandleRef hWnd, in WindowCompositionAttributeData data);
-        public static int SetWindowAttribute(IntPtr hwnd, DWMWINDOWATTRIBUTE attribute, int parameter)
-           => DwmSetWindowAttribute(hwnd, attribute, ref parameter, Marshal.SizeOf<int>());
         private unsafe struct WindowCompositionAttributeData
         {
             public WCA Attribute;
