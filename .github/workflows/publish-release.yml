@@ -34,10 +34,15 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
 
-    - name: Publish to NuGet
+    # - name: Publish to NuGet
 
-      uses: brandedoutcast/publish-nuget@v2.5.2
-      with:
-          PROJECT_FILE_PATH: ${{env.PROJECT}}
-          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+    #   uses: brandedoutcast/publish-nuget@v2.5.2
+    #   with:
+    #       PROJECT_FILE_PATH: ${{env.PROJECT}}
+    #       NUGET_KEY: ${{secrets.NUGET_API_KEY}}
 
+    - name: Pack 
+      run: dotnet pack --configuration Release --output nupkgs 
+      
+    - name: Publish to NuGet 
+      run: dotnet nuget push nupkgs/*.nupkg -s https://api.nuget.org/v3/index.json -k ${{secrets.NUGET_API_KEY}}
