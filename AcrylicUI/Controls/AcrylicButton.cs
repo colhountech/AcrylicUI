@@ -19,7 +19,7 @@ namespace AcrylicUI.Controls
         private bool _isDefault = false; // remove this after testing
         private bool _spacePressed;
         private bool _hasRoundedCorners = true;
-        private int _iconSize = 16;
+        private readonly int _iconSize = 16;
         private readonly int _padding = Consts.Padding / 2;
         private int _imagePadding = Consts.ImagePadding;
 
@@ -27,6 +27,7 @@ namespace AcrylicUI.Controls
 
         #region Designer Property Region
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public new string Text
         {
             get { return base.Text; }
@@ -47,6 +48,7 @@ namespace AcrylicUI.Controls
 
 
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public new bool Enabled
         {
             get { return base.Enabled; }
@@ -57,6 +59,7 @@ namespace AcrylicUI.Controls
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public bool Default
         {
             get { return _isDefault; }
@@ -134,6 +137,7 @@ namespace AcrylicUI.Controls
 
         private byte[] _svgIcon;
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public byte[] SvgIcon
         {
             set
@@ -147,11 +151,9 @@ namespace AcrylicUI.Controls
         {
             if (_svgIcon is not null)
             {
-                using (var stream = new MemoryStream(_svgIcon))
-                {
-                    var svgDoc = SvgDocument.Open<SvgDocument>(stream, null);
-                    base.Image = svgDoc.Draw(Scale(_iconSize), Scale(_iconSize));
-                }
+                using var stream = new MemoryStream(_svgIcon);
+                var svgDoc = SvgDocument.Open<SvgDocument>(stream, null);
+                base.Image = svgDoc.Draw(Scale(_iconSize), Scale(_iconSize));
             }
         }
 
@@ -160,6 +162,7 @@ namespace AcrylicUI.Controls
         /// call the UpdateScale(dpiScale) before gettingIcon
         /// 
         /// </summary>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public new Image Image
         {
             get

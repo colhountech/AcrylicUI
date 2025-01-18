@@ -138,6 +138,7 @@ namespace AcrylicUI.Controls
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public new bool Visible
         {
             get { return base.Visible; }

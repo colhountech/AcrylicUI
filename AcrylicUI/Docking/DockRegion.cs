@@ -23,8 +23,10 @@ namespace AcrylicUI.Docking
 
         #region Property Region
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public DockPanel DockPanel { get; private set; }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)] 
         public DockArea DockArea { get; private set; }
 
         public DockContent ActiveDocument

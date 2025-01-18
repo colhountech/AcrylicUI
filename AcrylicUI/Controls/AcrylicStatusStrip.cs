@@ -9,6 +9,7 @@ namespace AcrylicUI.Controls
     {
         private bool _isAcrylicEnabled;
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public bool IsAcrylicEnabled
         {
             get

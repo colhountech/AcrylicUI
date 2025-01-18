@@ -20,6 +20,7 @@ namespace AcrylicUI.Controls
         protected AcrylicScrollBar _vScrollBar;
         protected AcrylicScrollBar _hScrollBar;
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public bool DisableHorizontalScrollBar { get; set; } = false;
 
         private Size _visibleSize;

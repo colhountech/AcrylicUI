@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ namespace AcrylicUI.Forms
 {
     public partial class AcrylicSingleInput : AcrylicDialog
     {
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public string TextName
         {
             get { return this.txtName.Text; }
