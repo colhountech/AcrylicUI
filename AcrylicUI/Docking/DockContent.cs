@@ -25,6 +25,7 @@ namespace AcrylicUI.Docking
 
         [Category("Appearance")]
         [Description("Determines the text that will appear in the content tabs and headers.")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public string DockText
         {
             get { return _dockText; }
@@ -43,6 +44,7 @@ namespace AcrylicUI.Docking
 
         [Category("Appearance")]
         [Description("Determines the icon that will appear in the content tabs and headers.")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public Image Icon
         {
             get { return _icon; }
@@ -60,6 +62,7 @@ namespace AcrylicUI.Docking
 
         [Category("Behavior")]
         [Description("Determines the key used by this content in the dock serialization.")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public string SerializationKey { get; set; }
 
         [Browsable(false)]

@@ -18,9 +18,9 @@ namespace AcrylicUI.Controls
         private class DragDropMetaData { }
 
         private const int BorderWidth = 1;
-        private readonly DataGridView _base = new DataGridView();
-        private readonly AcrylicScrollBar _vScrollBar = new AcrylicScrollBar { ScrollOrientation = AcrylicScrollOrientation.Vertical };
-        private readonly AcrylicScrollBar _hScrollBar = new AcrylicScrollBar { ScrollOrientation = AcrylicScrollOrientation.Horizontal };
+        private readonly DataGridView _base = new();
+        private readonly AcrylicScrollBar _vScrollBar = new() { ScrollOrientation = AcrylicScrollOrientation.Vertical };
+        private readonly AcrylicScrollBar _hScrollBar = new() { ScrollOrientation = AcrylicScrollOrientation.Horizontal };
         private bool _isInit;
         private ScrollBars _scrollBars = ScrollBars.Both;
         private int _dragPosition = -1;
@@ -50,7 +50,7 @@ namespace AcrylicUI.Controls
 
         private static readonly Brush _dragDrawBrush = new HatchBrush(HatchStyle.Percent50, Color.Transparent, Colors.DataGridDrag);
 
-        private int _scrollSize => Consts.ScrollBarSize;
+        private static int ScrollSize => Consts.ScrollBarSize;
 
         public AcrylicDataGridView()
         {
@@ -113,12 +113,12 @@ namespace AcrylicUI.Controls
             _vScrollBar.BackColor = Colors.DocumentScrollbar;
             _vScrollBar.Minimum = 0;
             _vScrollBar.Maximum = 0;
-            _vScrollBar.ValueChanged += _vScrollBar_ValueChanged;
+            _vScrollBar.ValueChanged += VScrollBar_ValueChanged;
 
             _hScrollBar.BackColor = Colors.DocumentScrollbar;
             _hScrollBar.Minimum = 0;
             _hScrollBar.Maximum = 0;
-            _hScrollBar.ValueChanged += _hScrollBar_ValueChanged;
+            _hScrollBar.ValueChanged += HScrollBar_ValueChanged;
 
             UpdateScrollBarLayout();
 
@@ -145,7 +145,7 @@ namespace AcrylicUI.Controls
             if (DataSource is IBindingList dataSource && e.RowIndex >= 0)
             {
                 object obj = dataSource[e.RowIndex];
-                if (!(obj is INotifyPropertyChanged))
+                if (obj is not INotifyPropertyChanged)
                     dataSource[e.RowIndex] = obj;
             }
         }
@@ -179,7 +179,7 @@ namespace AcrylicUI.Controls
                     return;
 
                 // Paste string
-                string[] rowSeparator = new[] { "\r", "\n" };
+                string[] rowSeparator = { "\r", "\n" };
                 string[] columnSeperator = new[] { "\t" };
                 string[] pastedRows = clipboardString.Split(rowSeparator, StringSplitOptions.RemoveEmptyEntries);
                 for (int i = 0; i < pastedRows.GetLength(0); ++i)
@@ -347,12 +347,12 @@ namespace AcrylicUI.Controls
             _base.AlternatingRowsDefaultCellStyle = _cellStyleFocusedOdd;
         }
 
-        private void _hScrollBar_ValueChanged(object sender, ScrollValueEventArgs e)
+        private void HScrollBar_ValueChanged(object sender, ScrollValueEventArgs e)
         {
             _base.HorizontalScrollingOffset = Math.Max(0, Math.Min(Math.Max(TotalColumnsWidth - 1, 0), e.Value));
         }
 
-        private void _vScrollBar_ValueChanged(object sender, ScrollValueEventArgs e)
+        private void VScrollBar_ValueChanged(object sender, ScrollValueEventArgs e)
         {
             if (_base.Rows.Count != 0)
                 _base.FirstDisplayedScrollingRowIndex = Math.Max(0, Math.Min(Math.Max(_base.Rows.Count - 1, 0), e.Value));
@@ -418,21 +418,21 @@ namespace AcrylicUI.Controls
                 // Do update twice to ensure proper updating if columns auto resize during the first update
                 for (int i = 0; i < 2; ++i)
                 {
-                    Rectangle baseBounds = new Rectangle(BorderWidth, BorderWidth, size.Width - BorderWidth * 2, size.Height - BorderWidth * 2);
-                    Rectangle hScrollBarBounds = new Rectangle(BorderWidth, size.Height - _scrollSize - BorderWidth, size.Width - BorderWidth * 2, _scrollSize);
-                    Rectangle vScrollBarBounds = new Rectangle(size.Width - _scrollSize - BorderWidth, BorderWidth, _scrollSize, size.Height - BorderWidth * 2);
+                    Rectangle baseBounds = new(BorderWidth, BorderWidth, size.Width - BorderWidth * 2, size.Height - BorderWidth * 2);
+                    Rectangle hScrollBarBounds = new(BorderWidth, size.Height - AcrylicDataGridView.ScrollSize - BorderWidth, size.Width - BorderWidth * 2, AcrylicDataGridView.ScrollSize);
+                    Rectangle vScrollBarBounds = new(size.Width - AcrylicDataGridView.ScrollSize - BorderWidth, BorderWidth, AcrylicDataGridView.ScrollSize, size.Height - BorderWidth * 2);
 
                     // Setup rows
                     int rowCount = _base.Rows.Count + 1;
-                    int rowInView = CountVisibleRows(_base.FirstDisplayedScrollingRowIndex, size.Height - _scrollSize);
+                    int rowInView = CountVisibleRows(_base.FirstDisplayedScrollingRowIndex, size.Height - AcrylicDataGridView.ScrollSize);
                     bool rowScrollVisible = _scrollBars.HasFlag(ScrollBars.Vertical) && rowInView < rowCount;
                     if (rowScrollVisible)
                     {
                         _vScrollBar.ViewSize = rowInView + 1;
                         _vScrollBar.Maximum = Math.Max(rowInView + 2, rowCount);
 
-                        baseBounds.Width -= _scrollSize;
-                        hScrollBarBounds.Width -= _scrollSize;
+                        baseBounds.Width -= AcrylicDataGridView.ScrollSize;
+                        hScrollBarBounds.Width -= AcrylicDataGridView.ScrollSize;
                     }
 
                     // Setup columns
@@ -444,8 +444,8 @@ namespace AcrylicUI.Controls
                         _hScrollBar.ViewSize = columnsPixelInView;
                         _hScrollBar.Maximum = Math.Max(columnsPixelInView + 1, columnsPixelCount);
 
-                        baseBounds.Height -= _scrollSize;
-                        vScrollBarBounds.Height -= _scrollSize;
+                        baseBounds.Height -= AcrylicDataGridView.ScrollSize;
+                        vScrollBarBounds.Height -= AcrylicDataGridView.ScrollSize;
                     }
 
                     // Update layout
@@ -522,6 +522,7 @@ namespace AcrylicUI.Controls
         }
 
         [ReadOnly(true)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public Color OutlineColor
         {
             get { return base.BackColor; }
@@ -601,6 +602,7 @@ namespace AcrylicUI.Controls
         [DefaultValue(true)]
         [EditorBrowsable(EditorBrowsableState.Advanced)]
         public bool AutoGenerateColumns { get { return _base.AutoGenerateColumns; } set { _base.AutoGenerateColumns = value; } }
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public new bool AutoSize { get { return _base.AutoSize; } set { _base.AutoSize = value; } }
         [DefaultValue(DataGridViewAutoSizeColumnsMode.None)]
         public DataGridViewAutoSizeColumnsMode AutoSizeColumnsMode { get { return _base.AutoSizeColumnsMode; } set { _base.AutoSizeColumnsMode = value; } }
@@ -612,12 +614,15 @@ namespace AcrylicUI.Controls
         [ReadOnly(true)]
         public new Color BackColor { get { return _base.BackColor; } set { _base.BackColor = value; } }
         [ReadOnly(true)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public Color BackgroundColor { get { return _base.BackgroundColor; } set { _base.BackgroundColor = value; } }
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Never)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public new Image BackgroundImage { get { return _base.BackgroundImage; } set { _base.BackgroundImage = value; } }
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Never)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public new ImageLayout BackgroundImageLayout { get { return _base.BackgroundImageLayout; } set { _base.BackgroundImageLayout = value; } }
         [DefaultValue(BorderStyle.None)]
         public new BorderStyle BorderStyle { get { return _base.BorderStyle; } set { _base.BorderStyle = value; } }
@@ -636,6 +641,7 @@ namespace AcrylicUI.Controls
         [DefaultValue(DataGridViewHeaderBorderStyle.Single)]
         public DataGridViewHeaderBorderStyle ColumnHeadersBorderStyle { get { return _base.ColumnHeadersBorderStyle; } set { _base.ColumnHeadersBorderStyle = value; } }
         [Localizable(true)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public int ColumnHeadersHeight { get { return _base.ColumnHeadersHeight; } set { _base.ColumnHeadersHeight = value; } }
         [DefaultValue(DataGridViewColumnHeadersHeightSizeMode.AutoSize)]
         [RefreshProperties(RefreshProperties.All)]
@@ -686,12 +692,14 @@ namespace AcrylicUI.Controls
         public int FirstDisplayedScrollingRowIndex { get { return _base.FirstDisplayedScrollingRowIndex; } set { _base.FirstDisplayedScrollingRowIndex = value; } }
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Advanced)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public new Font Font { get { return _base.Font; } set { _base.Font = value; } }
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         [EditorBrowsable(EditorBrowsableState.Advanced)]
         public new Color ForeColor { get { return _base.ForeColor; } set { _base.ForeColor = value; } }
         [ReadOnly(true)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public Color GridColor { get { return _base.GridColor; } set { _base.GridColor = value; } }
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -725,6 +733,7 @@ namespace AcrylicUI.Controls
         [DefaultValue(false)]
         public bool RowHeadersVisible { get { return _base.RowHeadersVisible; } set { _base.RowHeadersVisible = value; } }
         [Localizable(true)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public int RowHeadersWidth { get { return _base.RowHeadersWidth; } set { _base.RowHeadersWidth = value; } }
         [DefaultValue(DataGridViewRowHeadersWidthSizeMode.EnableResizing)]
         [RefreshProperties(RefreshProperties.All)]
@@ -761,6 +770,7 @@ namespace AcrylicUI.Controls
         [Bindable(false)]
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Never)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public new string Text { get { return _base.Text; } set { _base.Text = value; } }
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -1066,10 +1076,10 @@ namespace AcrylicUI.Controls
             base.OnResize(e);
             UpdateScale();
         }
-        private int Scale(int pixel)
-        {
-            return (int)(pixel * _dpiScale);
-        }
+        //private int Scale(int pixel)
+        //{
+        //    return (int)(pixel * _dpiScale);
+        //}
 
         #endregion
     }
@@ -1079,8 +1089,8 @@ namespace AcrylicUI.Controls
         // Unfortunately we need access to a private data member
         private static readonly PropertyInfo _buttonState = typeof(DataGridViewButtonCell).GetProperty("ButtonState", BindingFlags.NonPublic | BindingFlags.Instance);
 
-        private static readonly Padding _padding = new Padding(1, 1, 2, 2);
-        private static readonly StringFormat _stringFormat = new StringFormat
+        private static readonly Padding _padding = new(1, 1, 2, 2);
+        private static readonly StringFormat _stringFormat = new()
         {
             LineAlignment = StringAlignment.Center,
             Alignment = StringAlignment.Center,
@@ -1163,8 +1173,8 @@ namespace AcrylicUI.Controls
             {
                 Color backColor = elementState.HasFlag(DataGridViewElementStates.Selected) ?
                 cellStyle.SelectionBackColor : cellStyle.BackColor;
-                using (var brush = new SolidBrush(backColor))
-                    graphics.FillRectangle(brush, cellBounds);
+                using var brush = new SolidBrush(backColor);
+                graphics.FillRectangle(brush, cellBounds);
             }
 
             if (paintParts.HasFlag(DataGridViewPaintParts.Border))
@@ -1190,7 +1200,7 @@ namespace AcrylicUI.Controls
                 fillColor = Colors.BtnHotFill;
 
             // Paint button
-            Rectangle contentBounds = new Rectangle(cellBounds.X + _padding.Left, cellBounds.Y + _padding.Top,
+            Rectangle contentBounds = new(cellBounds.X + _padding.Left, cellBounds.Y + _padding.Top,
                 cellBounds.Width - _padding.Horizontal, cellBounds.Height - _padding.Vertical);
 
             if (paintParts.HasFlag(DataGridViewPaintParts.ContentBackground))
@@ -1198,8 +1208,8 @@ namespace AcrylicUI.Controls
                 using (var brush = new SolidBrush(fillColor))
                     graphics.FillRectangle(brush, contentBounds);
 
-                using (var pen = new Pen(borderColor, 1))
-                    graphics.DrawRectangle(pen, contentBounds.Left, contentBounds.Top, contentBounds.Width - 1, contentBounds.Height - 1);
+                using var pen = new Pen(borderColor, 1);
+                graphics.DrawRectangle(pen, contentBounds.Left, contentBounds.Top, contentBounds.Width - 1, contentBounds.Height - 1);
             }
 
             if (paintParts.HasFlag(DataGridViewPaintParts.ContentForeground))
@@ -1224,6 +1234,7 @@ namespace AcrylicUI.Controls
             base.FlatStyle = FlatStyle.Flat;
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public sealed override DataGridViewCell CellTemplate
         {
             get { return base.CellTemplate; }
@@ -1231,7 +1242,7 @@ namespace AcrylicUI.Controls
         }
 
         [DefaultValue(FlatStyle.Flat)]
-        public new FlatStyle FlatStyle
+        public new static FlatStyle FlatStyle
         {
             get { return FlatStyle.Flat; }
         }
@@ -1268,7 +1279,7 @@ namespace AcrylicUI.Controls
         }
 
         [DefaultValue(FlatStyle.Flat)]
-        public new FlatStyle FlatStyle
+        public new static FlatStyle FlatStyle
         {
             get { return FlatStyle.Flat; }
         }

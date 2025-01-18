@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.ComponentModel.Design.Serialization;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -48,6 +49,7 @@ namespace AcrylicUI.Controls
 
         #region Property Region
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public bool RoundCorners
         {
             get
@@ -111,6 +113,7 @@ namespace AcrylicUI.Controls
 
         [Category("Appearance")]
         [Description("Determines the icon that will appear in the content tabs and headers.")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public Image Icon
         {
             get { return _icon; }
@@ -130,6 +133,7 @@ namespace AcrylicUI.Controls
 
         [Category("Appearance")]
         [Description("The section header text associated with this control.")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public string SectionHeader
         {
             get { return _sectionHeader; }

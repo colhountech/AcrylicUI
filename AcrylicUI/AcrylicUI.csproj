@@ -4,10 +4,10 @@
 
 	<PropertyGroup>
 		<OutputType>Library</OutputType>
-		<TargetFrameworks>net6-windows;net7-windows;net8-windows</TargetFrameworks>
+		<TargetFrameworks>net7-windows;net8-windows;net9-windows</TargetFrameworks>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<UseWindowsForms>true</UseWindowsForms>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <PackageId>AcrylicUI</PackageId>
     <Authors>Micheal Colhoun</Authors>
     <Company>ColhounTech</Company>
@@ -31,30 +31,14 @@
 
 	<ItemGroup>
 	  <Compile Update="Controls\AcrylicTransparentLabel.cs" />
-	  <Compile Update="Controls\AcrylicToolStrip.cs">
-	    <SubType>Component</SubType>
-	  </Compile>
-	  <Compile Update="Controls\AcrylicTreeView.cs">
-	    <SubType>Component</SubType>
-	  </Compile>
-	  <Compile Update="Controls\AcrylicDataGridView.cs">
-	    <SubType>UserControl</SubType>
-	  </Compile>
-	  <Compile Update="Controls\AcrylicCheckBox.cs">
-	    <SubType>Component</SubType>
-	  </Compile>
-	  <Compile Update="Controls\AcrylicMenuStrip.cs">
-	    <SubType>Component</SubType>
-	  </Compile>
-	  <Compile Update="Controls\AcrylicNumericUpDown.cs">
-	    <SubType>Component</SubType>
-	  </Compile>
-	  <Compile Update="Docking\Document.cs">
-	    <SubType>UserControl</SubType>
-	  </Compile>
-	  <Compile Update="Docking\ToolWindow.cs">
-	    <SubType>UserControl</SubType>
-	  </Compile>
+	  <Compile Update="Controls\AcrylicToolStrip.cs" />
+	  <Compile Update="Controls\AcrylicTreeView.cs" />
+	  <Compile Update="Controls\AcrylicDataGridView.cs" />
+	  <Compile Update="Controls\AcrylicCheckBox.cs" />
+	  <Compile Update="Controls\AcrylicMenuStrip.cs" />
+	  <Compile Update="Controls\AcrylicNumericUpDown.cs" />
+	  <Compile Update="Docking\Document.cs" />
+	  <Compile Update="Docking\ToolWindow.cs" />
 	  <Compile Update="Resources\DockIcons.Designer.cs">
 	    <DesignTime>True</DesignTime>
 	    <AutoGen>True</AutoGen>

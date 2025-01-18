@@ -1,6 +1,8 @@
 ﻿
 using AcrylicUI.Resources;
 using System;
+using System.ComponentModel;
+using System.ComponentModel.Design.Serialization;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -116,6 +118,7 @@ namespace AcrylicUI.Controls
         /// <returns>
         /// The text associated with this control.
         /// </returns>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public override string Text
         {
             get
@@ -139,6 +142,7 @@ namespace AcrylicUI.Controls
         /// <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
         /// The assigned value is not one of the <see cref="T:System.Windows.Forms.RightToLeft"/> values.
         /// </exception>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public override RightToLeft RightToLeft
         {
             get
@@ -159,6 +163,7 @@ namespace AcrylicUI.Controls
         /// <returns>
         /// The <see cref="T:System.Drawing.Font"/> to apply to the text displayed by the control. The default is the value of the <see cref="P:System.Windows.Forms.Control.DefaultFont"/> property.
         /// </returns>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public override Font Font
         {
             get
@@ -176,6 +181,7 @@ namespace AcrylicUI.Controls
         /// <summary>
         /// Gets or sets the text alignment.
         /// </summary>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public ContentAlignment TextAlign
         {
             get { return textAlign; }

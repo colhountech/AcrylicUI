@@ -48,6 +48,7 @@ namespace AcrylicUI.Controls
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public new bool AutoSize
         {
             get { return base.AutoSize; }

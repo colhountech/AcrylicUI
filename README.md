@@ -1,83 +1,93 @@
 # AcrylicUI
-AcrylicUI is an Open Source Control and Docking Framework for .NET Core WinForms on Windows 11
 
-This framework was inspired by [DarkUI](https://github.com/RobinPerris/DarkUI) by Robin Perris. However DarkUI does not support High Resolution Monitors or .NET Core. 
+AcrylicUI is a modern Control and Docking Framework for .NET Core WinForms, optimized for Windows 11. Inspired by [DarkUI](https://github.com/RobinPerris/DarkUI), it has been rebuilt for contemporary Windows development to bring Windows 11 features like Snap Layout, rounded corners, drop shadows on borderless forms, and scaling for high-resolution high-DPI monitors, along with beautiful Windows 11 Acrylic UI panels.
 
-AcrylicUI is taking the best bits of DarkUI and Supporting the latest and greatet dotnet core, Windows 11 Features like Snap Layout, Rounded Corners, Drop Shadows on Borderless Forms and Scaling for High Resolution High Dpi Monitors, and of course beautiful Windows 11 Acrylic UI panels.
- 
-Features of AcrylicUI:
+## Key Features
 
-    * Most Components migrated from DarkUI are now working (Some require High Dpi Refactoring)
-    * New Dark Theme Style a blend between Windows 11 Dark Theme and MacOs Dark Theme
-    * Support for Acyrlic and Glass WindowPanels
-    * Support for High Resolution Monitors
-    * Support for Custom TitleBars and Borderless WindowPanels
-    * Support for Borderless Windows Snapping
-    * Support for Borderless Windows 11 Snap Layout Popups (Hack)
-    * Support for .NET Core (No depenedency on .Net Full Framwork)
+- Windows 11 native features (Snap Layout, rounded corners, drop shadows)
+- High DPI support for modern displays
+- Acrylic and Glass window effects
+- Dark theme inspired by Windows 11 and macOS
+- .NET Core support (no .NET Framework dependency)
 
-This is clearly a Work In Progress and should not be considered production ready.
+## Available Components
 
-There is a clear path of the work to be done to migrate all relevant Controls from DarkUI to AcrylicUI. 
+### Form Elements
+- [AcrylicForm](docs/form-elements/AcrylicForm.md) - Modern Windows 11 style form
+- [AcrylicDialog](docs/form-elements/AcrylicDialog.md) - Custom dialog window
+- [AcrylicMessageBox](docs/form-elements/AcrylicMessageBox.md) - Styled message dialogs
+- [AcrylicSingleInput](docs/form-elements/AcrylicSingleInput.md) - Single input dialog
+- [WindowPanel](docs/form-elements/WindowPanel.md) - Support for Acrylic/Glass effects
 
-My Focus is supporting my own projects and I migrate Controls based on my personal priority. 
+### Core Controls
+- [AcrylicButton](docs/controls/AcrylicButton.md)
+- [AcrylicCheckBox](docs/controls/AcrylicCheckBox.md)
+- [AcrylicComboBox](docs/controls/AcrylicComboBox.md)
+- [AcrylicContextMenu](docs/controls/AcrylicContextMenu.md)
+- [AcrylicDataGridView](docs/controls/AcrylicDataGridView.md)
+- [AcrylicGlassPanel](docs/controls/AcrylicGlassPanel.md)
+- [AcrylicGroupBox](docs/controls/AcrylicGroupBox.md)
+- [AcrylicLabel](docs/controls/AcrylicLabel.md)
+- [AcrylicListItem](docs/controls/AcrylicListItem.md)
+- [AcrylicListView](docs/controls/AcrylicListView.md)
+- [AcrylicMenuStrip](docs/controls/AcrylicMenuStrip.md)
+- [AcrylicNumericUpDown](docs/controls/AcrylicNumericUpDown.md)
+- [AcrylicPanel](docs/controls/AcrylicPanel.md)
+- [AcrylicProgressBar](docs/controls/AcrylicProgressBar.md)
+- [AcrylicScrollBar](docs/controls/AcrylicScrollBar.md)
+- [AcrylicScrollView](docs/controls/AcrylicScrollView.md)
+- [AcrylicSectionPanel](docs/controls/AcrylicSectionPanel.md)
+- [AcrylicStatusStrip](docs/controls/AcrylicStatusStrip.md)
+- [AcrylicTextBox](docs/controls/AcrylicTextBox.md)
+- [AcrylicTitle](docs/controls/AcrylicTitle.md)
+- [AcrylicToolStrip](docs/controls/AcrylicToolStrip.md)
+- [AcrylicTransparentLabel](docs/controls/AcrylicTransparentLabel.md)
+- [AcrylicTreeView](docs/controls/AcrylicTreeView.md)
 
-Feel free to offer support and assistance, or better still 
-raise a pull request and message me on twitter https://twitter.com/colhountech
-
-## Frequenty Asked Questions:
-
-### Q: Can I used this in my commercial projects.
-
-Yes, but without warranty. This project is covered by MIT License and is covered for personal and commercial use. 
-
-### Q: Can I get support.
-
-If you spot a bug or need support, raise an issue.
-
-### Q: I want to get involved. How can I help?
-
-You can support me by joining my YouTube Channel, Start a conversation on my Discord Server, or share your love for Beautiful WinForms Desktop Apps on twitter.
-
-# Release Workflow
-
-Do you ever forgot how you did something? Me too. Especially how I do releases. So this is a note to myself to remind me what to do:
-
-* Run Examples Tests
-* Update README.MD to point to Release Notes for impending release
-* Push Changes
-* Check [GitHub Actions CI](https://github.com/colhountech/AcrylicUI/actions/workflows/main.yml) Builds ok
-* Create a [new Release](https://github.com/colhountech/AcrylicUI/releases/new) Tag using [Semantic versioning](http://semver.org/)
-* Add Release Notes to Tag
-* Add Full Changelog URL https://github.com/colhountech/AcrylicUI/commits/<Tag>
-
-My social links are below:
-
-## Twitter
-
-I've recently setup a new account on twitter.
-    
-Follow me on [twitter](https://twitter.com/colhountech)
-
-## Youtube
-
-When I reach 1000 subscribers, you can support the project with Memberships and Super Thanks. Until then, a sub will do very nicely.
-    
-Subscribe on [YouTube](https://www.youtube.com/channel/UC-mHR47cULEfJHvk49t1zQA)
-     
-## Discord
-
-If you have questions, you are invited to join my [Discord server](https://discord.gg/7yTM5RqDfn) where we can hangout and chat.
-
-## Twitch
-
-Sometime I livecode on twitch, so join me and Listen to some cool StreamBeats while I figure stuff out. Sometimes, I play Valorant or Eve-Online (Badly) on [Twitch.tv](https://twitch.tv/colhountech)
-
-Thank you.
-
-Mícheál Colhoun
+### Docking Framework
+- [DockPanel](docs/docking/DockPanel.md)
+- [DockContent](docs/docking/DockContent.md)
+- [DockArea](docs/docking/DockArea.md)
+- [DockGroup](docs/docking/DockGroup.md)
+- [DockRegion](docs/docking/DockRegion.md)
+- [DockSplitter](docs/docking/DockSplitter.md)
+- [DockTab](docs/docking/DockTab.md)
+- [ToolWindow](docs/docking/ToolWindow.md)
+- [Document](docs/docking/Document.md)
 
 
+All components support high DPI and Windows 11 visual features.
 
+## Getting Started
 
+Check out the [AcrylicUI Examples](https://github.com/colhountech/AcrylicUIExamples) repository for a step-by-step guide and working examples. This companion "book" is being actively developed alongside the main project.
 
+## Project Status
+
+This is a work in progress focusing on:
+1. Modern Windows 11 features
+2. High DPI support
+3. Selective migration of DarkUI controls
+4. Documentation and examples
+
+Not recommended for production use yet, but feel free to experiment and contribute.
+
+## License
+
+MIT License - Free for personal and commercial use.
+
+## Support & Community
+
+- Issues & Bugs: [GitHub Issues](https://github.com/colhountech/AcrylicUI/issues)
+- Examples & Documentation: [AcrylicUI Examples](https://github.com/colhountech/AcrylicUIExamples)
+- Community: [Discord Server](https://discord.gg/7yTM5RqDfn)
+- Updates: [@colhountech](https://twitter.com/colhountech)
+- Tutorials: [YouTube Channel](https://www.youtube.com/channel/UC-mHR47cULEfJHvk49t1zQA)
+
+## Contributing
+
+Pull requests welcome! Check the issues page for needed improvements or suggest new features.
+
+---
+
+Created by [Mícheál Colhoun](https://github.com/colhountech)
