@@ -43,6 +43,9 @@ jobs:
 
     - name: Pack 
       run: dotnet pack --configuration Release --output nupkgs 
-      
+     
+    - name: List nupkgs directory
+      run: dir /s /b 
+        
     - name: Publish to NuGet 
       run: dotnet nuget push nupkgs/*.nupkg -s https://api.nuget.org/v3/index.json -k ${{secrets.NUGET_API_KEY}}
