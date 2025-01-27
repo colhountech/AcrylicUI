@@ -815,9 +815,10 @@ namespace AcrylicUI.Controls
         private int _showSnapOverlay;
         private bool _isAcrylic;
 
-        protected override void WndProc(ref Message message)
-        {
-#if SKIP
+    protected override void WndProc(ref Message message)
+    { 
+#if SKIP // Helpful for Debugging
+
             switch (message.Msg)
             {
                 case WinUserH.WM_NCHITTEST:
@@ -850,38 +851,46 @@ namespace AcrylicUI.Controls
             }
 
 #endif
-            if (_showSnapOverlay > 100) _showSnapOverlay = 0;
+    
+    const int MaxSnapOverlay = 100;
+    const int SnapOverlayThreshold = 30;
 
-            // Don't Process a Hit Test, Allow Underlying Windows to Process
-            if (message.Msg == WinUserH.WM_NCHITTEST)
-            {                
-                base.WndProc(ref message);
+    if (_showSnapOverlay > MaxSnapOverlay) _showSnapOverlay = 0;
 
-                if ((int)message.Result == WinUserH.HT_CLIENT)
+    if (message.Msg == WinUserH.WM_NCHITTEST)
+    {
+        base.WndProc(ref message);
+
+        if ((int)message.Result == WinUserH.HT_CLIENT)
+        {
+            var cursor = this.PointToClient(Cursor.Position);
+
+            if (IsControlBoxHit(cursor))
+            {
+                if (_max.IsPressed)
                 {
-                    var cursor = this.PointToClient(Cursor.Position);                  
-
-                    if (IsControlBoxHit(cursor))
+                    _showSnapOverlay = 0;
+                }
+                else if (_max.IsHot)
+                {
+                    _showSnapOverlay++;
+                    if (_showSnapOverlay > SnapOverlayThreshold)
                     {
-                        if (_max.IsPressed) _showSnapOverlay = 0;
-                        if (_max.IsHot && _showSnapOverlay++ > 30)
-                        {
-                            message.Result = (IntPtr)(WinUserH.HT_MAXBUTTON);
-                            //Console.WriteLine($"SENT--> HT_MAXBUTTON {_showSnapOverlay}");
-                        }
-
-
+                        message.Result = (IntPtr)(WinUserH.HT_MAXBUTTON);
                         return;
                     }
-                    _showSnapOverlay = 0;
-                    message.Result = (IntPtr)(WinUserH.HT_TRANSPARENT);
-
                 }
+                return;
             }
-
-            else base.WndProc(ref message);
+            _showSnapOverlay = 0;
+            message.Result = (IntPtr)(WinUserH.HT_TRANSPARENT);
         }
-
+    }
+    else
+    {
+        base.WndProc(ref message);
+    }
+}
         [DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
 
