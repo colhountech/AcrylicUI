@@ -24,14 +24,14 @@ namespace Examples
 
         private void HookEvents()
         {
-            this.Load += new System.EventHandler(this.MainWindow_Load);
+            Load += new System.EventHandler(MainWindow_Load);
         }
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
-            var dpiScale = IconFactory.GetDpiScale(this.Handle);
-            this.windowPanel1.Icon = new IconFactory(IconFactory.GetDpiScale(Handle)).BitmapFromSvg(Icons.Cube_16x_svg);
-            this.windowPanel1.SectionHeader = "CT Studio";
+            var dpiScale = IconFactory.GetDpiScale(Handle);
+            windowPanel1.Icon = new IconFactory(IconFactory.GetDpiScale(Handle)).BitmapFromSvg(Icons.Cube_16x_svg);
+            windowPanel1.SectionHeader = "CT Studio";
            
 
         }

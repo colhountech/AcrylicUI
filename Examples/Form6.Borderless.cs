@@ -18,14 +18,14 @@ namespace Examples
         private void BtnMaximize_Click(object sender, EventArgs e)
         {
             _restoreSize = ClientSize;
-            this.WindowState = (this.WindowState == FormWindowState.Normal ? FormWindowState.Maximized : FormWindowState.Normal);
+            WindowState = (WindowState == FormWindowState.Normal ? FormWindowState.Maximized : FormWindowState.Normal);
             AdjustForm();
         }
 
         private void BtnMin_Click(object sender, EventArgs e)
         {
             _restoreSize = ClientSize;
-            this.WindowState = FormWindowState.Minimized;
+            WindowState = FormWindowState.Minimized;
             AdjustForm();
         }
 
@@ -37,14 +37,14 @@ namespace Examples
 
         private void AdjustForm()
         {
-            switch (this.WindowState)
+            switch (WindowState)
             {
                 case FormWindowState.Maximized: //Maximized form (After)
-                    this.Padding = new Padding(8, 8, 8, 8);
+                    Padding = new Padding(8, 8, 8, 8);
                     break;
                 case FormWindowState.Normal: //Restored form (After)
-                    if (this.Padding.Top != borderSize)
-                        this.Padding = new Padding(borderSize);
+                    if (Padding.Top != borderSize)
+                        Padding = new Padding(borderSize);
                     break;
             }
         }
@@ -77,12 +77,12 @@ namespace Examples
             {
                 base.WndProc(ref message);
 
-                if (this.WindowState == FormWindowState.Normal)
+                if (WindowState == FormWindowState.Normal)
                 {
                     if ((int)message.Result == WinUserH.HT_CLIENT)
                     {
-                        var cursor = this.PointToClient(Cursor.Position);
-                        WindowPanel.CheckResizeClientAreaHit(this.ClientSize, ref message, cursor);
+                        var cursor = PointToClient(Cursor.Position);
+                        WindowPanel.CheckResizeClientAreaHit(ClientSize, ref message, cursor);
                     }
                 }
                 return;
@@ -101,12 +101,12 @@ namespace Examples
                 if (wParam == WinUserH.SC_MINIMIZE)
                 {
                     //save client size
-                    _restoreSize = this.ClientSize;
+                    _restoreSize = ClientSize;
                 }
                 if (wParam == WinUserH.SC_RESTORE)
                 {
                     // restore client size
-                    this.Size = _restoreSize;
+                    Size = _restoreSize;
                 }
             }
 
@@ -174,9 +174,9 @@ namespace Examples
             {
                 var attribute = DWMWINDOWATTRIBUTE.DWMWA_WINDOW_CORNER_PREFERENCE;
                 var preference = DWM_WINDOW_CORNER_PREFERENCE.DWMWCP_ROUND;
-                DwmSetWindowAttribute(this.Handle, attribute, ref preference, sizeof(uint));
+                DwmSetWindowAttribute(Handle, attribute, ref preference, sizeof(uint));
             }
-            this.pnlTask.RoundCorners = isWindows11;
+            pnlTask.RoundCorners = isWindows11;
         }
 
         public enum DWMWINDOWATTRIBUTE

@@ -27,7 +27,7 @@ namespace Examples
         public Form7_ListItems()
         {
             InitializeComponent();
-            // Make sure you set this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            // Make sure you set AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             // Program.cs : Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
 
             SetupUIDefaults();
@@ -51,34 +51,34 @@ namespace Examples
         private void SetupUIDefaults()
         {
             // Don't change this: NoBorder with Resize Hack
-            var designSize = this.ClientSize;
-            this.FormBorderStyle = FormBorderStyle.Sizable;
-            this.Size = designSize;
-            this._restoreSize = designSize; // save for restore
+            var designSize = ClientSize;
+            FormBorderStyle = FormBorderStyle.Sizable;
+            Size = designSize;
+            _restoreSize = designSize; // save for restore
             // Glass Effect
 
-            this.BlurOpacity = 1;
-            this.BackColor = AcrylicUI.Resources.Colors.GreyBackground;
-            this.windowPanel1.IsAcrylic = true;
+            BlurOpacity = 1;
+            BackColor = AcrylicUI.Resources.Colors.GreyBackground;
+            windowPanel1.IsAcrylic = true;
         }
 
         private void HookEvents()
         {
-            this.Load += new System.EventHandler(this.MainWindow_Load);
+            Load += new System.EventHandler(MainWindow_Load);
         }
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
-            var dpiScale = IconFactory.GetDpiScale(this.Handle);
-            this.windowPanel1.Icon = new IconFactory(IconFactory.GetDpiScale(Handle)).BitmapFromSvg(Icons.Cube_16x_svg);
-            this.windowPanel1.SectionHeader = "CT Studio";
+            var dpiScale = IconFactory.GetDpiScale(Handle);
+            windowPanel1.Icon = new IconFactory(IconFactory.GetDpiScale(Handle)).BitmapFromSvg(Icons.Cube_16x_svg);
+            windowPanel1.SectionHeader = "CT Studio";
         }
 
 
         private void BtnMaximize_Click(object sender, EventArgs e)
         {
             _restoreSize = ClientSize;
-            this.WindowState = (this.WindowState == FormWindowState.Normal ? FormWindowState.Maximized : FormWindowState.Normal);
+            WindowState = (WindowState == FormWindowState.Normal ? FormWindowState.Maximized : FormWindowState.Normal);
             AdjustForm();
         }
 
@@ -89,7 +89,7 @@ namespace Examples
         private void BtnMin_Click(object sender, EventArgs e)
         {
             _restoreSize = ClientSize;
-            this.WindowState = FormWindowState.Minimized;
+            WindowState = FormWindowState.Minimized;
             AdjustForm();
         }
 
@@ -97,34 +97,34 @@ namespace Examples
 
         protected override void OnResizeBegin(EventArgs e)
         {
-            this.SuspendLayout();
+            SuspendLayout();
             base.OnResizeBegin(e);
         }
 
         protected override void OnResizeEnd(EventArgs e)
         {
             base.OnResizeEnd(e);
-            this.ResumeLayout();
+            ResumeLayout();
         }
 
         protected override void OnResize(EventArgs e)
         {
-            this.SuspendLayout();
+            SuspendLayout();
             base.OnResize(e);
             AdjustForm();
-            this.ResumeLayout();
+            ResumeLayout();
         }
 
         private void AdjustForm()
         {
-            switch (this.WindowState)
+            switch (WindowState)
             {
                 case FormWindowState.Maximized: //Maximized form (After)
-                    this.Padding = new Padding(8, 8, 8, 8);
+                    Padding = new Padding(8, 8, 8, 8);
                     break;
                 case FormWindowState.Normal: //Restored form (After)
-                    if (this.Padding.Top != borderSize)
-                        this.Padding = new Padding(borderSize);
+                    if (Padding.Top != borderSize)
+                        Padding = new Padding(borderSize);
                     break;
             }
         }
@@ -160,12 +160,12 @@ namespace Examples
             {
                 base.WndProc(ref message);
 
-                if (this.WindowState == FormWindowState.Normal)
+                if (WindowState == FormWindowState.Normal)
                 {
                     if ((int)message.Result == WinUserH.HT_CLIENT)
                     {
-                        var cursor = this.PointToClient(Cursor.Position);
-                        WindowPanel.CheckResizeClientAreaHit(this.ClientSize, ref message, cursor);
+                        var cursor = PointToClient(Cursor.Position);
+                        WindowPanel.CheckResizeClientAreaHit(ClientSize, ref message, cursor);
                     }
                 }
                 return;
@@ -184,12 +184,12 @@ namespace Examples
                 if (wParam == WinUserH.SC_MINIMIZE)
                 {
                     //save client size
-                    _restoreSize = this.ClientSize;
+                    _restoreSize = ClientSize;
                 }
                 if (wParam == WinUserH.SC_RESTORE)
                 {
                     // restore client size
-                    this.Size = _restoreSize;
+                    Size = _restoreSize;
                 }
             }
 
@@ -243,9 +243,9 @@ namespace Examples
             {
                 var attribute = DWMWINDOWATTRIBUTE.DWMWA_WINDOW_CORNER_PREFERENCE;
                 var preference = DWM_WINDOW_CORNER_PREFERENCE.DWMWCP_ROUND;
-                DwmSetWindowAttribute(this.Handle, attribute, ref preference, sizeof(uint));
+                DwmSetWindowAttribute(Handle, attribute, ref preference, sizeof(uint));
             }
-            this.windowPanel1.RoundCorners = _isWindows11;
+            windowPanel1.RoundCorners = _isWindows11;
         }
 
         public enum DWMWINDOWATTRIBUTE

@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
+            SuspendLayout();
             // 
             // Form16_MultiPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Location = new System.Drawing.Point(0, 0);
-            this.Name = "Form16_MultiPanel";
-            this.Text = "Form1";
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(800, 450);
+            Location = new System.Drawing.Point(0, 0);
+            Name = "Form16_MultiPanel";
+            Text = "Form1";
+            ResumeLayout(false);
 
         }
 

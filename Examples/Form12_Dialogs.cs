@@ -17,12 +17,12 @@ namespace Examples
         public Form12_Dialogs()
         {
             InitializeComponent();
-            // Make sure you set this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            // Make sure you set AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             // Program.cs : Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
-            this.Text = "";
-            this.IsAcrylic = true;
-            this.AutoScaleMode = AutoScaleMode.Dpi;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            Text = "";
+            IsAcrylic = true;
+            AutoScaleMode = AutoScaleMode.Dpi;
+            AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
         }
 
         private void DefaultDialog_Click(object sender, EventArgs e)

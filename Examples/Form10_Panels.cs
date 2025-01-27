@@ -17,11 +17,11 @@ namespace Examples
         public Form10_Panels()
         {
             InitializeComponent();
-            // Make sure you set this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            // Make sure you set AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             // Program.cs : Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
-            this.Text = "";
-            this.IsAcrylic = true;            
-            this.AutoScaleMode = AutoScaleMode.Dpi;
+            Text = "";
+            IsAcrylic = true;            
+            AutoScaleMode = AutoScaleMode.Dpi;
         }
     }
 }

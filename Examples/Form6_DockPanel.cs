@@ -28,7 +28,7 @@ namespace Examples
         public Form6_DockPanel()
         {
             InitializeComponent();
-            // Make sure you set this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            // Make sure you set AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             // Program.cs : Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
 
             SetupUIDefaults();
@@ -41,17 +41,17 @@ namespace Examples
             
 
             // Tool Tasks
-            this.toolTaskSettings.DefaultDockArea = DockArea.Bottom;
+            toolTaskSettings.DefaultDockArea = DockArea.Bottom;
             
             // Inbox
-            this.inboxControl.DefaultDockArea = DockArea.Left;
+            inboxControl.DefaultDockArea = DockArea.Left;
 
             // Outbox
-            this.outboxControl.DefaultDockArea = DockArea.Right;
+            outboxControl.DefaultDockArea = DockArea.Right;
 
-            DockPanel.AddContent(this.toolTaskSettings);    // The order added sets the tab order
-            DockPanel.AddContent(this.outboxControl);
-            DockPanel.AddContent(this.inboxControl);        // Active Control
+            DockPanel.AddContent(toolTaskSettings);    // The order added sets the tab order
+            DockPanel.AddContent(outboxControl);
+            DockPanel.AddContent(inboxControl);        // Active Control
             var doc1 = new Document();
             doc1.DockText = "Document 1";
             DockPanel.AddContent(doc1);
@@ -79,35 +79,35 @@ namespace Examples
         private void SetupUIDefaults()
         {
             // Colors
-            this.IsAcrylic = false;
-            this.pnlTask.IsAcrylic = false;
-            this.BackColor = Colors.MontereyPanel;
-            this.DockPanel.BackColor = Colors.MontereyDark;
+            IsAcrylic = false;
+            pnlTask.IsAcrylic = false;
+            BackColor = Colors.MontereyPanel;
+            DockPanel.BackColor = Colors.MontereyDark;
 
 
             // Windows 11 Hack
             RoundCorners();
 
             // Don't change this: NoBorder with Resize Hack
-            var designSize = this.ClientSize;
-            this.FormBorderStyle = FormBorderStyle.Sizable;
-            this.Size = designSize;
-            this._restoreSize = designSize; // save for restore
+            var designSize = ClientSize;
+            FormBorderStyle = FormBorderStyle.Sizable;
+            Size = designSize;
+            _restoreSize = designSize; // save for restore
 
         }
 
         private void HookEvents()
         {
-            this.Load += new System.EventHandler(this.MainWindow_Load);
+            Load += new System.EventHandler(MainWindow_Load);
 
         }
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
-            var dpiScale = IconFactory.GetDpiScale(this.Handle);
-            this.pnlTask.Icon = new IconFactory(IconFactory.GetDpiScale(Handle)).BitmapFromSvg(Icons.Cube_16x_svg);
-            this.pnlTask.SectionHeader = "";
-            this.mnuMain.Location = new System.Drawing.Point(36, 3); // Overlay Menu on Top Control Bar
+            var dpiScale = IconFactory.GetDpiScale(Handle);
+            pnlTask.Icon = new IconFactory(IconFactory.GetDpiScale(Handle)).BitmapFromSvg(Icons.Cube_16x_svg);
+            pnlTask.SectionHeader = "";
+            mnuMain.Location = new System.Drawing.Point(36, 3); // Overlay Menu on Top Control Bar
         }
 
 

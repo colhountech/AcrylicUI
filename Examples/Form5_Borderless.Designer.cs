@@ -31,93 +31,101 @@ namespace Examples
         /// </summary>
         private void InitializeComponent()
         {
-            this.windowPanel1 = new AcrylicUI.Controls.WindowPanel();
-            this.acrylicGlassPanel2 = new AcrylicUI.Controls.AcrylicGlassPanel();
-            this.acrylicGlassPanel3 = new AcrylicUI.Controls.AcrylicGlassPanel();
-            this.acrylicGlassPanel1 = new AcrylicUI.Controls.AcrylicGlassPanel();
-            this.lblStatus = new AcrylicUI.Controls.AcrylicLabel();
-            this.windowPanel1.SuspendLayout();
-            this.SuspendLayout();
+            windowPanel1 = new AcrylicUI.Controls.WindowPanel();
+            acrylicGlassPanel2 = new AcrylicUI.Controls.AcrylicGlassPanel();
+            acrylicGlassPanel3 = new AcrylicUI.Controls.AcrylicGlassPanel();
+            acrylicGlassPanel1 = new AcrylicUI.Controls.AcrylicGlassPanel();
+            acrylicStatusStrip1 = new AcrylicUI.Controls.AcrylicStatusStrip();
+            toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            windowPanel1.SuspendLayout();
+            acrylicStatusStrip1.SuspendLayout();
+            SuspendLayout();
             // 
             // windowPanel1
             // 
-            this.windowPanel1.Controls.Add(this.lblStatus);
-            this.windowPanel1.Controls.Add(this.acrylicGlassPanel2);
-            this.windowPanel1.Controls.Add(this.acrylicGlassPanel3);
-            this.windowPanel1.Controls.Add(this.acrylicGlassPanel1);
-            this.windowPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.windowPanel1.HamburgerMenuFeature = false;
-            this.windowPanel1.Icon = null;
-            this.windowPanel1.IsAcrylic = true;
-            this.windowPanel1.Location = new System.Drawing.Point(0, 0);
-            this.windowPanel1.Name = "windowPanel1";
-            this.windowPanel1.ProfileFeature = false;
-            this.windowPanel1.RoundCorners = false;
-            this.windowPanel1.SectionHeader = null;
-            this.windowPanel1.Size = new System.Drawing.Size(418, 450);
-            this.windowPanel1.TabIndex = 0;
+            windowPanel1.Controls.Add(acrylicStatusStrip1);
+            windowPanel1.Controls.Add(acrylicGlassPanel2);
+            windowPanel1.Controls.Add(acrylicGlassPanel3);
+            windowPanel1.Controls.Add(acrylicGlassPanel1);
+            windowPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            windowPanel1.Icon = null;
+            windowPanel1.Location = new System.Drawing.Point(0, 0);
+            windowPanel1.Name = "windowPanel1";
+            windowPanel1.RoundCorners = false;
+            windowPanel1.SectionHeader = null;
+            windowPanel1.Size = new System.Drawing.Size(418, 450);
+            windowPanel1.TabIndex = 0;
             // 
             // acrylicGlassPanel2
             // 
-            this.acrylicGlassPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.acrylicGlassPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(88)))), ((int)(((byte)(88)))), ((int)(((byte)(88)))));
-            this.acrylicGlassPanel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.acrylicGlassPanel2.Location = new System.Drawing.Point(35, 222);
-            this.acrylicGlassPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.acrylicGlassPanel2.Name = "acrylicGlassPanel2";
-            this.acrylicGlassPanel2.Size = new System.Drawing.Size(330, 150);
-            this.acrylicGlassPanel2.TabIndex = 4;
+            acrylicGlassPanel2.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            acrylicGlassPanel2.BackColor = System.Drawing.Color.FromArgb(40, 88, 88, 88);
+            acrylicGlassPanel2.ForeColor = System.Drawing.Color.FromArgb(99, 99, 99, 99);
+            acrylicGlassPanel2.Location = new System.Drawing.Point(35, 222);
+            acrylicGlassPanel2.Margin = new System.Windows.Forms.Padding(2);
+            acrylicGlassPanel2.Name = "acrylicGlassPanel2";
+            acrylicGlassPanel2.Size = new System.Drawing.Size(330, 150);
+            acrylicGlassPanel2.TabIndex = 4;
             // 
             // acrylicGlassPanel3
             // 
-            this.acrylicGlassPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.acrylicGlassPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(88)))), ((int)(((byte)(88)))), ((int)(((byte)(88)))));
-            this.acrylicGlassPanel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.acrylicGlassPanel3.HasRoundedCorners = true;
-            this.acrylicGlassPanel3.Location = new System.Drawing.Point(54, 81);
-            this.acrylicGlassPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.acrylicGlassPanel3.Name = "acrylicGlassPanel3";
-            this.acrylicGlassPanel3.Size = new System.Drawing.Size(294, 61);
-            this.acrylicGlassPanel3.TabIndex = 2;
+            acrylicGlassPanel3.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            acrylicGlassPanel3.BackColor = System.Drawing.Color.FromArgb(40, 88, 88, 88);
+            acrylicGlassPanel3.ForeColor = System.Drawing.Color.FromArgb(99, 99, 99, 99);
+            acrylicGlassPanel3.HasRoundedCorners = true;
+            acrylicGlassPanel3.Location = new System.Drawing.Point(54, 81);
+            acrylicGlassPanel3.Margin = new System.Windows.Forms.Padding(2);
+            acrylicGlassPanel3.Name = "acrylicGlassPanel3";
+            acrylicGlassPanel3.Size = new System.Drawing.Size(294, 61);
+            acrylicGlassPanel3.TabIndex = 2;
             // 
             // acrylicGlassPanel1
             // 
-            this.acrylicGlassPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.acrylicGlassPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(88)))), ((int)(((byte)(88)))), ((int)(((byte)(88)))));
-            this.acrylicGlassPanel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.acrylicGlassPanel1.Location = new System.Drawing.Point(35, 61);
-            this.acrylicGlassPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.acrylicGlassPanel1.Name = "acrylicGlassPanel1";
-            this.acrylicGlassPanel1.Size = new System.Drawing.Size(330, 150);
-            this.acrylicGlassPanel1.TabIndex = 3;
+            acrylicGlassPanel1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            acrylicGlassPanel1.BackColor = System.Drawing.Color.FromArgb(40, 88, 88, 88);
+            acrylicGlassPanel1.ForeColor = System.Drawing.Color.FromArgb(99, 99, 99, 99);
+            acrylicGlassPanel1.Location = new System.Drawing.Point(35, 61);
+            acrylicGlassPanel1.Margin = new System.Windows.Forms.Padding(2);
+            acrylicGlassPanel1.Name = "acrylicGlassPanel1";
+            acrylicGlassPanel1.Size = new System.Drawing.Size(330, 150);
+            acrylicGlassPanel1.TabIndex = 3;
             // 
-            // lblStatus
+            // acrylicStatusStrip1
             // 
-            this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.lblStatus.Location = new System.Drawing.Point(1, 426);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(416, 23);
-            this.lblStatus.TabIndex = 5;
-            this.lblStatus.Text = "Ready";
+            acrylicStatusStrip1.AutoSize = false;
+            acrylicStatusStrip1.BackColor = System.Drawing.Color.FromArgb(31, 31, 31);
+            acrylicStatusStrip1.ForeColor = System.Drawing.Color.FromArgb(192, 192, 192);
+            acrylicStatusStrip1.IsAcrylicEnabled = false;
+            acrylicStatusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { toolStripStatusLabel1 });
+            acrylicStatusStrip1.Location = new System.Drawing.Point(1, 425);
+            acrylicStatusStrip1.Name = "acrylicStatusStrip1";
+            acrylicStatusStrip1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 3);
+            acrylicStatusStrip1.Size = new System.Drawing.Size(416, 24);
+            acrylicStatusStrip1.SizingGrip = false;
+            acrylicStatusStrip1.TabIndex = 5;
+            acrylicStatusStrip1.Text = "Ready";
+            // 
+            // toolStripStatusLabel1
+            // 
+            toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            toolStripStatusLabel1.Size = new System.Drawing.Size(118, 11);
+            toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
             // Form5_Borderless
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(418, 450);
-            this.Controls.Add(this.windowPanel1);
-            this.Location = new System.Drawing.Point(0, 0);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.Name = "Form5_Borderless";
-            this.Text = "Form5";
-            this.windowPanel1.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            BackColor = System.Drawing.SystemColors.Control;
+            ClientSize = new System.Drawing.Size(418, 450);
+            Controls.Add(windowPanel1);
+            Location = new System.Drawing.Point(0, 0);
+            Margin = new System.Windows.Forms.Padding(5);
+            Name = "Form5_Borderless";
+            Text = "Form5";
+            windowPanel1.ResumeLayout(false);
+            acrylicStatusStrip1.ResumeLayout(false);
+            acrylicStatusStrip1.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -126,6 +134,7 @@ namespace Examples
         private AcrylicUI.Controls.AcrylicGlassPanel acrylicGlassPanel3;
         private AcrylicUI.Controls.AcrylicGlassPanel acrylicGlassPanel2;
         private AcrylicUI.Controls.AcrylicGlassPanel acrylicGlassPanel1;
-        private AcrylicUI.Controls.AcrylicLabel lblStatus;
+        private AcrylicUI.Controls.AcrylicStatusStrip acrylicStatusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }

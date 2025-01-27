@@ -16,9 +16,9 @@ namespace Examples
         public MainWindow()
         {
             InitializeComponent();
-            this.Text = "";
-            this.IsAcrylic = true;
-            this.BackColor = AcrylicUI.Resources.Colors.GreyBackground;
+            Text = "";
+            IsAcrylic = true;
+            BackColor = AcrylicUI.Resources.Colors.GreyBackground;
 
         }
 

@@ -28,44 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.acrylicLabel1 = new AcrylicUI.Controls.AcrylicLabel();
-            this.acrylicTreeView1 = new AcrylicUI.Controls.AcrylicTreeView();
-            this.SuspendLayout();
+            acrylicLabel1 = new AcrylicUI.Controls.AcrylicLabel();
+            acrylicTreeView1 = new AcrylicUI.Controls.AcrylicTreeView();
+            SuspendLayout();
             // 
             // acrylicLabel1
             // 
-            this.acrylicLabel1.AutoSize = true;
-            this.acrylicLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.acrylicLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.acrylicLabel1.Location = new System.Drawing.Point(33, 19);
-            this.acrylicLabel1.Name = "acrylicLabel1";
-            this.acrylicLabel1.Size = new System.Drawing.Size(53, 15);
-            this.acrylicLabel1.TabIndex = 8;
-            this.acrylicLabel1.Text = "TreeView";
+            acrylicLabel1.AutoSize = true;
+            acrylicLabel1.BackColor = System.Drawing.Color.Transparent;
+            acrylicLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            acrylicLabel1.Location = new System.Drawing.Point(33, 19);
+            acrylicLabel1.Name = "acrylicLabel1";
+            acrylicLabel1.Size = new System.Drawing.Size(53, 15);
+            acrylicLabel1.TabIndex = 8;
+            acrylicLabel1.Text = "TreeView";
             // 
             // acrylicTreeView1
             // 
-            this.acrylicTreeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.acrylicTreeView1.Location = new System.Drawing.Point(0, 0);
-            this.acrylicTreeView1.MaxDragChange = 20;
-            this.acrylicTreeView1.Name = "acrylicTreeView1";
-            this.acrylicTreeView1.Size = new System.Drawing.Size(800, 450);
-            this.acrylicTreeView1.TabIndex = 9;
-            this.acrylicTreeView1.Text = "acrylicTreeView1";
+            acrylicTreeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            acrylicTreeView1.Location = new System.Drawing.Point(0, 0);
+            acrylicTreeView1.MaxDragChange = 20;
+            acrylicTreeView1.Name = "acrylicTreeView1";
+            acrylicTreeView1.Size = new System.Drawing.Size(800, 450);
+            acrylicTreeView1.TabIndex = 9;
+            acrylicTreeView1.Text = "acrylicTreeView1";
             // 
             // Form13_TreeView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = AcrylicUI.Resources.Colors.GreyBackground;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.acrylicTreeView1);
-            this.Controls.Add(this.acrylicLabel1);
-            this.Location = new System.Drawing.Point(0, 0);
-            this.Name = "Form13_TreeView";
-            this.Text = "Form13 - TreeView";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = AcrylicUI.Resources.Colors.GreyBackground;
+            ClientSize = new System.Drawing.Size(800, 450);
+            Controls.Add(acrylicTreeView1);
+            Controls.Add(acrylicLabel1);
+            Location = new System.Drawing.Point(0, 0);
+            Name = "Form13_TreeView";
+            Text = "Form13 - TreeView";
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 

@@ -10,9 +10,9 @@ namespace Examples
         public Form15_ComboBox()
         {
             // Make sure you set:
-            //  * Form1.cs:  this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            //  * Form1.cs:  AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             //  * Program.cs : Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             InitializeComponent();
         }
 

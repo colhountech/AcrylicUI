@@ -16,26 +16,26 @@ namespace Examples
         public Form2_Buttons()
         {
             InitializeComponent();
-            // Make sure you set this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            // Make sure you set AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             // Program.cs : Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
-            this.Text = "";
-            this.ShowIcon = false;
-            this.acrylicGroupBox1.ForeColor = Colors.Text;
+            Text = "";
+            ShowIcon = false;
+            acrylicGroupBox1.ForeColor = Colors.Text;
 
             // TextImageRelation = TextImageRelation.ImageBeforeText;
-            this.acrylicButton9.SvgIcon = Media.SvgIcons.FolderClosed_16x_svg;           
-            this.acrylicButton13.SvgIcon = Media.SvgIcons.FolderClosed_16x_svg;
-            this.acrylicButton14.SvgIcon = Media.SvgIcons.FolderClosed_16x_svg;            
-            this.acrylicButton15.SvgIcon = Media.SvgIcons.FolderClosed_16x_svg;            
-            this.acrylicButton16.SvgIcon = Media.SvgIcons.FolderClosed_16x_svg;
+            acrylicButton9.SvgIcon = Media.SvgIcons.FolderClosed_16x_svg;           
+            acrylicButton13.SvgIcon = Media.SvgIcons.FolderClosed_16x_svg;
+            acrylicButton14.SvgIcon = Media.SvgIcons.FolderClosed_16x_svg;            
+            acrylicButton15.SvgIcon = Media.SvgIcons.FolderClosed_16x_svg;            
+            acrylicButton16.SvgIcon = Media.SvgIcons.FolderClosed_16x_svg;
 
             //// TextImageRelation = TextImageRelation.ImageBeforeText;
 
-            this.acrylicButton17.SvgIcon = Media.SvgIcons.FolderClosed_16x_svg;   
-            this.acrylicButton18.SvgIcon = Media.SvgIcons.FolderClosed_16x_svg;   
-            this.acrylicButton19.SvgIcon = Media.SvgIcons.FolderClosed_16x_svg;   
-            this.acrylicButton20.SvgIcon = Media.SvgIcons.FolderClosed_16x_svg;   
-            this.acrylicButton21.SvgIcon = Media.SvgIcons.FolderClosed_16x_svg;
+            acrylicButton17.SvgIcon = Media.SvgIcons.FolderClosed_16x_svg;   
+            acrylicButton18.SvgIcon = Media.SvgIcons.FolderClosed_16x_svg;   
+            acrylicButton19.SvgIcon = Media.SvgIcons.FolderClosed_16x_svg;   
+            acrylicButton20.SvgIcon = Media.SvgIcons.FolderClosed_16x_svg;   
+            acrylicButton21.SvgIcon = Media.SvgIcons.FolderClosed_16x_svg;
 
         }
 

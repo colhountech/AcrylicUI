@@ -30,95 +30,95 @@ namespace Examples
         /// </summary>
         private void InitializeComponent()
         {
-            this.acrylicTitle1 = new AcrylicUI.Controls.AcrylicTitle();
-            this.acrylicTitle2 = new AcrylicUI.Controls.AcrylicTitle();
-            this.acrylicLabel1 = new AcrylicUI.Controls.AcrylicLabel();
-            this.acrylicLabel2 = new AcrylicUI.Controls.AcrylicLabel();
-            this.acrylicLabel3 = new AcrylicUI.Controls.AcrylicLabel();
-            this.acrylicLabel4 = new AcrylicUI.Controls.AcrylicLabel();
-            this.SuspendLayout();
+            acrylicTitle1 = new AcrylicUI.Controls.AcrylicTitle();
+            acrylicTitle2 = new AcrylicUI.Controls.AcrylicTitle();
+            acrylicLabel1 = new AcrylicUI.Controls.AcrylicLabel();
+            acrylicLabel2 = new AcrylicUI.Controls.AcrylicLabel();
+            acrylicLabel3 = new AcrylicUI.Controls.AcrylicLabel();
+            acrylicLabel4 = new AcrylicUI.Controls.AcrylicLabel();
+            SuspendLayout();
             // 
             // acrylicTitle1
             // 
-            this.acrylicTitle1.BackColor = System.Drawing.Color.Transparent;
-            this.acrylicTitle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-            this.acrylicTitle1.Location = new System.Drawing.Point(97, 66);
-            this.acrylicTitle1.Name = "acrylicTitle1";
-            this.acrylicTitle1.Size = new System.Drawing.Size(440, 23);
-            this.acrylicTitle1.TabIndex = 0;
-            this.acrylicTitle1.Text = "acrylicTitle1";
+            acrylicTitle1.BackColor = System.Drawing.Color.Transparent;
+            acrylicTitle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            acrylicTitle1.Location = new System.Drawing.Point(97, 66);
+            acrylicTitle1.Name = "acrylicTitle1";
+            acrylicTitle1.Size = new System.Drawing.Size(440, 23);
+            acrylicTitle1.TabIndex = 0;
+            acrylicTitle1.Text = "acrylicTitle1";
             // 
             // acrylicTitle2
             // 
-            this.acrylicTitle2.BackColor = System.Drawing.Color.Transparent;
-            this.acrylicTitle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-            this.acrylicTitle2.Location = new System.Drawing.Point(97, 219);
-            this.acrylicTitle2.Name = "acrylicTitle2";
-            this.acrylicTitle2.Size = new System.Drawing.Size(440, 23);
-            this.acrylicTitle2.TabIndex = 1;
-            this.acrylicTitle2.Text = "acrylicTitle2";
+            acrylicTitle2.BackColor = System.Drawing.Color.Transparent;
+            acrylicTitle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            acrylicTitle2.Location = new System.Drawing.Point(97, 219);
+            acrylicTitle2.Name = "acrylicTitle2";
+            acrylicTitle2.Size = new System.Drawing.Size(440, 23);
+            acrylicTitle2.TabIndex = 1;
+            acrylicTitle2.Text = "acrylicTitle2";
             // 
             // acrylicLabel1
             // 
-            this.acrylicLabel1.AutoSize = true;
-            this.acrylicLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.acrylicLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.acrylicLabel1.Location = new System.Drawing.Point(132, 116);
-            this.acrylicLabel1.Name = "acrylicLabel1";
-            this.acrylicLabel1.Size = new System.Drawing.Size(75, 15);
-            this.acrylicLabel1.TabIndex = 2;
-            this.acrylicLabel1.Text = "acrylicLabel1";
+            acrylicLabel1.AutoSize = true;
+            acrylicLabel1.BackColor = System.Drawing.Color.Transparent;
+            acrylicLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            acrylicLabel1.Location = new System.Drawing.Point(132, 116);
+            acrylicLabel1.Name = "acrylicLabel1";
+            acrylicLabel1.Size = new System.Drawing.Size(75, 15);
+            acrylicLabel1.TabIndex = 2;
+            acrylicLabel1.Text = "acrylicLabel1";
             // 
             // acrylicLabel2
             // 
-            this.acrylicLabel2.AutoSize = true;
-            this.acrylicLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.acrylicLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.acrylicLabel2.Location = new System.Drawing.Point(132, 167);
-            this.acrylicLabel2.Name = "acrylicLabel2";
-            this.acrylicLabel2.Size = new System.Drawing.Size(75, 15);
-            this.acrylicLabel2.TabIndex = 3;
-            this.acrylicLabel2.Text = "acrylicLabel2";
+            acrylicLabel2.AutoSize = true;
+            acrylicLabel2.BackColor = System.Drawing.Color.Transparent;
+            acrylicLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            acrylicLabel2.Location = new System.Drawing.Point(132, 167);
+            acrylicLabel2.Name = "acrylicLabel2";
+            acrylicLabel2.Size = new System.Drawing.Size(75, 15);
+            acrylicLabel2.TabIndex = 3;
+            acrylicLabel2.Text = "acrylicLabel2";
             // 
             // acrylicLabel3
             // 
-            this.acrylicLabel3.AutoSize = true;
-            this.acrylicLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.acrylicLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.acrylicLabel3.Location = new System.Drawing.Point(132, 269);
-            this.acrylicLabel3.Name = "acrylicLabel3";
-            this.acrylicLabel3.Size = new System.Drawing.Size(75, 15);
-            this.acrylicLabel3.TabIndex = 4;
-            this.acrylicLabel3.Text = "acrylicLabel3";
+            acrylicLabel3.AutoSize = true;
+            acrylicLabel3.BackColor = System.Drawing.Color.Transparent;
+            acrylicLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            acrylicLabel3.Location = new System.Drawing.Point(132, 269);
+            acrylicLabel3.Name = "acrylicLabel3";
+            acrylicLabel3.Size = new System.Drawing.Size(75, 15);
+            acrylicLabel3.TabIndex = 4;
+            acrylicLabel3.Text = "acrylicLabel3";
             // 
             // acrylicLabel4
             // 
-            this.acrylicLabel4.AutoSize = true;
-            this.acrylicLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.acrylicLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.acrylicLabel4.Location = new System.Drawing.Point(132, 320);
-            this.acrylicLabel4.Name = "acrylicLabel4";
-            this.acrylicLabel4.Size = new System.Drawing.Size(75, 15);
-            this.acrylicLabel4.TabIndex = 5;
-            this.acrylicLabel4.Text = "acrylicLabel4";
+            acrylicLabel4.AutoSize = true;
+            acrylicLabel4.BackColor = System.Drawing.Color.Transparent;
+            acrylicLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            acrylicLabel4.Location = new System.Drawing.Point(132, 320);
+            acrylicLabel4.Name = "acrylicLabel4";
+            acrylicLabel4.Size = new System.Drawing.Size(75, 15);
+            acrylicLabel4.TabIndex = 5;
+            acrylicLabel4.Text = "acrylicLabel4";
             // 
             // Form11
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = AcrylicUI.Resources.Colors.GreyBackground;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.acrylicLabel4);
-            this.Controls.Add(this.acrylicLabel3);
-            this.Controls.Add(this.acrylicLabel2);
-            this.Controls.Add(this.acrylicLabel1);
-            this.Controls.Add(this.acrylicTitle2);
-            this.Controls.Add(this.acrylicTitle1);
-            this.Location = new System.Drawing.Point(0, 0);
-            this.Name = "Form11";
-            this.Text = "Form11";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            BackColor = AcrylicUI.Resources.Colors.GreyBackground;
+            ClientSize = new System.Drawing.Size(800, 450);
+            Controls.Add(acrylicLabel4);
+            Controls.Add(acrylicLabel3);
+            Controls.Add(acrylicLabel2);
+            Controls.Add(acrylicLabel1);
+            Controls.Add(acrylicTitle2);
+            Controls.Add(acrylicTitle1);
+            Location = new System.Drawing.Point(0, 0);
+            Name = "Form11";
+            Text = "Form11";
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 

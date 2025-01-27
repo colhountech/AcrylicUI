@@ -16,7 +16,7 @@ namespace Examples
         public Form9_BlankGlass()
         {
             InitializeComponent();
-            // Make sure you set this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            // Make sure you set AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             // Program.cs : Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
             SetupUIDefaults();
 
@@ -24,11 +24,11 @@ namespace Examples
 
         private void SetupUIDefaults()
         {
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BlurOpacity = 10;
-            this.BackColor = Colors.GreyBackground;            
-            this.Icon = new IconFactory(IconFactory.GetDpiScale(Handle)).IconFromSvg(Icons.Cube_16x_svg);
-            this.Text = "";
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            BlurOpacity = 10;
+            BackColor = Colors.GreyBackground;            
+            Icon = new IconFactory(IconFactory.GetDpiScale(Handle)).IconFromSvg(Icons.Cube_16x_svg);
+            Text = "";
         }
     }
 }

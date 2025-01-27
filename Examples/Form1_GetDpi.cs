@@ -19,16 +19,16 @@ namespace Examples
         {
 
             InitializeComponent();
-            // Make sure you set this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            // Make sure you set AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             // Program.cs : Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
 
-            this.Text = string.Empty;
-            this.ShowIcon = false;
-            this.BackColor = Colors.GreyBackground;
-            this.MinimumSize = this.Size;
-            this.grpDpiSettings.BorderColor = Colors.BtnOutline;
-            this.grpDpiSettings.BackColor = Colors.Transparent;
-            this.grpDpiSettings.ForeColor = Colors.Text;
+            Text = string.Empty;
+            ShowIcon = false;
+            BackColor = Colors.GreyBackground;
+            MinimumSize = Size;
+            grpDpiSettings.BorderColor = Colors.BtnOutline;
+            grpDpiSettings.BackColor = Colors.Transparent;
+            grpDpiSettings.ForeColor = Colors.Text;
 
         }
         private void Form1_Load(object sender, EventArgs e)
@@ -44,19 +44,19 @@ namespace Examples
 
         protected override void OnResize(EventArgs e)
         {
-            this.SuspendLayout();
+            SuspendLayout();
             base.OnResize(e);
             ScaleText();
 
-            this.ResumeLayout();           
+            ResumeLayout();           
         }
 
         private void ScaleText()
         {
-            if (this.txtSystemDpi != null)
+            if (txtSystemDpi != null)
             {
-                txtSystemDpi.Text = $"{this.DeviceDpi}";
-                var scale = (float)Drawing.GetDpi(this.Handle) / (float)96f;
+                txtSystemDpi.Text = $"{DeviceDpi}";
+                var scale = (float)Drawing.GetDpi(Handle) / (float)96f;
                 txtAutoScaleFactor.Text = scale.ToString();
             }         
         }

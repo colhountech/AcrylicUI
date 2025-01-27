@@ -28,44 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.acrylicPanel1 = new AcrylicUI.Controls.AcrylicPanel();
-            this.acrylicSectionPanel1 = new AcrylicUI.Controls.AcrylicSectionPanel();
-            this.acrylicPanel1.SuspendLayout();
-            this.acrylicSectionPanel1.SuspendLayout();
-            this.SuspendLayout();
+            acrylicPanel1 = new AcrylicUI.Controls.AcrylicPanel();
+            acrylicSectionPanel1 = new AcrylicUI.Controls.AcrylicSectionPanel();
+            acrylicPanel1.SuspendLayout();
+            acrylicSectionPanel1.SuspendLayout();
+            SuspendLayout();
             // 
             // acrylicPanel1
             // 
-            this.acrylicPanel1.Controls.Add(this.acrylicSectionPanel1);
-            this.acrylicPanel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.acrylicPanel1.Location = new System.Drawing.Point(507, 0);
-            this.acrylicPanel1.Name = "acrylicPanel1";
-            this.acrylicPanel1.Padding = new System.Windows.Forms.Padding(12);
-            this.acrylicPanel1.Size = new System.Drawing.Size(293, 426);
-            this.acrylicPanel1.TabIndex = 1;
+            acrylicPanel1.Controls.Add(acrylicSectionPanel1);
+            acrylicPanel1.Dock = System.Windows.Forms.DockStyle.Right;
+            acrylicPanel1.Location = new System.Drawing.Point(507, 0);
+            acrylicPanel1.Name = "acrylicPanel1";
+            acrylicPanel1.Padding = new System.Windows.Forms.Padding(12);
+            acrylicPanel1.Size = new System.Drawing.Size(293, 426);
+            acrylicPanel1.TabIndex = 1;
             // 
             // acrylicSectionPanel1
             // 
-            this.acrylicSectionPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.acrylicSectionPanel1.Location = new System.Drawing.Point(12, 12);
-            this.acrylicSectionPanel1.Name = "acrylicSectionPanel1";
-            this.acrylicSectionPanel1.SectionHeader = "Tree View";
-            this.acrylicSectionPanel1.Size = new System.Drawing.Size(269, 402);
-            this.acrylicSectionPanel1.TabIndex = 0;
+            acrylicSectionPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            acrylicSectionPanel1.Location = new System.Drawing.Point(12, 12);
+            acrylicSectionPanel1.Name = "acrylicSectionPanel1";
+            acrylicSectionPanel1.SectionHeader = "Tree View";
+            acrylicSectionPanel1.Size = new System.Drawing.Size(269, 402);
+            acrylicSectionPanel1.TabIndex = 0;
  
             // 
             // Form14_SectionPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.acrylicPanel1);
-            this.Location = new System.Drawing.Point(0, 0);
-            this.Name = "Form14_SectionPanel";
-            this.Text = "Form1";
-            this.acrylicPanel1.ResumeLayout(false);
-            this.acrylicSectionPanel1.ResumeLayout(false);
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(800, 450);
+            Controls.Add(acrylicPanel1);
+            Location = new System.Drawing.Point(0, 0);
+            Name = "Form14_SectionPanel";
+            Text = "Form1";
+            acrylicPanel1.ResumeLayout(false);
+            acrylicSectionPanel1.ResumeLayout(false);
+            ResumeLayout(false);
 
         }
 

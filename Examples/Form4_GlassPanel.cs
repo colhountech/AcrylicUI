@@ -16,31 +16,31 @@ namespace Examples
         public Form4_GlassPanel()
         {
             InitializeComponent();
-            // Make sure you set this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            // Make sure you set AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             // Program.cs : Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
 
-            this.BlurOpacity = 1;
-            this.BackColor = AcrylicUI.Resources.Colors.GreyBackground;
+            BlurOpacity = 1;
+            BackColor = AcrylicUI.Resources.Colors.GreyBackground;
 
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Text = "";
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Text = "";
             var appImage = new IconFactory(IconFactory.GetDpiScale(Handle)).BitmapFromSvg(Icons.Cube_16x_svg);
             var appIcon = Icon.FromHandle(new Bitmap(appImage).GetHicon());
 
-            this.ShowIcon = true;
-            this.Icon = appIcon;
-            this.BackColor = Colors.DarkPanel;
-            this.ForeColor = Colors.Text;
-            this.MinimumSize = this.Size;
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            ShowIcon = true;
+            Icon = appIcon;
+            BackColor = Colors.DarkPanel;
+            ForeColor = Colors.Text;
+            MinimumSize = Size;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
 
             // 10 minutes
 
             // Snooze
-            this.acrylicButton1.Image = new IconFactory(IconFactory.GetDpiScale(Handle)).BitmapFromSvg(Icons.Cube_16x_svg);
+            acrylicButton1.Image = new IconFactory(IconFactory.GetDpiScale(Handle)).BitmapFromSvg(Icons.Cube_16x_svg);
             // Dismiss
-            this.acrylicButton3.Image = new IconFactory(IconFactory.GetDpiScale(Handle)).BitmapFromSvg(Icons.Cube_16x_svg);
+            acrylicButton3.Image = new IconFactory(IconFactory.GetDpiScale(Handle)).BitmapFromSvg(Icons.Cube_16x_svg);
 
 
 
