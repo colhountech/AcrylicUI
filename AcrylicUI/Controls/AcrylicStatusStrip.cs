@@ -52,41 +52,36 @@ namespace AcrylicUI.Controls
 
         #region Paint Region
 
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            var g = e.Graphics;
+            base.OnPaint(e);
+         
+            // Ligher Upper Border
+            using (var p = new Pen(Colors.MontereyPanel))
+            {
+                  g.DrawLine(p, ClientRectangle.Left, 0, ClientRectangle.Right, 0);
+            } 
+
+            // Darker lower Shadow
+            using (var p = new Pen(Colors.MontereyDark))
+            {
+                g.DrawLine(p, ClientRectangle.Left, 1, ClientRectangle.Right, 1);
+            }
+        }
 
         protected override void OnPaintBackground(PaintEventArgs e)
         {
             var g = e.Graphics;
 
-            //if (_hasRoundCorners)
-            //{
-            //    using (GraphicsPath border = RoundedRectange(modRect, Scale(ARC_RADIUS)))
-            //    {
-            //        g.DrawPath(p, border);
-            //    }
-            //}
-            //else
-            //{
-            //    g.DrawRectangle(p, modRect);
-            //}
+        
 
             using (var b = new SolidBrush(BackColor))
             {
                 g.Clear(BackColor);
                 g.FillRectangle(b, ClientRectangle);
             }
-            if (_isAcrylicEnabled)
-            {
-                return;
-            }
-            using (var p = new Pen(Colors.DarkBorder))
-            {
-                g.DrawLine(p, ClientRectangle.Left, 0, ClientRectangle.Right, 0);
-            }
-
-            using (var p = new Pen(Colors.LightBorder))
-            {
-                g.DrawLine(p, ClientRectangle.Left, 1, ClientRectangle.Right, 1);
-            }
+           
         }
 
         #endregion
