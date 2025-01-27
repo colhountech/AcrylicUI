@@ -1,4 +1,5 @@
-﻿using AcrylicUI.Resources;
+﻿using AcrylicUI.Extensions;
+using AcrylicUI.Resources;
 using Svg;
 using System;
 using System.ComponentModel;
@@ -89,7 +90,7 @@ namespace AcrylicUI.Controls
         [DefaultValue(Consts.BUTTON_XOFFSET)]
         public int ImagePadding
         {
-            get { return Scale(_imagePadding); }
+            get { return this.ScaleDpi(_imagePadding); }
             set
             {
                 _imagePadding = value;
@@ -153,7 +154,9 @@ namespace AcrylicUI.Controls
             {
                 using var stream = new MemoryStream(_svgIcon);
                 var svgDoc = SvgDocument.Open<SvgDocument>(stream, null);
-                base.Image = svgDoc.Draw(Scale(_iconSize), Scale(_iconSize));
+
+                //  use this.Scale to rescale 
+                base.Image = svgDoc.Draw(this.ScaleDpi(_iconSize), this.ScaleDpi(_iconSize));
             }
         }
 
@@ -205,8 +208,7 @@ namespace AcrylicUI.Controls
 
             SetButtonState(AcrylicControlState.Normal);
             Padding = new Padding(_padding);
-            UpdateScale();
-
+            this.ApplyDpiScaling(RescaleImage);
         }
 
         #endregion
@@ -375,7 +377,7 @@ namespace AcrylicUI.Controls
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
             var rect = new Rectangle(0, 0, ClientSize.Width, ClientSize.Height);
-            var arcRadius = Scale(Consts.SMALL_ARC_RADIUS);
+            var arcRadius = this.ScaleDpi(Consts.SMALL_ARC_RADIUS);
 
             var rectRounded = Drawing.RoundedRectange(rect, arcRadius);
 
@@ -423,7 +425,7 @@ namespace AcrylicUI.Controls
                 }
             }
 
-            var penWidth = Scale(Consts.PEN_WIDTH) / 2;
+            var penWidth = this.ScaleDpi(Consts.PEN_WIDTH) / 2;
             penWidth = penWidth == 0 ? 1 : penWidth;
 
 
@@ -463,21 +465,21 @@ namespace AcrylicUI.Controls
                 switch (TextImageRelation)
                 {
                     case TextImageRelation.ImageAboveText:
-                        textOffsetY = (Image.Size.Height / 2) + Scale(ImagePadding / 2);
-                        y -= ((int)(stringSize.Height / 2) + Scale(ImagePadding / 2));
+                        textOffsetY = (Image.Size.Height / 2) + this.ScaleDpi(ImagePadding / 2);
+                        y -= ((int)(stringSize.Height / 2) + this.ScaleDpi(ImagePadding / 2));
                         break;
                     case TextImageRelation.TextAboveImage:
-                        textOffsetY = ((Image.Size.Height / 2) + Scale(ImagePadding / 2)) * -Scale(Consts.PEN_WIDTH);
-                        y += ((int)(stringSize.Height / 2) + Scale(ImagePadding / 2));
+                        textOffsetY = ((Image.Size.Height / 2) + this.ScaleDpi(ImagePadding / 2)) * -this.ScaleDpi(Consts.PEN_WIDTH);
+                        y += ((int)(stringSize.Height / 2) + this.ScaleDpi(ImagePadding / 2));
                         break;
                     case TextImageRelation.ImageBeforeText:
 
                         textOffsetX = 0;
-                        x = Scale(ImagePadding) + Scale(Consts.PEN_WIDTH); ;
+                        x = this.ScaleDpi(ImagePadding) + this.ScaleDpi(Consts.PEN_WIDTH); ;
 
                         break;
                     case TextImageRelation.TextBeforeImage:
-                        x = ClientSize.Width - Image.Size.Width - Scale(ImagePadding) - Scale(Consts.PEN_WIDTH);
+                        x = ClientSize.Width - Image.Size.Width - this.ScaleDpi(ImagePadding) - this.ScaleDpi(Consts.PEN_WIDTH);
                         break;
                 }
 
@@ -520,45 +522,6 @@ namespace AcrylicUI.Controls
 
 
         #endregion
-
-        #region Dpi Scale
-
-        private const float DEFAULT_DPI = 96f;
-        private float _dpiScale = 1;
-
-        // call at init too
-        private void UpdateScale()
-        {
-            var form = FindForm();
-            if (form is null)
-            {
-
-            }
-            var handle = form?.Handle ?? this.Handle;
-
-            var newDpiScale = (float)Drawing.GetDpi(handle) / (float)DEFAULT_DPI;
-            if (newDpiScale != _dpiScale)
-            {
-                _dpiScale = newDpiScale;
-
-                // TODO
-                // update Icons
-            }
-        }
-        protected override void OnResize(EventArgs e)
-        {
-            base.OnResize(e);
-            UpdateScale();
-            RescaleImage();
-        }
-        private int Scale(int pixel)
-        {
-            return (int)(pixel * _dpiScale);
-        }
-
-        #endregion
-
-
 
     }
 }
