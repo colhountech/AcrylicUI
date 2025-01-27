@@ -50,7 +50,7 @@ namespace Examples
             this._restoreSize = designSize; // save for restore
             this.windowPanel1.ProfileFeature = false;
             this.windowPanel1.IsAcrylic = true;
-            this.BlurOpacity = 10;
+            this.BlurOpacity = 255;
             this.BackColor = AcrylicUI.Resources.Colors.GreyBackground;
 
         }
