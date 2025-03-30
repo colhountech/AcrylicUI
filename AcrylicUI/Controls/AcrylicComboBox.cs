@@ -138,6 +138,9 @@ namespace AcrylicUI.Controls
 
         private void PaintCombobox()
         {
+            if (ClientRectangle.Width <= 0 || ClientRectangle.Height <= 0)
+                return;
+
             if (_buffer == null)
                 _buffer = new Bitmap(ClientRectangle.Width, ClientRectangle.Height);
 
