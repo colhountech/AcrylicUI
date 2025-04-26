@@ -59,6 +59,12 @@ namespace AcrylicUI.Docking
             DockPanel = dockPanel;
             DockArea = dockArea;
 
+            // Enable double buffering
+            SetStyle(ControlStyles.DoubleBuffer | 
+                     ControlStyles.UserPaint | 
+                     ControlStyles.AllPaintingInWmPaint, true);
+            UpdateStyles();
+
             BuildProperties();
         }
 

@@ -120,6 +120,12 @@ namespace AcrylicUI.Docking
             DockContentDragFilter = new DockContentDragFilter(this);
             DockResizeFilter = new DockResizeFilter(this);
 
+            // Enable double buffering
+            SetStyle(ControlStyles.DoubleBuffer | 
+                     ControlStyles.UserPaint | 
+                     ControlStyles.AllPaintingInWmPaint, true);
+            UpdateStyles();
+
             _regions = new Dictionary<DockArea, DockRegion>();
             _contents = new List<DockContent>();
 
