@@ -9,6 +9,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using AcrylicUI.Platform.Windows;
 
 namespace AcrylicUI.Controls
 {
@@ -1288,25 +1289,23 @@ namespace AcrylicUI.Controls
         private const float DEFAULT_DPI = 96f;
         private float _dpiScale = 1;
 
-        // call at init too
-        //private void UpdateScale()
-        //{
-        //    var form = FindForm();
-        //    if (form is null)
-        //    {
+        private void UpdateScale()
+        {
+            if (!this.IsHandleCreated)
+                return;
 
-        //    }
-        //    var handle = form?.Handle ?? this.Handle;
+            var handle = this.Handle;
 
-        //    var newDpiScale = (float)Drawing.GetDpi(handle) / (float)DEFAULT_DPI;
-        //    if (newDpiScale != _dpiScale)
-        //    {
-        //        _dpiScale = newDpiScale;
+            var newDpiScale = (float)Drawing.GetDpi(handle) / DEFAULT_DPI;
+            if (newDpiScale != _dpiScale)
+            {
+                _dpiScale = newDpiScale;
 
-        //        // TODO
-        //        // update Icons
-        //    }
-        //}
+                LoadIcons();
+                UpdateNodes();
+            }
+        }
+
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
