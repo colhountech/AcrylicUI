@@ -83,6 +83,22 @@ public partial class MyForm : AcrylicForm
 }
 ```
 
+## Layout Considerations
+
+**Preventing Overlap with Parent Header:**
+
+When placing an `AcrylicTreeView` inside a container control (like a `ToolWindow` or `UserControl`) that has its own header or title bar, setting the `AcrylicTreeView`'s `Dock` property to `DockStyle.Fill` might cause the TreeView to overlap the parent's header area.
+
+To prevent this, ensure the *parent container control* has standard WinForms AutoScale properties set, typically in its constructor or `InitializeComponent` method:
+
+```csharp
+// In the constructor or InitializeComponent of the PARENT control (e.g., MyToolWindow.cs)
+this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F); 
+this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+```
+
+This helps the parent control respect its own non-client areas (like the header) when its client area is being filled by the docked `AcrylicTreeView`.
+
 ## Key Properties
 
 *   `Nodes`: Gets the collection of root `AcrylicTreeNode` objects.
