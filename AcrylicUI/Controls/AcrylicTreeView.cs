@@ -1289,7 +1289,7 @@ namespace AcrylicUI.Controls
         private const float DEFAULT_DPI = 96f;
         private float _dpiScale = 1;
 
-        private void UpdateScale()
+        protected new virtual void UpdateScale()
         {
             if (!this.IsHandleCreated)
                 return;
