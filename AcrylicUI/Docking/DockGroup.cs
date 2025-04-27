@@ -178,18 +178,18 @@ namespace AcrylicUI.Docking
             switch (DockArea)
             {
                 case DockArea.Document:
-                    size = _tabArea.Visible ? Consts.DocumentTabAreaSize : 0;                    
+                    size = _tabArea.Visible ? Scale(Consts.DocumentTabAreaSize) : 0;
                     Padding = new Padding(0, size, 0, 0);
                     _tabArea.ClientRectangle = new Rectangle(Padding.Left, 0, ClientRectangle.Width - Padding.Horizontal, size);
                     break;
                 case DockArea.Left:
                 case DockArea.Right:
-                    size = _tabArea.Visible ? Consts.ToolWindowTabAreaSize : 0;
+                    size = _tabArea.Visible ? Scale(Consts.ToolWindowTabAreaSize) : 0;
                     Padding = new Padding(0, 0, 0, size);
                     _tabArea.ClientRectangle = new Rectangle(Padding.Left, ClientRectangle.Bottom - size, ClientRectangle.Width - Padding.Horizontal, size);
                     break;
                 case DockArea.Bottom:
-                    size = _tabArea.Visible ? Consts.ToolWindowTabAreaSize : 0;
+                    size = _tabArea.Visible ? Scale(Consts.ToolWindowTabAreaSize) : 0;
                     Padding = new Padding(1, 0, 0, size);
                     _tabArea.ClientRectangle = new Rectangle(Padding.Left, ClientRectangle.Bottom - size, ClientRectangle.Width - Padding.Horizontal, size);
                     break;
@@ -197,7 +197,7 @@ namespace AcrylicUI.Docking
 
             if (DockArea == DockArea.Document)
             {
-                var dropdownSize = Consts.DocumentTabAreaSize;
+                var dropdownSize = Scale(Consts.DocumentTabAreaSize);
                 _tabArea.DropdownRectangle = new Rectangle(_tabArea.ClientRectangle.Right - dropdownSize, 0, dropdownSize, dropdownSize);
             }
 
@@ -213,7 +213,7 @@ namespace AcrylicUI.Docking
 
             SuspendLayout();
 
-            var closeButtonSize = Consts.TAB_CLOSE_BUTTON_SIZE;
+            var closeButtonSize = Scale(Consts.TAB_CLOSE_BUTTON_SIZE);
 
             // Calculate areas of all tabs
             var totalSize = 0;
@@ -245,8 +245,8 @@ namespace AcrylicUI.Docking
                 tab.ShowSeparator = true;
                 width += 1;
 
-                var y = DockArea == DockArea.Document ? 0 : ClientRectangle.Height - Consts.ToolWindowTabAreaSize;
-                var height = DockArea == DockArea.Document ? Consts.DocumentTabAreaSize : Consts.ToolWindowTabAreaSize;
+                var y = DockArea == DockArea.Document ? 0 : ClientRectangle.Height - Scale(Consts.ToolWindowTabAreaSize);
+                var height = DockArea == DockArea.Document ? Scale(Consts.DocumentTabAreaSize) : Scale(Consts.ToolWindowTabAreaSize);
 
                 var tabRect = new Rectangle(_tabArea.ClientRectangle.Left + totalSize, y, width, height);
                 tab.ClientRectangle = tabRect;
