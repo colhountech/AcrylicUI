@@ -88,6 +88,5 @@ MIT License - Free for personal and commercial use.
 
 Pull requests welcome! Check the issues page for needed improvements or suggest new features.
 
----
 
 Created by [Mícheál Colhoun](https://github.com/colhountech)

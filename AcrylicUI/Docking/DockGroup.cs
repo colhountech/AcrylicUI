@@ -228,17 +228,28 @@ namespace AcrylicUI.Docking
 
                 using (var g = CreateGraphics())
                 {
-                    width = tab.CalculateWidth(g, Font);
+                    width = tab.CalculateWidth(g, Font); // Base text width (now unpadded)
                 }
 
-                // Add additional width for document tab items
+                // Add additional width for document tab items using scaled padding
                 if (DockArea == DockArea.Document)
                 {
-                    width += 5;
-                    width += closeButtonSize;
-
+                    width += Scale(5); // Scaled Padding before icon/text
+                    
                     if (tab.DockContent.Icon != null)
-                        width += tab.DockContent.Icon.Width + 5;
+                    {
+                        width += tab.DockContent.Icon.Width; // Icon width (absolute)
+                        width += Scale(5); // Scaled Padding after icon
+                    }
+                    else
+                    {
+                         // If no icon, still need padding after text position
+                         width += Scale(5); // Scaled Padding after text 
+                    }
+
+                    // Add padding before close button and close button width
+                    width += Scale(7); // Scaled Padding before close button
+                    width += closeButtonSize; // closeButtonSize is already scaled
                 }
 
                 // Show separator on all tabs for now
@@ -313,8 +324,9 @@ namespace AcrylicUI.Docking
                 foreach (var content in orderedContent)
                 {
                     var tab = _tabs[content];
-                    var closeRect = new Rectangle(tab.ClientRectangle.Right - 7 - closeButtonSize - 1,
-                                                  tab.ClientRectangle.Top + (tab.ClientRectangle.Height / 2) - (closeButtonSize / 2) - 1,
+                    // Use smaller scaled padding for positioning close button closer to the edge
+                    var closeRect = new Rectangle(tab.ClientRectangle.Right - Scale(5) - closeButtonSize - Scale(1), // Reduced padding before button from 7 to 5
+                                                  tab.ClientRectangle.Top + (tab.ClientRectangle.Height / 2) - (closeButtonSize / 2) - Scale(1),
                                                   closeButtonSize, closeButtonSize);
                     tab.CloseButtonRectangle = closeRect;
                 }
@@ -733,8 +745,13 @@ namespace AcrylicUI.Docking
             // Draw icon
             if (tab.DockContent.Icon != null)
             {
-                g.DrawImageUnscaled(tab.DockContent.Icon, tabRect.Left + 5, tabRect.Top + 4);
-                xOffset += tab.DockContent.Icon.Width + 2;
+                // Use scaled padding/offset for icon position
+                g.DrawImageUnscaled(tab.DockContent.Icon, tabRect.Left + Scale(5), tabRect.Top + (tabRect.Height - tab.DockContent.Icon.Height) / 2 ); // Padding before icon
+                xOffset += Scale(5) + tab.DockContent.Icon.Width + Scale(5); // Total offset includes padding before, icon width, padding after
+            }
+            else
+            {
+                 xOffset += Scale(5); // Initial padding if no icon
             }
 
             var tabTextFormat = new StringFormat
@@ -749,7 +766,16 @@ namespace AcrylicUI.Docking
             var textColor = isFocussed ? Colors.LightText : Colors.DisabledText;
             using (var b = new SolidBrush(textColor))
             {
-                var textRect = new Rectangle(tabRect.Left + 5 + xOffset, tabRect.Top, tabRect.Width - tab.CloseButtonRectangle.Width - 7 - 5 - xOffset, tabRect.Height);
+                // Calculate text rectangle using scaled padding and offsets
+                var textRightPadding = Scale(7); // Space before close button
+                var textX = tabRect.Left + xOffset; // Start after icon/padding
+                // Available width = Total width - Left Offset - Right Padding - Close Button Width - Separator Width
+                var textWidth = tabRect.Width - xOffset - textRightPadding - Scale(10) - Scale(1);
+
+                // Ensure textWidth is not negative
+                textWidth = Math.Max(0, textWidth);
+
+                var textRect = new Rectangle(textX, tabRect.Top, textWidth, tabRect.Height);
                 g.DrawString(tab.DockContent.DockText, Font, b, textRect, tabTextFormat);
             }
 
