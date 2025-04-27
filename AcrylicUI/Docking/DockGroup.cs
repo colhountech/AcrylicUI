@@ -13,6 +13,9 @@ namespace AcrylicUI.Docking
     {
         #region Field Region
 
+        private const float DEFAULT_DPI = 96f; // Added for scaling
+        private float _dpiScale = 1; // Added for scaling
+
         private List<DockContent> _contents = new List<DockContent>();
 
         private Dictionary<DockContent, DockTab> _tabs = new Dictionary<DockContent, DockTab>();
@@ -52,6 +55,8 @@ namespace AcrylicUI.Docking
                      ControlStyles.ResizeRedraw |
                      ControlStyles.UserPaint, true);
 
+            UpdateScale(); // Added for scaling
+
             DockPanel = dockPanel;
             DockRegion = dockRegion;
             DockArea = dockRegion.DockArea;
@@ -61,6 +66,10 @@ namespace AcrylicUI.Docking
             _tabArea = new DockTabArea(DockArea);
 
             DockPanel.ActiveContentChanged += DockPanel_ActiveContentChanged;
+
+            BuildTabs();
+
+            EnsureVisible();
         }
 
         #endregion
@@ -618,6 +627,13 @@ namespace AcrylicUI.Docking
             BuildTabs();
         }
 
+        protected override void OnHandleCreated(EventArgs e) // Added for scaling
+        {
+            base.OnHandleCreated(e);
+            if (!DesignMode)
+                UpdateScale();
+        }
+
         #endregion
 
         #region Render Region
@@ -796,6 +812,37 @@ namespace AcrylicUI.Docking
         protected override void OnPaintBackground(PaintEventArgs e)
         {
             // Absorb event
+        }
+
+        #endregion
+
+        #region Scaling Methods
+
+        // Added for scaling
+        private void UpdateScale()
+        {
+            if (DesignMode || !IsHandleCreated)
+            {
+                _dpiScale = 1;
+                return;
+            }
+
+            // Get the graphics object from the handle
+            using (var graphics = Graphics.FromHwnd(Handle))
+            {
+                _dpiScale = graphics.DpiX / DEFAULT_DPI;
+            }
+
+            // Optional: Force layout update if scale changed significantly
+            // Invalidate(); // Could cause flicker, use carefully
+        }
+
+        // Added for scaling
+        private int Scale(int pixel)
+        {
+             // Avoid scaling icons and images that are bitmaps
+             // as scaling might cause distortion and blurry images
+            return (int)(pixel * _dpiScale);
         }
 
         #endregion
